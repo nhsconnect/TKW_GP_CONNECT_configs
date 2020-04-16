@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <type value="searchset"/>
+  <entry>
+    <resource>
+      <Composition xmlns="http://hl7.org/fhir">
+        <meta>
+          <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/>
+        </meta>
+        <date value= "__TIMESTAMP__"/>
+        <type>
+          <coding>
+            <system value="valueSet"/>
+            <code value="425173008"/>
+            <display value="record extract (record artifact)"/>
+          </coding>
+          <text value="record extract (record artifact)"/>
+        </type>
+        <title value="Patient Care Record"/>
+        <status value="final"/>
+        <subject>
+          <reference value="Patient/6"/>
+        </subject>
+        <author>
+          <reference value="Practitioner/1"/>
+        </author>
+        <section>
+          <title value="Administrative Items"/>
+          <code>
+            <coding>
+              <system value="http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"/>
+              <code value="ADM"/>
+              <display value="Administrative Items"/>
+            </coding>
+            <text value="Administrative Items"/>
+          </code>
+          <text>
+            <status value="generated"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <div>
+                <h2>Administrative Items</h2>
+                <div>
+                  <p>All relevant items</p>
+                </div>
+                <div>
+                  <p>No 'Administrative Items' data is recorded for this patient.</p>
+                </div>
+              </div>
+            </div>
+          </text>
+        </section>
+      </Composition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Practitioner/1"/>
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <meta>
+          <versionId value="1469448000000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+00:00"/>
+          <profile value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+          <value value="G13579135"/>
+        </identifier>
+        <name>
+          <use value="usual"/>
+          <family value="Gilbert"/>
+          <given value="Nichole"/>
+          <prefix value="Miss"/>
+        </name>
+        <gender value="female"/>
+        <practitionerRole>
+          <managingOrganization>
+            <reference value="Organization/2"/>
+          </managingOrganization>
+          <role>
+            <coding>
+              <system value="https://fhir.hl7.org.uk/ValueSet/CareConnect-SDSJobRoleName-1"/>
+              <code value="R0050"/>
+              <display value="Consultant"/>
+            </coding>
+          </role>
+        </practitionerRole>
+        <communication>
+          <coding>
+            <system value="http://fhir.nhs.net/ValueSet/human-language-1"/>
+            <code value="de"/>
+            <display value="German"/>
+          </coding>
+        </communication>
+        <communication>
+          <coding>
+            <system value="http://fhir.nhs.net/ValueSet/human-language-1"/>
+            <code value="en"/>
+            <display value="English"/>
+          </coding>
+        </communication>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Organization/2"/>
+    <resource>
+      <Organization xmlns="http://hl7.org/fhir">
+        <id value="2"/>
+        <meta>
+          <versionId value="1469448000000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+00:00"/>
+          <profile value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+          <value value="R1A14"/>
+        </identifier>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type"/>
+            <code value="dept"/>
+            <display value="Hospital Department"/>
+          </coding>
+        </type>
+        <name value="Test GP Care Trust"/>
+        <telecom>
+          <system value="phone"/>
+          <use value="work"/>
+        </telecom>
+        <address>
+          <use value="work"/>
+          <type value="physical"/>
+        </address>
+        <contact>
+          <purpose>
+            <coding>
+              <system value="http://hl7.org/fhir/ValueSet/contactentity-type"/>
+              <code value="ADMIN"/>
+            </coding>
+          </purpose>
+          <name>
+            <use value="usual"/>
+            <family value="FamilyName"/>
+          </name>
+          <telecom>
+            <system value="phone"/>
+            <use value="work"/>
+          </telecom>
+          <address>
+            <use value="work"/>
+            <type value="physical"/>
+          </address>
+        </contact>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Patient/6"/>
+    <resource>
+      <Patient xmlns="http://hl7.org/fhir">
+        <id value="6"/>
+        <meta>
+          <versionId value="1469448000000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+00:00"/>
+          <profile value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"/>
+        </meta>
+        <identifier>
+          <extension url="https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1"/>
+                <code value="01"/>
+                <display value="Number present and verified"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+          <value value="__PATIENT_6__"/>
+        </identifier>
+        <active value="true"/>
+        <name>
+          <use value="usual"/>
+          <text value=" Sybill PROUT"/>
+          <family value="PROUT"/>
+          <given value=" Sybill"/>
+          <prefix value="MS"/>
+        </name>
+        <telecom>
+          <system value="phone"/>
+          <value value="013256541523"/>
+          <use value="home"/>
+        </telecom>
+        <gender value="female"/>
+        <birthDate value="1953-11-02"/>
+        <address>
+          <use value="home"/>
+          <type value="physical"/>
+          <text value="30 HALTON CLOSE, KIRTON LINDSEY, GAINSBOROUGH, DN21 4PX"/>
+        </address>
+        <maritalStatus>
+          <coding>
+            <system value="https://fhir.nhs.uk/ValueSet/CareConnect-MaritalStatus-1"/>
+            <code value="S"/>
+            <display value="Married"/>
+          </coding>
+        </maritalStatus>
+        <multipleBirthBoolean value="false"/>
+        <careProvider>
+          <reference value="Practitioner/1"/>
+          <display value="Miss Nichole Gilbert"/>
+        </careProvider>
+        <managingOrganization>
+          <reference value="Organization/1"/>
+        </managingOrganization>
+      </Patient>
+    </resource>
+  </entry>
+</Bundle>

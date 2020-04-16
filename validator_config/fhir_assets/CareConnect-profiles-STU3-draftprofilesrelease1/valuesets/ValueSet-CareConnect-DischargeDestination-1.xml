@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+	<id value="CareConnect-DischargeDestination-1"/>
+	<extension url="http://hl7.org/fhir/StructureDefinition/valueset-sourceReference">
+		<valueUri value="http://www.datadictionary.nhs.uk/data_dictionary/attributes/d/disc/discharge_destination_de.asp?shownav=1"/>
+	</extension>	
+	<url value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeDestination-1"/>
+	<version value="1.0.0"/>
+	<name value="NHS Data Model and Dictionary Discharge Destination"/>
+	<status value="draft"/>
+	<date value="2018-02-15T00:00:00+00:00"/>
+	<publisher value="HL7 UK"/>
+	<description value="The destination of a Patient on completion of a Hospital Provider Spell, or a note that the Patient died or was a still birth."/>
+	<copyright value="Copyright © 2016 HL7 UK"/>
+	<compose>
+		<include>
+			<system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1"/>
+		</include>
+	</compose>
+</ValueSet>

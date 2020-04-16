@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<block>
+<![CDATA[
+  <entry>
+    <resource>
+      <Patient xmlns="http://hl7.org/fhir">
+        <id value="2"/>
+        <meta>
+          <versionId value="1521806400000"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1">
+          <extension url="registrationPeriod">
+            <valuePeriod>
+              <start value="1962-07-13T00:00:00+01:00"/>
+            </valuePeriod>
+          </extension>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1">
+          <extension url="language">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"/>
+                <code value="en"/>
+                <display value="English"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="preferred">
+            <valueBoolean value="false"/>
+          </extension>
+          <extension url="modeOfCommunication">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-LanguageAbilityMode-1"/>
+                <code value="RWR"/>
+                <display value="Received written"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="communicationProficiency">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-LanguageAbilityProficiency-1"/>
+                <code value="E"/>
+                <display value="Excellent"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="interpreterRequired">
+            <valueBoolean value="false"/>
+          </extension>
+        </extension>
+        <identifier>
+          <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1"/>
+                <code value="01"/>
+                <display value="Number present and verified"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+          <value value="9658218873"/>
+        </identifier>
+        <active value="true"/>
+        <name>
+          <use value="official"/>
+          <text value="Mike MEAKIN"/>
+          <family value="MEAKIN"/>
+          <given value="Mike"/>
+          <prefix value="MR"/>
+        </name>
+        <telecom>
+          <system value="phone"/>
+          <value value="01454587554"/>
+          <use value="home"/>
+        </telecom>
+        <gender value="male"/>
+        <birthDate value="1927-06-19"/>
+        <address>
+          <use value="home"/>
+          <type value="physical"/>
+          <line value="1 KNIGHTS COURT"/>
+          <city value="SCUNTHORPE"/>
+          <district value="S HUMBERSIDE"/>
+          <postalCode value="DN16 3PL"/>
+        </address>
+        <contact>
+          <relationship>
+            <text value="Emergency contact"/>
+          </relationship>
+          <relationship>
+            <text value="Next of kin"/>
+          </relationship>
+          <relationship>
+            <text value="Daughter"/>
+          </relationship>
+          <name>
+            <use value="official"/>
+            <text value="JACKSON Jane (Miss)"/>
+            <family value="Jackson"/>
+            <given value="Jane"/>
+            <prefix value="Miss"/>
+          </name>
+          <telecom>
+            <system value="phone"/>
+            <value value="07777123123"/>
+            <use value="mobile"/>
+          </telecom>
+          <address>
+            <use value="home"/>
+            <type value="physical"/>
+            <line value="Trevelyan Square"/>
+            <line value="Boar Ln"/>
+            <postalCode value="LS1 6AE"/>
+          </address>
+          <gender value="female"/>
+        </contact>
+        <generalPractitioner>
+          <reference value="Practitioner/1"/>
+        </generalPractitioner>
+        <managingOrganization>
+          <reference value="Organization/7"/>
+        </managingOrganization>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <meta>
+          <versionId value="1469444400000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+01:00"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1">
+          <extension url="language">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"/>
+                <code value="de"/>
+                <display value="German"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1">
+          <extension url="language">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"/>
+                <code value="en"/>
+                <display value="English"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+        </extension>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+          <value value="G13579135"/>
+        </identifier>
+        <name>
+          <use value="usual"/>
+          <family value="Gilbert"/>
+          <given value="Nichole"/>
+          <prefix value="Miss"/>
+        </name>
+        <gender value="female"/>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Organization xmlns="http://hl7.org/fhir">
+        <id value="7"/>
+        <meta>
+          <versionId value="1469444400000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+01:00"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+          <value value="A20047"/>
+        </identifier>
+        <name value="Dr Legg's Surgery"/>
+        <telecom>
+          <system value="phone"/>
+          <value value="12345678"/>
+          <use value="work"/>
+        </telecom>
+        <address>
+          <use value="work"/>
+          <line value="NHS NPFIT Test Data Manager"/>
+          <line value="Princes Exchange"/>
+          <city value="Leeds"/>
+          <district value="West Yorkshire"/>
+          <postalCode value="LS1 4HY"/>
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+   <entry>
+      <resource>
+         <PractitionerRole xmlns="http://hl7.org/fhir">
+            <id value="e0244de8-07ef-4274-9f7a-d7067bcc8d21"></id>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"></profile>
+            </meta>
+            <practitioner>
+               <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"></reference>
+            </practitioner>
+            <organization>
+               <reference value="Organization/db67f447-b30d-442a-8e31-6918d1367eeb"></reference>
+            </organization>
+            <code>
+               <coding>
+                  <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1"></system>
+                  <code value="R0260"></code>
+                  <display value="General Medical Practitioner"></display>
+               </coding>
+            </code>
+         </PractitionerRole>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Location xmlns="http://hl7.org/fhir">
+            <id value="17"></id>
+            <meta>
+               <versionId value="636064088100870233"></versionId>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"></profile>
+            </meta>
+            <name value="The Trevelyan Practice"></name>
+            <telecom>
+               <system value="phone"></system>
+               <value value="03003035678"></value>
+               <use value="work"></use>
+            </telecom>
+            <address>
+               <line value="Trevelyan Square"></line>
+               <line value="Boar Ln"></line>
+               <line value="Leeds"></line>
+               <postalCode value="LS1 6AE"></postalCode>
+            </address>
+            <managingOrganization>
+               <reference value="Organization/db67f447-b30d-442a-8e31-6918d1367eeb"></reference>
+            </managingOrganization>
+         </Location>
+      </resource>
+   </entry>
+]]>
+</block>

@@ -1,0 +1,43 @@
+#
+# drives creation of operation outcomes
+# <tag>,<code and display>,<diagnostics>
+ce,INVALID_PARAMETER,__ERRORTEXT_CE__
+jwtnotb64,BAD_REQUEST,JWT is not base 64 URL encoded
+iis,INVALID_PARAMETER,Invalid identifier system url
+ivnnn,INVALID_NHS_NUMBER,NHS Number is not valid
+ivp,INVALID_PARAMETER,__ERRORTEXT_IVP__
+ivr,INVALID_RESOURCE,__ERRORTEXT__
+npc,NO_PATIENT_CONSENT,__ERRORTEXT__
+pnf,PATIENT_NOT_FOUND,No patient details found for patient ID: __PATIENT_ID__
+#
+am,BAD_REQUEST,Authorization missing
+ndc,BAD_REQUEST,JWT Payload reason for request is not Direct Care
+pi,BAD_REQUEST,JWT Payload incorrect
+nrd,BAD_REQUEST,JWT Payload no requesting device
+ird,BAD_REQUEST,JWT Payload invalid requesting device
+irdrt,BAD_REQUEST,JWT Payload invalid requesting device resource type
+noiat,BAD_REQUEST,JWT Payload no iat creation time
+noexp,BAD_REQUEST,JWT Payload no exp expiry time
+noiss,BAD_REQUEST,JWT Payload no iss
+noaud,BAD_REQUEST,JWT Payload no aud
+nosub,BAD_REQUEST,JWT Payload no sub
+noscope,BAD_REQUEST,JWT Payload no requested scope
+norqorg,BAD_REQUEST,JWT Payload no requesting organization
+norqprac,BAD_REQUEST,JWT Payload no requesting practitioner
+invrqprac,BAD_REQUEST,JWT Payload invalid requesting practitioner
+ctinp,BAD_REQUEST,JWT Payload iat creation time in the past
+expetcr,BAD_REQUEST,JWT Payload exp expiry time earlier than creation time
+exptoosoon,BAD_REQUEST,JWT Payload exp expiry time too soon (less than 300s after creation)
+exptoolate,BAD_REQUEST,JWT Payload exp expiry time too late (more thaqn 300s after creation)
+ivprt,BAD_REQUEST,JWT Payload invalid requesting practitioner resource type
+pad,BAD_REQUEST,JWT Payload Base 64 padding detected
+#
+intidmissing,BAD_REQUEST,SSP Interaction id missing
+traceidmissing,BAD_REQUEST,SSP Trace id missing
+ssptomissing,BAD_REQUEST,SSP To ASID Missing
+ssptoinv,BAD_REQUEST,SSP To ASID Incorrect format
+sspfrommissing,BAD_REQUEST,SSP From ASID Missing
+sspfrominv,BAD_REQUEST,SSP From ASID Incorrect format
+rqorgscope,BAD_REQUEST,JWT Payload Requesting Organization scope is invalid
+intidcpmismatch,BAD_REQUEST,SSP Interaction ID does not align wth the context_path
+jwtsigpresent,BAD_REQUEST,The JWT includes a signature

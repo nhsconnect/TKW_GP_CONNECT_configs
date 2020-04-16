@@ -1,0 +1,45 @@
+# Simulator rule definition file for ITK Testbench
+#  GP Connect Messages forward everything
+#
+BEGIN RESPONSES
+operation_outcome_400 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome.xml 400
+END RESPONSES
+
+# all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
+BEGIN EXPRESSIONS
+dontpassthrough	Never
+END EXPRESSIONS
+
+#=========================================================================================
+# Http methods no interactionid
+
+BEGIN RULE
+GET
+if dontpassthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+POST
+if dontpassthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+PUT
+if dontpassthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+DELETE
+if dontpassthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+PATCH
+if dontpassthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+OPTIONS
+if dontpassthrough then operation_outcome_400
+END RULE
+#=========================================================================================

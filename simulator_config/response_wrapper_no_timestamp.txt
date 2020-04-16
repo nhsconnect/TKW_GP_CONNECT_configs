@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:crs="http://national.carerecords.nhs.uk/schema/crs/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns="urn:hl7-org:v3" xmlns:hl7="urn:hl7-org:v3">
+	<SOAP-ENV:Header>
+		<wsa:MessageID>__MESSAGEID__</wsa:MessageID>
+		<wsa:Action>__ACTION__</wsa:Action>
+		<wsa:To>__TO_ADDRESS__</wsa:To>
+		<wsa:From>
+			<wsa:Address>__FROM_ADDRESS__</wsa:Address>
+		</wsa:From>
+		<communicationFunctionRcv typeCode="RCV">
+			<device classCode="DEV" determinerCode="INSTANCE">
+				<id root="1.2.826.0.1285.0.2.0.107" extension="__RCV_ASID__"/>
+			</device>
+		</communicationFunctionRcv>
+		<communicationFunctionSnd typeCode="SND">
+			<device classCode="DEV" determinerCode="INSTANCE">
+				<id root="1.2.826.0.1285.0.2.0.107" extension="__SND_ASID__"/>
+			</device>
+		</communicationFunctionSnd>
+		<wsa:RelatesTo>__ORIGINAL_MESSAGEID__</wsa:RelatesTo>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+	__PAYLOAD_BODY__
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

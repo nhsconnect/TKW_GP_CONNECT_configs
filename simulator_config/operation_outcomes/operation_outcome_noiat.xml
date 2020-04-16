@@ -1,0 +1,17 @@
+<OperationOutcome xmlns="http://hl7.org/fhir">
+    <meta>
+        <profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1" />
+    </meta>
+    <issue>
+        <severity value="error" />
+        <code value="invalid" />
+        <details>
+            <coding>
+                <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
+                <code value="BAD_REQUEST" />
+                <display value="BAD_REQUEST" />
+            </coding>
+        </details>
+		<diagnostics value="JWT Payload no iat creation time" />
+    </issue>
+</OperationOutcome>

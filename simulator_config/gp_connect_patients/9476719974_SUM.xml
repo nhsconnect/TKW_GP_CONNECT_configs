@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <type value="searchset"/>
+  <entry>
+    <resource>
+      <Composition xmlns="http://hl7.org/fhir">
+        <meta>
+          <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/>
+        </meta>
+        <date value= "__TIMESTAMP__"/>
+        <type>
+          <coding>
+            <system value="valueSet"/>
+            <code value="425173008"/>
+            <display value="record extract (record artifact)"/>
+          </coding>
+          <text value="record extract (record artifact)"/>
+        </type>
+        <title value="Patient Care Record"/>
+        <status value="final"/>
+        <subject>
+          <reference value="Patient/3"/>
+        </subject>
+        <author>
+          <reference value="Practitioner/3"/>
+        </author>
+        <section>
+          <title value="Summary"/>
+          <code>
+            <coding>
+              <system value="http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"/>
+              <code value="SUM"/>
+              <display value="Summary"/>
+            </coding>
+            <text value="Summary"/>
+          </code>
+          <text>
+            <status value="generated"/>
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <div>
+                <h2>Active Problems and Issues</h2>
+                <div>
+                  <p>All relevant items</p>
+                </div>
+                <div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Start Date</th>
+                        <th>Entry</th>
+                        <th>Significance</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2016-07-25 12:00:00.0</td>
+                        <td>Type II diabetes mellitus</td>
+                        <td>Major</td>
+                        <td>Treated daily</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <h2>Current Medication Issues</h2>
+                <div>
+                  <p>All relevant items</p>
+                </div>
+                <div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Start Date</th>
+                        <th>Medication Item</th>
+                        <th>Type</th>
+                        <th>Scheduled End</th>
+                        <th>Days Duration</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>14-09-2005</td>
+                        <td>Lansoprazole 15mg gastro-resistant capsules</td>
+                        <td>4</td>
+                        <td>19-11-2019</td>
+                        <td>Day Duration 2</td>
+                        <td>3</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <h2>Current Repeat Medications</h2>
+                <div>
+                  <p>All relevant items</p>
+                </div>
+                <div>
+                  <p>No 'Current Repeat Medications' data is recorded for this patient.</p>
+                </div>
+              </div>
+              <div>
+                <h2>Current Allergies and Adverse Reactions</h2>
+                <div>
+                  <p>All relevant items</p>
+                </div>
+                <div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Start Date</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2014-12-10 12:17:00.0</td>
+                        <td>PENICILLIN VK</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <h2>Last 3 Encounters</h2>
+                <div>
+                  <p>All relevant items</p>
+                </div>
+                <div>
+                  <p>No 'Last 3 Encounters' data is recorded for this patient.</p>
+                </div>
+              </div>
+            </div>
+          </text>
+        </section>
+      </Composition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Practitioner/3"/>
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <meta>
+          <versionId value="1469448000000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+00:00"/>
+          <profile value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+          <value value="G11111116"/>
+        </identifier>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-role-profile-id"/>
+          <value value="PT1234"/>
+        </identifier>
+        <name>
+          <use value="usual"/>
+          <family value="Parsons"/>
+          <given value="Melissa"/>
+          <prefix value="Mrs"/>
+        </name>
+        <gender value="female"/>
+        <practitionerRole>
+          <managingOrganization>
+            <reference value="Organization/2"/>
+          </managingOrganization>
+          <role>
+            <coding>
+              <system value="https://fhir.hl7.org.uk/ValueSet/CareConnect-SDSJobRoleName-1"/>
+              <code value="R0042"/>
+              <display value="paediatrician"/>
+            </coding>
+          </role>
+        </practitionerRole>
+        <communication>
+          <coding>
+            <system value="http://fhir.nhs.net/ValueSet/human-language-1"/>
+            <code value="de"/>
+            <display value="German"/>
+          </coding>
+        </communication>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Organization/2"/>
+    <resource>
+      <Organization xmlns="http://hl7.org/fhir">
+        <id value="2"/>
+        <meta>
+          <versionId value="1469448000000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+00:00"/>
+          <profile value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+          <value value="R1A14"/>
+        </identifier>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type"/>
+            <code value="dept"/>
+            <display value="Hospital Department"/>
+          </coding>
+        </type>
+        <name value="Test GP Care Trust"/>
+        <telecom>
+          <system value="phone"/>
+          <use value="work"/>
+        </telecom>
+        <address>
+          <use value="work"/>
+          <type value="physical"/>
+        </address>
+        <contact>
+          <purpose>
+            <coding>
+              <system value="http://hl7.org/fhir/ValueSet/contactentity-type"/>
+              <code value="ADMIN"/>
+            </coding>
+          </purpose>
+          <name>
+            <use value="usual"/>
+            <family value="FamilyName"/>
+          </name>
+          <telecom>
+            <system value="phone"/>
+            <use value="work"/>
+          </telecom>
+          <address>
+            <use value="work"/>
+            <type value="physical"/>
+          </address>
+        </contact>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="Patient/3"/>
+    <resource>
+      <Patient xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <meta>
+          <versionId value="1469448000000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+00:00"/>
+          <profile value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"/>
+        </meta>
+        <identifier>
+          <extension url="https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1"/>
+                <code value="01"/>
+                <display value="Number present and verified"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+          <value value="__PATIENT_3__"/>
+        </identifier>
+        <active value="true"/>
+        <name>
+          <use value="usual"/>
+          <text value="Julian PHELAN"/>
+          <family value="PHELAN"/>
+          <given value="Julian"/>
+          <prefix value="MR"/>
+        </name>
+        <telecom>
+          <system value="phone"/>
+          <value value="02123636563"/>
+          <use value="home"/>
+        </telecom>
+        <gender value="male"/>
+        <birthDate value="1992-07-02"/>
+        <address>
+          <use value="home"/>
+          <type value="physical"/>
+          <text value="FARM HOUSE, BONNYHALE ROAD, S HUMBERSIDE, DN17 4JQ"/>
+        </address>
+        <maritalStatus>
+          <coding>
+            <system value="https://fhir.nhs.uk/ValueSet/CareConnect-MaritalStatus-1"/>
+            <code value="S"/>
+            <display value="Married"/>
+          </coding>
+        </maritalStatus>
+        <multipleBirthBoolean value="false"/>
+        <careProvider>
+          <reference value="Practitioner/3"/>
+          <display value="Mrs Melissa Parsons"/>
+        </careProvider>
+        <managingOrganization>
+          <reference value="Organization/2"/>
+        </managingOrganization>
+      </Patient>
+    </resource>
+  </entry>
+</Bundle>

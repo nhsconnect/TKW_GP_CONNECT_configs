@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+<![CDATA[
+	<issue>
+	  <severity value="warning"/>
+	  <code value="not-supported"/>
+	  <details>
+		<coding>
+		  <system value="https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1"/>
+		  <code value="NOT_IMPLEMENTED"/>
+		  <display value="Not implemented"/>
+		</coding>
+		<text value="__CLINICAL_AREA__ is an unrecognised parameter"/>
+	  </details>
+	  <diagnostics value="__CLINICAL_AREA__"/>
+	</issue>
+]]>
+</block>

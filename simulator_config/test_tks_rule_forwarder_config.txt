@@ -1,0 +1,114 @@
+# Simulator rule definition file for ITK Testbench
+#  GP Connect Messages
+#
+BEGIN RESPONSES
+INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
+do_process	NONE	0
+patient2_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/diary_response.xml "200 OK"
+END RESPONSES
+
+BEGIN SUBSTITUTIONS
+__MESSAGEID__	UUID
+__TIMESTAMP__	ISO8601datetime
+__JOBID__	UUID
+__ERRORID__	UUID
+#__ERRORCODE__ Literal INVALID_PARAMETER
+__ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (../../fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')]/concat(../../fhir:name/@value,'.',@value),','))
+__SERVER__ Literal NHS Digital TKW Server
+__PATIENT_1__ Literal 9658218865
+__PATIENT_2__ Literal 9658218873
+__PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
+__ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body as JSON resource. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
+SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
+
+# patient specific preamble added to the start of a structured response
+__PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('simulator_config/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
+# parameter part check
+# one operation outcome with a separate issue for each unrecognised parameter part
+__DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('simulator_config/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
+END SUBSTITUTIONS
+
+# all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
+BEGIN EXPRESSIONS
+INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
+passthrough	Always
+dontpassthrough	Never
+single_clinical_area xpathequals count(/fhir:Parameters/fhir:parameter) 2
+multiple_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter)>2  true
+single_diary_entry xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) 1
+diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries'])>0 true
+QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218873
+
+consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
+problemsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeProblems'])>0 true
+
+invalidPartParametersForConsultations xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','filterSignificance','filterStatus','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
+invalidPartParametersForProblems xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
+END EXPRESSIONS
+
+BEGIN RULE
+POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+#
+#    Http header checks
+#
+if not EMPTY_ACCEPT and INVALID_ACCEPT then operation_outcome_415
+if INVALID_CONTENT_TYPE then operation_outcome_415
+if EMPTY_CONTENT then operation_outcome_400
+#
+if NO_PARAMETERS then operation_outcome_422_ivr
+# Order of tests is important no point in checking parameters if content-type is wrong and its actually valid json because conversion to xml won't happen.
+#
+#  NHS Number checks
+#
+if INVALID_NHS_NO_SYSTEM_ID then operation_outcome_422_iis
+if INVALID_NHS_NUMBER then operation_outcome_400_ivnnn
+if NO_NHS_NO_SYSTEM_ID or EMPTY_NHS_NO_SYSTEM_ID then operation_outcome_422
+#
+if JWT_PAYLOAD_PATIENT_MISMATCH then operation_outcome_400
+if not JWT_PAYLOAD_REQUESTED_SCOPE_PATIENT then operation_outcome_400
+#
+if not GETSTRUCTUREDRECORD_CP then operation_outcome_404
+# needs to be check before any further references to the NNN
+if PATIENT_COUNT_INVALID then operation_outcome_400
+
+if consultationsRequested and invalidPartParametersForConsultations then  operation_outcome_422_ivp
+if problemsRequested and invalidPartParametersForProblems then  operation_outcome_422_ivp
+
+if multiple_clinical_areas and diary_entries then operation_outcome_400
+
+if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
+if single_clinical_area and single_diary_entry then patient_not_found_response
+END RULE
+
+# these idiomatic rules ensure forwarding to the endpoint since no rule is invoked
+BEGIN RULE
+GET
+if dontpassthrough then do_process
+END RULE
+
+BEGIN RULE
+POST
+if dontpassthrough then do_process
+END RULE
+
+BEGIN RULE
+PUT
+if dontpassthrough then do_process
+END RULE
+
+BEGIN RULE
+DELETE
+if dontpassthrough then do_process
+END RULE
+
+BEGIN RULE
+PATCH
+if dontpassthrough then do_process
+END RULE
+
+BEGIN RULE
+OPTIONS
+if dontpassthrough then do_process
+END RULE
+#=========================================================================================

@@ -1,0 +1,26 @@
+{
+   "resourceType":"Parameters",
+   "meta":{
+      "profile":[
+         "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
+      ]
+   },
+   "parameter":[
+      {
+         "name":"patientNHSNumber",
+         "valueIdentifier":{
+            "system":"https://fhir.nhs.uk/Id/nhs-number",
+            "value":"9658218873"
+         }
+      },
+      {
+         "name":"includeAllergies",
+         "part":[
+            {
+               "name":"includeResolvedAllergies",
+               "valueBoolean":true
+            }
+         ]
+      }
+   ]
+}

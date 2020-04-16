@@ -1,0 +1,276 @@
+# Simulator rule definition file for ITK Testbench
+#  GP Connect Messages
+#
+BEGIN RESPONSES
+INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
+INCLUDE	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/patient_responses.conf
+#
+patient2_ADM_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_ADM_with_time.xml "200 OK"
+patient2_CLI_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_CLI_with_time.xml "200 OK"
+patient2_ENC_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_ENC_with_time.xml "200 OK"
+patient2_MED_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_MED_with_time.xml "200 OK"
+patient2_OBS_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_OBS_with_time.xml "200 OK"
+patient2_PRB_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_PRB_with_time.xml "200 OK"
+patient2_REF_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_REF_with_time.xml "200 OK"
+#
+# fhir DSTU2
+conformance	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/conformance.xml "200 OK"
+# fhir STU3
+capability	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/capability.xml "200 OK"
+do_process	NONE	0
+END RESPONSES
+
+BEGIN SUBSTITUTIONS
+__MESSAGEID__	UUID
+__TIMESTAMP__	ISO8601datetime
+__JOBID__	UUID
+__ERRORID__	UUID
+__ERRORCODE__ Literal INVALID_PARAMETER
+__SERVER__ Literal NHS Digital TKW Server
+__PATIENT_1__ Literal 9658218865
+__PATIENT_2__ Literal 9658218873
+__ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body as JSON resource. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
+SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
+END SUBSTITUTIONS
+
+# all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
+BEGIN EXPRESSIONS
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
+# from VisualStudio data\NHSNoMap.csv
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/patient_expressions.conf
+#
+QUERY_PATIENT_NOT_IN_SYSTEM	xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^9999999999$
+#
+# global change back to net from uk for 0.5.0
+#
+QUERY_RS_ADM	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value ADM
+QUERY_RS_ALL	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value ALL
+QUERY_RS_CLI	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value CLI
+QUERY_RS_ENC	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value ENC
+QUERY_RS_IMM	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value IMM
+QUERY_RS_MED	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value MED
+QUERY_RS_OBS	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value OBS
+QUERY_RS_PRB	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value PRB
+QUERY_RS_REF	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value REF
+QUERY_RS_SUM	xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding[fhir:system/@value='http://fhir.nhs.net/ValueSet/gpconnect-record-section-1']/fhir:code/@value SUM
+#
+QUERY_TIME xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='timePeriod']
+#
+#
+# recordSection checks
+#
+NO_RS_CODE_SYSTEM_ID xpathnotexists /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:system/@value
+EMPTY_RS_CODE_SYSTEM_ID xpathnotmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:system/@value ^.+$
+NO_RS_CODE	xpathnotexists /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']
+#INVALID_RS_CODE_SYSTEM_ID xpathnotequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:system/@value http://fhir.nhs.uk/ValueSet/gpconnect-record-section-1
+INVALID_RS_CODE_SYSTEM_ID xpathnotequals /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:system/@value http://fhir.nhs.net/ValueSet/gpconnect-record-section-1
+RS_CODE_IS_INVALID xpathnotin /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:code/@value "ADM" "ALL" "CLI" "ENC" "IMM" "MED" "OBS" "PRB" "REF" "SUM"
+RS_COUNT_INVALID xpathequals boolean(count(/fhir:Parameters/fhir:parameter/fhir:name[@value='recordSection'])>1) true
+NO_RECORDSECTION	xpathnotexists /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:code/@value
+NON_FILTERABLE_RECORDSECTION	xpathin /fhir:Parameters/fhir:parameter[fhir:name/@value='recordSection']/fhir:valueCodeableConcept/fhir:coding/fhir:code/@value "ALL" "IMM" "SUM"
+#
+passthrough	Always
+dontpassthrough	Never
+# temporary bodge for throwing 415 exceptions
+INVALID_FORMAT_PARAMETER context_path matches ^.*\?.*_format=text%2Fxml.*$
+#
+v_is_99 $v matches ^99$
+timeperiod_is_t xpathnotequals /fhir:Parameters/fhir:parameter/fhir:name[@value='timePeriod']/@value $t
+END EXPRESSIONS
+
+BEGIN RULE
+GET
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+# catch mismatch between interaction id and context path
+IF	METADATA_CP then operation_outcome_400_intidcpmismatch
+IF	GETCARERECORD_CP then operation_outcome_400_intidcpmismatch
+if passthrough then operation_outcome_404
+END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+if	not METADATA_CP then operation_outcome_404
+if not JWT_PAYLOAD_REQUESTED_SCOPE_ORGANIZATION then operation_outcome_400_rqorgscope
+# other tests failed when this was in the common area
+#if not JWT_PAYLOAD_VALID_REQUESTING_DEVICE then operation_outcome_422
+if passthrough then capability
+END RULE
+
+BEGIN RULE
+POST
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+# catch mismatch between interaction id and context path for POST messages other than getcarerecord
+IF	METADATA_CP then operation_outcome_400_intidcpmismatch
+IF	GETCARERECORD_CP then operation_outcome_400_intidcpmismatch
+if v_is_99 then operation_outcome_400_reset
+#if timeperiod_is_t then operation_outcome_400_reset
+if passthrough then operation_outcome_404
+END RULE
+
+BEGIN RULE
+POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+#
+#    Http header checks
+#
+if not EMPTY_ACCEPT and INVALID_ACCEPT then operation_outcome_415
+if INVALID_CONTENT_TYPE then operation_outcome_415
+if EMPTY_CONTENT then operation_outcome_400
+#
+if NO_PARAMETERS then operation_outcome_422_ivr
+# Order of tests is important no point in checking parameters if content-type is wrong and its actually valid json because conversion to xml won't happen.
+#
+#  NHS Number checks
+#
+if INVALID_NHS_NO_SYSTEM_ID then operation_outcome_422_iis
+if INVALID_NHS_NUMBER then operation_outcome_400_ivnnn
+if NO_NHS_NO_SYSTEM_ID or EMPTY_NHS_NO_SYSTEM_ID then operation_outcome_422
+#
+if JWT_PAYLOAD_PATIENT_MISMATCH then operation_outcome_400
+if not JWT_PAYLOAD_REQUESTED_SCOPE_PATIENT then operation_outcome_400
+#
+if not GETCARERECORD_CP then operation_outcome_404
+# needs to be check before any further references to the NNN
+if PATIENT_COUNT_INVALID then operation_outcome_400
+#
+#  recordSection checks
+#
+if RS_COUNT_INVALID then operation_outcome_400
+if NO_NHS_NO then operation_outcome_400
+if NO_RS_CODE then operation_outcome_400
+if EMPTY_NHS_NO then operation_outcome_422
+if NO_RECORDSECTION then operation_outcome_422
+if NO_RS_CODE_SYSTEM_ID or EMPTY_RS_CODE_SYSTEM_ID then operation_outcome_422
+#
+#  Timeperiod checks
+#
+# these are not working at present - too restictive
+if TIMEPERIOD_EXISTS and INVALID_START_DATE then operation_outcome_422
+if TIMEPERIOD_EXISTS and INVALID_END_DATE then operation_outcome_422
+if TIMEPERIOD_EXISTS and INVALID_TIMEPERIOD then operation_outcome_422
+if TIMEPERIOD_EXISTS and NON_FILTERABLE_RECORDSECTION then operation_outcome_400
+#
+#  Context path check
+#
+if INVALID_FORMAT_PARAMETER then operation_outcome_415
+#
+if INVALID_RS_CODE_SYSTEM_ID then operation_outcome_400
+if RS_CODE_IS_INVALID then operation_outcome_422
+#
+if QUERY_PATIENT2 and QUERY_RS_ADM and QUERY_TIME then patient2_ADM_with_time_response
+if QUERY_PATIENT2 and QUERY_RS_CLI and QUERY_TIME then patient2_CLI_with_time_response
+if QUERY_PATIENT2 and QUERY_RS_ENC and QUERY_TIME then patient2_ENC_with_time_response
+if QUERY_PATIENT2 and QUERY_RS_MED and QUERY_TIME then patient2_MED_with_time_response
+if QUERY_PATIENT2 and QUERY_RS_OBS and QUERY_TIME then patient2_OBS_with_time_response
+if QUERY_PATIENT2 and QUERY_RS_PRB and QUERY_TIME then patient2_PRB_with_time_response
+if QUERY_PATIENT2 and QUERY_RS_REF and QUERY_TIME then patient2_REF_with_time_response
+#
+# time query with no corresponding data available
+if QUERY_TIME then operation_outcome_404
+#
+#  include the autogenerated data
+#
+INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/patient_rules.conf
+#
+if QUERY_PATIENT14 then patient_not_found_response
+if QUERY_PATIENT_NOT_IN_SYSTEM then patient_not_found_response
+if QUERY_PATIENT15 then operation_outcome_403
+#
+#
+if passthrough then operation_outcome_404
+END RULE
+
+# these should enable forwarding to a resource manager eg demonstrator
+#=========================================================================================
+# Slot
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:search:slot
+if passthrough then operation_outcome_400
+END RULE
+
+#=========================================================================================
+# Patient
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1
+if passthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1
+if passthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1
+if passthrough then operation_outcome_400
+END RULE
+
+#=========================================================================================
+
+# Appointment 
+BEGIN RULE
+POST+urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1
+if passthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1
+if passthrough then operation_outcome_400
+END RULE
+
+#=========================================================================================
+# Location
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:read:location-1
+if passthrough then operation_outcome_400
+END RULE
+
+#=========================================================================================
+# Organization
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1
+if passthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1
+if passthrough then operation_outcome_400
+END RULE
+
+#=========================================================================================
+# Practitioner 
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1
+if passthrough then operation_outcome_400
+END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1
+if passthrough then operation_outcome_400
+END RULE
+
+#=========================================================================================
+# Http methods no interactionid
+
+BEGIN RULE
+PUT
+if passthrough then operation_outcome_404
+END RULE
+
+BEGIN RULE
+DELETE
+if passthrough then operation_outcome_404
+END RULE
+
+BEGIN RULE
+PATCH
+if passthrough then operation_outcome_404
+END RULE
+
+BEGIN RULE
+OPTIONS
+if passthrough then operation_outcome_404
+END RULE
+#=========================================================================================

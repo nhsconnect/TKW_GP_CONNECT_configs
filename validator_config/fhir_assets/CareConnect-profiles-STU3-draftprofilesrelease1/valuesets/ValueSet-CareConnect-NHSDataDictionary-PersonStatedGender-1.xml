@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+	<id value="CareConnect-NHSDataDictionary-PersonStatedGender-1"/>
+	<extension url="http://hl7.org/fhir/StructureDefinition/valueset-sourceReference">
+		<valueUri value="http://www.datadictionary.nhs.uk/data_dictionary/attributes/p/person/person_stated_gender_code_de.asp?shownav=1"/>
+	</extension>	
+	<url value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-NHSDataDictionary-PersonStatedGender-1"/>
+	<version value="1.0.0"/>
+	<name value="NHS Data Model and Dictionary Person Stated Gender Code"/>
+	<status value="active"/>
+	<date value="2017-08-21T12:00:00+00:00"/>
+	<publisher value="HL7 UK"/>
+	<description value="The gender of a Person. Person Stated Gender Code is self declared or inferred by observation for those unable to declare their Person Stated Gender."/>
+	<copyright value="Copyright © 2016 HL7 UK"/>
+	<compose>
+		<include>
+			<system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSDataDictionary-PersonStatedGender-1"/>
+		</include>
+	</compose>
+</ValueSet>

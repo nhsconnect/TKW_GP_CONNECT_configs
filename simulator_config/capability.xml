@@ -1,0 +1,247 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+    <status value="active" />
+    <date value="2018-01-15T18:18:11+00:00" />
+    <publisher value="Not provided" />
+    <kind value="instance" />
+    <software>
+        <name value="HAPI FHIR Server" />
+        <version value="3.0.0" />
+    </software>
+    <fhirVersion value="3.0.1" />
+    <acceptUnknown value="extensions" />
+    <format value="application/fhir+xml" />
+    <format value="application/fhir+json" />
+    <rest>
+        <mode value="server" />
+        <resource>
+            <type value="Appointment" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Appointment" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="vread" />
+            </interaction>
+            <interaction>
+                <code value="update" />
+            </interaction>
+            <interaction>
+                <code value="create" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="patient" />
+                <type value="string" />
+                <documentation value="One of the individuals of the appointment is this patient" />
+            </searchParam>
+            <searchParam>
+                <name value="start" />
+                <type value="date" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="Location" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Location" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="vread" />
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Medication" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Medication" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+        </resource>
+        <resource>
+            <type value="MedicationAdministration" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/MedicationAdministration" />
+            </profile>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="patient" />
+                <type value="string" />
+                <documentation value="The identity of a patient to list administrations  for" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="MedicationDispense" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/MedicationDispense" />
+            </profile>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="patient" />
+                <type value="string" />
+                <documentation value="The identity of a patient to list dispenses  for" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="MedicationRequest" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/MedicationRequest" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="patient" />
+                <type value="string" />
+                <documentation value="Returns prescriptions for a specific patient" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="OperationDefinition" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/OperationDefinition" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Organization" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Organization" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="vread" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="identifier" />
+                <type value="token" />
+                <documentation value="Any identifier for the organization (not the accreditation issuer's identifier)" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="Patient" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Patient" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="vread" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="identifier" />
+                <type value="token" />
+                <documentation value="A patient identifier" />
+            </searchParam>
+            <searchParam>
+                <name value="start" />
+                <type value="date" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="Practitioner" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Practitioner" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="vread" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchParam>
+                <name value="identifier" />
+                <type value="token" />
+                <documentation value="A practitioner's Identifier" />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="Schedule" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Schedule" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Slot" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/Slot" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+            <searchInclude value="Schedule:Practitioner" />
+            <searchInclude value="Schedule:actor:Location" />
+            <searchInclude value="Slot:schedule" />
+            <searchParam>
+                <name value="end" />
+                <type value="date" />
+            </searchParam>
+            <searchParam>
+                <name value="fb-type" />
+                <type value="string" />
+            </searchParam>
+            <searchParam>
+                <name value="start" />
+                <type value="date" />
+                <documentation value="Appointment date/time." />
+            </searchParam>
+        </resource>
+        <resource>
+            <type value="StructureDefinition" />
+            <profile>
+                <reference value="http://hl7.org/fhir/Profile/StructureDefinition" />
+            </profile>
+            <interaction>
+                <code value="read" />
+            </interaction>
+            <interaction>
+                <code value="search-type" />
+            </interaction>
+        </resource>
+        <operation>
+            <name value="gpc.registerpatient" />
+            <definition>
+                <reference value="OperationDefinition/Patient--gpc.registerpatient" />
+            </definition>
+        </operation>
+        <operation>
+            <name value="gpc.getcarerecord" />
+            <definition>
+                <reference value="OperationDefinition/Patient--gpc.getcarerecord" />
+            </definition>
+        </operation>
+    </rest>
+</CapabilityStatement>

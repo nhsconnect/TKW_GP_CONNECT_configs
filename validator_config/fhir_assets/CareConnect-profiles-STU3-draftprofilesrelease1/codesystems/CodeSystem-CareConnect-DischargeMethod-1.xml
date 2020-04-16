@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/JEEL1/Desktop/STU3%20Schemas/codesystem.xsd">
+	<id value="CareConnect-DischargeMethod-1"/>
+	<extension url="http://hl7.org/fhir/StructureDefinition/codesystem-sourceReference">
+		<valueUri value="http://www.datadictionary.nhs.uk/data_dictionary/attributes/d/disc/discharge_method_de.asp?shownav=1"/>
+	</extension>
+	<url value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeMethod-1"/>
+	<version value="1.0.0"/>
+	<name value="NHS Data Model and Dictionary Discharge Method"/>
+	<status value="draft"/>
+	<date value="2018-02-15T00:00:00+00:00"/>
+	<publisher value="HL7 UK"/>
+	<description value="The method of discharge from a Hospital Provider Spell."/>
+	<copyright value="Copyright © 2016 HL7 UK"/>
+	<content value="complete"/>
+	<concept>
+		<code value="1"/>
+		<display value="Patient discharged on clinical advice or with clinical consent"/>
+	</concept>
+	<concept>
+		<code value="2"/>
+		<display value="Patient discharged him/herself or was discharged by a relative or advocate"/>
+	</concept>
+	<concept>
+		<code value="3"/>
+		<display value="Patient discharged by mental health review tribunal, Home Secretary or Court"/>
+	</concept>
+	<concept>
+		<code value="4"/>
+		<display value="Patient died"/>
+	</concept>
+	<concept>
+		<code value="5"/>
+		<display value="Stillbirth"/>
+	</concept>
+	<concept>
+		<code value="6"/>
+		<display value="Patient discharged him/herself"/>
+		<definition value="National Codes 6 and 7 have been introduced for the Mental Health Services Data Set only to add further granularity to National Code 2. However, National Code 2 is still valid for the Mental Health Services Data Set where extra detail cannot be collected. National Codes 6 and 7 are NOT valid in any other data set including Commissioning Data Set version 6-2."/>
+	</concept>
+	<concept>
+		<code value="7"/>
+		<display value="Patient discharged by a relative or advocate"/>
+		<definition value="National Codes 6 and 7 have been introduced for the Mental Health Services Data Set only to add further granularity to National Code 2. However, National Code 2 is still valid for the Mental Health Services Data Set where extra detail cannot be collected. National Codes 6 and 7 are NOT valid in any other data set including Commissioning Data Set version 6-2."/>
+	</concept>
+</CodeSystem>

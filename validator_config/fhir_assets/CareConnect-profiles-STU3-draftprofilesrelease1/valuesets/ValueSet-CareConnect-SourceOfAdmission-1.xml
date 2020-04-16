@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+	<id value="CareConnect-SourceOfAdmission-1"/>
+	<extension url="http://hl7.org/fhir/StructureDefinition/valueset-sourceReference">
+		<valueUri value="http://www.datadictionary.nhs.uk/data_dictionary/attributes/s/smo/source_of_admission_de.asp?shownav=1"/>
+	</extension>	
+	<url value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-SourceOfAdmission-1"/>
+	<version value="1.0.0"/>
+	<name value="NHS Data Model and Dictionary Source Of Admission"/>
+	<status value="draft"/>
+	<date value="2018-02-15T00:00:00+00:00"/>
+	<publisher value="HL7 UK"/>
+	<description value="The source of admission to a Hospital Provider Spell or a Nursing Episode when the Patient is in a Hospital Site or a Care Home."/>
+	<copyright value="Copyright © 2016 HL7 UK"/>
+	<compose>
+		<include>
+			<system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1"/>
+		</include>
+	</compose>
+</ValueSet>

@@ -1,0 +1,12 @@
+# TKS Routing file
+# Controls delivery of asynchronous messages to particular URLs, via
+# queues. Format is one line per route, with three fields:
+#
+# address (url)
+# act	(soapaction)
+# queue	(queue name)
+#
+# The queue name is what requestors specify in their GetMessages and
+# related calls.
+#
+#http://localhost:4001	response	test_subscriber

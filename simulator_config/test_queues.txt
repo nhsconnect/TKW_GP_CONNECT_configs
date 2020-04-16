@@ -1,0 +1,10 @@
+# Queue configuration
+#
+# General structure, 1 line per queue with fields:
+# Name
+# Queue class
+# [Timeout seconds]
+#
+# Provided queue classes are: SimpleQueue ReliableQueue ReliableSequencingQueue
+#
+test_subscriber	org.warlock.tk.internalservices.queue.SimpleQueue	600
