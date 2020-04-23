@@ -9,7 +9,7 @@
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
                 <code value="PATIENT_NOT_FOUND" />
-                <display value="PATIENT_NOT_FOUND" />
+                <display value="Patient Not Found" />
             </coding>
         </details>
 		<diagnostics value="No patient details found for patient ID: __PATIENT_ID__" />

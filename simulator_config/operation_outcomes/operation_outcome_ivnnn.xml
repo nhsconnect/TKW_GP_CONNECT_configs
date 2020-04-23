@@ -9,7 +9,7 @@
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
                 <code value="INVALID_NHS_NUMBER" />
-                <display value="INVALID_NHS_NUMBER" />
+                <display value="Invalid Nhs Number" />
             </coding>
         </details>
 		<diagnostics value="NHS Number is not valid" />

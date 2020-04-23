@@ -8,10 +8,10 @@
         <details>
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
-                <code value="BAD_REQUEST" />
-                <display value="Bad Request" />
+                <code value="NO_RECORD_FOUND" />
+                <display value="No Record Found" />
             </coding>
         </details>
-		<diagnostics value="JWT Payload no requested scope" />
+		<diagnostics value="No record found" />
     </issue>
 </OperationOutcome>

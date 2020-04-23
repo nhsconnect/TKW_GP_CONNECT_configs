@@ -9,7 +9,7 @@
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
                 <code value="BAD_REQUEST" />
-                <display value="BAD_REQUEST" />
+                <display value="Bad Request" />
             </coding>
         </details>
 		<diagnostics value="JWT Payload invalid requesting practitioner" />

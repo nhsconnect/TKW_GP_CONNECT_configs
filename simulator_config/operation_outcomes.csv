@@ -41,3 +41,19 @@ sspfrominv,BAD_REQUEST,SSP From ASID Incorrect format
 rqorgscope,BAD_REQUEST,JWT Payload Requesting Organization scope is invalid
 intidcpmismatch,BAD_REQUEST,SSP Interaction ID does not align wth the context_path
 jwtsigpresent,BAD_REQUEST,The JWT includes a signature
+#
+# Document Reference Search Errors
+#
+document_search_missing_mandatory_patient,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:subject:Patient
+document_search_missing_mandatory_custodian,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:custodian:Organization
+document_search_missing_mandatory_author_org,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:author:Organization
+document_search_missing_mandatory_author_prac,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:author:Practitioner
+document_search_missing_mandatory_prac_role,INVALID_PARAMETER,Missing mandatory _revinclude parameter _revinclude:recurse=PractitionerRole:practitioner
+#
+document_search_facility_invalid_system,INVALID_PARAMETER,facility search parameter is not an ODS code
+document_search_author_invalid_system,INVALID_PARAMETER,author search parameter is not an ODS code
+document_search_custodian_invalid_system,INVALID_PARAMETER,custiodian search parameter is not an ODS code
+#
+# Binary
+#
+binary_nrf,NO_RECORD_FOUND,No record found

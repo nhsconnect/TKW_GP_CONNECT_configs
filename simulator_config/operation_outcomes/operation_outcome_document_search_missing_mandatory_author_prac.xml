@@ -8,10 +8,10 @@
         <details>
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
-                <code value="BAD_REQUEST" />
-                <display value="Bad Request" />
+                <code value="INVALID_PARAMETER" />
+                <display value="Invalid Parameter" />
             </coding>
         </details>
-		<diagnostics value="JWT Payload no requested scope" />
+		<diagnostics value="Missing mandatory _include parameter _include=DocumentReference:author:Practitioner" />
     </issue>
 </OperationOutcome>

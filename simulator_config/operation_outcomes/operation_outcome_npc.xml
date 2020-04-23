@@ -9,7 +9,7 @@
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
                 <code value="NO_PATIENT_CONSENT" />
-                <display value="NO_PATIENT_CONSENT" />
+                <display value="No Patient Consent" />
             </coding>
         </details>
 		<diagnostics value="__ERRORTEXT__" />

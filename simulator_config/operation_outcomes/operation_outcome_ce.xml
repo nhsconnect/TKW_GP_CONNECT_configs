@@ -9,7 +9,7 @@
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
                 <code value="INVALID_PARAMETER" />
-                <display value="INVALID_PARAMETER" />
+                <display value="Invalid Parameter" />
             </coding>
         </details>
 		<diagnostics value="__ERRORTEXT_CE__" />

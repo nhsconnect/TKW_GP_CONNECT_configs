@@ -5,6 +5,8 @@ BEGIN RESPONSES
 INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
 do_process	NONE	0
 patient2_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/diary_response.xml "200 OK"
+patient2_document_reference_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/document_reference_response.xml "200 OK"
+patient2_document_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/document_response.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -12,17 +14,21 @@ __MESSAGEID__	UUID
 __TIMESTAMP__	ISO8601datetime
 __JOBID__	UUID
 __ERRORID__	UUID
-#__ERRORCODE__ Literal INVALID_PARAMETER
+__ERRORCODE__ Literal INVALID_PARAMETER
 __ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (../../fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')]/concat(../../fhir:name/@value,'.',@value),','))
 __SERVER__ Literal NHS Digital TKW Server
 __PATIENT_1__ Literal 9658218865
 __PATIENT_2__ Literal 9658218873
+
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
+__PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*subject=(.*?)\&.*$" "$1"
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body as JSON resource. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
 SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
 __PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('simulator_config/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
+__PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/9658218873_head.xml')/block/text()
+
 # parameter part check
 # one operation outcome with a separate issue for each unrecognised parameter part
 __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('simulator_config/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
@@ -37,7 +43,22 @@ single_clinical_area xpathequals count(/fhir:Parameters/fhir:parameter) 2
 multiple_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter)>2  true
 single_diary_entry xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) 1
 diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries'])>0 true
+
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218873
+GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
+GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c455102$
+
+SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference:subject:Patient.*$
+SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference:custodian:Organization.*$
+SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG context_path matches ^.*_include=DocumentReference:author:Organization.*$
+SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC context_path matches ^.*_include=DocumentReference:author:Practitioner.*$
+SEARCH_INCLUDES_MANDATORY_PRAC_ROLE context_path matches ^.*_revinclude:recurse=PractitionerRole:practitioner.*$
+
+FACILITY_SEARCH context_path matches ^.*facility=.*$
+FACILITY_SYSTEM_VALID context_path matches ^.*facility=https://fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
+
+AUTHOR_SEARCH context_path matches ^.*author=.*$
+AUTHOR_SYSTEM_VALID context_path matches ^.*author=https://fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
 
 consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
 problemsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeProblems'])>0 true
@@ -80,6 +101,30 @@ if multiple_clinical_areas and diary_entries then operation_outcome_400
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
 if single_clinical_area and single_diary_entry then patient_not_found_response
 END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1
+INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+
+if not SEARCH_INCLUDES_MANDATORY_PATIENT then operation_outcome_422_document_search_missing_mandatory_patient
+if not SEARCH_INCLUDES_MANDATORY_CUSTODIAN then operation_outcome_422_document_search_missing_mandatory_custodian
+if not SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG then operation_outcome_422_document_search_missing_mandatory_author_org
+if not SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC then operation_outcome_422_document_search_missing_mandatory_author_prac
+if not SEARCH_INCLUDES_MANDATORY_PRAC_ROLE then operation_outcome_422_document_search_missing_mandatory_prac_role
+
+if FACILITY_SEARCH and not FACILITY_SYSTEM_VALID then operation_outcome_422_document_search_facility_invalid_system
+if AUTHOR_SEARCH and not AUTHOR_SYSTEM_VALID then operation_outcome_422_document_search_author_invalid_system
+
+if GET_PATIENT_2 then patient2_document_reference_response else patient_not_found_response
+END RULE
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
+INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
+END RULE
+
+#==================================================================================================
 
 # these idiomatic rules ensure forwarding to the endpoint since no rule is invoked
 BEGIN RULE
