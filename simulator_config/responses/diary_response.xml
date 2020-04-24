@@ -34,7 +34,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"></reference>
+               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
             </subject>
             <date value="2019-03-01T10:57:34+00:00"></date>
             <orderedBy>
@@ -77,7 +77,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"></reference>
+               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
             </subject>
             <context>
                <reference value="Encounter/Encounter1"></reference>
@@ -86,7 +86,7 @@ __DIARY_ENTRIES_WARNINGS__
             <authoredOn value="2019-03-02"></authoredOn>
             <requester>
                <agent>
-                  <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"></reference>
+                  <reference value="Practitioner/__PRACTITIONER_ID__"></reference>
                </agent>
             </requester>
          </ProcedureRequest>
@@ -113,7 +113,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"></reference>
+               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
             </subject>
             <context>
                <reference value="Encounter/Encounter3"></reference>
@@ -125,7 +125,7 @@ __DIARY_ENTRIES_WARNINGS__
             <authoredOn value="2019-05-01"></authoredOn>
             <requester>
                <agent>
-                  <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"></reference>
+                  <reference value="Practitioner/__PRACTITIONER_ID__"></reference>
                </agent>
             </requester>
             <note>
@@ -164,7 +164,7 @@ __DIARY_ENTRIES_WARNINGS__
                <text value="Swollen legs"></text>
             </code>
             <subject>
-               <reference value="Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"></reference>
+               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
             </subject>
             <onsetDateTime value="2019-03-28T10:30:00"></onsetDateTime>
             <assertedDate value="2018-09-28T10:30:00"></assertedDate>

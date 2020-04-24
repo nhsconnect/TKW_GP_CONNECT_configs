@@ -41,6 +41,7 @@ sspfrominv,BAD_REQUEST,SSP From ASID Incorrect format
 rqorgscope,BAD_REQUEST,JWT Payload Requesting Organization scope is invalid
 intidcpmismatch,BAD_REQUEST,SSP Interaction ID does not align wth the context_path
 jwtsigpresent,BAD_REQUEST,The JWT includes a signature
+multiple_clinical_areas,INVALID_PARAMETER,diary entries have been requested with other clinical areas
 #
 # Document Reference Search Errors
 #

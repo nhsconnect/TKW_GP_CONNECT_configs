@@ -14,9 +14,9 @@ patient2_PRB_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0
 patient2_REF_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_REF_with_time.xml "200 OK"
 #
 # fhir DSTU2
-conformance	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/conformance.xml "200 OK"
+conformance	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/conformance.xml "200 OK"
 # fhir STU3
-capability	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/capability.xml "200 OK"
+capability	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/capability.xml "200 OK"
 do_process	NONE	0
 END RESPONSES
 
