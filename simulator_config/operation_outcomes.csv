@@ -43,6 +43,12 @@ intidcpmismatch,BAD_REQUEST,SSP Interaction ID does not align wth the context_pa
 jwtsigpresent,BAD_REQUEST,The JWT includes a signature
 multiple_clinical_areas,INVALID_PARAMETER,diary entries have been requested with other clinical areas
 #
+# Diary Entries Errors
+#
+#
+diary_entries_multiple_search_dates,INVALID_PARAMETER,multiple search date parameter parts
+diary_entries_invalid_search_date,INVALID_PARAMETER,search date is not well formed
+#
 # Document Reference Search Errors
 #
 document_search_missing_mandatory_patient,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:subject:Patient

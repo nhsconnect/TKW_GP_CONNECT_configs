@@ -25,8 +25,8 @@ __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNH
 __PRACTITIONER_ID__ Literal 1
 __PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*subject=(.*?)\&.*$" "$1"
 __PATIENT_2_LOGICAL_ID__ Literal 2
-__ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body as JSON resource. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
-SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
+__ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
+#SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
 __PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
@@ -44,13 +44,18 @@ passthrough	Always
 dontpassthrough	Never
 single_clinical_area xpathequals count(/fhir:Parameters/fhir:parameter) 2
 multiple_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter)>2  true
+
+# diary entries
 single_diary_entry xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) 1
 diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries'])>0 true
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218873
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
+
+# GetBinary
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c455102$
 
+# search document references
 SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference:subject:Patient.*$
 SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference:custodian:Organization.*$
 SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG context_path matches ^.*_include=DocumentReference:author:Organization.*$
@@ -63,11 +68,18 @@ FACILITY_SYSTEM_VALID context_path matches ^.*facility=https://fhir.nhs.uk/Id/od
 AUTHOR_SEARCH context_path matches ^.*author=.*$
 AUTHOR_SYSTEM_VALID context_path matches ^.*author=https://fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
 
+# other clinical areas
 consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
 problemsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeProblems'])>0 true
 
 invalidPartParametersForConsultations xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','filterSignificance','filterStatus','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
 invalidPartParametersForProblems xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
+
+# diary entries
+multiple_search_date_parameters  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])>1 true
+single_search_date_parameter  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])=1 true
+search_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate']/fhir:valueDate/@value ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+
 END EXPRESSIONS
 
 #==================================================================================================
@@ -103,7 +115,12 @@ if problemsRequested and invalidPartParametersForProblems then  operation_outcom
 
 if multiple_clinical_areas and diary_entries then operation_outcome_400_multiple_clinical_areas
 
+# 0..1 search dates of the form YYYY-MM-DD
+if multiple_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
+if single_search_date_parameter and not search_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
+
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
+
 if single_clinical_area and single_diary_entry then patient_not_found_response
 END RULE
 
