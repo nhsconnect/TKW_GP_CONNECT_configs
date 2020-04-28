@@ -61,6 +61,13 @@ document_search_facility_invalid_system,INVALID_PARAMETER,facility search parame
 document_search_author_invalid_system,INVALID_PARAMETER,author search parameter is not an ODS code
 document_search_custodian_invalid_system,INVALID_PARAMETER,custiodian search parameter is not an ODS code
 #
+# created outcomes
+#
+document_search_created_more_than_2,INVALID_PARAMETER,more than 2 created parameters
+document_search_no_created_ge,INVALID_PARAMETER,date range query - no valid created ge parameter
+document_search_no_created_le,INVALID_PARAMETER,date range query - no valid created le parameter
+document_search_no_created_le_or_ge,INVALID_PARAMETER,single date query - no valid created ge or le parameter
+#
 # Binary
 #
 binary_nrf,NO_RECORD_FOUND,No record found

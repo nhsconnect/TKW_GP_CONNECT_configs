@@ -23,7 +23,7 @@ __PATIENT_2__ Literal 9658218873
 
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
 __PRACTITIONER_ID__ Literal 1
-__PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*subject=(.*?)\&.*$" "$1"
+__PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*Patient/([^/]+)/.*$" "$1"
 __PATIENT_2_LOGICAL_ID__ Literal 2
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
 #SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
@@ -68,6 +68,16 @@ FACILITY_SYSTEM_VALID context_path matches ^.*facility=https://fhir.nhs.uk/Id/od
 AUTHOR_SEARCH context_path matches ^.*author=.*$
 AUTHOR_SYSTEM_VALID context_path matches ^.*author=https://fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
 
+# 0..2 created parameters
+CREATED_MORE_THAN_2 context_path matches ^.*(created=.+){3,}.*$
+CREATED_2 context_path matches ^.*(created=.+){2}.*$
+CREATED context_path matches ^.*(created=.+).*$
+#                                                     YYYY   -  M   M -   D    D   T  H    H  :  M    M  :  S    S    .ssss      +00   : 00
+CREATED_GE_VALID context_path matches ^.*created=ge[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
+CREATED_LE_VALID context_path matches ^.*created=le[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
+#
+# le later than ge ?
+
 # other clinical areas
 consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
 problemsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeProblems'])>0 true
@@ -82,7 +92,13 @@ search_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:parameter[f
 
 END EXPRESSIONS
 
+#
+#  Rules
+#
+
 #==================================================================================================
+#  Structured Data - Diary Entries Clinical Area
+#
 
 BEGIN RULE
 POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
@@ -125,24 +141,37 @@ if single_clinical_area and single_diary_entry then patient_not_found_response
 END RULE
 
 #==================================================================================================
+# Documents Interface - Search Document Reference
+#
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1
 INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 
+# includes checks
 if not SEARCH_INCLUDES_MANDATORY_PATIENT then operation_outcome_422_document_search_missing_mandatory_patient
 if not SEARCH_INCLUDES_MANDATORY_CUSTODIAN then operation_outcome_422_document_search_missing_mandatory_custodian
 if not SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG then operation_outcome_422_document_search_missing_mandatory_author_org
 if not SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC then operation_outcome_422_document_search_missing_mandatory_author_prac
 if not SEARCH_INCLUDES_MANDATORY_PRAC_ROLE then operation_outcome_422_document_search_missing_mandatory_prac_role
 
+# search checks
 if FACILITY_SEARCH and not FACILITY_SYSTEM_VALID then operation_outcome_422_document_search_facility_invalid_system
 if AUTHOR_SEARCH and not AUTHOR_SYSTEM_VALID then operation_outcome_422_document_search_author_invalid_system
+
+# created checks
+if CREATED_MORE_THAN_2 then operation_outcome_422_document_search_created_more_than_2
+if CREATED_2 and not CREATED_GE_VALID then operation_outcome_422_document_search_no_created_ge
+if CREATED_2 and not CREATED_LE_VALID then operation_outcome_422_document_search_no_created_le
+if CREATED and not ( CREATED_LE_VALID or CREATED_GE_VALID ) then operation_outcome_422_document_search_no_created_le_or_ge
+# invalid date range?
 
 if GET_PATIENT_2 then patient2_document_reference_response else patient_not_found_response
 END RULE
 
 #==================================================================================================
+# Documents Interface - Read Binary
+#
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
@@ -151,6 +180,8 @@ if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
 END RULE
 
 #==================================================================================================
+# Documents Interface - Read Metadata
+#
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1
@@ -159,7 +190,8 @@ if passthrough then documents_metadata_response
 END RULE
 
 #==================================================================================================
-
+# default forwarding rules to demonstrator
+#
 
 # these idiomatic rules ensure forwarding to the endpoint since no rule is invoked
 BEGIN RULE
