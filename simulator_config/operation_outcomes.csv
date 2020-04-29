@@ -67,6 +67,7 @@ document_search_created_more_than_2,INVALID_PARAMETER,more than 2 created parame
 document_search_no_created_ge,INVALID_PARAMETER,date range query - no valid created ge parameter
 document_search_no_created_le,INVALID_PARAMETER,date range query - no valid created le parameter
 document_search_no_created_le_or_ge,INVALID_PARAMETER,single date query - no valid created ge or le parameter
+document_search_created_ge_after_le,INVALID_PARAMETER,created start date is later than end date
 #
 # Binary
 #

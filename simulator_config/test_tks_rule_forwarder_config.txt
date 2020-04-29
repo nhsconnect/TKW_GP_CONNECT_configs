@@ -35,6 +35,8 @@ __PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0De
 # parameter part check
 # one operation outcome with a separate issue for each unrecognised parameter part
 __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
+
+
 END SUBSTITUTIONS
 
 # all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
@@ -77,6 +79,7 @@ CREATED_GE_VALID context_path matches ^.*created=ge[0-9]{4}-[01][0-9]-[0-3][0-9]
 CREATED_LE_VALID context_path matches ^.*created=le[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
 #
 # le later than ge ?
+CREATED_RANGE_VALID Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.FhirDateCompareExpression context_path "^.*created=ge([0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?)(\&.+)?$" "$1" context_path "^.*created=le([0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?)(\&.+)?$" "$1"  "<="
 
 # other clinical areas
 consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
@@ -165,6 +168,8 @@ if CREATED_2 and not CREATED_GE_VALID then operation_outcome_422_document_search
 if CREATED_2 and not CREATED_LE_VALID then operation_outcome_422_document_search_no_created_le
 if CREATED and not ( CREATED_LE_VALID or CREATED_GE_VALID ) then operation_outcome_422_document_search_no_created_le_or_ge
 # invalid date range?
+
+if CREATED_2 and not CREATED_RANGE_VALID then operation_outcome_422_document_search_created_ge_after_le
 
 if GET_PATIENT_2 then patient2_document_reference_response else patient_not_found_response
 END RULE
