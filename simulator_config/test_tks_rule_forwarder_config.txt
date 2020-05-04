@@ -74,7 +74,7 @@ AUTHOR_SYSTEM_VALID context_path matches ^.*author=https://fhir.nhs.uk/Id/ods-or
 CREATED_MORE_THAN_2 context_path matches ^.*(created=.+){3,}.*$
 CREATED_2 context_path matches ^.*(created=.+){2}.*$
 CREATED context_path matches ^.*(created=.+).*$
-#                                                     YYYY   -  M   M -   D    D   T  H    H  :  M    M  :  S    S    .ssss      +00   : 00
+#                                                     YYYY -  M   M  -  D    D   T  H    H  :  M    M  :  S    S    .ssss      +00   :00
 CREATED_GE_VALID context_path matches ^.*created=ge[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
 CREATED_LE_VALID context_path matches ^.*created=le[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
 #
