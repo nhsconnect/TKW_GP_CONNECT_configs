@@ -5,10 +5,10 @@
    <type value="searchset"></type>
    __PATIENT_2_HEAD__
    <entry>
-      <fullUrl value="http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentReference/27863182736"></fullUrl>
+	   <fullUrl value="__BINARY_URL__/GP0001/STU3/1/gpconnect-documents/DocumentReference/__DOCREF_ID__"></fullUrl>
       <resource>
          <DocumentReference xmlns="http://hl7.org/fhir">
-            <id value="27863182736"></id>
+            <id value="__DOCREF_ID__"></id>
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"></profile>
             </meta>
@@ -40,7 +40,7 @@
             <content>
                <attachment>
                   <contentType value="application/msword"></contentType>
-                  <url value="http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/Binary/07a6483f-732b-461e-86b6-edb665c45510"></url>
+                  <url value="__BINARY_URL__/GP0001/STU3/1/gpconnect-documents/Binary/07a6483f-732b-461e-86b6-edb665c45510"></url>
                   <size value="3654"></size>
                </attachment>
             </content>

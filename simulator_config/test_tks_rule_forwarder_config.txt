@@ -36,6 +36,8 @@ __PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0De
 # one operation outcome with a separate issue for each unrecognised parameter part
 __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
 
+__DOCREF_ID__ Literal 27863182736
+__BINARY_URL__ Property tks.serverBaseUrl
 
 END SUBSTITUTIONS
 
@@ -55,7 +57,7 @@ QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='pa
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 
 # GetBinary
-GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c455102$
+GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
 
 # search document references
 SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference:subject:Patient.*$

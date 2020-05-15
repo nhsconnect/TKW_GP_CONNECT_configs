@@ -4,6 +4,9 @@
 # listenport 4848
 #
 JAVA_OPTIONS=-Dtks.skipsignlogs=Y
+#
+# Test tkw properties injection
+#JAVA_OPTIONS+=" -Dtks.serverBaseUrl=xxxx"
 
 #MODE=-simulator
 MODE=-httpinterceptor
