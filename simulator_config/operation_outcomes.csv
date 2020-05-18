@@ -36,6 +36,7 @@ intidmissing,BAD_REQUEST,SSP Interaction id missing
 traceidmissing,BAD_REQUEST,SSP Trace id missing
 ssptomissing,BAD_REQUEST,SSP To ASID Missing
 ssptoinv,BAD_REQUEST,SSP To ASID Incorrect format
+ssptomismatch,BAD_REQUEST,SSP-To header does not match ASID of system
 sspfrommissing,BAD_REQUEST,SSP From ASID Missing
 sspfrominv,BAD_REQUEST,SSP From ASID Incorrect format
 rqorgscope,BAD_REQUEST,JWT Payload Requesting Organization scope is invalid
