@@ -60,28 +60,28 @@ GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
 
 # search document references
-SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference:subject:Patient.*$
-SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference:custodian:Organization.*$
-SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG context_path matches ^.*_include=DocumentReference:author:Organization.*$
-SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC context_path matches ^.*_include=DocumentReference:author:Practitioner.*$
-SEARCH_INCLUDES_MANDATORY_PRAC_ROLE context_path matches ^.*_revinclude:recurse=PractitionerRole:practitioner.*$
+SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference%3Asubject%3APatient.*$
+SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference%3Acustodian%3AOrganization.*$
+SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG context_path matches ^.*_include=DocumentReference%3Aauthor%3AOrganization.*$
+SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC context_path matches ^.*_include=DocumentReference%3Aauthor%3APractitioner.*$
+SEARCH_INCLUDES_MANDATORY_PRAC_ROLE context_path matches ^.*_revinclude%3Arecurse=PractitionerRole%3Apractitioner.*$
 
 FACILITY_SEARCH context_path matches ^.*facility=.*$
-FACILITY_SYSTEM_VALID context_path matches ^.*facility=https://fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
+FACILITY_SYSTEM_VALID context_path matches ^.*facility=https%3A//fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
 
 AUTHOR_SEARCH context_path matches ^.*author=.*$
-AUTHOR_SYSTEM_VALID context_path matches ^.*author=https://fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
+AUTHOR_SYSTEM_VALID context_path matches ^.*author=https%3A//fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
 
 # 0..2 created parameters
 CREATED_MORE_THAN_2 context_path matches ^.*(created=.+){3,}.*$
 CREATED_2 context_path matches ^.*(created=.+){2}.*$
 CREATED context_path matches ^.*(created=.+).*$
 #                                                     YYYY -  M   M  -  D    D   T  H    H  :  M    M  :  S    S    .ssss      +00   :00
-CREATED_GE_VALID context_path matches ^.*created=ge[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
-CREATED_LE_VALID context_path matches ^.*created=le[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?(\&.+)?$
+CREATED_GE_VALID context_path matches ^.*created=ge[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]%3A[0-5][0-9]%3A[0-5][0-9](\.[0-9]+)?(\+0[01]%3A00)?)?(\&.+)?$
+CREATED_LE_VALID context_path matches ^.*created=le[0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]%3A[0-5][0-9]%3A[0-5][0-9](\.[0-9]+)?(\+0[01]%3A00)?)?(\&.+)?$
 #
 # le later than ge ?
-CREATED_RANGE_VALID Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.FhirDateCompareExpression context_path "^.*created=ge([0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?)(\&.+)?$" "$1" context_path "^.*created=le([0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(\+0[01]:00)?)?)(\&.+)?$" "$1"  "<="
+CREATED_RANGE_VALID Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.FhirDateCompareExpression context_path "^.*created=ge([0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]%3A[0-5][0-9]%3A[0-5][0-9](\.[0-9]+)?(\+0[01]%3A00)?)?)(\&.+)?$" "$1" context_path "^.*created=le([0-9]{4}-[01][0-9]-[0-3][0-9](T[0-2][0-9]%3A[0-5][0-9]%3A[0-5][0-9](\.[0-9]+)?(\+0[01]%3A00)?)?)(\&.+)?$" "$1"  "<="
 
 # other clinical areas
 consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
