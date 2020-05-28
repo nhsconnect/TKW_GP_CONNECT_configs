@@ -32,6 +32,7 @@ __PATIENT_1__ Literal 9658218865
 __PATIENT_2__ Literal 9658218873
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body as JSON resource. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
+__SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
 SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 END SUBSTITUTIONS
 

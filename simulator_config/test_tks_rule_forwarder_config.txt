@@ -26,6 +26,7 @@ __PRACTITIONER_ID__ Literal 1
 __PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*Patient/([^/]+)/.*$" "$1"
 __PATIENT_2_LOGICAL_ID__ Literal 2
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
+__SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
 #SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
@@ -37,7 +38,7 @@ __PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0De
 __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
 
 __DOCREF_ID__ Literal 27863182736
-__BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
+__BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
 
 END SUBSTITUTIONS
 

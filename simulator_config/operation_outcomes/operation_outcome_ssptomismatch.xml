@@ -12,6 +12,6 @@
                 <display value="Bad Request" />
             </coding>
         </details>
-		<diagnostics value="SSP-To header does not match ASID of system" />
+		<diagnostics value="SSP-To header (__SSP_TO__) does not match ASID of system" />
     </issue>
 </OperationOutcome>
