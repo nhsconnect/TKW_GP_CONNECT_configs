@@ -48,9 +48,6 @@
       <resource>
          <type value="Patient"></type>
          <interaction>
-            <code value="read"></code>
-         </interaction>
-         <interaction>
             <code value="search-type"></code>
          </interaction>
          <searchParam>
@@ -75,10 +72,6 @@
          <searchInclude value="DocumentReference:author:Organization"></searchInclude>
          <searchInclude value="DocumentReference:author:Practitioner"></searchInclude>
          <searchParam>
-            <name value="subject"></name>
-            <type value="string"></type>
-         </searchParam>
-         <searchParam>
             <name value="created"></name>
             <type value="date"></type>
          </searchParam>
@@ -88,7 +81,7 @@
          </searchParam>
          <searchParam>
             <name value="author"></name>
-            <type value="string"></type>
+            <type value="token"></type>
          </searchParam>
          <searchParam>
             <name value="type"></name>
@@ -96,7 +89,7 @@
          </searchParam>
          <searchParam>
             <name value="custodian"></name>
-            <type value="string"></type>
+            <type value="token"></type>
          </searchParam>
          <searchParam>
             <name value="description"></name>
