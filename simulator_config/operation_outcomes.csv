@@ -52,6 +52,7 @@ diary_entries_invalid_search_date,INVALID_PARAMETER,search date is not well form
 #
 # Document Reference Search Errors
 #
+document_search_invalid_parameters,INVALID_PARAMETER,Invalid parameter __BAD_DOC_SEARCH_PARM__
 document_search_missing_mandatory_patient,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:subject:Patient
 document_search_missing_mandatory_custodian,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:custodian:Organization
 document_search_missing_mandatory_author_org,INVALID_PARAMETER,Missing mandatory _include parameter _include=DocumentReference:author:Organization

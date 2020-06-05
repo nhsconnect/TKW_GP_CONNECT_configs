@@ -38,7 +38,10 @@ __PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0De
 __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
 
 __DOCREF_ID__ Literal 27863182736
-__BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
+#__BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
+__BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/internal/gpconnect-demonstrator-api.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
+
+__BAD_DOC_SEARCH_PARM__ reg_exp context_path "^[^?]+\?.*?^(_include|_revinclude%3Arecurse|author|facility|created|type|description)=[^&]+(&|$).*" "$1"
 
 END SUBSTITUTIONS
 
@@ -61,6 +64,9 @@ GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
 
 # search document references
+
+DOCUMENT_SEARCH_PARAMETERS_VALID context_path matches ^[^?]+\?((_include|_revinclude%3Arecurse|author|facility|created|type|description)=[^&]+(&|$))+
+
 SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference%3Asubject%3APatient.*$
 SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference%3Acustodian%3AOrganization.*$
 SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG context_path matches ^.*_include=DocumentReference%3Aauthor%3AOrganization.*$
@@ -68,10 +74,10 @@ SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC context_path matches ^.*_include=DocumentR
 SEARCH_INCLUDES_MANDATORY_PRAC_ROLE context_path matches ^.*_revinclude%3Arecurse=PractitionerRole%3Apractitioner.*$
 
 FACILITY_SEARCH context_path matches ^.*facility=.*$
-FACILITY_SYSTEM_VALID context_path matches ^.*facility=https%3A//fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
+FACILITY_SYSTEM_VALID context_path matches ^.*facility=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fods-organization-code%7[Cc].*$
 
 AUTHOR_SEARCH context_path matches ^.*author=.*$
-AUTHOR_SYSTEM_VALID context_path matches ^.*author=https%3A//fhir.nhs.uk/Id/ods-organization-code%7[Cc].*$
+AUTHOR_SYSTEM_VALID context_path matches ^.*author=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fods-organization-code%7[Cc].*$
 
 # 0..2 created parameters
 CREATED_MORE_THAN_2 context_path matches ^.*(created=.+){3,}.*$
@@ -153,6 +159,8 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1
 INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+
+if not DOCUMENT_SEARCH_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
 # includes checks
 if not SEARCH_INCLUDES_MANDATORY_PATIENT then operation_outcome_422_document_search_missing_mandatory_patient
