@@ -40,7 +40,7 @@ __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir
 __DOCREF_ID__ Literal 27863182736
 __BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/internal/gpconnect-demonstrator-api.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/internal/gpconnect-demonstrator-api.environment.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
 
-__BAD_DOC_SEARCH_PARM__ reg_exp context_path "^[^?]+\?.*?^(_include|_revinclude%3Arecurse|author|facility|created|type|description)=[^&]+(&|$).*" "$1"
+__BAD_DOC_SEARCH_PARM__ reg_exp context_path "^[^?]+\?((_include|_revinclude%3Arecurse|author|facility|created|type|description|(.*))=[^&]+(&|$))+" "$1"
 
 END SUBSTITUTIONS
 
