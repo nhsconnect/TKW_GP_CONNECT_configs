@@ -9,8 +9,9 @@ patient2_document_reference_response /mnt/encrypted/home/simonfarrow/Documents/T
 document_reference_response_no_records /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
 patient2_document_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 documents_metadata_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
-patient9658218997_meds_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
-patient9658218997_allergies_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
+patient_rich_response_1 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
+patient_rich_response_2 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
+patient_rich_response_3 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -62,8 +63,8 @@ multiple_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter)>2  tr
 single_diary_entry xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) 1
 diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries'])>0 true
 
-meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
-allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']) 1
+meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']) 1
+allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218873
 # stubbed in rich meds
@@ -112,9 +113,14 @@ invalidPartParametersForConsultations xpathequals count(/fhir:Parameters/fhir:pa
 invalidPartParametersForProblems xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
 
 # diary entries
-multiple_search_date_parameters  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])>1 true
-single_search_date_parameter  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])=1 true
-search_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate']/fhir:valueDate/@value ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+multiple_diary_search_date_parameters  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])>1 true
+single_diary_search_date_parameter  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])=1 true
+search_diary_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate']/fhir:valueDate/@value ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+
+# rich data 
+meds_start_date_1 xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']/fhir:part[fhir:name/@value='medicationSearchFromDate']/fhir:valueDate/@value ^1971-01-01$
+meds_start_date_2 xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']/fhir:part[fhir:name/@value='medicationSearchFromDate']/fhir:valueDate/@value ^1971-01-02$
+meds_start_date_3 xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']/fhir:part[fhir:name/@value='medicationSearchFromDate']/fhir:valueDate/@value ^1971-01-03$
 
 END EXPRESSIONS
 
@@ -158,14 +164,15 @@ if problemsRequested and invalidPartParametersForProblems then  operation_outcom
 if multiple_clinical_areas and diary_entries then operation_outcome_400_multiple_clinical_areas
 
 # stub in some responses for rich data
-#if QUERY_PATIENT_6 and meds_request then patient9658218997_meds_response
-#if QUERY_PATIENT_6 and allergies_request then patient9658218997_allergies_response
+if QUERY_PATIENT_2 and meds_start_date_1 then patient_rich_response_1
+if QUERY_PATIENT_2 and meds_start_date_2 then patient_rich_response_2
+if QUERY_PATIENT_2 and meds_start_date_3 then patient_rich_response_3
 
 # start of diary entry specific stuff
 
 # 0..1 search dates of the form YYYY-MM-DD
-if multiple_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
-if single_search_date_parameter and not search_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
+if multiple_diary_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
+if single_diary_search_date_parameter and not search_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
 
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
 
