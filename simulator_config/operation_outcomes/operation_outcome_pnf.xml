@@ -12,6 +12,6 @@
                 <display value="Patient Not Found" />
             </coding>
         </details>
-		<diagnostics value="No patient details found for patient ID: __PATIENT_ID__" />
+		<diagnostics value="No patient details found for patient ID: __PATIENT_ID____PATIENT_LOGICAL_ID__" />
     </issue>
 </OperationOutcome>

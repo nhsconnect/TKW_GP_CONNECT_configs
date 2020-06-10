@@ -1,0 +1,8 @@
+<Bundle xmlns="http://hl7.org/fhir">
+   <meta>
+      <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"></profile>
+   </meta>
+   <type value="searchset"></type>
+   __PATIENT_3_HEAD__
+   __ORG_HEAD__
+</Bundle>

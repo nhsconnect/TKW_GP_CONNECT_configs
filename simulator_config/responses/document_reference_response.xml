@@ -4,6 +4,7 @@
    </meta>
    <type value="searchset"></type>
    __PATIENT_2_HEAD__
+   __ORG_HEAD__
    <entry>
 	   <fullUrl value="__BINARY_URL__/GP0001/STU3/1/gpconnect-documents/DocumentReference/__DOCREF_ID__"></fullUrl>
       <resource>
