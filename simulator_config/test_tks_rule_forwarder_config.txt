@@ -172,7 +172,7 @@ if QUERY_PATIENT_2 and meds_start_date_3 then patient_rich_response_3
 
 # 0..1 search dates of the form YYYY-MM-DD
 if multiple_diary_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
-if single_diary_search_date_parameter and not search_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
+if single_diary_search_date_parameter and not search_diary_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
 
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
 

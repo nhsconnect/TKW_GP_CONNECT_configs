@@ -9,3 +9,6 @@ cmd.exe.lnk
 mygitcommit.sh
 setremote.sh
 /external
+/internal
+.gitignore
+temp
