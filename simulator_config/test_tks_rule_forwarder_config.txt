@@ -4,11 +4,17 @@
 BEGIN RESPONSES
 INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
 do_process	NONE	0
+
 patient2_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/diary_response.xml "200 OK"
+patient3_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/diary_response_no_problems.xml "200 OK"
+patient4_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/diary_response_no_entries.xml "200 OK"
+
 patient2_document_reference_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
 document_reference_response_no_records /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
 patient2_document_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
+
 documents_metadata_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
+
 patient_rich_response_1 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
 patient_rich_response_2 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
 patient_rich_response_3 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
@@ -24,20 +30,26 @@ __ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination for '
 __SERVER__ Literal NHS Digital TKW Server
 __PATIENT_1__ Literal 9658218865
 __PATIENT_2__ Literal 9658218873
+__PATIENT_3__ Literal 9658218881
+__PATIENT_4__ Literal 9658218903
 __PATIENT_6__ Literal 9658218997
 
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
 __PRACTITIONER_ID__ Literal 1
 __PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*Patient/([^/]+)/.*$" "$1"
 __PATIENT_2_LOGICAL_ID__ Literal 2
+__PATIENT_3_LOGICAL_ID__ Literal 3
+__PATIENT_4_LOGICAL_ID__ Literal 4
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
 __SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
 #SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
-__PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
+# fails for eg patient 5 because no doc found
+#__PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
 __PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/9658218873_head.xml')/block/text()
 __PATIENT_3_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/9658218881_head.xml')/block/text()
+__PATIENT_4_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/9658218903_head.xml')/block/text()
 __ORG_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
@@ -67,12 +79,17 @@ meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value=
 allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218873
+QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218881
+QUERY_PATIENT_4 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218903
+
 # stubbed in rich meds
 QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218997
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 # only those patients who should have a record returned
-CONFIGURED_PATIENT context_path matches ^.*/Patient/(1|2|3|4|5|6|7|8|11|12|13|14|16|17|19)/.*$
+# checks for structured record post patients 2 3 4 
+CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^(9658218873|9658218881|9658218903)$
+
 DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3)/.*$
 
 # GetBinary
@@ -174,7 +191,11 @@ if QUERY_PATIENT_2 and meds_start_date_3 then patient_rich_response_3
 if multiple_diary_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
 if single_diary_search_date_parameter and not search_diary_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
 
+if not CONFIGURED_PATIENT then patient_not_found_response
+
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
+if QUERY_PATIENT_3 and single_clinical_area and single_diary_entry then patient3_diary_response
+if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4_diary_response
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 END RULE
@@ -209,7 +230,7 @@ if CREATED and not ( CREATED_LE_VALID or CREATED_GE_VALID ) then operation_outco
 
 if CREATED_2 and not CREATED_RANGE_VALID then operation_outcome_422_document_search_created_ge_after_le
 
-if not DOCUMENT_CONFIGURED_PATIENT then patient_not_found_response
+if not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
 
 if GET_PATIENT_2 then patient2_document_reference_response else document_reference_response_no_records
 

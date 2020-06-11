@@ -8,7 +8,8 @@ ivnnn,INVALID_NHS_NUMBER,NHS Number is not valid
 ivp,INVALID_PARAMETER,__ERRORTEXT_IVP__
 ivr,INVALID_RESOURCE,__ERRORTEXT__
 npc,NO_PATIENT_CONSENT,__ERRORTEXT__
-pnf,PATIENT_NOT_FOUND,No patient details found for patient ID: __PATIENT_ID____PATIENT_LOGICAL_ID__
+pnf,PATIENT_NOT_FOUND,No patient details found for patient Identifier: __PATIENT_ID__
+pnf_lid,PATIENT_NOT_FOUND,No patient details found for patient ID: __PATIENT_LOGICAL_ID__
 #
 am,BAD_REQUEST,Authorization missing
 ndc,BAD_REQUEST,JWT Payload reason for request is not Direct Care

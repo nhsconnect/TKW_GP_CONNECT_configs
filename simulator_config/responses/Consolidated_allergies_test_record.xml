@@ -52,7 +52,7 @@
           <reference value="Practitioner/1"/>
         </generalPractitioner>
         <managingOrganization>
-          <reference value="Organization/8"/>
+          <reference value="Organization/7"/>
         </managingOrganization>
       </Patient>
     </resource>
@@ -133,7 +133,7 @@
           <reference value="Practitioner/1"/>
         </practitioner>
         <organization>
-          <reference value="Organization/8"/>
+          <reference value="Organization/7"/>
         </organization>
         <code>
           <coding>

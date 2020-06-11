@@ -3,7 +3,7 @@
       <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"></profile>
    </meta>
    <type value="collection"></type>
-__PATIENT_2_HEAD__
+__PATIENT_3_HEAD__
 __ORG_HEAD__
 __DIARY_ENTRIES_WARNINGS__
    <entry>
@@ -23,7 +23,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
+               <reference value="Patient/__PATIENT_3_LOGICAL_ID__"></reference>
             </subject>
             <date value="2019-03-01T10:57:34+00:00"></date>
             <orderedBy>
@@ -34,12 +34,12 @@ __DIARY_ENTRIES_WARNINGS__
             </orderedBy>
             <entry>
                <item>
-                  <reference value="ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45"></reference>
+                  <reference value="ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad47"></reference>
                </item>
             </entry>
             <entry>
                <item>
-                  <reference value="ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd57ad46"></reference>
+                  <reference value="ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd57ad48"></reference>
                </item>
             </entry>
          </List>
@@ -48,7 +48,7 @@ __DIARY_ENTRIES_WARNINGS__
    <entry>
       <resource>
          <ProcedureRequest xmlns="http://hl7.org/fhir">
-            <id value="eba25af1-5b74-4790-aa5a-2134fd27ad45"></id>
+            <id value="eba25af1-5b74-4790-aa5a-2134fd27ad47"></id>
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"></profile>
             </meta>
@@ -66,7 +66,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
+               <reference value="Patient/__PATIENT_3_LOGICAL_ID__"></reference>
             </subject>
             <context>
                <reference value="Encounter/Encounter1"></reference>
@@ -84,7 +84,7 @@ __DIARY_ENTRIES_WARNINGS__
    <entry>
       <resource>
          <ProcedureRequest xmlns="http://hl7.org/fhir">
-            <id value="eba25af1-5b74-4790-aa5a-2134fd57ad46"></id>
+            <id value="eba25af1-5b74-4790-aa5a-2134fd57ad48"></id>
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"></profile>
             </meta>
@@ -102,7 +102,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
+               <reference value="Patient/__PATIENT_3_LOGICAL_ID__"></reference>
             </subject>
             <context>
                <reference value="Encounter/Encounter3"></reference>
@@ -123,75 +123,4 @@ __DIARY_ENTRIES_WARNINGS__
          </ProcedureRequest>
       </resource>
    </entry>
-   <entry>
-      <resource>
-         <Condition xmlns="http://hl7.org/fhir">
-            <id value="aba25af1-5b74-4790-aa5a-2134fd57ad45"></id>
-            <meta>
-               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"></profile>
-            </meta>
-            <extension url="http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1">
-               <valueReference>
-                  <reference value="ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45"></reference>
-               </valueReference>
-            </extension>
-            <clinicalStatus value="active"></clinicalStatus>
-            <code>
-               <coding>
-                  <extension url="http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
-                     <extension url="DescriptionID">
-                        <valueId value="2729461000000110"></valueId>
-                     </extension>
-                     <extension url="descriptionDisplay">
-                        <valueString value="Swollen leg"></valueString>
-                     </extension>
-                  </extension>
-                  <system value="http://snomed.info/sct"></system>
-                  <code value="449614009"></code>
-                  <display value="Swelling of lower limb (finding)"></display>
-               </coding>
-               <text value="Swollen legs"></text>
-            </code>
-            <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"></reference>
-            </subject>
-            <onsetDateTime value="2019-03-28T10:30:00"></onsetDateTime>
-            <assertedDate value="2018-09-28T10:30:00"></assertedDate>
-         </Condition>
-      </resource>
-   </entry>
-    <entry>
-        <resource>
-            <List xmlns="http://hl7.org/fhir">
-                <meta>
-                    <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
-                </meta>
-                <status value="current"/>
-                <mode value="snapshot"/>
-                <title value="Problems"/>
-                <code>
-                    <coding>
-                        <system value="http://snomed.info/sct"/>
-                        <code value="717711000000103"/>
-                        <display value="Problems"/>
-                    </coding>
-                </code>
-                <subject>
-                    <reference value="Patient/2"/>
-                </subject>
-                <date value="2019-03-01T10:57:34+00:00"/>
-                <orderedBy>
-                    <coding>
-                        <system value="http://hl7.org/fhir/list-order"/>
-                        <code value="event-date"/>
-                    </coding>
-                </orderedBy>
-                <entry>
-                    <item>
-                        <reference value="Condition/aba25af1-5b74-4790-aa5a-2134fd57ad45"/>
-                    </item>
-                </entry>
-            </List>
-        </resource>
-    </entry>
 </Bundle>
