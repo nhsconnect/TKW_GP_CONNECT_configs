@@ -126,16 +126,30 @@ __DIARY_ENTRIES_WARNINGS__
    <entry>
       <resource>
          <Condition xmlns="http://hl7.org/fhir">
-            <id value="aba25af1-5b74-4790-aa5a-2134fd57ad45"></id>
+            <id value="Problem-B-Swollen-Legs"></id>
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"></profile>
             </meta>
-            <extension url="http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1">
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1">
+               <valueCode value="major"/>
+            </extension>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1">
                <valueReference>
                   <reference value="ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45"></reference>
                </valueReference>
             </extension>
+            <identifier>
+                <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+                <value value="62658072-28af-47e5-b81c-bc0521d5c41c"/>
+            </identifier>
             <clinicalStatus value="active"></clinicalStatus>
+            <category>
+                <coding>
+                    <system value="http://hl7.org/fhir/condition-category"/>
+                    <code value="problem-list-item"/>
+                    <display value="Problem List Item"/>
+                </coding>
+            </category>
             <code>
                <coding>
                   <extension url="http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
@@ -157,6 +171,9 @@ __DIARY_ENTRIES_WARNINGS__
             </subject>
             <onsetDateTime value="2019-03-28T10:30:00"></onsetDateTime>
             <assertedDate value="2018-09-28T10:30:00"></assertedDate>
+            <asserter>
+                <reference value="Practitioner/1"/>
+            </asserter>
          </Condition>
       </resource>
    </entry>
@@ -188,7 +205,7 @@ __DIARY_ENTRIES_WARNINGS__
                 </orderedBy>
                 <entry>
                     <item>
-                        <reference value="Condition/aba25af1-5b74-4790-aa5a-2134fd57ad45"/>
+                        <reference value="Condition/Problem-B-Swollen-Legs"/>
                     </item>
                 </entry>
             </List>
