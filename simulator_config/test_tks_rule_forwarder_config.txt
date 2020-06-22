@@ -87,8 +87,8 @@ QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='pa
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 # only those patients who should have a record returned
-# checks for structured record post patients 2 3 4 
-CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^(9658218873|9658218881|9658218903)$
+# checks for structured record post patients 2 3 4 for diary entries - not used
+DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^(9658218873|9658218881|9658218903)$
 
 DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3)/.*$
 
@@ -190,8 +190,6 @@ if QUERY_PATIENT_2 and meds_start_date_3 then patient_rich_response_3
 # 0..1 search dates of the form YYYY-MM-DD
 if multiple_diary_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
 if single_diary_search_date_parameter and not search_diary_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
-
-if not CONFIGURED_PATIENT then patient_not_found_response
 
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
 if QUERY_PATIENT_3 and single_clinical_area and single_diary_entry then patient3_diary_response
