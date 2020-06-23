@@ -2,21 +2,21 @@
 #  GP Connect Messages
 #
 BEGIN RESPONSES
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
-INCLUDE	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/patient_responses.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
+INCLUDE	TKW_ROOT/config/GP_CONNECT/simulator_config/patient_responses.conf
 #
-patient2_ADM_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_ADM_with_time.xml "200 OK"
-patient2_CLI_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_CLI_with_time.xml "200 OK"
-patient2_ENC_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_ENC_with_time.xml "200 OK"
-patient2_MED_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_MED_with_time.xml "200 OK"
-patient2_OBS_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_OBS_with_time.xml "200 OK"
-patient2_PRB_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_PRB_with_time.xml "200 OK"
-patient2_REF_with_time_response	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_REF_with_time.xml "200 OK"
+patient2_ADM_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_ADM_with_time.xml "200 OK"
+patient2_CLI_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_CLI_with_time.xml "200 OK"
+patient2_ENC_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_ENC_with_time.xml "200 OK"
+patient2_MED_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_MED_with_time.xml "200 OK"
+patient2_OBS_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_OBS_with_time.xml "200 OK"
+patient2_PRB_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_PRB_with_time.xml "200 OK"
+patient2_REF_with_time_response	TKW_ROOT/config/GP_CONNECT/simulator_config/gp_connect_patients/9476719931_REF_with_time.xml "200 OK"
 #
 # fhir DSTU2
-conformance	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/conformance.xml "200 OK"
+conformance	TKW_ROOT/config/GP_CONNECT/simulator_config/responses/conformance.xml "200 OK"
 # fhir STU3
-capability	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/capability.xml "200 OK"
+capability	TKW_ROOT/config/GP_CONNECT/simulator_config/responses/capability.xml "200 OK"
 do_process	NONE	0
 END RESPONSES
 
@@ -38,9 +38,9 @@ END SUBSTITUTIONS
 
 # all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
 BEGIN EXPRESSIONS
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 # from VisualStudio data\NHSNoMap.csv
-INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/patient_expressions.conf
+INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/patient_expressions.conf
 #
 QUERY_PATIENT_NOT_IN_SYSTEM	xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^9999999999$
 #
@@ -83,7 +83,7 @@ END EXPRESSIONS
 
 BEGIN RULE
 GET
-INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # catch mismatch between interaction id and context path
 IF	METADATA_CP then operation_outcome_400_intidcpmismatch
 IF	GETCARERECORD_CP then operation_outcome_400_intidcpmismatch
@@ -92,7 +92,7 @@ END RULE
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
-INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 if	not METADATA_CP then operation_outcome_404
 if not JWT_PAYLOAD_REQUESTED_SCOPE_ORGANIZATION then operation_outcome_400_rqorgscope
 # other tests failed when this was in the common area
@@ -102,7 +102,7 @@ END RULE
 
 BEGIN RULE
 POST
-INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # catch mismatch between interaction id and context path for POST messages other than getcarerecord
 IF	METADATA_CP then operation_outcome_400_intidcpmismatch
 IF	GETCARERECORD_CP then operation_outcome_400_intidcpmismatch
@@ -113,7 +113,7 @@ END RULE
 
 BEGIN RULE
 POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 #
 #    Http header checks
 #
@@ -174,7 +174,7 @@ if QUERY_TIME then operation_outcome_404
 #
 #  include the autogenerated data
 #
-INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/patient_rules.conf
+INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/patient_rules.conf
 #
 if QUERY_PATIENT14 then patient_not_found_response
 if QUERY_PATIENT_NOT_IN_SYSTEM then patient_not_found_response

@@ -2,22 +2,22 @@
 #  GP Connect Messages
 #
 BEGIN RESPONSES
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/gpconnect_common_responses.conf
 do_process	NONE	0
 
-patient2_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/diary_response.xml "200 OK"
-patient3_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/diary_response_no_problems.xml "200 OK"
-patient4_diary_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/diary_response_no_entries.xml "200 OK"
+patient2_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/diary_response.xml "200 OK"
+patient3_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/diary_response_no_problems.xml "200 OK"
+patient4_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/diary_response_no_entries.xml "200 OK"
 
-patient2_document_reference_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
-document_reference_response_no_records /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
-patient2_document_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
+patient2_document_reference_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
+document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
+patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
-documents_metadata_response /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
+documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
 
-patient_rich_response_1 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
-patient_rich_response_2 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
-patient_rich_response_3 /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
+patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
+patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
+patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -46,18 +46,18 @@ __SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
 # fails for eg patient 5 because no doc found
-#__PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
-__PATIENT_2_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/9658218873_head.xml')/block/text()
-__PATIENT_3_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/9658218881_head.xml')/block/text()
-__PATIENT_4_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/9658218903_head.xml')/block/text()
-__ORG_HEAD__ Xpath doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
+#__PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
+__PATIENT_2_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9658218873_head.xml')/block/text()
+__PATIENT_3_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9658218881_head.xml')/block/text()
+__PATIENT_4_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9658218903_head.xml')/block/text()
+__ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
 # one operation outcome with a separate issue for each unrecognised parameter part
-__DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/responses/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
+__DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']) > 0) then concat('<entry><resource><OperationOutcome><meta><profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/></meta>',string-join(for $r in /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value!='diaryEntriesSearchDate']/fhir:name/@value return replace(doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/warning.xml')/block/text(),'__CLINICAL_AREA__',$r),''),'</OperationOutcome></resource></entry>') else '')
 
 __DOCREF_ID__ Literal 27863182736
-__BINARY_URL__ Property /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/internal/gpconnect-demonstrator-api.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/internal/gpconnect-demonstrator-api.environment.properties /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
+__BINARY_URL__ Property TKW_ROOT/config/GP_CONNECT/internal/gpconnect-demonstrator-api.properties TKW_ROOT/config/GP_CONNECT/internal/gpconnect-demonstrator-api.environment.properties TKW_ROOT/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
 
 __BAD_DOC_SEARCH_PARM__ reg_exp context_path "^[^?]+\?((_include|_revinclude%3Arecurse|author|facility|created|type|description|(.*))=[^&]+(&|$))+" "$1"
 
@@ -65,7 +65,7 @@ END SUBSTITUTIONS
 
 # all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
 BEGIN EXPRESSIONS
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 passthrough	Always
 dontpassthrough	Never
 single_clinical_area xpathequals count(/fhir:Parameters/fhir:parameter) 2
@@ -151,7 +151,7 @@ END EXPRESSIONS
 
 BEGIN RULE
 POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
-INCLUDE 	/mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 #
 #    Http header checks
 #
@@ -180,7 +180,7 @@ if problemsRequested and invalidPartParametersForProblems then  operation_outcom
 
 if multiple_clinical_areas and diary_entries then operation_outcome_400_multiple_clinical_areas
 
-# stub in some responses for rich data
+# stub in some responses for medications and allergies rich data
 if QUERY_PATIENT_2 and meds_start_date_1 then patient_rich_response_1
 if QUERY_PATIENT_2 and meds_start_date_2 then patient_rich_response_2
 if QUERY_PATIENT_2 and meds_start_date_3 then patient_rich_response_3
@@ -204,7 +204,7 @@ END RULE
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 
 if not DOCUMENT_SEARCH_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
@@ -240,7 +240,7 @@ END RULE
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
 END RULE
 
@@ -250,7 +250,7 @@ END RULE
 
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1
-INCLUDE /mnt/encrypted/home/simonfarrow/Documents/TKW5.0Dev/TKW/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 if passthrough then documents_metadata_response
 END RULE
 
