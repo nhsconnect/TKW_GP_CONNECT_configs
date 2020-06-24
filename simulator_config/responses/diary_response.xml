@@ -90,7 +90,7 @@ __DIARY_ENTRIES_WARNINGS__
             </meta>
             <identifier>
                <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"></system>
-               <value value="urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"></value>
+               <value value="urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad76"></value>
             </identifier>
             <status value="active"></status>
             <intent value="plan"></intent>
@@ -117,9 +117,6 @@ __DIARY_ENTRIES_WARNINGS__
                   <reference value="Practitioner/__PRACTITIONER_ID__"></reference>
                </agent>
             </requester>
-            <note>
-               <text value="???"></text>
-            </note>
          </ProcedureRequest>
       </resource>
    </entry>
@@ -152,7 +149,7 @@ __DIARY_ENTRIES_WARNINGS__
             </category>
             <code>
                <coding>
-                  <extension url="http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+                  <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
                      <extension url="DescriptionID">
                         <valueId value="2729461000000110"></valueId>
                      </extension>
