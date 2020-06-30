@@ -50,6 +50,7 @@ multiple_clinical_areas,INVALID_PARAMETER,diary entries have been requested with
 #
 diary_entries_multiple_search_dates,INVALID_PARAMETER,multiple search date parameter parts
 diary_entries_invalid_search_date,INVALID_PARAMETER,search date is not well formed
+diary_entries_search_date_in_past,INVALID_PARAMETER,search date (__DIARY_ENTRY_SEARCH_DATE__) is in the past
 #
 # Document Reference Search Errors
 #

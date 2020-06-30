@@ -71,7 +71,7 @@ __DIARY_ENTRIES_WARNINGS__
             <context>
                <reference value="Encounter/Encounter1"></reference>
             </context>
-            <occurrenceDateTime value="2019-05-02"></occurrenceDateTime>
+            <occurrenceDateTime value="__DIARY_ENTRY_SEARCH_DATE__"></occurrenceDateTime>
             <authoredOn value="2019-03-02"></authoredOn>
             <requester>
                <agent>
@@ -108,8 +108,8 @@ __DIARY_ENTRIES_WARNINGS__
                <reference value="Encounter/Encounter3"></reference>
             </context>
             <occurrencePeriod>
-               <start value="2019-05-01"></start>
-               <end value="2019-05-01"></end>
+               <start value="__DIARY_ENTRY_SEARCH_DATE__"></start>
+               <end value="__DIARY_ENTRY_SEARCH_DATE__"></end>
             </occurrencePeriod>
             <authoredOn value="2019-05-01"></authoredOn>
             <requester>
