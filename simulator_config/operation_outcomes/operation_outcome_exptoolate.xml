@@ -12,6 +12,6 @@
                 <display value="Bad Request" />
             </coding>
         </details>
-		<diagnostics value="JWT Payload exp expiry time too late (more thaqn 300s after creation)" />
+		<diagnostics value="JWT Payload exp expiry time too late (more than 300s after creation)" />
     </issue>
 </OperationOutcome>

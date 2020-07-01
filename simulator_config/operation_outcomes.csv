@@ -29,7 +29,7 @@ invrqprac,BAD_REQUEST,JWT Payload invalid requesting practitioner
 ctinp,BAD_REQUEST,JWT Payload iat creation time in the past
 expetcr,BAD_REQUEST,JWT Payload exp expiry time earlier than creation time
 exptoosoon,BAD_REQUEST,JWT Payload exp expiry time too soon (less than 300s after creation)
-exptoolate,BAD_REQUEST,JWT Payload exp expiry time too late (more thaqn 300s after creation)
+exptoolate,BAD_REQUEST,JWT Payload exp expiry time too late (more than 300s after creation)
 ivprt,BAD_REQUEST,JWT Payload invalid requesting practitioner resource type
 pad,BAD_REQUEST,JWT Payload Base 64 padding detected
 #
