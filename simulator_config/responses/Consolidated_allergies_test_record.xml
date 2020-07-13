@@ -429,7 +429,7 @@
         <patient>
           <reference value="Patient/2"/>
         </patient>
-        <assertedDate value="2020-06-16"/>
+        <assertedDate value="2020-07-03"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
@@ -461,7 +461,7 @@
         <patient>
           <reference value="Patient/2"/>
         </patient>
-        <assertedDate value="2020-06-16"/>
+        <assertedDate value="2020-07-03"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
@@ -493,7 +493,7 @@
         <patient>
           <reference value="Patient/2"/>
         </patient>
-        <assertedDate value="2020-06-16"/>
+        <assertedDate value="2020-07-03"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
@@ -525,7 +525,7 @@
         <patient>
           <reference value="Patient/2"/>
         </patient>
-        <assertedDate value="2020-06-16"/>
+        <assertedDate value="2020-07-03"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
@@ -557,7 +557,7 @@
         <patient>
           <reference value="Patient/2"/>
         </patient>
-        <assertedDate value="2020-06-16"/>
+        <assertedDate value="2020-07-03"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>

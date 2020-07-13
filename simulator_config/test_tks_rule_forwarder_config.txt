@@ -69,7 +69,10 @@ END SUBSTITUTIONS
 BEGIN EXPRESSIONS
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 
+# 1.2
 #rev1_2	Always
+
+# 1.5
 rev1_2	Never
 
 passthrough	Always
