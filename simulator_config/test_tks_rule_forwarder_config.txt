@@ -166,9 +166,9 @@ INCLUDE 	TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 #
 #    Http header checks
 #
-if not EMPTY_ACCEPT and INVALID_ACCEPT then operation_outcome_415
-if INVALID_CONTENT_TYPE then operation_outcome_415
-if EMPTY_CONTENT then operation_outcome_400
+if not EMPTY_ACCEPT and INVALID_ACCEPT then operation_outcome_415_invalid_accept
+if INVALID_CONTENT_TYPE then operation_outcome_415_invalid_content_type
+if EMPTY_CONTENT then operation_outcome_400_no_content
 #
 if NO_PARAMETERS then operation_outcome_422_ivr
 # Order of tests is important no point in checking parameters if content-type is wrong and its actually valid json because conversion to xml won't happen.
@@ -177,14 +177,14 @@ if NO_PARAMETERS then operation_outcome_422_ivr
 #
 if INVALID_NHS_NO_SYSTEM_ID then operation_outcome_422_iis
 if INVALID_NHS_NUMBER then operation_outcome_400_ivnnn
-if NO_NHS_NO_SYSTEM_ID or EMPTY_NHS_NO_SYSTEM_ID then operation_outcome_422
+if NO_NHS_NO_SYSTEM_ID or EMPTY_NHS_NO_SYSTEM_ID then operation_outcome_422_invalid_nhsno_system
 #
-if JWT_PAYLOAD_PATIENT_MISMATCH then operation_outcome_400
-if not JWT_PAYLOAD_REQUESTED_SCOPE_PATIENT then operation_outcome_400
+if JWT_PAYLOAD_PATIENT_MISMATCH then operation_outcome_400_nnn_mismatch
+if not JWT_PAYLOAD_REQUESTED_SCOPE_PATIENT then operation_outcome_400_nopatreadscope
 #
 if not GETSTRUCTUREDRECORD_CP then operation_outcome_404
 # needs to be check before any further references to the NNN
-if PATIENT_COUNT_INVALID then operation_outcome_400
+if PATIENT_COUNT_INVALID then operation_outcome_400_multiple_nnn
 
 if not rev1_2 and consultationsRequested and invalidPartParametersForConsultations then  operation_outcome_422_ivp
 if not rev1_2 and problemsRequested and invalidPartParametersForProblems then  operation_outcome_422_ivp

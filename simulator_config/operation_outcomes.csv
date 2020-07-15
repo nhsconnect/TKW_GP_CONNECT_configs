@@ -23,6 +23,7 @@ noiss,BAD_REQUEST,JWT Payload no iss
 noaud,BAD_REQUEST,JWT Payload no aud
 nosub,BAD_REQUEST,JWT Payload no sub
 noscope,BAD_REQUEST,JWT Payload no requested scope
+nopatreadscope,INVALID_PARAMETER,JWT Payload no patient read requested scope
 norqorg,BAD_REQUEST,JWT Payload no requesting organization
 norqprac,BAD_REQUEST,JWT Payload no requesting practitioner
 invrqprac,BAD_REQUEST,JWT Payload invalid requesting practitioner
@@ -32,6 +33,14 @@ exptoosoon,BAD_REQUEST,JWT Payload exp expiry time too soon (less than 300s afte
 exptoolate,BAD_REQUEST,JWT Payload exp expiry time too late (more than 300s after creation)
 ivprt,BAD_REQUEST,JWT Payload invalid requesting practitioner resource type
 pad,BAD_REQUEST,JWT Payload Base 64 padding detected
+no_content,INVALID_PARAMETER,No payload content
+nnn_mismatch,INVALID_PARAMETER,JWT NHS Number does not match NHS Number in parameter
+multiple_nnn,INVALID_PARAMETER,More than 1 NHS Number supplied
+#
+invalid_accept,INVALID_PARAMETER,Invalid http accept header
+invalid_content_type,INVALID_PARAMETER,Invalid http content type header
+invalid_nhsno_system,INVALID_PARAMETER,Invalid NHS Number System
+invalid_jwt_header,INVALID_PARAMETER,JWT Header algorithm is not valid
 #
 intidmissing,BAD_REQUEST,SSP Interaction id missing
 traceidmissing,BAD_REQUEST,SSP Trace id missing

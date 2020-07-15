@@ -1,0 +1,17 @@
+<OperationOutcome xmlns="http://hl7.org/fhir">
+    <meta>
+        <profile value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1" />
+    </meta>
+    <issue>
+        <severity value="error" />
+        <code value="invalid" />
+        <details>
+            <coding>
+                <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
+                <code value="INVALID_PARAMETER" />
+                <display value="Invalid Parameter" />
+            </coding>
+        </details>
+		<diagnostics value="Invalid NHS Number System" />
+    </issue>
+</OperationOutcome>
