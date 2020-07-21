@@ -8,9 +8,9 @@ set MODE=-httpinterceptor
 
 E:
 if "%1" == "F" (
-	set PROPS=tkw_forward_all.properties
+	set PROPS=tkw-x-forwarding.properties
 ) else (
-	set PROPS=tkw.properties
+	set PROPS=tkw-x.properties
 )
 
-java %JAVA_OPTIONS% -jar ..\..\TKW.jar %MODE% %PROPS%
+java %JAVA_OPTIONS% -jar ..\..\TKW-x.jar %MODE% %PROPS%

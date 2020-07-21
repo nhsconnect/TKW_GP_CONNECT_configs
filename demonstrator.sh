@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# spool up the answer dmonstrator
+# spool up the answer demonstrator
 #
 export JDK8=/usr/lib/jvm/java-8-openjdk-amd64
 
