@@ -19,9 +19,10 @@ case $1 in
 		cd $ROOT/gpconnect-demonstrator-release-1.2
 		docker-compose -f gpconnect-opentest.yml up
 		;;
-	1.5)
+	1.3|1.5)
 		cd $ROOT/gpconnect-demonstrator-develop
-		docker-compose -f gpconnect.yml up
+		./start_gpconnect.sh
+		#docker-compose -f gpconnect.yml up
 		;;
 	*)
 		cd $ROOT/gpconnect-demonstrator-release-0.5.0

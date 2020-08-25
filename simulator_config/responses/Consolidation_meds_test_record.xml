@@ -136,7 +136,7 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="2b52000000000000"/>
+        <id value="1"/>
         <meta>
           <versionId value="67DA8D2DD47E14A9203832D65D02ADF7"/>
           <lastUpdated value="2019-10-04T12:13:07+01:00"/>
@@ -172,7 +172,7 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="6D340A1B-BC15-4D4E-93CF-BBCB5B74DF735E496953-065B-41F2-9577-BE8F2FBD0757"/>
+        <id value="2"/>
         <meta>
           <versionId value="4770759809396285430"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
@@ -217,7 +217,7 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="80"/>
+        <id value="3"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
         </meta>
@@ -777,11 +777,11 @@
         <taken value="unk"/>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 Administrative note"/>
+          <text value="Issue number 1 Administrative note "/>
         </note>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Issue number 1 Script note"/>
+          <text value="Issue number 1 Script note "/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
@@ -896,11 +896,11 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 Administrative note"/>
+          <text value="Issue number 1 Administrative note "/>
         </note>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Issue number 1 Script note"/>
+          <text value="Issue number 1 Script note "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -972,11 +972,11 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Administrative note"/>
+          <text value="Administrative note "/>
         </note>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Script note"/>
+          <text value="Script note "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -4832,7 +4832,7 @@
         </recorder>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Take 30 mins before a meal or snack"/>
+          <text value="Take 30 mins before a meal or snack "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Morning"/>
@@ -4955,7 +4955,7 @@
         </subject>
         <authoredOn value="2006-09-06"/>
         <recorder>
-          <reference value="Practitioner/80"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="2X5ML SPOON DAILY"/>
@@ -5007,7 +5007,7 @@
         </subject>
         <authoredOn value="2006-09-06"/>
         <recorder>
-          <reference value="Practitioner/80"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="2X5ML SPOON DAILY"/>
@@ -5412,7 +5412,7 @@
         </note>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is a pharmacy information note for Cilazapril"/>
+          <text value="Issue number 1 This is a pharmacy information note for Cilazapril "/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
@@ -5457,7 +5457,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="This is a pharmacy information note for Cilazapril"/>
+          <text value="This is a pharmacy information note for Cilazapril "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -5523,7 +5523,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is a pharmacy information note for Cilazapril"/>
+          <text value="Issue number 1 This is a pharmacy information note for Cilazapril "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -5819,7 +5819,7 @@
         <taken value="unk"/>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is the generic acute for 22047"/>
+          <text value="Issue number 1 This is the generic acute for 22047 "/>
         </note>
         <dosage>
           <text value="One To Be Taken Every Four To Six Hours When Required"/>
@@ -5926,7 +5926,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is the generic acute for 22047"/>
+          <text value="Issue number 1 This is the generic acute for 22047 "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Every Four To Six Hours When Required"/>
@@ -6016,7 +6016,7 @@
         <taken value="unk"/>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 THis is the acute issue post generic -&amp;amp;gt; proprietary switch for 22047"/>
+          <text value="Issue number 1 THis is the acute issue post generic -&amp;amp;gt; proprietary switch for 22047 "/>
         </note>
         <dosage>
           <text value="One To Be Taken Every Four To Six Hours When Required"/>
@@ -6136,7 +6136,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 THis is the acute issue post generic -&amp;amp;gt; proprietary switch for 22047"/>
+          <text value="Issue number 1 THis is the acute issue post generic -&amp;amp;gt; proprietary switch for 22047 "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Every Four To Six Hours When Required"/>

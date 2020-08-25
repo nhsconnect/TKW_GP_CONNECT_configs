@@ -638,7 +638,7 @@
         </note>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is the restart"/>
+          <text value="Issue number 1 This is the restart "/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
@@ -1081,7 +1081,7 @@
         </subject>
         <authoredOn value="2010-01-14T10:26:31.553+00:00"/>
         <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -1199,7 +1199,7 @@
         </subject>
         <authoredOn value="2010-08-09T13:42:22.51+01:00"/>
         <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="One Tablet Daily For 21 Days; Subsequent Courses Repeated After 7-Day Tablet Free Interval"/>
@@ -1430,7 +1430,7 @@
         </subject>
         <authoredOn value="2010-01-14T10:46:01.933+00:00"/>
         <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -1500,7 +1500,7 @@
         </subject>
         <authoredOn value="2010-01-14T11:23:20.077+00:00"/>
         <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="For Subcutaneous Injection, According To Requirements"/>
@@ -1783,7 +1783,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="This is the restart"/>
+          <text value="This is the restart "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -2106,7 +2106,7 @@
         </subject>
         <authoredOn value="2010-08-09T13:42:38.04+01:00"/>
         <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          <reference value="Practitioner/3"/>
         </recorder>
         <dosageInstruction>
           <text value="One Tablet Daily For 21 Days; Subsequent Courses Repeated After 7-Day Tablet Free Interval"/>
@@ -2864,7 +2864,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is the restart"/>
+          <text value="Issue number 1 This is the restart "/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -3284,7 +3284,7 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="567B852A-5775-4AEF-BB77-504D820F11F75E496953-065B-41F2-9577-BE8F2FBD0757"/>
+        <id value="1"/>
         <meta>
           <versionId value="1635687876481377364"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
@@ -3308,7 +3308,7 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="6D340A1B-BC15-4D4E-93CF-BBCB5B74DF735E496953-065B-41F2-9577-BE8F2FBD0757"/>
+        <id value="2"/>
         <meta>
           <versionId value="4770759809396285430"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
@@ -3332,7 +3332,7 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="6AB948A5-2067-4A67-AD00-60EAF13E9CAA5E496953-065B-41F2-9577-BE8F2FBD0757"/>
+        <id value="3"/>
         <meta>
           <versionId value="3821120703926896789"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
