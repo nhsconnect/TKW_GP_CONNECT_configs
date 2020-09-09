@@ -9,7 +9,7 @@
 			<xsl:message>WARNING: empty epoch (is epoch server running on port 8000?)</xsl:message>
 		</xsl:if>
         <xsl:choose>
-			<xsl:when test="/json:json/@iat &lt; ($epoch - 5)">
+			<xsl:when test="/json:json/@iat &lt; ($epoch - 600)">
                 <xsl:value-of select="'TRUE'" />
 			</xsl:when>
             <xsl:otherwise>
