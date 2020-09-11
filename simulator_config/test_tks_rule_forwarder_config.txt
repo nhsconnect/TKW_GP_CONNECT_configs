@@ -28,11 +28,11 @@ __ERRORID__	UUID
 __ERRORCODE__ Literal INVALID_PARAMETER
 __ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination for ',if (//fhir:parameter/fhir:name[@value='includeConsultations']) then 'Consultations ' else 'Problems ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (//fhir:parameter/fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or @value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')]/concat(../../fhir:name/@value,'.',@value),','))
 __SERVER__ Literal NHS Digital TKW Server
-__PATIENT_1__ Literal 9658218865
-__PATIENT_2__ Literal 9658218873
-__PATIENT_3__ Literal 9658218881
-__PATIENT_4__ Literal 9658218903
-__PATIENT_6__ Literal 9658218997
+__PATIENT_1__ Literal 9690937278
+__PATIENT_2__ Literal 9690937286
+__PATIENT_3__ Literal 9690937294
+__PATIENT_4__ Literal 9690937308
+__PATIENT_6__ Literal 9690937383
 
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
 __PRACTITIONER_ID__ Literal 1
@@ -47,9 +47,9 @@ SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 # patient specific preamble added to the start of a structured response
 # fails for eg patient 5 because no doc found
 #__PATIENT_HEAD__ Xpath ( if (fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) then doc(concat('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/',/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value,'_head.xml'))/block/text() else '' )
-__PATIENT_2_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9658218873_head.xml')/block/text()
-__PATIENT_3_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9658218881_head.xml')/block/text()
-__PATIENT_4_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9658218903_head.xml')/block/text()
+__PATIENT_2_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937286_head.xml')/block/text()
+__PATIENT_3_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937294_head.xml')/block/text()
+__PATIENT_4_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937308_head.xml')/block/text()
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
@@ -87,17 +87,17 @@ diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value
 meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']) 1
 allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
 
-QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218873
-QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218881
-QUERY_PATIENT_4 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218903
+QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937286
+QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
+QUERY_PATIENT_4 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937308
 
 # stubbed in rich meds
-QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9658218997
+QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937383
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 # only those patients who should have a record returned
 # checks for structured record post patients 2 3 4 for diary entries - not used
-DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^(9658218873|9658218881|9658218903)$
+DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^(9690937286|9690937294|9690937308)$
 
 DIARY_ENTRY_SEARCH_IN_PAST content xslt TKW_ROOT/config/GP_CONNECT/simulator_config/past_diary_entry_search_time.xslt TRUE
 

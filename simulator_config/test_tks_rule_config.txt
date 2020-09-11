@@ -28,8 +28,8 @@ __ERRORID__	UUID
 #__ERRORCODE__ Literal INVALID_PARAMETER
 __ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (../../fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')]/concat(../../fhir:name/@value,'.',@value),','))
 __SERVER__ Literal NHS Digital TKW Server
-__PATIENT_1__ Literal 9658218865
-__PATIENT_2__ Literal 9658218873
+__PATIENT_1__ Literal 9690937278
+__PATIENT_2__ Literal 9690937286
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body as JSON resource. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
 __SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
