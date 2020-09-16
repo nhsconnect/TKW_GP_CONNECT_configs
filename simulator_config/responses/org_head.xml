@@ -57,9 +57,9 @@
         </meta>
         <identifier>
           <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
-          <value value="A20047"/>
+          <value value="B82617"/>
         </identifier>
-        <name value="Dr Legg's Surgery"/>
+        <name value="COXWOLD SURGERY"/>
         <telecom>
           <system value="phone"/>
           <value value="12345678"/>
