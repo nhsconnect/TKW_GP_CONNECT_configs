@@ -94,6 +94,10 @@ QUERY_PATIENT_4 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='pa
 # stubbed in rich meds
 QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937383
 
+QUERY_PATIENT_22 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937316
+QUERY_PATIENT_23 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937324
+QUERY_PATIENT_24 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937332
+
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 # only those patients who should have a record returned
 # checks for structured record post patients 2 3 4 for diary entries - not used
@@ -145,11 +149,6 @@ multiple_diary_search_date_parameters  xpathequals count(/fhir:Parameters/fhir:p
 single_diary_search_date_parameter  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])=1 true
 search_diary_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate']/fhir:valueDate/@value ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
 
-# rich data 
-meds_start_date_1 xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']/fhir:part[fhir:name/@value='medicationSearchFromDate']/fhir:valueDate/@value ^1971-01-01$
-meds_start_date_2 xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']/fhir:part[fhir:name/@value='medicationSearchFromDate']/fhir:valueDate/@value ^1971-01-02$
-meds_start_date_3 xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']/fhir:part[fhir:name/@value='medicationSearchFromDate']/fhir:valueDate/@value ^1971-01-03$
-
 END EXPRESSIONS
 
 #
@@ -192,9 +191,9 @@ if not rev1_2 and problemsRequested and invalidPartParametersForProblems then  o
 if not rev1_2 and multiple_clinical_areas and diary_entries then operation_outcome_400_multiple_clinical_areas
 
 # stub in some responses for medications and allergies rich data
-if QUERY_PATIENT_2 and meds_start_date_1 then patient_rich_response_1
-if QUERY_PATIENT_2 and meds_start_date_2 then patient_rich_response_2
-if QUERY_PATIENT_2 and meds_start_date_3 then patient_rich_response_3
+if QUERY_PATIENT_22 and single_clinical_area and meds_request then patient_rich_response_1
+if QUERY_PATIENT_23 and single_clinical_area and meds_request then patient_rich_response_2
+if QUERY_PATIENT_24 and single_clinical_area and allergies_request then patient_rich_response_3
 
 # start of diary entry specific stuff
 
