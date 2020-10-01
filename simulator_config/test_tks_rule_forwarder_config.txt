@@ -112,7 +112,7 @@ GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-e
 
 # search document references
 
-DOCUMENT_SEARCH_PARAMETERS_VALID context_path matches ^[^?]+\?((_include|_revinclude%3Arecurse|author|facility|created|type|description)=[^&]+(&|$))+
+DOCUMENT_SEARCH_PARAMETERS_VALID context_path matches ^[^?]+\?((_include|_revinclude%3Arecurse|author|created|description)=[^&]+(&|$))+
 
 SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference%3Asubject%3APatient.*$
 SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference%3Acustodian%3AOrganization.*$
@@ -120,8 +120,8 @@ SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG context_path matches ^.*_include=DocumentRe
 SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC context_path matches ^.*_include=DocumentReference%3Aauthor%3APractitioner.*$
 SEARCH_INCLUDES_MANDATORY_PRAC_ROLE context_path matches ^.*_revinclude%3Arecurse=PractitionerRole%3Apractitioner.*$
 
-FACILITY_SEARCH context_path matches ^.*facility=.*$
-FACILITY_SYSTEM_VALID context_path matches ^.*facility=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fods-organization-code%7[Cc].*$
+#FACILITY_SEARCH context_path matches ^.*facility=.*$
+#FACILITY_SYSTEM_VALID context_path matches ^.*facility=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fods-organization-code%7[Cc].*$
 
 AUTHOR_SEARCH context_path matches ^.*author=.*$
 AUTHOR_SYSTEM_VALID context_path matches ^.*author=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fods-organization-code%7[Cc].*$
@@ -228,7 +228,7 @@ if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC then operation_outco
 if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_PRAC_ROLE then operation_outcome_422_document_search_missing_mandatory_prac_role
 
 # search checks
-if not rev1_2 and FACILITY_SEARCH and not FACILITY_SYSTEM_VALID then operation_outcome_422_document_search_facility_invalid_system
+#if not rev1_2 and FACILITY_SEARCH and not FACILITY_SYSTEM_VALID then operation_outcome_422_document_search_facility_invalid_system
 if not rev1_2 and AUTHOR_SEARCH and not AUTHOR_SYSTEM_VALID then operation_outcome_422_document_search_author_invalid_system
 
 # created checks
