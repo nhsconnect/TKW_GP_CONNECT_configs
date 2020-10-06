@@ -274,6 +274,56 @@
   </entry>
   <entry>
     <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="2DB481A3-306A-4133-9491-1558161D6A2B"/>
+        <meta>
+          <versionId value="4333436790463129417"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+          <value value="G13579135"/>
+        </identifier>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-role-profile-id"/>
+          <value value="555079046103"/>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <family value="TEMPLE SOWERBY"/>
+          <given value="GPONE"/>
+          <prefix value="Mr"/>
+        </name>
+        <gender value="male"/>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole xmlns="http://hl7.org/fhir">
+        <id value="2DB481A3306A413394911558161D6A2B5E496953065B41F29577BE8F2FBD0757"/>
+        <meta>
+          <versionId value="2896411073564168692"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
+        </meta>
+        <practitioner>
+          <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+        </practitioner>
+        <organization>
+          <reference value="Organization/7"/>
+        </organization>
+        <code>
+          <coding>
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1"/>
+            <code value="R0260"/>
+            <display value="General Medical Practitioner"/>
+          </coding>
+        </code>
+      </PractitionerRole>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
         <id value="9000000000000000_54bd000000000000"/>
         <meta>
@@ -292,8 +342,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="8e1077e5-43c8-41fb-a595-1f7aaa6e3f09"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_54bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_54bd000000000000_plan"/>
@@ -344,8 +394,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1c50e981-8cb9-4f4a-bf7d-edd4a44480f4"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_54bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="54bd000000000000"/>
@@ -405,8 +455,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="677ce173-5c0f-4aa2-88eb-8277867ea337"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_cacff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_54bd000000000000_plan"/>
@@ -489,12 +539,12 @@
             </coding>
           </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extensioncoding-CareConnect-GPC-DosageLastChanged-1">
-          <valueDateTime value="2021-01-28"/>
+        <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1">
+          <valueDateTime value="2020-01-28"/>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="7d037f5b-62bd-416d-83c4-9b653690aeb2"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_07bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_07bd000000000000_plan"/>
@@ -549,8 +599,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="c0a2f58a-c6f7-4507-837e-80302ae86141"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_07bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="07bd000000000000"/>
@@ -614,8 +664,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1af4a3f6-1588-47e7-9376-d06c64efcb34"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_51aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_07bd000000000000_plan"/>
@@ -686,13 +736,10 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="2E61869F-D0DB-4532-B694-DB6511DB7A7D"/>
+        <id value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-MS"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
         </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2020-09-30T00:00:00+01:00"/>
-        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
           <valueCodeableConcept>
             <coding>
@@ -703,20 +750,20 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="799e79c1-c099-0fea-ae80-b46b3d735f61"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="799E79C1-C099-0FEA-AE80-B46B3D735F61"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D"/>
         </basedOn>
         <status value="active"/>
         <medicationReference>
-          <reference value="Medication/BAC177A5-B7D5-4C7B-A347-71A02AF38233"/>
+          <reference value="Medication/DAE92442-09FC-42BA-8CBD-62E46E9F13B1"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2020-09-30"/>
         </effectivePeriod>
-        <dateAsserted value="2021-03-03T12:49:02.21+00:00"/>
+        <dateAsserted value="2021-03-03T12:49:35.397+00:00"/>
         <subject>
           <reference value="Patient/22"/>
         </subject>
@@ -739,13 +786,10 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-FD-1"/>
+        <id value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1-MS"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
         </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2020-09-30T12:38:00+01:00"/>
-        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
           <valueCodeableConcept>
             <coding>
@@ -755,33 +799,36 @@
             </coding>
           </valueCodeableConcept>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2020-09-30T00:00:00+01:00"/>
+        </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="9920e13f-964d-ae7d-935f-103c7e7b354f"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="A63B48A8-9A25-A527-02BE-DBBCDB32D6C0"/>
         </identifier>
         <basedOn>
-          <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-FD-1"/>
+          <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
         </basedOn>
         <status value="completed"/>
         <medicationReference>
-          <reference value="Medication/BAC177A5-B7D5-4C7B-A347-71A02AF38233"/>
+          <reference value="Medication/DAE92442-09FC-42BA-8CBD-62E46E9F13B1"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2020-09-30"/>
-          <end value="2020-10-28"/>
+          <end value="2020-09-30"/>
         </effectivePeriod>
-        <dateAsserted value="2021-03-03T12:49:35.397+00:00"/>
+        <dateAsserted value="2021-03-03T12:49:02.21+00:00"/>
         <subject>
           <reference value="Patient/22"/>
         </subject>
         <taken value="unk"/>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 Administrative note "/>
+          <text value="Issue number 1 Administrative note"/>
         </note>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Issue number 1 Script note "/>
+          <text value="Issue number 1 Script note"/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
@@ -792,16 +839,16 @@
   <entry>
     <resource>
       <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-FD-1"/>
+        <id value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
         </meta>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
           <extension url="numberOfRepeatPrescriptionsAllowed">
-            <valuePositiveInt value="1"/>
+            <valueUnsignedInt value="12"/>
           </extension>
           <extension url="numberOfRepeatPrescriptionsIssued">
-            <valuePositiveInt value="1"/>
+            <valueUnsignedInt value="1"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -814,21 +861,21 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-fd-1"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
         </identifier>
         <groupIdentifier>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-fd-1"/>
+          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-hd-1"/>
         </groupIdentifier>
         <status value="completed"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/BAC177A5-B7D5-4C7B-A347-71A02AF38233"/>
+          <reference value="Medication/DAE92442-09FC-42BA-8CBD-62E46E9F13B1"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2021-03-03T12:49:35.397+00:00"/>
+        <authoredOn value="2021-03-03T12:49:02.21+00:00"/>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
@@ -838,13 +885,11 @@
         <dispenseRequest>
           <validityPeriod>
             <start value="2020-09-30"/>
-            <end value="2020-10-28"/>
+            <end value="2020-09-30"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
             <value value="28"/>
+            <unit value="capsule"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -873,34 +918,34 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="80462435-9a91-47a4-a7e9-c7bf525a00c5"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="80462435-9A91-47A4-A7E9-C7BF525A00C5"/>
         </identifier>
         <basedOn>
-          <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-FD-1"/>
+          <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
         </basedOn>
         <groupIdentifier>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-fd-1"/>
+          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-hd-1"/>
         </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/BAC177A5-B7D5-4C7B-A347-71A02AF38233"/>
+          <reference value="Medication/DAE92442-09FC-42BA-8CBD-62E46E9F13B1"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2020-09-30T12:38:00+01:00"/>
+        <authoredOn value="2021-03-03T12:49:35.397+00:00"/>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 Administrative note "/>
+          <text value="Issue number 1 Administrative note"/>
         </note>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Issue number 1 Script note "/>
+          <text value="Issue number 1 Script note"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -912,10 +957,8 @@
             <end value="2020-10-28"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
             <value value="28"/>
+            <unit value="capsule"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -936,10 +979,10 @@
         </meta>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
           <extension url="numberOfRepeatPrescriptionsAllowed">
-            <valuePositiveInt value="11"/>
+            <valueUnsignedInt value="11"/>
           </extension>
           <extension url="numberOfRepeatPrescriptionsIssued">
-            <valuePositiveInt value="0"/>
+            <valueUnsignedInt value="0"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -952,8 +995,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2E61869F-D0DB-4532-B694-DB6511DB7A7D"/>
         </identifier>
         <groupIdentifier>
           <value value="2e61869f-d0db-4532-b694-db6511db7a7d"/>
@@ -961,22 +1004,22 @@
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/BAC177A5-B7D5-4C7B-A347-71A02AF38233"/>
+          <reference value="Medication/DAE92442-09FC-42BA-8CBD-62E46E9F13B1"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2021-03-03T12:49:02.21+00:00"/>
+        <authoredOn value="2021-03-03T12:49:35.397+00:00"/>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Administrative note "/>
+          <text value="Administrative note"/>
         </note>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Script note "/>
+          <text value="Script note"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -987,10 +1030,8 @@
             <start value="2020-09-30"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
             <value value="14"/>
+            <unit value="capsule"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="14"/>
@@ -1000,7 +1041,7 @@
           </expectedSupplyDuration>
         </dispenseRequest>
         <priorPrescription>
-          <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-FD-1"/>
+          <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
         </priorPrescription>
       </MedicationRequest>
     </resource>
@@ -1008,7 +1049,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="BAC177A5-B7D5-4C7B-A347-71A02AF38233"/>
+        <id value="DAE92442-09FC-42BA-8CBD-62E46E9F13B1"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -1048,8 +1089,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="c7bc725f-0004-4b35-8f2a-474786b61042"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_e9bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_e9bd000000000000_plan"/>
@@ -1100,8 +1141,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="13731ff6-6e0b-479b-ab5a-7152f12c993a"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_e9bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="e9bd000000000000"/>
@@ -1161,8 +1202,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="375c1c46-a03c-4b77-884e-b8983fbdf3d9"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_d0aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_e9bd000000000000_plan"/>
@@ -1226,8 +1267,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="cf6eb424-0cd8-487f-af37-953fad101e75"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_b0aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_e9bd000000000000_plan"/>
@@ -1311,8 +1352,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="e2a88d63-4bcb-408b-ba27-69058d297014"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_31bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_31bd000000000000_plan"/>
@@ -1363,8 +1404,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="26a31ef5-b489-4aec-b984-f24fde85f117"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_31bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="31bd000000000000"/>
@@ -1424,8 +1465,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="35655f20-2d5c-4d7b-a2e2-e878dca458c8"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_37dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_31bd000000000000_plan"/>
@@ -1489,8 +1530,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="b67d1719-b426-4f6c-a787-c113771fa144"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_27dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_31bd000000000000_plan"/>
@@ -1574,8 +1615,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="8d21c7cf-4d38-4949-8dec-47426e16a48b"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_21bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_21bd000000000000_plan"/>
@@ -1641,8 +1682,8 @@
           </extension>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="ffca04a7-6518-4008-83de-5965c97ed23a"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_21bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="21bd000000000000"/>
@@ -1704,8 +1745,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="302899d5-35f1-47a0-975d-cf72e824fbe4"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_87dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_21bd000000000000_plan"/>
@@ -1790,8 +1831,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1ac21529-d179-4a2b-83a7-afd4021b2dca"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_d9bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -1846,8 +1887,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1308b12d-f262-4265-8122-3e352636498e"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_d9bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="d9bd000000000000"/>
@@ -1908,8 +1949,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="02830729-aa4b-47d5-9ac8-57330c343535"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_50aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -1974,8 +2015,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="d3d47d3a-aa36-44b0-8edb-925a977d168b"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_60aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -2040,8 +2081,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="da0ac5b8-a557-4526-bac2-6519d61f7e8f"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_70aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -2106,8 +2147,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="c2cb086d-d431-423d-bfa0-fa8125fcb5ae"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_80aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -2172,8 +2213,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2014ceed-d0ac-4b8b-9d6b-1128896f3c58"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_90aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -2238,8 +2279,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="fa80c541-5aa9-4643-a748-9b8b945ae37e"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_a0aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_d9bd000000000000_plan"/>
@@ -2324,8 +2365,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="0e781b21-6402-4a77-82b9-254bf6b6acc9"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_44bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_44bd000000000000_plan"/>
@@ -2379,8 +2420,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="6e363fed-7508-4750-ae05-903750a3b99a"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_44bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="44bd000000000000"/>
@@ -2440,8 +2481,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="16f6d37f-eec5-4353-b260-e0c6781aef7b"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_67dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_44bd000000000000_plan"/>
@@ -2505,8 +2546,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="4c590824-5444-4781-947b-bb32b6625f30"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_77dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_44bd000000000000_plan"/>
@@ -2590,8 +2631,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="ecbdab8a-c6e1-49ea-b246-3de848688b27"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_58bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -2645,8 +2686,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="36e167b1-3cc6-4ed9-a5b3-baca68df2239"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_58bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="58bd000000000000"/>
@@ -2706,8 +2747,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="fbcb88c6-0092-4dc8-b505-d19985b3def9"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_11eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -2771,8 +2812,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="493b2a11-e423-4607-850f-99947726ca7a"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_21eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -2836,8 +2877,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="32c7b480-33b7-4940-8965-267e0b3d95dd"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_31eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -2901,8 +2942,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="fdc40b36-ccbf-43a4-a555-479df445bf61"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_41eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -2966,8 +3007,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="246a2dd6-7343-47e0-8eba-e3d288f8c3e4"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_51eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -3031,8 +3072,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="42cb3275-760b-47f8-9216-c01ae0c9cc26"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_61eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_58bd000000000000_plan"/>
@@ -3090,6 +3131,7 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="2284311000001102"/>
+            <display value="Cocois ointment (RPH Pharmaceuticals AB) 40 gram"/>
           </coding>
           <text value="Cocois ointment (RPH Pharmaceuticals AB)"/>
         </code>
@@ -3119,8 +3161,8 @@
           <valueDateTime value="2021-02-25"/>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2fef5063-ce14-46c2-9662-159c69d73757"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_48bd000000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_48bd000000000000_plan"/>
@@ -3174,8 +3216,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="d4ed38a5-31d3-4d11-8f09-b913bfc71657"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="9000000000000000_48bd000000000000_plan"/>
         </identifier>
         <groupIdentifier>
           <value value="48bd000000000000"/>
@@ -3235,8 +3277,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1b6c5451-43aa-4cd4-bc2e-20f63a108d17"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_01eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/9000000000000000_48bd000000000000_plan"/>
@@ -3303,192 +3345,6 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_e0aff60000000000"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2021-01-28"/>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
-              <code value="prescribed-at-gp-practice"/>
-              <display value="Prescribed at GP practice"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="9f49d67f-7a6d-452e-8c9a-9f1062f9c40f"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1000000000000000_e0aff60000000000_plan"/>
-        </basedOn>
-        <context>
-          <reference value="Encounter/4000000000000000_b91a090000000000"/>
-        </context>
-        <status value="completed"/>
-        <medicationReference>
-          <reference value="Medication/1002868_0"/>
-        </medicationReference>
-        <effectivePeriod>
-          <start value="2021-01-28"/>
-          <end value="2021-02-02"/>
-        </effectivePeriod>
-        <dateAsserted value="2020-09-30"/>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <taken value="unk"/>
-        <dosage>
-          <text value="take one 3 times/day"/>
-        </dosage>
-      </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_e0aff60000000000_plan"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="delayed-prescribing"/>
-              <display value="Delayed prescribing"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="cc7bcb02-7186-4b61-84c0-2299cb20942e"/>
-        </identifier>
-        <status value="completed"/>
-        <intent value="plan"/>
-        <medicationReference>
-          <reference value="Medication/1002868_0"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <context>
-          <reference value="Encounter/4000000000000000_b91a090000000000"/>
-        </context>
-        <authoredOn value="2020-09-30T14:32:08+01:00"/>
-        <recorder>
-          <reference value="Practitioner/1"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="take one 3 times/day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2021-01-28"/>
-            <end value="2021-02-02"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
-            <value value="15"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="5"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_e0aff60000000000_order"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="delayed-prescribing"/>
-              <display value="Delayed prescribing"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="32e73702-2a7b-4c31-b2aa-365f8c53023f"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1000000000000000_e0aff60000000000_plan"/>
-        </basedOn>
-        <status value="completed"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/1002868_0"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <context>
-          <reference value="Encounter/4000000000000000_b91a090000000000"/>
-        </context>
-        <authoredOn value="2020-09-30T14:32:08+01:00"/>
-        <recorder>
-          <reference value="Practitioner/1"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="take one 3 times/day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2021-01-28"/>
-            <end value="2021-02-02"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
-            <value value="15"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="5"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <Medication xmlns="http://hl7.org/fhir">
-        <id value="1002868_0"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
-        </meta>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="323509004"/>
-            <display value="Amoxicillin 250mg capsules"/>
-          </coding>
-        </code>
-      </Medication>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationStatement xmlns="http://hl7.org/fhir">
         <id value="1000000000000000_61aff60000000000"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
@@ -3506,8 +3362,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="35751571-d80a-4135-87b9-77ab6273977c"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_61aff60000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_61aff60000000000_plan"/>
@@ -3551,8 +3407,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="0c2e06c6-4370-4cee-a33c-8ed465ef0374"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_61aff60000000000_plan"/>
         </identifier>
         <status value="completed"/>
         <intent value="plan"/>
@@ -3610,8 +3466,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="770f9c64-b4b6-4bd7-8ac3-6a4e7c2caf05"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_61aff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_61aff60000000000_plan"/>
@@ -3693,8 +3549,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="81bc8d04-b3fd-4636-acc8-5b5863ca1aec"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_c0aff60000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_c0aff60000000000_plan"/>
@@ -3738,8 +3594,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="00ea9148-fb14-4d36-9229-b2673c4b5c7a"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_c0aff60000000000_plan"/>
         </identifier>
         <status value="completed"/>
         <intent value="plan"/>
@@ -3814,8 +3670,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="a4d3a6d9-4951-4f8f-b01f-b74759b5a02a"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_17dff60000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_17dff60000000000_plan"/>
@@ -3863,8 +3719,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="5f91a232-798d-479f-b2a3-ae25cff649d2"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_17dff60000000000_plan"/>
         </identifier>
         <status value="active"/>
         <intent value="plan"/>
@@ -3926,8 +3782,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="a1d0a97d-ad5b-440b-876e-1b05b50c9faa"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_17dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_17dff60000000000_plan"/>
@@ -3995,193 +3851,6 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_d7dff60000000000"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2021-02-19"/>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
-              <code value="prescribed-at-gp-practice"/>
-              <display value="Prescribed at GP practice"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="00981f29-6f76-4c3b-bc78-5916a94bd660"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1000000000000000_d7dff60000000000_plan"/>
-        </basedOn>
-        <context>
-          <reference value="Encounter/4000000000000000_136a090000000000"/>
-        </context>
-        <status value="active"/>
-        <medicationReference>
-          <reference value="Medication/9000154_0"/>
-        </medicationReference>
-        <effectivePeriod>
-          <start value="2021-02-19"/>
-          <end value="2021-02-26"/>
-        </effectivePeriod>
-        <dateAsserted value="2021-02-19"/>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <taken value="unk"/>
-        <dosage>
-          <text value="take one 3 times/day"/>
-        </dosage>
-      </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_d7dff60000000000_plan"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1c47db6a-030b-4549-adcf-99fee5a45759"/>
-        </identifier>
-        <status value="active"/>
-        <intent value="plan"/>
-        <medicationReference>
-          <reference value="Medication/9000154_0"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <context>
-          <reference value="Encounter/4000000000000000_136a090000000000"/>
-        </context>
-        <authoredOn value="2021-02-19T14:41:08Z"/>
-        <recorder>
-          <reference value="Practitioner/1"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="take one 3 times/day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2021-02-19"/>
-            <end value="2021-02-26"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsules"/>
-            </extension>
-            <value value="21"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="7"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_d7dff60000000000_order"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="26bfdf43-4751-4396-aa8b-ec5caa2e3eb5"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1000000000000000_d7dff60000000000_plan"/>
-        </basedOn>
-        <status value="active"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/9000154_0"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <context>
-          <reference value="Encounter/4000000000000000_136a090000000000"/>
-        </context>
-        <authoredOn value="2021-02-19T14:41:08Z"/>
-        <recorder>
-          <reference value="Practitioner/1"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="take one 3 times/day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2021-02-19"/>
-            <end value="2021-02-26"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsules"/>
-            </extension>
-            <value value="21"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="7"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <Medication xmlns="http://hl7.org/fhir">
-        <id value="9000154_0"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
-        </meta>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="196421000000109"/>
-            <display value="Transfer-degraded medication entry"/>
-          </coding>
-          <text value="AMOXICILLIN capsules 250mg [CROSS-PHAR]"/>
-        </code>
-      </Medication>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationStatement xmlns="http://hl7.org/fhir">
         <id value="1000000000000000_34dff60000000000"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
@@ -4199,8 +3868,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="f7eb2c96-502e-4fe8-9b2c-978685641f70"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_34dff60000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_34dff60000000000_plan"/>
@@ -4245,8 +3914,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="f2fbf107-22f4-479a-b7ec-1fa02896f6a9"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_34dff60000000000_plan"/>
         </identifier>
         <status value="active"/>
         <intent value="plan"/>
@@ -4305,8 +3974,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="541dc4c1-1915-4918-bc0a-1e36aa4ec05c"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_34dff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_34dff60000000000_plan"/>
@@ -4372,192 +4041,6 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_a1eff60000000000"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2021-02-25"/>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
-              <code value="prescribed-at-gp-practice"/>
-              <display value="Prescribed at GP practice"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="26ee89c0-9faa-41d9-8917-2075df8461b1"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1000000000000000_a1eff60000000000_plan"/>
-        </basedOn>
-        <context>
-          <reference value="Encounter/4000000000000000_2e6a090000000000"/>
-        </context>
-        <status value="active"/>
-        <medicationReference>
-          <reference value="Medication/3004531_6"/>
-        </medicationReference>
-        <effectivePeriod>
-          <start value="2021-02-25"/>
-          <end value="2021-03-09"/>
-        </effectivePeriod>
-        <dateAsserted value="2021-02-25"/>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <taken value="unk"/>
-        <dosage>
-          <text value="take two 4 times/day"/>
-        </dosage>
-      </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_a1eff60000000000_plan"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="5a53d2b4-f316-4539-9573-7742c36c8b41"/>
-        </identifier>
-        <status value="active"/>
-        <intent value="plan"/>
-        <medicationReference>
-          <reference value="Medication/3004531_6"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <context>
-          <reference value="Encounter/4000000000000000_2e6a090000000000"/>
-        </context>
-        <authoredOn value="2021-02-25T11:55:34Z"/>
-        <recorder>
-          <reference value="Practitioner/1"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="take two 4 times/day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2021-02-25"/>
-            <end value="2021-03-09"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="pack of 100 capsule(s)"/>
-            </extension>
-            <value value="1"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="12"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1000000000000000_a1eff60000000000_order"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="f07450ae-202a-4884-8c67-b1a7c028645e"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1000000000000000_a1eff60000000000_plan"/>
-        </basedOn>
-        <status value="active"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/3004531_6"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <context>
-          <reference value="Encounter/4000000000000000_2e6a090000000000"/>
-        </context>
-        <authoredOn value="2021-02-25T11:55:34Z"/>
-        <recorder>
-          <reference value="Practitioner/1"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="take two 4 times/day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2021-02-25"/>
-            <end value="2021-03-09"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="pack of 100 capsule(s)"/>
-            </extension>
-            <value value="1"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="12"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <Medication xmlns="http://hl7.org/fhir">
-        <id value="3004531_6"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
-        </meta>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="9709511000001108"/>
-          </coding>
-          <text value="Paracetamol 500mg capsules"/>
-        </code>
-      </Medication>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationStatement xmlns="http://hl7.org/fhir">
         <id value="1000000000000000_71eff60000000000"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
@@ -4575,8 +4058,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="20450af6-e14e-4337-bdbc-933e30296856"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_71eff60000000000"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_71eff60000000000_plan"/>
@@ -4620,8 +4103,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="89e52ce7-c9b1-4e24-8f73-e1fa4fe74967"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_71eff60000000000_plan"/>
         </identifier>
         <status value="active"/>
         <intent value="plan"/>
@@ -4679,8 +4162,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="46113484-90b0-40e6-97ee-5ef668f25fe7"/>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="1000000000000000_71eff60000000000_order"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/1000000000000000_71eff60000000000_plan"/>
@@ -4735,6 +4218,7 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="1122411000001107"/>
+            <display value="Timolol 0.25% eye drops 5 ml"/>
           </coding>
           <text value="Timolol 0.25% eye drops"/>
         </code>
@@ -4744,7 +4228,7 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="2E352BA6-8F87-479B-BC80-41494027F2E6"/>
+        <id value="2E352BA6-8F87-479B-BC80-41494027F2E6-MS"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
         </meta>
@@ -4758,15 +4242,15 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="fbdb076f-1d04-efc2-983c-71537763e705"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="FBDB076F-1D04-EFC2-983C-71537763E705"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/2E352BA6-8F87-479B-BC80-41494027F2E6"/>
         </basedOn>
         <status value="active"/>
         <medicationReference>
-          <reference value="Medication/663DF46E-3E81-47E5-ACF7-883AF703FC08"/>
+          <reference value="Medication/A37EA2D2-69D6-43C9-BB6F-66CF8D9D50F7"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2021-03-05"/>
@@ -4796,10 +4280,10 @@
         </meta>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
           <extension url="numberOfRepeatPrescriptionsAllowed">
-            <valuePositiveInt value="6"/>
+            <valueUnsignedInt value="6"/>
           </extension>
           <extension url="numberOfRepeatPrescriptionsIssued">
-            <valuePositiveInt value="0"/>
+            <valueUnsignedInt value="0"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -4812,8 +4296,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2e352ba6-8f87-479b-bc80-41494027f2e6"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2E352BA6-8F87-479B-BC80-41494027F2E6"/>
         </identifier>
         <groupIdentifier>
           <value value="2e352ba6-8f87-479b-bc80-41494027f2e6"/>
@@ -4821,7 +4305,7 @@
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/663DF46E-3E81-47E5-ACF7-883AF703FC08"/>
+          <reference value="Medication/A37EA2D2-69D6-43C9-BB6F-66CF8D9D50F7"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -4832,7 +4316,7 @@
         </recorder>
         <note>
           <authorString value="Patient Notes"/>
-          <text value="Take 30 mins before a meal or snack "/>
+          <text value="Take 30 mins before a meal or snack"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Morning"/>
@@ -4843,10 +4327,8 @@
             <start value="2021-03-05"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="28"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -4861,7 +4343,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="663DF46E-3E81-47E5-ACF7-883AF703FC08"/>
+        <id value="A37EA2D2-69D6-43C9-BB6F-66CF8D9D50F7"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -5053,13 +4535,10 @@
   <entry>
     <resource>
       <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
+        <id value="60880139-9E79-4F1E-959A-545B4A7F3BC7-MS"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
         </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2021-02-11T00:00:00+01:00"/>
-        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
           <valueCodeableConcept>
             <coding>
@@ -5069,19 +4548,22 @@
             </coding>
           </valueCodeableConcept>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2020-07-01T00:00:00+01:00"/>
+        </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="e84daaaf-c74c-e9da-4be4-8629214e182e"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="E84DAAAF-C74C-E9DA-4BE4-8629214E182E"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
         </basedOn>
         <status value="active"/>
         <medicationReference>
-          <reference value="Medication/36C088A0-AAA6-4E6C-A85F-3EA3234793CB"/>
+          <reference value="Medication/56587AC8-2930-4B25-8A80-6D22D0E9A5F1"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2021-02-11"/>
+          <start value="2020-07-01"/>
         </effectivePeriod>
         <dateAsserted value="2021-03-03T14:42:12.453+00:00"/>
         <subject>
@@ -5102,11 +4584,8 @@
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
         </meta>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
-          <extension url="numberOfRepeatPrescriptionsAllowed">
-            <valuePositiveInt value="0"/>
-          </extension>
           <extension url="numberOfRepeatPrescriptionsIssued">
-            <valuePositiveInt value="1"/>
+            <valueUnsignedInt value="1"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -5119,8 +4598,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="60880139-9e79-4f1e-959a-545b4a7f3bc7"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
         </identifier>
         <groupIdentifier>
           <value value="60880139-9e79-4f1e-959a-545b4a7f3bc7"/>
@@ -5128,7 +4607,7 @@
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/36C088A0-AAA6-4E6C-A85F-3EA3234793CB"/>
+          <reference value="Medication/56587AC8-2930-4B25-8A80-6D22D0E9A5F1"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -5142,13 +4621,11 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2021-02-11"/>
+            <start value="2020-07-01"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="28"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -5177,8 +4654,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="ea171c1e-6c99-45a7-b4ba-605c6ba22a4b"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="EA171C1E-6C99-45A7-B4BA-605C6BA22A4B"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
@@ -5186,15 +4663,15 @@
         <groupIdentifier>
           <value value="60880139-9e79-4f1e-959a-545b4a7f3bc7"/>
         </groupIdentifier>
-        <status value="active"/>
+        <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/36C088A0-AAA6-4E6C-A85F-3EA3234793CB"/>
+          <reference value="Medication/56587AC8-2930-4B25-8A80-6D22D0E9A5F1"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2021-02-11T14:36:00+01:00"/>
+        <authoredOn value="2021-03-03T14:42:34.29+00:00"/>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
@@ -5203,14 +4680,12 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2021-02-11"/>
-            <end value="2021-03-10"/>
+            <start value="2020-07-01"/>
+            <end value="2020-07-29"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="28"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -5225,7 +4700,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="36C088A0-AAA6-4E6C-A85F-3EA3234793CB"/>
+        <id value="56587AC8-2930-4B25-8A80-6D22D0E9A5F1"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -5262,15 +4737,15 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="8f7b874f-2a7e-8471-0f5b-803e7af43503"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="8F7B874F-2A7E-8471-0F5B-803E7AF43503"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/E01E5A37-972A-4911-B3A8-873E68978084"/>
         </basedOn>
         <status value="active"/>
         <medicationReference>
-          <reference value="Medication/58DBE5D1-D53E-474F-9B8E-FBEDF0E3EF6E-M"/>
+          <reference value="Medication/6548025F-84B3-4C72-BC39-A2A0A7FAF66A"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2011-08-10"/>
@@ -5303,8 +4778,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="e01e5a37-972a-4911-b3a8-873e68978084"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="E01E5A37-972A-4911-B3A8-873E68978084"/>
         </identifier>
         <groupIdentifier>
           <value value="e01e5a37-972a-4911-b3a8-873e68978084"/>
@@ -5312,7 +4787,7 @@
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/58DBE5D1-D53E-474F-9B8E-FBEDF0E3EF6E-M"/>
+          <reference value="Medication/6548025F-84B3-4C72-BC39-A2A0A7FAF66A"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -5329,10 +4804,8 @@
             <start value="2011-08-10"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
             <value value="15"/>
+            <unit value="capsule"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="5"/>
@@ -5347,7 +4820,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="58DBE5D1-D53E-474F-9B8E-FBEDF0E3EF6E-M"/>
+        <id value="6548025F-84B3-4C72-BC39-A2A0A7FAF66A"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -5383,25 +4856,22 @@
             </coding>
           </valueCodeableConcept>
         </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-16T00:00:00+00:00"/>
-        </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="0bbd883f-e74a-795e-3876-099aafcdbbed"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="0BBD883F-E74A-795E-3876-099AAFCDBBED"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457"/>
         </basedOn>
         <status value="completed"/>
         <medicationReference>
-          <reference value="Medication/BB42B59E-F6E1-4016-8448-0867F26A1620-M"/>
+          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2011-01-16"/>
           <end value="2019-10-28"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-16T10:06:08.953+00:00"/>
+        <dateAsserted value="2011-01-16T10:06:09.733+00:00"/>
         <subject>
           <reference value="Patient/22"/>
         </subject>
@@ -5410,14 +4880,116 @@
           <authorString value="Prescriber Notes"/>
           <text value="This is a pharmacy information note for Cilazapril"/>
         </note>
+        <dosage>
+          <text value="One To Be Taken Each Day"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationStatement xmlns="http://hl7.org/fhir">
+        <id value="EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1-MS"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+              <code value="prescribed-at-gp-practice"/>
+              <display value="Prescribed at GP practice"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2011-01-16T00:00:00+00:00"/>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="A2C20582-E327-C4E5-B25A-060507840FCA"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
+        </basedOn>
+        <status value="completed"/>
+        <medicationReference>
+          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
+        </medicationReference>
+        <effectivePeriod>
+          <start value="2011-01-16"/>
+          <end value="2011-01-16"/>
+        </effectivePeriod>
+        <dateAsserted value="2011-01-16T10:06:08.953+00:00"/>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <taken value="unk"/>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is a pharmacy information note for Cilazapril "/>
+          <text value="Issue number 1 This is a pharmacy information note for Cilazapril"/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
         </dosage>
       </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="acute"/>
+              <display value="Acute"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
+        </identifier>
+        <groupIdentifier>
+          <value value="eb002df0-c869-4464-8f74-340bbc8a2457-fi-1"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="plan"/>
+        <medicationReference>
+          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2011-01-16T10:06:08.953+00:00"/>
+        <recorder>
+          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+        </recorder>
+        <dosageInstruction>
+          <text value="One To Be Taken Each Day"/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2011-01-16"/>
+            <end value="2011-01-16"/>
+          </validityPeriod>
+          <quantity>
+            <value value="28"/>
+            <unit value="tablet"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="28"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
     </resource>
   </entry>
   <entry>
@@ -5437,8 +5009,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="eb002df0-c869-4464-8f74-340bbc8a2457"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="EB002DF0-C869-4464-8F74-340BBC8A2457"/>
         </identifier>
         <groupIdentifier>
           <value value="eb002df0-c869-4464-8f74-340bbc8a2457"/>
@@ -5446,18 +5018,18 @@
         <status value="completed"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/BB42B59E-F6E1-4016-8448-0867F26A1620-M"/>
+          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2011-01-16T10:06:08.953+00:00"/>
+        <authoredOn value="2011-01-16T10:06:09.733+00:00"/>
         <recorder>
           <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="This is a pharmacy information note for Cilazapril "/>
+          <text value="This is a pharmacy information note for Cilazapril"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -5468,10 +5040,8 @@
             <end value="2019-10-28"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="28"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -5480,6 +5050,9 @@
             <code value="d"/>
           </expectedSupplyDuration>
         </dispenseRequest>
+        <priorPrescription>
+          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
+        </priorPrescription>
       </MedicationRequest>
     </resource>
   </entry>
@@ -5500,19 +5073,19 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="f14dcb62-c936-4fb9-be4b-9ae9326a9944"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="F14DCB62-C936-4FB9-BE4B-9AE9326A9944"/>
         </identifier>
         <basedOn>
-          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457"/>
+          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
         </basedOn>
         <groupIdentifier>
-          <value value="eb002df0-c869-4464-8f74-340bbc8a2457"/>
+          <value value="eb002df0-c869-4464-8f74-340bbc8a2457-fi-1"/>
         </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/BB42B59E-F6E1-4016-8448-0867F26A1620-M"/>
+          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -5523,7 +5096,7 @@
         </recorder>
         <note>
           <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is a pharmacy information note for Cilazapril "/>
+          <text value="Issue number 1 This is a pharmacy information note for Cilazapril"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -5534,10 +5107,8 @@
             <end value="2011-02-13"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="28"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -5552,7 +5123,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="BB42B59E-F6E1-4016-8448-0867F26A1620-M"/>
+        <id value="0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -5588,16 +5159,19 @@
             </coding>
           </valueCodeableConcept>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2011-10-02T00:00:00+01:00"/>
+        </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="d9f9df68-6b1e-95a9-1824-7c813860ab00"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="D9F9DF68-6B1E-95A9-1824-7C813860AB00"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/47599D21-788E-4F4A-8DA8-9DBE1B40A2BF"/>
         </basedOn>
         <status value="stopped"/>
         <medicationReference>
-          <reference value="Medication/22E7195D-2C39-4B2A-B565-7ACF04753466-M"/>
+          <reference value="Medication/923CE5C9-CA49-40B8-A68A-FD55C576AF8A"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2011-10-02"/>
@@ -5641,8 +5215,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="47599d21-788e-4f4a-8da8-9dbe1b40a2bf"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="47599D21-788E-4F4A-8DA8-9DBE1B40A2BF"/>
         </identifier>
         <groupIdentifier>
           <value value="47599d21-788e-4f4a-8da8-9dbe1b40a2bf"/>
@@ -5650,7 +5224,7 @@
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/22E7195D-2C39-4B2A-B565-7ACF04753466-M"/>
+          <reference value="Medication/923CE5C9-CA49-40B8-A68A-FD55C576AF8A"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -5668,10 +5242,8 @@
             <end value="2011-10-02"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
             <value value="14"/>
+            <unit value="capsule"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="14"/>
@@ -5690,16 +5262,6 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
         </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
-          <extension url="statusReason">
-            <valueCodeableConcept>
-              <text value="Change to Medication Treatment Regime"/>
-            </valueCodeableConcept>
-          </extension>
-          <extension url="statusChangeDate">
-            <valueDateTime value="2011-10-02T12:08:19.107+01:00"/>
-          </extension>
-        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
           <valueCodeableConcept>
             <coding>
@@ -5710,8 +5272,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="9155dfd6-182a-48ed-9a62-97a92955020a"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9155DFD6-182A-48ED-9A62-97A92955020A"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/47599D21-788E-4F4A-8DA8-9DBE1B40A2BF"/>
@@ -5722,7 +5284,7 @@
         <status value="stopped"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/22E7195D-2C39-4B2A-B565-7ACF04753466-M"/>
+          <reference value="Medication/923CE5C9-CA49-40B8-A68A-FD55C576AF8A"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -5731,6 +5293,9 @@
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
+        <note>
+          <text value="Cancellation Reason: Change to Medication Treatment Regime, Cancellation Date: 2010-10-01"/>
+        </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
         </dosageInstruction>
@@ -5740,10 +5305,8 @@
             <end value="2011-10-02"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="capsule"/>
-            </extension>
             <value value="14"/>
+            <unit value="capsule"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="14"/>
@@ -5758,7 +5321,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="22E7195D-2C39-4B2A-B565-7ACF04753466-M"/>
+        <id value="923CE5C9-CA49-40B8-A68A-FD55C576AF8A"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -5773,413 +5336,6 @@
             <system value="http://snomed.info/sct"/>
             <code value="321949006"/>
             <display value="Fluoxetine 20mg capsules"/>
-          </coding>
-        </code>
-      </Medication>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FD-1-MS"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
-              <code value="prescribed-at-gp-practice"/>
-              <display value="Prescribed at GP practice"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2012-11-15T14:54:00+00:00"/>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="4cc4b004-ecf8-397a-b0ff-dd551568541e"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FD-1"/>
-        </basedOn>
-        <status value="completed"/>
-        <medicationReference>
-          <reference value="Medication/DB5B5481-6339-4F79-8CE1-4E621E24F36E-M"/>
-        </medicationReference>
-        <effectivePeriod>
-          <start value="2012-11-15"/>
-          <end value="2012-12-13"/>
-        </effectivePeriod>
-        <dateAsserted value="2012-11-15T14:56:09.187+00:00"/>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <taken value="unk"/>
-        <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is the generic acute for 22047 "/>
-        </note>
-        <dosage>
-          <text value="One To Be Taken Every Four To Six Hours When Required"/>
-        </dosage>
-      </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FD-1"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c-fd-1"/>
-        </identifier>
-        <groupIdentifier>
-          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c-fd-1"/>
-        </groupIdentifier>
-        <status value="completed"/>
-        <intent value="plan"/>
-        <medicationReference>
-          <reference value="Medication/DB5B5481-6339-4F79-8CE1-4E621E24F36E-M"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2012-11-15T14:56:09.187+00:00"/>
-        <recorder>
-          <reference value="Practitioner/2"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="One To Be Taken Every Four To Six Hours When Required"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-12-13"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
-            <value value="168"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="5CF3E022-961E-4D8A-B0BA-5705B9EBD55A"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="5cf3e022-961e-4d8a-b0ba-5705b9ebd55a"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FD-1"/>
-        </basedOn>
-        <groupIdentifier>
-          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c-fd-1"/>
-        </groupIdentifier>
-        <status value="completed"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/DB5B5481-6339-4F79-8CE1-4E621E24F36E-M"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2012-11-15T14:54:00+00:00"/>
-        <recorder>
-          <reference value="Practitioner/2"/>
-        </recorder>
-        <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is the generic acute for 22047 "/>
-        </note>
-        <dosageInstruction>
-          <text value="One To Be Taken Every Four To Six Hours When Required"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-12-13"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
-            <value value="168"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <Medication xmlns="http://hl7.org/fhir">
-        <id value="DB5B5481-6339-4F79-8CE1-4E621E24F36E-M"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
-        </meta>
-        <code>
-          <coding>
-            <system value="https://fhir.hl7.org.uk/Id/emis-drug-codes"/>
-            <code value="ASE/24522EMIS"/>
-            <display value="Aspirin 300mg gastro-resistant tablets"/>
-            <userSelected value="true"/>
-          </coding>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="322225002"/>
-            <display value="Aspirin 300mg gastro-resistant tablets"/>
-          </coding>
-        </code>
-      </Medication>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="1458EF9E-D0EA-4745-BB46-C38668E0EC0C-MS"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
-              <code value="prescribed-at-gp-practice"/>
-              <display value="Prescribed at GP practice"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2012-11-15T14:54:00+00:00"/>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2d42d834-1fea-7240-5d87-95bab3af470f"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C"/>
-        </basedOn>
-        <status value="stopped"/>
-        <medicationReference>
-          <reference value="Medication/F02F10C5-D001-422C-A723-0A3BD81B0CB2-M"/>
-        </medicationReference>
-        <effectivePeriod>
-          <start value="2012-11-15"/>
-          <end value="2012-11-15"/>
-        </effectivePeriod>
-        <dateAsserted value="2012-11-15T14:55:59.093+00:00"/>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <taken value="unk"/>
-        <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 THis is the acute issue post generic -&amp;amp;gt; proprietary switch for 22047 "/>
-        </note>
-        <dosage>
-          <text value="One To Be Taken Every Four To Six Hours When Required"/>
-        </dosage>
-      </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="1458EF9E-D0EA-4745-BB46-C38668E0EC0C"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
-          <extension url="statusReason">
-            <valueCodeableConcept>
-              <text value="End course for acute post G -&amp;amp;gt; T switch for 22047"/>
-            </valueCodeableConcept>
-          </extension>
-          <extension url="statusChangeDate">
-            <valueDateTime value="2012-11-15T15:02:50.72+00:00"/>
-          </extension>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c"/>
-        </identifier>
-        <groupIdentifier>
-          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c"/>
-        </groupIdentifier>
-        <status value="stopped"/>
-        <intent value="plan"/>
-        <medicationReference>
-          <reference value="Medication/F02F10C5-D001-422C-A723-0A3BD81B0CB2-M"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2012-11-15T14:55:59.093+00:00"/>
-        <recorder>
-          <reference value="Practitioner/2"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="One To Be Taken Every Four To Six Hours When Required"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-11-15"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
-            <value value="168"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-        <priorPrescription>
-          <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FD-1"/>
-        </priorPrescription>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="44638ED8-35BC-4715-BC17-D7E59E92554D"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="44638ed8-35bc-4715-bc17-d7e59e92554d"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C"/>
-        </basedOn>
-        <groupIdentifier>
-          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c"/>
-        </groupIdentifier>
-        <status value="completed"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/F02F10C5-D001-422C-A723-0A3BD81B0CB2-M"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2012-11-15T14:59:52.57+00:00"/>
-        <recorder>
-          <reference value="Practitioner/2"/>
-        </recorder>
-        <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 THis is the acute issue post generic -&amp;amp;gt; proprietary switch for 22047 "/>
-        </note>
-        <dosageInstruction>
-          <text value="One To Be Taken Every Four To Six Hours When Required"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-12-13"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
-            <value value="168"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <Medication xmlns="http://hl7.org/fhir">
-        <id value="F02F10C5-D001-422C-A723-0A3BD81B0CB2-M"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
-        </meta>
-        <code>
-          <coding>
-            <system value="https://fhir.hl7.org.uk/Id/emis-drug-codes"/>
-            <code value="NUTA2039"/>
-            <display value="Nu-Seals 300 gastro-resistant tablets (Alliance Pharmaceuticals Ltd)"/>
-            <userSelected value="true"/>
-          </coding>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="183311000001101"/>
-            <display value="Nu-Seals 300 gastro-resistant tablets (Alliance Pharmaceuticals Ltd)"/>
           </coding>
         </code>
       </Medication>
@@ -6205,15 +5361,15 @@
           <valueDateTime value="2011-03-24T00:00:00+00:00"/>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="ccb7338a-7b51-107a-0a41-9e3eb7e57825"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="CCB7338A-7B51-107A-0A41-9E3EB7E57825"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/C3DE337C-18BE-4379-9EE8-38683327B53A"/>
         </basedOn>
         <status value="stopped"/>
         <medicationReference>
-          <reference value="Medication/261B4DA2-C62D-41A9-A254-341E45A9A5C9-M"/>
+          <reference value="Medication/DDF08CFF-20F6-4B21-8FE0-D7AF8C1129AC"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2011-03-24"/>
@@ -6247,8 +5403,17 @@
                 <userSelected value="true"/>
               </coding>
               <coding>
+                <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+                  <extension url="descriptionId">
+                    <valueId value="1030121000006113"/>
+                  </extension>
+                  <extension url="descriptionDisplay">
+                    <valueString value="Adverse reaction to Prednisolone"/>
+                  </extension>
+                </extension>
                 <system value="http://snomed.info/sct"/>
                 <code value="1030121000006109"/>
+                <display value="Adverse reaction to Prednisolone"/>
               </coding>
               <text value="Adverse reaction to Prednisolone (Fat, John said)"/>
             </valueCodeableConcept>
@@ -6267,8 +5432,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="c3de337c-18be-4379-9ee8-38683327b53a"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="C3DE337C-18BE-4379-9EE8-38683327B53A"/>
         </identifier>
         <groupIdentifier>
           <value value="c3de337c-18be-4379-9ee8-38683327b53a"/>
@@ -6276,7 +5441,7 @@
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/261B4DA2-C62D-41A9-A254-341E45A9A5C9-M"/>
+          <reference value="Medication/DDF08CFF-20F6-4B21-8FE0-D7AF8C1129AC"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -6294,10 +5459,8 @@
             <end value="2011-08-10"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="30"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="30"/>
@@ -6326,8 +5489,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="dae87b52-38ed-42bd-b081-34e8ba634194"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="DAE87B52-38ED-42BD-B081-34E8BA634194"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/C3DE337C-18BE-4379-9EE8-38683327B53A"/>
@@ -6338,12 +5501,12 @@
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/261B4DA2-C62D-41A9-A254-341E45A9A5C9-M"/>
+          <reference value="Medication/DDF08CFF-20F6-4B21-8FE0-D7AF8C1129AC"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2011-03-24T15:39:00+00:00"/>
+        <authoredOn value="2011-03-24T15:59:29.41+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -6356,10 +5519,8 @@
             <end value="2011-04-23"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="tablet"/>
-            </extension>
             <value value="30"/>
+            <unit value="tablet"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="30"/>
@@ -6374,7 +5535,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="261B4DA2-C62D-41A9-A254-341E45A9A5C9-M"/>
+        <id value="DDF08CFF-20F6-4B21-8FE0-D7AF8C1129AC"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -6414,15 +5575,15 @@
           <valueDateTime value="2011-01-15T00:00:00+00:00"/>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="bf47c921-12aa-3235-e7e2-4d3f833e5aa3"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="BF47C921-12AA-3235-E7E2-4D3F833E5AA3"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/51F22039-1FD7-44B1-B8EF-54994AE81706"/>
         </basedOn>
         <status value="active"/>
         <medicationReference>
-          <reference value="Medication/B5BCF3B2-48D9-4111-A693-1378C664915A-M"/>
+          <reference value="Medication/E14FC522-A409-491A-8A37-F8648A6D9EFB"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2011-01-15"/>
@@ -6447,10 +5608,10 @@
         </meta>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
           <extension url="numberOfRepeatPrescriptionsAllowed">
-            <valuePositiveInt value="12"/>
+            <valueUnsignedInt value="12"/>
           </extension>
           <extension url="numberOfRepeatPrescriptionsIssued">
-            <valuePositiveInt value="1"/>
+            <valueUnsignedInt value="1"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -6463,8 +5624,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="51f22039-1fd7-44b1-b8ef-54994ae81706"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="51F22039-1FD7-44B1-B8EF-54994AE81706"/>
         </identifier>
         <groupIdentifier>
           <value value="51f22039-1fd7-44b1-b8ef-54994ae81706"/>
@@ -6472,7 +5633,7 @@
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/B5BCF3B2-48D9-4111-A693-1378C664915A-M"/>
+          <reference value="Medication/E14FC522-A409-491A-8A37-F8648A6D9EFB"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -6489,10 +5650,8 @@
             <start value="2011-01-15"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="device"/>
-            </extension>
             <value value="100"/>
+            <unit value="device"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -6521,8 +5680,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="2488eaab-4c1a-477c-a34e-5c38f636952e"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2488EAAB-4C1A-477C-A34E-5C38F636952E"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/51F22039-1FD7-44B1-B8EF-54994AE81706"/>
@@ -6533,7 +5692,7 @@
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/B5BCF3B2-48D9-4111-A693-1378C664915A-M"/>
+          <reference value="Medication/E14FC522-A409-491A-8A37-F8648A6D9EFB"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -6551,10 +5710,8 @@
             <end value="2011-02-12"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="device"/>
-            </extension>
             <value value="100"/>
+            <unit value="device"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -6569,7 +5726,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="B5BCF3B2-48D9-4111-A693-1378C664915A-M"/>
+        <id value="E14FC522-A409-491A-8A37-F8648A6D9EFB"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -6609,15 +5766,15 @@
           <valueDateTime value="2011-01-21T00:00:00+00:00"/>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="139a7606-4263-eba3-cd56-31bf97816eb2"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="139A7606-4263-EBA3-CD56-31BF97816EB2"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
         </basedOn>
         <status value="active"/>
         <medicationReference>
-          <reference value="Medication/924DD882-82CD-4036-8551-1275DE09C82D-M"/>
+          <reference value="Medication/17A4DFEE-213D-4565-BA41-C8CF648BC5FA"/>
         </medicationReference>
         <effectivePeriod>
           <start value="2011-01-19"/>
@@ -6642,10 +5799,10 @@
         </meta>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
           <extension url="numberOfRepeatPrescriptionsAllowed">
-            <valuePositiveInt value="3"/>
+            <valueUnsignedInt value="3"/>
           </extension>
           <extension url="numberOfRepeatPrescriptionsIssued">
-            <valuePositiveInt value="3"/>
+            <valueUnsignedInt value="3"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -6658,8 +5815,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="B6777C23-E245-4053-BE4C-45F5D0A27054"/>
         </identifier>
         <groupIdentifier>
           <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
@@ -6667,7 +5824,7 @@
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
-          <reference value="Medication/924DD882-82CD-4036-8551-1275DE09C82D-M"/>
+          <reference value="Medication/17A4DFEE-213D-4565-BA41-C8CF648BC5FA"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -6684,134 +5841,8 @@
             <start value="2011-01-19"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="gram"/>
-            </extension>
             <value value="40"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="63E48882-8381-410A-BD0A-3DAAEA849FBB"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="repeat"/>
-              <display value="Repeat"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="63e48882-8381-410a-bd0a-3daaea849fbb"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
-        </basedOn>
-        <groupIdentifier>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
-        </groupIdentifier>
-        <status value="completed"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/924DD882-82CD-4036-8551-1275DE09C82D-M"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2011-01-21T09:35:21.617+00:00"/>
-        <recorder>
-          <reference value="Practitioner/2"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="Apply Each Day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2011-01-21"/>
-            <end value="2011-02-18"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="gram"/>
-            </extension>
-            <value value="40"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="A4EF54E4-E3A0-4DFB-876D-5396378506C6"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="repeat"/>
-              <display value="Repeat"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="a4ef54e4-e3a0-4dfb-876d-5396378506c6"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
-        </basedOn>
-        <groupIdentifier>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
-        </groupIdentifier>
-        <status value="completed"/>
-        <intent value="order"/>
-        <medicationReference>
-          <reference value="Medication/924DD882-82CD-4036-8551-1275DE09C82D-M"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2011-01-20T09:18:53.657+00:00"/>
-        <recorder>
-          <reference value="Practitioner/2"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="Apply Each Day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2011-01-20"/>
-            <end value="2011-02-17"/>
-          </validityPeriod>
-          <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="gram"/>
-            </extension>
-            <value value="40"/>
+            <unit value="gram"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -6840,8 +5871,8 @@
           </valueCodeableConcept>
         </extension>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="5fba0748-81a4-4d79-8edf-b558a5ea3dc8"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="5FBA0748-81A4-4D79-8EDF-B558A5EA3DC8"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
@@ -6852,7 +5883,7 @@
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
-          <reference value="Medication/924DD882-82CD-4036-8551-1275DE09C82D-M"/>
+          <reference value="Medication/17A4DFEE-213D-4565-BA41-C8CF648BC5FA"/>
         </medicationReference>
         <subject>
           <reference value="Patient/22"/>
@@ -6870,10 +5901,128 @@
             <end value="2011-02-16"/>
           </validityPeriod>
           <quantity>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
-              <valueString value="gram"/>
-            </extension>
             <value value="40"/>
+            <unit value="gram"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="28"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="A4EF54E4-E3A0-4DFB-876D-5396378506C6"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="repeat"/>
+              <display value="Repeat"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="A4EF54E4-E3A0-4DFB-876D-5396378506C6"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
+        </basedOn>
+        <groupIdentifier>
+          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="order"/>
+        <medicationReference>
+          <reference value="Medication/17A4DFEE-213D-4565-BA41-C8CF648BC5FA"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2011-01-20T09:18:53.657+00:00"/>
+        <recorder>
+          <reference value="Practitioner/2"/>
+        </recorder>
+        <dosageInstruction>
+          <text value="Apply Each Day"/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2011-01-20"/>
+            <end value="2011-02-17"/>
+          </validityPeriod>
+          <quantity>
+            <value value="40"/>
+            <unit value="gram"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="28"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="63E48882-8381-410A-BD0A-3DAAEA849FBB"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="repeat"/>
+              <display value="Repeat"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="63E48882-8381-410A-BD0A-3DAAEA849FBB"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
+        </basedOn>
+        <groupIdentifier>
+          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="order"/>
+        <medicationReference>
+          <reference value="Medication/17A4DFEE-213D-4565-BA41-C8CF648BC5FA"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2011-01-21T09:35:21.617+00:00"/>
+        <recorder>
+          <reference value="Practitioner/2"/>
+        </recorder>
+        <dosageInstruction>
+          <text value="Apply Each Day"/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2011-01-21"/>
+            <end value="2011-02-18"/>
+          </validityPeriod>
+          <quantity>
+            <value value="40"/>
+            <unit value="gram"/>
           </quantity>
           <expectedSupplyDuration>
             <value value="28"/>
@@ -6888,7 +6037,7 @@
   <entry>
     <resource>
       <Medication xmlns="http://hl7.org/fhir">
-        <id value="924DD882-82CD-4036-8551-1275DE09C82D-M"/>
+        <id value="17A4DFEE-213D-4565-BA41-C8CF648BC5FA"/>
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
         </meta>
@@ -6978,11 +6127,6 @@
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/1000000000000000_e0aff60000000000"/>
-          </item>
-        </entry>
-        <entry>
-          <item>
             <reference value="MedicationStatement/1000000000000000_61aff60000000000"/>
           </item>
         </entry>
@@ -6998,17 +6142,7 @@
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/1000000000000000_d7dff60000000000"/>
-          </item>
-        </entry>
-        <entry>
-          <item>
             <reference value="MedicationStatement/1000000000000000_34dff60000000000"/>
-          </item>
-        </entry>
-        <entry>
-          <item>
-            <reference value="MedicationStatement/1000000000000000_a1eff60000000000"/>
           </item>
         </entry>
         <entry>
@@ -7018,22 +6152,22 @@
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/2E61869F-D0DB-4532-B694-DB6511DB7A7D"/>
+            <reference value="MedicationStatement/2E61869F-D0DB-4532-B694-DB6511DB7A7D-MS"/>
           </item>
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/2E61869F-D0DB-4532-B694-DB6511DB7A7D-FD-1"/>
+            <reference value="MedicationStatement/2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1-MS"/>
           </item>
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/2E352BA6-8F87-479B-BC80-41494027F2E6"/>
+            <reference value="MedicationStatement/2E352BA6-8F87-479B-BC80-41494027F2E6-MS"/>
           </item>
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
+            <reference value="MedicationStatement/60880139-9E79-4F1E-959A-545B4A7F3BC7-MS"/>
           </item>
         </entry>
         <entry>
@@ -7048,17 +6182,12 @@
         </entry>
         <entry>
           <item>
+            <reference value="MedicationStatement/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1-MS"/>
+          </item>
+        </entry>
+        <entry>
+          <item>
             <reference value="MedicationStatement/47599D21-788E-4F4A-8DA8-9DBE1B40A2BF-MS"/>
-          </item>
-        </entry>
-        <entry>
-          <item>
-            <reference value="MedicationStatement/1458EF9E-D0EA-4745-BB46-C38668E0EC0C-MS"/>
-          </item>
-        </entry>
-        <entry>
-          <item>
-            <reference value="MedicationStatement/1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FD-1-MS"/>
           </item>
         </entry>
         <entry>

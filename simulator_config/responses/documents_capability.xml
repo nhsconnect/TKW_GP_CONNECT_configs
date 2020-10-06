@@ -76,19 +76,7 @@
             <type value="date"></type>
          </searchParam>
          <searchParam>
-            <name value="facility"></name>
-            <type value="token"></type>
-         </searchParam>
-         <searchParam>
             <name value="author"></name>
-            <type value="token"></type>
-         </searchParam>
-         <searchParam>
-            <name value="type"></name>
-            <type value="token"></type>
-         </searchParam>
-         <searchParam>
-            <name value="custodian"></name>
             <type value="token"></type>
          </searchParam>
          <searchParam>
