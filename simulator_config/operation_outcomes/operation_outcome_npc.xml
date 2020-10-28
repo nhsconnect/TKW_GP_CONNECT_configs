@@ -12,6 +12,6 @@
                 <display value="No Patient Consent" />
             </coding>
         </details>
-		<diagnostics value="__ERRORTEXT__" />
+		<diagnostics value="No patient consent given" />
     </issue>
 </OperationOutcome>

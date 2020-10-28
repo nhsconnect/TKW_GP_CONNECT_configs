@@ -6,10 +6,11 @@ jwtnotb64,BAD_REQUEST,JWT is not base 64 URL encoded
 iis,INVALID_PARAMETER,Invalid identifier system url
 ivnnn,INVALID_NHS_NUMBER,NHS Number is not valid
 ivp,INVALID_PARAMETER,__ERRORTEXT_IVP__
-ivr,INVALID_RESOURCE,__ERRORTEXT__
-npc,NO_PATIENT_CONSENT,__ERRORTEXT__
+ivr,INVALID_RESOURCE,No Parameters element supplied
+npc,NO_PATIENT_CONSENT,No patient consent given
 pnf,PATIENT_NOT_FOUND,No patient details found for patient Identifier: __PATIENT_ID__
 pnf_lid,PATIENT_NOT_FOUND,No patient details found for patient ID: __PATIENT_LOGICAL_ID__
+ivcp,BAD_REQUEST,Invalid context path
 #
 am,BAD_REQUEST,Authorization missing
 ndc,BAD_REQUEST,JWT Payload reason for request is not Direct Care

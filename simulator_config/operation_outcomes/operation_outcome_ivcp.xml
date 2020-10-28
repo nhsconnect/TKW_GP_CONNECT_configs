@@ -8,10 +8,10 @@
         <details>
             <coding>
                 <system value="https://fhir.nhs.uk/ValueSet/gpconnect-error-or-warning-code-1" />
-                <code value="INVALID_RESOURCE" />
-                <display value="Invalid Resource" />
+                <code value="BAD_REQUEST" />
+                <display value="Bad Request" />
             </coding>
         </details>
-		<diagnostics value="No Parameters element supplied" />
+		<diagnostics value="Invalid context path" />
     </issue>
 </OperationOutcome>

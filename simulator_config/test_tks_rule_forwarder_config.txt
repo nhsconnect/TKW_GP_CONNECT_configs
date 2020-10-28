@@ -61,7 +61,8 @@ __DIARY_ENTRY_SEARCH_DATE__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@val
 __DOCREF_ID__ Literal 27863182736
 __BINARY_URL__ Property TKW_ROOT/config/GP_CONNECT/internal/gpconnect-demonstrator-api.properties TKW_ROOT/config/GP_CONNECT/internal/gpconnect-demonstrator-api.environment.properties TKW_ROOT/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
 
-__BAD_DOC_SEARCH_PARM__ reg_exp context_path "^[^?]+\?((_include|_revinclude%3Arecurse|author|facility|created|type|description|(.*))=[^&]+(&|$))+" "$1"
+# see #6 temporarily removed type and facility search criteria
+__BAD_DOC_SEARCH_PARM__ reg_exp context_path "^[^?]+\?((((author|created|description)=[^&$]+)|_include=DocumentReference%3A(subject%3APatient|custodian%3AOrganization|author%3A(Organization|Practitioner))|_revinclude%3Arecurse=PractitionerRole%3Apractitioner|([^&$]+))(&|$))+" "$7"
 
 END SUBSTITUTIONS
 
@@ -112,7 +113,8 @@ GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-e
 
 # search document references
 
-DOCUMENT_SEARCH_PARAMETERS_VALID context_path matches ^[^?]+\?((_include|_revinclude%3Arecurse|author|created|description)=[^&]+(&|$))+
+# see #6 temporarily removed type and facility search criteria
+DOCUMENT_SEARCH_PARAMETERS_VALID context_path matches ^[^?]+\?((((created|author|description)=[^&$]+)|_include=DocumentReference%3A(subject%3APatient|custodian%3AOrganization|author%3A(Organization|Practitioner))|_revinclude%3Arecurse=PractitionerRole%3Apractitioner)(&|$))+
 
 SEARCH_INCLUDES_MANDATORY_PATIENT context_path matches ^.*_include=DocumentReference%3Asubject%3APatient.*$
 SEARCH_INCLUDES_MANDATORY_CUSTODIAN context_path matches ^.*_include=DocumentReference%3Acustodian%3AOrganization.*$
@@ -181,7 +183,7 @@ if NO_NHS_NO_SYSTEM_ID or EMPTY_NHS_NO_SYSTEM_ID then operation_outcome_422_inva
 if JWT_PAYLOAD_PATIENT_MISMATCH then operation_outcome_400_nnn_mismatch
 if not JWT_PAYLOAD_REQUESTED_SCOPE_PATIENT then operation_outcome_400_nopatreadscope
 #
-if not GETSTRUCTUREDRECORD_CP then operation_outcome_404
+if not GETSTRUCTUREDRECORD_CP then operation_outcome_422_ivcp
 # needs to be check before any further references to the NNN
 if PATIENT_COUNT_INVALID then operation_outcome_400_multiple_nnn
 
