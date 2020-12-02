@@ -26,7 +26,7 @@ __TIMESTAMP__	ISO8601datetime
 __JOBID__	UUID
 __ERRORID__	UUID
 __ERRORCODE__ Literal INVALID_PARAMETER
-__ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination for ',if (//fhir:parameter/fhir:name[@value='includeConsultations']) then 'Consultations ' else 'Problems ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (//fhir:parameter/fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or @value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')]/concat(../../fhir:name/@value,'.',@value),','))
+__ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination for ',if (//fhir:parameter/fhir:name[@value='includeConsultations']) then 'Consultations ' else 'Problems ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (//fhir:parameter/fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or @value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeStatus')]/concat(../../fhir:name/@value,'.',@value),','))
 __SERVER__ Literal NHS Digital TKW Server
 __PATIENT_1__ Literal 9690937278
 __PATIENT_2__ Literal 9690937286
@@ -143,8 +143,8 @@ CREATED_RANGE_VALID Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.Fhi
 consultationsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations'])>0 true
 problemsRequested xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeProblems'])>0 true
 
-invalidPartParametersForConsultations xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','filterSignificance','filterStatus','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
-invalidPartParametersForProblems xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeDissentConsent')])>0 true
+invalidPartParametersForConsultations xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','filterSignificance','filterStatus','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeStatus')])>0 true
+invalidPartParametersForProblems xpathequals count(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod','referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeStatus')])>0 true
 
 # diary entries
 multiple_diary_search_date_parameters  xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate'])>1 true
