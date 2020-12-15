@@ -35,7 +35,7 @@
 	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2"></reference>
    </profile>
    <profile>
-	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.2"></reference>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3"></reference>
    </profile>
    <profile>
 	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1/_history/1.3"></reference>
