@@ -185,7 +185,7 @@ __DIARY_ENTRIES_WARNINGS__
                 <title value="Problems - linked problems not relating to the primary query"/>
                 <code>
                     <coding>
-                        <system value="https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1"/>
+                        <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1"/>
                         <code value="problems-linked-problems-not-relating-to-the-primary-query"/>
                         <display value="Problems - linked problems not relating to the primary query"/>
                     </coding>
