@@ -3,6 +3,7 @@
       <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"></profile>
    </meta>
    <type value="searchset"></type>
+   <id value="__SSP_TRACEID__"></id>
    __PATIENT_3_HEAD__
    __ORG_HEAD__
 </Bundle>

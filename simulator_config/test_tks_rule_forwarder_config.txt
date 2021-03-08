@@ -42,6 +42,7 @@ __PATIENT_3_LOGICAL_ID__ Literal 3
 __PATIENT_4_LOGICAL_ID__ Literal 4
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
 __SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
+__SSP_TRACEID__ reg_exp http_header Ssp-TraceID "^(.*)$" "$1"
 SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
