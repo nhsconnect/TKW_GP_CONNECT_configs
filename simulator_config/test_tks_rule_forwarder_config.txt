@@ -11,6 +11,7 @@ patient4_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/di
 
 patient2_document_reference_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
 document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
+document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
@@ -101,16 +102,21 @@ QUERY_PATIENT_23 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 QUERY_PATIENT_24 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937332
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
+GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
+GET_PATIENT_4 context_path matches ^.*/Patient/4/.*$
+
 # only those patients who should have a record returned
 # checks for structured record post patients 2 3 4 for diary entries - not used
 DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value ^(9690937286|9690937294|9690937308)$
 
 DIARY_ENTRY_SEARCH_IN_PAST content xslt TKW_ROOT/config/GP_CONNECT/simulator_config/past_diary_entry_search_time.xslt TRUE
 
-DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3)/.*$
+DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4)/.*$
 
 # GetBinary
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
+# > 5MB 
+GET_PATIENT_4_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45511$
 
 # search document references
 
@@ -245,7 +251,13 @@ if not rev1_2 and CREATED_2 and not CREATED_RANGE_VALID then operation_outcome_4
 
 if not rev1_2 and not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
 
-if not rev1_2 and GET_PATIENT_2 then patient2_document_reference_response else document_reference_response_no_records
+# return a docref 
+if not rev1_2 and GET_PATIENT_2 then patient2_document_reference_response
+# return no docref  
+if not rev1_2 and GET_PATIENT_3 then document_reference_response_no_records
+# return a docref for doc > 5MB
+if not rev1_2 and GET_PATIENT_4 then document_reference_response_gt_5MB
+# patient 5 upwards return patient not found
 
 END RULE
 
