@@ -255,9 +255,12 @@ if not rev1_2 and not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_res
 if not rev1_2 and GET_PATIENT_2 then patient2_document_reference_response
 # return no docref  
 if not rev1_2 and GET_PATIENT_3 then document_reference_response_no_records
+
+# patient 4 backed out - see issue #10
 # return a docref for doc > 5MB
-if not rev1_2 and GET_PATIENT_4 then document_reference_response_gt_5MB
-# patient 5 upwards return patient not found
+#if not rev1_2 and GET_PATIENT_4 then document_reference_response_gt_5MB
+
+# patient 4 upwards return patient not found
 
 END RULE
 
