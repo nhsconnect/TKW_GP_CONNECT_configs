@@ -111,7 +111,7 @@ DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/
 
 DIARY_ENTRY_SEARCH_IN_PAST content xslt TKW_ROOT/config/GP_CONNECT/simulator_config/past_diary_entry_search_time.xslt TRUE
 
-DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4)/.*$
+DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3)/.*$
 
 # GetBinary
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
