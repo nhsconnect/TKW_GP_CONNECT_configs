@@ -17,7 +17,8 @@ case $1 in
 		;;
 	1.2-opentest)
 		cd $ROOT/gpconnect-demonstrator-release-1.2
-		docker-compose -f gpconnect-opentest.yml up
+		#docker-compose -f gpconnect-opentest.yml up
+		./start_gpconnect.sh
 		;;
 	1.3|1.5)
 		cd $ROOT/gpconnect-demonstrator-develop

@@ -3,6 +3,8 @@
 # default C -clear
 # listenport 4848
 #
+# NB This clones and edits tkw-x.properties it never runs tkw-x-forwarding.properties
+#
 JAVA_OPTIONS=-Dtks.skipsignlogs=Y
 #
 # Test tkw properties injection
