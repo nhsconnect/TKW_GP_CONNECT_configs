@@ -50,7 +50,7 @@ __SSP_TRACEID__ reg_exp http_header Ssp-TraceID "^(.*)$" "$1"
 
 # parameters here are external url prefix, sds extract file, device transform , endpoint transform
 # parameters  1 and 2 will need modifying on a site by site basis the final two should not need modification
-#__SDS_ADAPTER__ Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.SDSAdapterSubstitution context_path "https://localhost:4854 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sdsdump_opentest.xml TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_device.xsl TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_endpoint.xsl"
+__SDS_ADAPTER__ Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.SDSAdapterSubstitution context_path "https://localhost:4854 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sdsdump_opentest.xml TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_device.xsl TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_endpoint.xsl"
 SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
