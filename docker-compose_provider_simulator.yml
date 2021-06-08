@@ -1,0 +1,9 @@
+version: '2.0'
+services:
+    tkw_gpconnect_simulator:
+        ports:
+            - '4854:4854'
+        volumes:
+            - '${TKWROOT}/config/GP_CONNECT:/home/service/data'
+            - '${TKWROOT}/config/GP_CONNECT/internal:/home/service/TKW/config/GP_CONNECT/internal'
+        image: 'nhsdigitalmait/tkw_gpconnect_simulator:1.5.1'

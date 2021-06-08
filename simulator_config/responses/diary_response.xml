@@ -170,7 +170,7 @@ __DIARY_ENTRIES_WARNINGS__
             <onsetDateTime value="2019-03-28T10:30:00"></onsetDateTime>
             <assertedDate value="2018-09-28T10:30:00"></assertedDate>
             <asserter>
-                <reference value="Practitioner/1"/>
+                <reference value="Practitioner/__PRACTITIONER_ID__"/>
             </asserter>
          </Condition>
       </resource>

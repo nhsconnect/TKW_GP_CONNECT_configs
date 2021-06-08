@@ -1,0 +1,11 @@
+# Ignore everything
+**
+
+# With these exceptions:
+!/simulator_config/**
+!/validator_config/**
+!/tkw-x-forwarding.properties
+!/set-all-configurations.sh
+!/runtkwfhirvalidator.sh
+!/tkwoutputstructure.tar
+!/version_string.txt
