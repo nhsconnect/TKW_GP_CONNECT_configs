@@ -4,6 +4,7 @@
 # With these exceptions:
 !/simulator_config/**
 !/validator_config/**
+!/certs/**
 !/tkw-x-forwarding.properties
 !/set-all-configurations.sh
 !/runtkwfhirvalidator.sh

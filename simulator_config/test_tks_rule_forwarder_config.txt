@@ -15,6 +15,9 @@ document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/r
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
+documents_metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_5_1.xml "200 OK"
+structured_metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/structured_capability_1_5_1.xml "200 OK"
+metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/capability_1_5_1.xml "200 OK"
 
 patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
 patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
@@ -22,6 +25,8 @@ patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Co
 
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
+
+full_record TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -79,11 +84,11 @@ END SUBSTITUTIONS
 BEGIN EXPRESSIONS
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 
-# 1.2
-#rev1_2	Always
+# 1.5.1
+rev_1_5_1	Always
 
-# 1.5
-rev1_2	Never
+# 1.5.0
+#rev_1_5_1	Never
 
 passthrough	Always
 dontpassthrough	Never
@@ -169,6 +174,12 @@ search_diary_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:param
 DEVICE context_path matches ^.*/Device\\?.*$
 ENDPOINT context_path matches ^.*/Endpoint\\?.*$
 
+# 1.5.1
+MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
+
+FULL_RECORD_REQUESTED xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']
+FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
+
 END EXPRESSIONS
 
 #
@@ -205,10 +216,11 @@ if not GETSTRUCTUREDRECORD_CP then operation_outcome_422_ivcp
 # needs to be check before any further references to the NNN
 if PATIENT_COUNT_INVALID then operation_outcome_400_multiple_nnn
 
-if not rev1_2 and consultationsRequested and invalidPartParametersForConsultations then  operation_outcome_422_ivp
-if not rev1_2 and problemsRequested and invalidPartParametersForProblems then  operation_outcome_422_ivp
 
-if not rev1_2 and multiple_clinical_areas and diary_entries then operation_outcome_400_multiple_clinical_areas
+if consultationsRequested and invalidPartParametersForConsultations then  operation_outcome_422_ivp
+if problemsRequested and invalidPartParametersForProblems then  operation_outcome_422_ivp
+
+if multiple_clinical_areas and diary_entries then operation_outcome_400_multiple_clinical_areas
 
 # stub in some responses for medications and allergies rich data
 if QUERY_PATIENT_22 and single_clinical_area and meds_request then patient_rich_response_1
@@ -218,16 +230,20 @@ if QUERY_PATIENT_24 and single_clinical_area and allergies_request then patient_
 # start of diary entry specific stuff
 
 # 0..1 search dates of the form YYYY-MM-DD
-if not rev1_2 and multiple_diary_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
-if not rev1_2 and single_diary_search_date_parameter and not search_diary_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
-if not rev1_2 and single_diary_search_date_parameter and DIARY_ENTRY_SEARCH_IN_PAST then operation_outcome_422_diary_entries_search_date_in_past
+if multiple_diary_search_date_parameters then operation_outcome_422_diary_entries_multiple_search_dates
+if single_diary_search_date_parameter and not search_diary_date_parameter_well_formed then operation_outcome_422_diary_entries_invalid_search_date
+if single_diary_search_date_parameter and DIARY_ENTRY_SEARCH_IN_PAST then operation_outcome_422_diary_entries_search_date_in_past
 
 
-if not rev1_2 and QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
-if not rev1_2 and QUERY_PATIENT_3 and single_clinical_area and single_diary_entry then patient3_diary_response
-if not rev1_2 and QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4_diary_response
+if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
+if QUERY_PATIENT_3 and single_clinical_area and single_diary_entry then patient3_diary_response
+if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4_diary_response
 
-if not rev1_2 and single_clinical_area and single_diary_entry then patient_not_found_response
+if single_clinical_area and single_diary_entry then patient_not_found_response
+
+if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
+if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then operation_outcome_404
 END RULE
 
 #==================================================================================================
@@ -238,40 +254,57 @@ BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 
-if not rev1_2 and not DOCUMENT_SEARCH_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+if not DOCUMENT_SEARCH_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
 # includes checks
-if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_PATIENT then operation_outcome_422_document_search_missing_mandatory_patient
-if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_CUSTODIAN then operation_outcome_422_document_search_missing_mandatory_custodian
-if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG then operation_outcome_422_document_search_missing_mandatory_author_org
-if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC then operation_outcome_422_document_search_missing_mandatory_author_prac
-if not rev1_2 and not SEARCH_INCLUDES_MANDATORY_PRAC_ROLE then operation_outcome_422_document_search_missing_mandatory_prac_role
+if not SEARCH_INCLUDES_MANDATORY_PATIENT then operation_outcome_422_document_search_missing_mandatory_patient
+if not SEARCH_INCLUDES_MANDATORY_CUSTODIAN then operation_outcome_422_document_search_missing_mandatory_custodian
+if not SEARCH_INCLUDES_MANDATORY_AUTHOR_ORG then operation_outcome_422_document_search_missing_mandatory_author_org
+if not SEARCH_INCLUDES_MANDATORY_AUTHOR_PRAC then operation_outcome_422_document_search_missing_mandatory_author_prac
+if not SEARCH_INCLUDES_MANDATORY_PRAC_ROLE then operation_outcome_422_document_search_missing_mandatory_prac_role
 
 # search checks
-#if not rev1_2 and FACILITY_SEARCH and not FACILITY_SYSTEM_VALID then operation_outcome_422_document_search_facility_invalid_system
-if not rev1_2 and AUTHOR_SEARCH and not AUTHOR_SYSTEM_VALID then operation_outcome_422_document_search_author_invalid_system
+#if FACILITY_SEARCH and not FACILITY_SYSTEM_VALID then operation_outcome_422_document_search_facility_invalid_system
+if AUTHOR_SEARCH and not AUTHOR_SYSTEM_VALID then operation_outcome_422_document_search_author_invalid_system
 
 # created checks
-if not rev1_2 and CREATED_MORE_THAN_2 then operation_outcome_422_document_search_created_more_than_2
-if not rev1_2 and CREATED_2 and not CREATED_GE_VALID then operation_outcome_422_document_search_no_created_ge
-if not rev1_2 and CREATED_2 and not CREATED_LE_VALID then operation_outcome_422_document_search_no_created_le
-if not rev1_2 and CREATED and not ( CREATED_LE_VALID or CREATED_GE_VALID ) then operation_outcome_422_document_search_no_created_le_or_ge
+if CREATED_MORE_THAN_2 then operation_outcome_422_document_search_created_more_than_2
+if CREATED_2 and not CREATED_GE_VALID then operation_outcome_422_document_search_no_created_ge
+if CREATED_2 and not CREATED_LE_VALID then operation_outcome_422_document_search_no_created_le
+if CREATED and not ( CREATED_LE_VALID or CREATED_GE_VALID ) then operation_outcome_422_document_search_no_created_le_or_ge
 # invalid date range?
 
-if not rev1_2 and CREATED_2 and not CREATED_RANGE_VALID then operation_outcome_422_document_search_created_ge_after_le
+if CREATED_2 and not CREATED_RANGE_VALID then operation_outcome_422_document_search_created_ge_after_le
 
-if not rev1_2 and not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
+if not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
 
 # return a docref 
-if not rev1_2 and GET_PATIENT_2 then patient2_document_reference_response
+if GET_PATIENT_2 then patient2_document_reference_response
 # return no docref  
-if not rev1_2 and GET_PATIENT_3 then document_reference_response_no_records
+if GET_PATIENT_3 then document_reference_response_no_records
 
 # patient 4 backed out - see issue #10
 # return a docref for doc > 5MB
-#if not rev1_2 and GET_PATIENT_4 then document_reference_response_gt_5MB
+#if GET_PATIENT_4 then document_reference_response_gt_5MB
 
 # patient 4 upwards return patient not found
+
+END RULE
+
+#==================================================================================================
+# 1.5.1 Migrate structured record
+
+BEGIN RULE
+POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.migratestructuredrecord-1
+
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+
+if rev_1_5_1 and not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_parameters
+if rev_1_5_1 and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+
+# nb only supporting patient 2 migration
+if rev_1_5_1 and QUERY_PATIENT_2 then full_record
+if rev_1_5_1 and not QUERY_PATIENT_2 then operation_outcome_404
 
 END RULE
 
@@ -282,7 +315,7 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if not rev1_2 and GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
+if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
 END RULE
 
 #==================================================================================================
@@ -292,7 +325,39 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if not rev1_2 and passthrough then documents_metadata_response
+if rev_1_5_1 then documents_metadata_1_5_1_response else documents_metadata_response
+END RULE
+
+#==================================================================================================
+# Documents Interface - Migrate Binary
+#
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+# check CP ?
+if rev_1_5_1 and GET_PATIENT_2_DOCUMENT then patient2_document_response
+if rev_1_5_1 and not GET_PATIENT_2_DOCUMENT then binary_nrf
+END RULE
+
+#==================================================================================================
+# Structured Interface - Read Metadata
+#
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+if rev_1_5_1 then structured_metadata_1_5_1_response
+END RULE
+
+#==================================================================================================
+# Foundation Interface - Read Metadata
+#
+
+BEGIN RULE
+GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
+INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+if rev_1_5_1 then metadata_1_5_1_response
 END RULE
 
 #==================================================================================================

@@ -6,4 +6,10 @@ services:
         volumes:
             - '${TKWROOT}/config/GP_CONNECT:/home/service/data'
             - '${TKWROOT}/config/GP_CONNECT/internal:/home/service/TKW/config/GP_CONNECT/internal'
+        environment:
+            - trustStore=/home/service/TKW/config/GP_CONNECT/certs/orange_2022.jks
+            - trustStorePassword=password
+            - keyStore=/home/service/TKW/config/GP_CONNECT/certs/tls.jks
+            - keyStorePassword=password
+        network_mode : "host"
         image: 'nhsdigitalmait/tkw_gpconnect_simulator:1.5.1'
