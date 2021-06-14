@@ -8,8 +8,10 @@ services:
             - '${TKWROOT}/config/GP_CONNECT/internal:/home/service/TKW/config/GP_CONNECT/internal'
         environment:
             - trustStore=/home/service/TKW/config/GP_CONNECT/certs/orange_2022.jks
+            #- trustStore=/home/service/TKW/config/GP_CONNECT/certs/opentest.jks
             - trustStorePassword=password
             - keyStore=/home/service/TKW/config/GP_CONNECT/certs/tls.jks
+              #- keyStore=/home/service/TKW/config/GP_CONNECT/certs/vpn-client-1003.opentest.hscic.gov.uk.jks
             - keyStorePassword=password
         network_mode : "host"
         image: 'nhsdigitalmait/tkw_gpconnect_simulator:1.5.1'

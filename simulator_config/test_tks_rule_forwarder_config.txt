@@ -300,6 +300,7 @@ POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.migratestructuredrecord
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 
 if rev_1_5_1 and not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_parameters
+if rev_1_5_1 and not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
 if rev_1_5_1 and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
 # nb only supporting patient 2 migration

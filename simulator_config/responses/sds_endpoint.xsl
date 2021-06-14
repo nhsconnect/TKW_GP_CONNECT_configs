@@ -18,7 +18,7 @@
 	<!-- overcome the cache by making each request different-->
 	<xsl:function name="nhsd:getuuid">
 		<xsl:param name="s"/>
-		<xsl:value-of select="document(concat('http://127.0.0.1:8000/getuuid?',$s))"/>
+		<xsl:value-of select="document(concat('http://127.0.0.1:8001/getuuid?',$s))"/>
 	</xsl:function>
 
 	<!-- =======================================================================================================================  -->

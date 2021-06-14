@@ -13,7 +13,9 @@ pnf_lid,PATIENT_NOT_FOUND,No patient details found for patient ID: __PATIENT_LOG
 ivcp,BAD_REQUEST,Invalid context path
 #
 am,BAD_REQUEST,Authorization missing
-ndc,BAD_REQUEST,JWT Payload reason for request is not Direct Care
+ndc,BAD_REQUEST,JWT Payload reason for request is not directcare
+ndcormig,BAD_REQUEST,JWT Payload reason for request is not directcare or migration
+nmig,BAD_REQUEST,JWT Payload reason for request is not migration
 pi,BAD_REQUEST,JWT Payload incorrect
 nrd,BAD_REQUEST,JWT Payload no requesting device
 ird,BAD_REQUEST,JWT Payload invalid requesting device
