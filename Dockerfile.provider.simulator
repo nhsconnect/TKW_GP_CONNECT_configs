@@ -6,7 +6,7 @@ RUN mkdir /home/service/data/ && chown service:service /home/service/data/
 VOLUME /home/service/data
 VOLUME /home/service/fhir
 VOLUME /home/service/certs
-COPY . /home/service/TKW/config/GP_CONNECT
+COPY --chown=service:service . /home/service/TKW/config/GP_CONNECT
 WORKDIR /home/service/TKW/config/GP_CONNECT
 RUN mkdir /home/service/TKW/config/GP_CONNECT/simulator_saved_messages/
 RUN mkdir /home/service/TKW/config/GP_CONNECT/messages_for_validation/

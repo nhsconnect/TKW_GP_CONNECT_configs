@@ -8,5 +8,7 @@
 !/tkw-x-forwarding.properties
 !/set-all-configurations.sh
 !/runtkwfhirvalidator.sh
+!/wait-for-it.sh
 !/tkwoutputstructure.tar
 !/version_string.txt
+!/internal/**
