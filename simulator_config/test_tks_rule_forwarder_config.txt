@@ -352,14 +352,14 @@ if rev_1_5_1 then structured_metadata_1_5_1_response
 END RULE
 
 #==================================================================================================
-# Foundation Interface - Read Metadata
+# Foundation Interface - Read Metadata this still defers to 1.5.0 at this time
 #
 
-BEGIN RULE
-GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
-INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if rev_1_5_1 then metadata_1_5_1_response
-END RULE
+#BEGIN RULE
+#GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
+#INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+#if rev_1_5_1 then metadata_1_5_1_response
+#END RULE
 
 #==================================================================================================
 # FHIR SDS Adapter
@@ -368,8 +368,10 @@ END RULE
 BEGIN RULE
 GET
 # SDS adapter rules
-if DEVICE then device
-if ENDPOINT then endpoint
+#if DEVICE then device
+#if ENDPOINT then endpoint
+
+if dontpassthrough then do_process
 END RULE
 
 #==================================================================================================

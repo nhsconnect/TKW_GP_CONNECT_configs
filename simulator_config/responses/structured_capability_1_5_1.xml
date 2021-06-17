@@ -93,5 +93,11 @@
             <reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.16"/>
          </definition>
       </operation>
+      <operation>
+         <name value="gpc.migratestructuredrecord"/>
+         <definition>
+            <reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-MigrateStructuredRecord-Operation-1/_history/1.1"/>
+         </definition>
+      </operation>
    </rest>
 </CapabilityStatement>
