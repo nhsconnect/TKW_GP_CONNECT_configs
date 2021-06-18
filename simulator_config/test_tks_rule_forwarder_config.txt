@@ -241,10 +241,9 @@ if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
-# spec release notes impled that retrieve could take fullRecord as a parameter this turns out not to be true
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then patient_not_found_response
+if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
+if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then patient_not_found_response
 END RULE
 
 #==================================================================================================
