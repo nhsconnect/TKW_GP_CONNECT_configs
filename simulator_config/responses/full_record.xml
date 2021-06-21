@@ -11464,11 +11464,6 @@ __DIARY_ENTRIES_WARNINGS__
             <reference value="DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"/>
           </item>
         </entry>
-        <entry>
-          <item>
-            <reference value="DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e5"/>
-          </item>
-        </entry>
       </List>
     </resource>
   </entry>
@@ -11650,92 +11645,110 @@ __DIARY_ENTRIES_WARNINGS__
         <specimen>
           <reference value="Specimen/756a8361-79ce-4561-afcb-a91fe19df123"/>
         </specimen>
-        <related>
+	<related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/dacb177a-9501-4dcc-8b22-b941791ae0dc"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/32685afe-1d46-4d98-8279-39b9e96ee914"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/770b982d-be09-4744-a5d7-54e757947ffe"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/0a8aba3d-6b29-4dba-9c64-3a47516cc5eb"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/ddc43c3a-2863-4d6f-a926-162f5a4174b1"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/9825b7cf-de29-4c07-9b84-4af04dbf8233"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/e732e681-3a89-4433-a37b-3767dd19d809"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/2a604bea-1ef4-4cb1-97a0-f2a160f12679"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/704b6bb2-a1c0-429b-b901-c641e70345ec"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/53f4132c-0168-4327-8d69-560b13f5bb4e"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/c9e03e92-78b8-4e8e-9785-cbd9424e9380"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/9c61ad77-8c17-41aa-b795-f0fcb9f983d5"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/f67cb109-0890-4e47-9126-86da677c7008"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/1f2e71db-b9aa-4e4f-9a78-87f99fefc8bf"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/a23b563d-765a-4032-8dd3-c03178224f35"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/fedb7c2d-337c-435c-9169-612349783b5a"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/f9070943-7460-413a-a608-e15334b6e1d9"/>
           </target>
         </related>
         <related>
+	  <type value="has-member"/>
           <target>
             <reference value="Observation/66acb40a-e241-474a-92b5-c74f9aa6a854"/>
           </target>
@@ -12638,88 +12651,6 @@ __DIARY_ENTRIES_WARNINGS__
     </resource>
   </entry>
   <!-- part 2 -->
-  <entry>
-    <resource>
-      <ProcedureRequest xmlns="http://hl7.org/fhir">
-        <id value="d9df1431-22ac-462a-946a-f195f6c639b0"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"/>
-        </meta>
-        <identifier>
-          <system value="https://tools.ietf.org/html/rfc4122"/>
-          <value value="7e9bbd01-4e52-420d-b05b-48bc671d6709"/>
-        </identifier>
-        <status value="active"/>
-        <intent value="order"/>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="26604007"/>
-            <display value="FBC - Full blood count"/>
-          </coding>
-        </code>
-        <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
-          <display value="SKELLY, Horace"/>
-        </subject>
-        <requester>
-          <agent>
-            <reference value="Practitioner/__PRACTITIONER_ID__"/>
-            <display value="GILBERT"/>
-          </agent>
-        </requester>
-        <performer>
-          <reference value="Organization/7"/>
-          <display value="COXWOLD Surgery"/>
-        </performer>
-        <note>
-          <text value="FBC"/>
-        </note>
-      </ProcedureRequest>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <DiagnosticReport xmlns="http://hl7.org/fhir">
-        <id value="efae5859-28df-4e7d-be91-6df56d8215e5"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1"/>
-        </meta>
-        <identifier>
-          <system value="https://tools.ietf.org/html/rfc4122"/>
-          <value value="1b663fc5-9dec-49c0-90ed-18a7cfa5a6b3"/>
-        </identifier>
-        <basedOn>
-          <reference value="ProcedureRequest/d9df1431-22ac-462a-946a-f195f6c639b0"/>
-        </basedOn>
-        <status value="final"/>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="721981007"/>
-            <display value="Diagnostic studies report"/>
-          </coding>
-        </code>
-        <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
-          <display value="SKELLY, Horace"/>
-        </subject>
-        <issued value="2019-04-03T12:00:00+00:00"/>
-        <performer>
-          <actor>
-            <reference value="Organization/7"/>
-            <display value="COXWOLD Surgery"/>
-          </actor>
-        </performer>
-        <specimen>
-          <reference value="Specimen/756a8361-79ce-4561-afcb-a91fe19df124"/>
-        </specimen>
-        <result>
-          <reference value="Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"/>
-        </result>
-      </DiagnosticReport>
-    </resource>
-  </entry>
   <entry>
     <resource>
       <Specimen xmlns="http://hl7.org/fhir">

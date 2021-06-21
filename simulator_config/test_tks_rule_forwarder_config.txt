@@ -178,7 +178,8 @@ ENDPOINT context_path matches ^.*/Endpoint\\?.*$
 MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
 
 FULL_RECORD_REQUESTED xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']
-FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
+FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part) = 0 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
+MIGRATE_FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 
 END EXPRESSIONS
 
@@ -301,7 +302,7 @@ INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 
 if rev_1_5_1 and not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_parameters
 if rev_1_5_1 and not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
-if rev_1_5_1 and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+if rev_1_5_1 and not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
 # nb only supporting patient 2 migration
 if rev_1_5_1 and QUERY_PATIENT_2 then full_record
