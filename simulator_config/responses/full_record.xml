@@ -9963,6 +9963,10 @@ __DIARY_ENTRIES_WARNINGS__
             </coding>
           </valueCodeableConcept>
         </extension>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+          <value value="bb49bd70-bca8-11eb-b888-1002b58598b4"/>
+        </identifier>
         <basedOn>
           <reference value="MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"/>
         </basedOn>
@@ -10008,6 +10012,10 @@ __DIARY_ENTRIES_WARNINGS__
             </coding>
           </valueCodeableConcept>
         </extension>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+          <value value="bb49bd70-bca8-11eb-b888-1002b58598b4"/>
+        </identifier>
         <basedOn>
           <reference value="MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"/>
         </basedOn>
@@ -10053,6 +10061,10 @@ __DIARY_ENTRIES_WARNINGS__
             </coding>
           </valueCodeableConcept>
         </extension>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+          <value value="bb49bd70-bca8-11eb-b888-1002b58598b4"/>
+        </identifier>
         <basedOn>
           <reference value="MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"/>
         </basedOn>
@@ -10098,6 +10110,10 @@ __DIARY_ENTRIES_WARNINGS__
             </coding>
           </valueCodeableConcept>
         </extension>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+          <value value="bb49bd70-bca8-11eb-b888-1002b58598b4"/>
+        </identifier>
         <basedOn>
           <reference value="MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"/>
         </basedOn>
@@ -10143,6 +10159,10 @@ __DIARY_ENTRIES_WARNINGS__
             </coding>
           </valueCodeableConcept>
         </extension>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+          <value value="bb49bd70-bca8-11eb-b888-1002b58598b4"/>
+        </identifier>
         <basedOn>
           <reference value="MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"/>
         </basedOn>
