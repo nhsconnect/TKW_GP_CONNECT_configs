@@ -177,8 +177,8 @@ ENDPOINT context_path matches ^.*/Endpoint\\?.*$
 # 1.5.1
 MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
 
-FULL_RECORD_REQUESTED xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']
-FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part) = 0 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
+#FULL_RECORD_REQUESTED xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']
+#FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part) = 0 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 MIGRATE_FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 
 END EXPRESSIONS
@@ -242,9 +242,9 @@ if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
-if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
-if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
-if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then patient_not_found_response
+#if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+#if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
+#if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then patient_not_found_response
 END RULE
 
 #==================================================================================================
