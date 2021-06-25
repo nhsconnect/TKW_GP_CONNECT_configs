@@ -369,8 +369,8 @@ END RULE
 BEGIN RULE
 GET
 # SDS adapter rules
-#if DEVICE then device
-#if ENDPOINT then endpoint
+if DEVICE then device
+if ENDPOINT then endpoint
 
 if dontpassthrough then do_process
 END RULE
