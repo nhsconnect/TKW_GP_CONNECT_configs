@@ -1,0 +1,88 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+   <version value="1.6.0"></version>
+   <name value="GP Connect API - Access Document"></name>
+   <status value="active"></status>
+   <date value="2020-02-10"></date>
+   <publisher value="[Provider Software Vendor Name]"></publisher>
+   <contact>
+      <name value="[Provider Software Vendor Contact Name]"></name>
+   </contact>
+   <description value="This server implements the GP Connect API - Access Document version 1.6.0"></description>
+   <copyright value="Copyright NHS Digital 2016-21"></copyright>
+   <kind value="capability"></kind>
+   <software>
+      <name value="[Provider Software Name]"></name>
+      <version value="[Provider Software Version]"></version>
+      <releaseDate value="2017-09-27T00:00:00+01:00"></releaseDate>
+   </software>
+   <fhirVersion value="3.0.1"></fhirVersion>
+   <acceptUnknown value="both"></acceptUnknown>
+   <format value="application/fhir+json"></format>
+   <format value="application/fhir+xml"></format>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8"></reference>
+   </profile>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4"></reference>
+   </profile>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2"></reference>
+   </profile>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2"></reference>
+   </profile>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2"></reference>
+   </profile>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3"></reference>
+   </profile>
+   <profile>
+	   <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1/_history/1.3"></reference>
+   </profile>
+   <rest>
+      <mode value="server"></mode>
+      <security>
+         <cors value="true"></cors>
+      </security>
+      <resource>
+         <type value="Patient"></type>
+         <interaction>
+            <code value="search-type"></code>
+         </interaction>
+         <searchParam>
+            <name value="identifier"></name>
+            <type value="token"></type>
+            <documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"></documentation>
+         </searchParam>
+      </resource>
+      <resource>
+         <type value="Binary"></type>
+         <interaction>
+            <code value="read"></code>
+         </interaction>
+      </resource>
+      <resource>
+         <type value="DocumentReference"></type>
+         <interaction>
+            <code value="search-type"></code>
+         </interaction>
+         <searchInclude value="DocumentReference:subject:Patient"></searchInclude>
+         <searchInclude value="DocumentReference:custodian:Organization"></searchInclude>
+         <searchInclude value="DocumentReference:author:Organization"></searchInclude>
+         <searchInclude value="DocumentReference:author:Practitioner"></searchInclude>
+         <searchParam>
+            <name value="created"></name>
+            <type value="date"></type>
+         </searchParam>
+         <searchParam>
+            <name value="author"></name>
+            <type value="token"></type>
+         </searchParam>
+         <searchParam>
+            <name value="description"></name>
+            <type value="string"></type>
+         </searchParam>
+      </resource>
+   </rest>
+</CapabilityStatement>

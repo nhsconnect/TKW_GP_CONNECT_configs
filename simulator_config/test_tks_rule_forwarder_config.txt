@@ -15,9 +15,10 @@ document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/r
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
-documents_metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_5_1.xml "200 OK"
-structured_metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/structured_capability_1_5_1.xml "200 OK"
-metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/capability_1_5_1.xml "200 OK"
+documents_metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_6_0.xml "200 OK"
+structured_metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/structured_capability_1_6_0.xml "200 OK"
+# not required defers to 1.5
+#metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/capability_1_6_0.xml "200 OK"
 
 patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
 patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
@@ -83,12 +84,6 @@ END SUBSTITUTIONS
 # all the "match/contains" rules apply to the content by default to use eg the context path it must be specified as context_path
 BEGIN EXPRESSIONS
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
-
-# 1.5.1
-rev_1_5_1	Always
-
-# 1.5.0
-#rev_1_5_1	Never
 
 passthrough	Always
 dontpassthrough	Never
@@ -174,7 +169,7 @@ search_diary_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:param
 DEVICE context_path matches ^.*/Device\\?.*$
 ENDPOINT context_path matches ^.*/Endpoint\\?.*$
 
-# 1.5.1
+# 1.6
 MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
 
 #FULL_RECORD_REQUESTED xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']
@@ -242,9 +237,6 @@ if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then patient_not_found_response
 END RULE
 
 #==================================================================================================
@@ -293,20 +285,20 @@ if GET_PATIENT_3 then document_reference_response_no_records
 END RULE
 
 #==================================================================================================
-# 1.5.1 Migrate structured record
+# 1.6 Migrate structured record
 
 BEGIN RULE
 POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.migratestructuredrecord-1
 
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 
-if rev_1_5_1 and not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_parameters
-if rev_1_5_1 and not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
-if rev_1_5_1 and not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
+if not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_parameters
+if not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
+if not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
 # nb only supporting patient 2 migration
-if rev_1_5_1 and QUERY_PATIENT_2 then full_record
-if rev_1_5_1 and not QUERY_PATIENT_2 then patient_not_found_response
+if QUERY_PATIENT_2 then full_record
+if not QUERY_PATIENT_2 then patient_not_found_response
 
 END RULE
 
@@ -327,7 +319,7 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if rev_1_5_1 then documents_metadata_1_5_1_response else documents_metadata_response
+if passthrough then documents_metadata_1_6_response else documents_metadata_response
 END RULE
 
 #==================================================================================================
@@ -338,8 +330,7 @@ BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # check CP ?
-if rev_1_5_1 and GET_PATIENT_2_DOCUMENT then patient2_document_response
-if rev_1_5_1 and not GET_PATIENT_2_DOCUMENT then binary_nrf
+if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
 END RULE
 
 #==================================================================================================
@@ -349,7 +340,7 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if rev_1_5_1 then structured_metadata_1_5_1_response
+if passthrough then structured_metadata_1_6_response
 END RULE
 
 #==================================================================================================
@@ -359,7 +350,7 @@ END RULE
 #BEGIN RULE
 #GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
 #INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-#if rev_1_5_1 then metadata_1_5_1_response
+#if rev_1.6 then metadata_1_6_response
 #END RULE
 
 #==================================================================================================
