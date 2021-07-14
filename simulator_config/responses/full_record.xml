@@ -5046,7 +5046,7 @@ __DIARY_ENTRIES_WARNINGS__
         </entry>
         <entry>
           <item>
-            <reference value="Referral items are not supported by the provider system"/>
+            <reference value="ReferralRequest/Consultation1-Topic1-Category-Plan-ReferralRequest-1"/>
           </item>
         </entry>
         <entry>
@@ -5723,10 +5723,15 @@ __DIARY_ENTRIES_WARNINGS__
           </item>
         </entry>
         <entry>
-          <item>
-            <reference value="Referral items are not supported by the provider system"/>
-          </item>
+           <item>
+               <reference value="ReferralRequest/Consultation1-Topic5-Category-Plan-ReferralRequest-1"/>
+            </item>
         </entry>
+        <entry>
+           <item>
+              <reference value="documentReference/Consultation1-Topic5-Plan-DocumentReference-1"/>
+           </item>
+         </entry>
       </List>
     </resource>
   </entry>
@@ -8745,12 +8750,12 @@ __DIARY_ENTRIES_WARNINGS__
         </entry>
         <entry>
           <item>
-            <display value="Pathology report items are not supported by the provider system"/>
+            <display value="DiagnosticReport/Consultation3-Topic2-Category-Examination-DiagnosticReport-1"/>
           </item>
         </entry>
         <entry>
           <item>
-            <display value="Pathology report items are not supported by the provider system"/>
+            <display value="DiagnosticReport/Consultation3-Topic2-Category-Examination-DiagnosticReport-2"/>
           </item>
         </entry>
       </List>
@@ -10806,7 +10811,55 @@ __DIARY_ENTRIES_WARNINGS__
         <description value="Referral due to swollen legs"/>
       </ReferralRequest>
     </resource>
-  </entry>
+   </entry>
+   <entry>
+      <fullUrl value="http://10.0.2.2:4854/B82617/STU3/1/gpconnect/fhir/DocumentReference/27863182736"/>
+      <resource>
+         <DocumentReference xmlns="http://hl7.org/fhir">
+            <id value="Consultation1-Topic5-Category-Plan-DocumentReference-1"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"/>
+            </meta>
+            <masterIdentifier>
+               <system value="LocalSystem/1"/>
+               <value value="bb2374e2-dde2-11e9-9d36-2a2ae2dbcce4"/>
+            </masterIdentifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="bb237762-dde2-11e9-9d36-2a2ae2dbcce4"/>
+            </identifier>
+            <status value="current"/>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="824331000000106"/>
+                  <display value="Inpatient final discharge letter"/>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <created value="2019-06-24T09:35:00+11:00"/>
+            <indexed value="2019-07-02T09:43:41+11:00"/>
+            <author>
+               <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"/>
+            </author>
+            <description value="Discharge Summary"/>
+            <content>
+               <attachment>
+                  <contentType value="application/msword"/>
+				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45510"/>
+                  <size value="3654"/>
+               </attachment>
+            </content>
+            <context>
+               <encounter>
+                  <reference value="Encounter/Encounter1"/>
+               </encounter>
+            </context>
+         </DocumentReference>
+      </resource>
+   </entry>
   <entry>
     <resource>
       <ReferralRequest xmlns="http://hl7.org/fhir">
@@ -10902,6 +10955,18 @@ __DIARY_ENTRIES_WARNINGS__
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
         </meta>
+      <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ClinicalSetting-1">
+         <valueCodeableConcept>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="1060971000000108"/>
+              <display value="General practice service"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
+           <valueCode value="confidential-items"/>
+        </extension>
         <status value="current"/>
         <mode value="snapshot"/>
         <title value="Uncategorised data"/>
@@ -10922,6 +10987,9 @@ __DIARY_ENTRIES_WARNINGS__
             <code value="event-date"/>
           </coding>
         </orderedBy>
+        <note>
+          <text value="Items excluded due to confidentiality and/or patient preferences."/>
+        </note>
         <entry>
           <item>
             <reference value="Observation/Consultation1_topic2_category_Examination_Observation_1"/>
@@ -12745,7 +12813,129 @@ __DIARY_ENTRIES_WARNINGS__
         </asserter>
       </Condition>
     </resource>
-  </entry>
+</entry>
+   <entry>
+      <resource>
+         <List xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+            </meta>
+            <status value="current"/>
+            <mode value="snapshot"/>
+            <title value="Consultations - documents contained in consultations"/>
+            <code>
+               <coding>
+                  <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1"/>
+                  <code value="consultations-documents-contained-in-consultations"/>
+                  <display value="Consultations - documents contained in consultations"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <date value="2019-03-01T10:57:34+00:00"/>
+            <orderedBy>
+               <coding>
+                  <system value="http://hl7.org/fhir/list-order"/>
+                  <code value="event-date"/>
+               </coding>
+            </orderedBy>
+            <entry>
+               <item>
+                  <reference value="DocumentReference/Consultation1-Topic5-Category-Plan-DocumentReference-1"/>
+               </item>
+            </entry>
+         </List>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <List xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+            </meta>
+            <status value="current"/>
+            <mode value="snapshot"/>
+            <title value="Consultations - outbound referrals in consultations"/>
+            <code>
+               <coding>
+                  <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1"/>
+                  <code value="consultations-outbound-referrals-in-consultations"/>
+                  <display value="Consultations - outbound referrals in consultations"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <date value="2019-03-01T10:57:34+00:00"/>
+            <orderedBy>
+               <coding>
+                  <system value="http://hl7.org/fhir/list-order"/>
+                  <code value="event-date"/>
+               </coding>
+            </orderedBy>
+            <entry>
+               <item>
+                  <reference value="ReferralRequest/Consultation1-Topic1-Category-Plan-ReferralRequest-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="ReferralRequest/Consultation1-Topic5-Category-Plan-ReferralRequest-1"/>
+               </item>
+            </entry>
+         </List>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <List xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ClinicalSetting-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="1060971000000108"/>
+                     <display value="General practice service"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
+               <valueCode value="confidential-items"/>
+            </extension>
+            <status value="current"/>
+            <mode value="snapshot"/>
+            <title value="Consultations - investigations contained in consultations"/>
+            <code>
+               <coding>
+                  <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1"/>
+                  <code value="consultations-investigations-contained-in-consultations"/>
+                  <display value="Consultations - investigations contained in onsultations"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <date value="2018-03-01T10:57:34+00:00"/>
+            <orderedBy>
+               <coding>
+                  <system value="http://hl7.org/fhir/list-order"/>
+                  <code value="event-date"/>
+               </coding>
+            </orderedBy>
+            <note>
+               <text value="Items excluded due to confidentiality and/or patient preferences."/>
+            </note>
+            <entry>
+               <item>
+                  <reference value="DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"/>
+               </item>
+            </entry>
+         </List>
+      </resource>
+   </entry>
   <entry>
     <resource>
       <Practitioner xmlns="http://hl7.org/fhir">
