@@ -12,7 +12,12 @@ patient4_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/di
 patient2_document_reference_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
 document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
 document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
+
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
+patient2_document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.10.xml "200 OK"
+patient2_document_20_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.20.xml "200 OK"
+patient2_document_50_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.50.xml "200 OK"
+patient2_document_100_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.100.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
 documents_metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_6_0.xml "200 OK"
@@ -122,6 +127,10 @@ DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3)/.*$
 
 # GetBinary
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
+GET_PATIENT_2_DOCUMENT_10 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45512$
+GET_PATIENT_2_DOCUMENT_20 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45513$
+GET_PATIENT_2_DOCUMENT_50 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45514$
+GET_PATIENT_2_DOCUMENT_100 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45515$
 # > 5MB 
 GET_PATIENT_4_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45511$
 
@@ -309,7 +318,11 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
+if GET_PATIENT_2_DOCUMENT then patient2_document_response
+if GET_PATIENT_2_DOCUMENT_10 then patient2_document_10_response 
+if GET_PATIENT_2_DOCUMENT_20 then patient2_document_20_response
+if GET_PATIENT_2_DOCUMENT_50 then patient2_document_50_response
+if GET_PATIENT_2_DOCUMENT_100 then patient2_document_100_response else binary_nrf
 END RULE
 
 #==================================================================================================
@@ -330,7 +343,11 @@ BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # check CP ?
-if GET_PATIENT_2_DOCUMENT then patient2_document_response else binary_nrf
+if GET_PATIENT_2_DOCUMENT then patient2_document_response
+if GET_PATIENT_2_DOCUMENT_10 then patient2_document_10_response 
+if GET_PATIENT_2_DOCUMENT_20 then patient2_document_20_response
+if GET_PATIENT_2_DOCUMENT_50 then patient2_document_50_response
+if GET_PATIENT_2_DOCUMENT_100 then patient2_document_100_response else binary_nrf
 END RULE
 
 #==================================================================================================
