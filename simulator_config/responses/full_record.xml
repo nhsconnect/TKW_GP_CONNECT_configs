@@ -10813,7 +10813,6 @@ __DIARY_ENTRIES_WARNINGS__
     </resource>
    </entry>
    <entry>
-      <fullUrl value="__BINARY_URL__/DocumentReference/27863182736"/>
       <resource>
          <DocumentReference xmlns="http://hl7.org/fhir">
             <id value="Consultation1-Topic5-Category-Plan-DocumentReference-1"/>
