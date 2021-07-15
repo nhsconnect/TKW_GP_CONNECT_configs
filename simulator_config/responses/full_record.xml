@@ -5729,7 +5729,7 @@ __DIARY_ENTRIES_WARNINGS__
         </entry>
         <entry>
            <item>
-              <reference value="documentReference/Consultation1-Topic5-Plan-DocumentReference-1"/>
+              <reference value="DocumentReference/Consultation1-Topic5-Plan-DocumentReference-1"/>
            </item>
          </entry>
       </List>
@@ -10813,7 +10813,7 @@ __DIARY_ENTRIES_WARNINGS__
     </resource>
    </entry>
    <entry>
-      <fullUrl value="http://10.0.2.2:4854/B82617/STU3/1/gpconnect/fhir/DocumentReference/27863182736"/>
+      <fullUrl value="__BINARY_URL__/DocumentReference/27863182736"/>
       <resource>
          <DocumentReference xmlns="http://hl7.org/fhir">
             <id value="Consultation1-Topic5-Category-Plan-DocumentReference-1"/>
@@ -12912,7 +12912,7 @@ __DIARY_ENTRIES_WARNINGS__
                <coding>
                   <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1"/>
                   <code value="consultations-investigations-contained-in-consultations"/>
-                  <display value="Consultations - investigations contained in onsultations"/>
+                  <display value="Consultations - investigations contained in consultations"/>
                </coding>
             </code>
             <subject>
