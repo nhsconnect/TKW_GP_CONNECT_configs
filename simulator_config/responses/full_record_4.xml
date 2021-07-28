@@ -4,7 +4,7 @@
   </meta>
   <type value="collection"/>
   <id value="__SSP_TRACEID__"/>
-__PATIENT_2_HEAD__
+__PATIENT_4_HEAD__
 __ORG_HEAD__
 __DIARY_ENTRIES_WARNINGS__
   <entry>
@@ -34,7 +34,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <patient>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </patient>
         <onsetDateTime value="1963-07-27T12:00:00+01:00"/>
         <assertedDate value="1963-07-27T12:00:00+01:00"/>
@@ -135,7 +135,7 @@ __DIARY_ENTRIES_WARNINGS__
               </coding>
             </code>
             <patient>
-              <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+              <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
             </patient>
             <onsetDateTime value="1962-08-12T00:00:00+01:00"/>
             <assertedDate value="2016-11-01T00:00:00+00:00"/>
@@ -201,7 +201,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2020-12-01T00:00:00+00:00"/>
         <orderedBy>
@@ -279,7 +279,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <assertedDate value="2020-12-01T00:00:00+00:00"/>
         <asserter>
@@ -317,7 +317,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <identifier>
             <system value="https://fhir.nhs.uk/Id/nhs-number"/>
             <value value="9690937286"/>
@@ -401,7 +401,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2017-11-10T00:00:00+00:00"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <dosage>
@@ -471,7 +471,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -536,7 +536,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -601,7 +601,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -666,7 +666,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -731,7 +731,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -796,7 +796,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -861,7 +861,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -926,7 +926,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -991,7 +991,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -1056,7 +1056,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -1121,7 +1121,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -1186,7 +1186,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/20"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-10T00:00:00+00:00"/>
         <recorder>
@@ -1258,7 +1258,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2017-11-22T00:00:00+00:00"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <dosage>
@@ -1328,7 +1328,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1393,7 +1393,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1458,7 +1458,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1523,7 +1523,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1588,7 +1588,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1653,7 +1653,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1718,7 +1718,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1783,7 +1783,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1848,7 +1848,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1913,7 +1913,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -1978,7 +1978,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2043,7 +2043,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2108,7 +2108,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/21"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2180,7 +2180,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2017-11-22T00:00:00+00:00"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <dosage>
@@ -2250,7 +2250,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2315,7 +2315,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2380,7 +2380,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2445,7 +2445,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2510,7 +2510,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2575,7 +2575,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2640,7 +2640,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2705,7 +2705,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2770,7 +2770,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2835,7 +2835,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2900,7 +2900,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -2965,7 +2965,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/22"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3037,7 +3037,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2017-11-22T00:00:00+00:00"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <dosage>
@@ -3107,7 +3107,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3172,7 +3172,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3237,7 +3237,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3302,7 +3302,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3367,7 +3367,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3432,7 +3432,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3497,7 +3497,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3562,7 +3562,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3627,7 +3627,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3692,7 +3692,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3757,7 +3757,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3822,7 +3822,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/23"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2017-11-22T00:00:00+00:00"/>
         <recorder>
@@ -3894,7 +3894,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2018-01-15T00:00:00+00:00"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <dosage>
@@ -3964,7 +3964,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4029,7 +4029,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4094,7 +4094,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4159,7 +4159,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4224,7 +4224,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4289,7 +4289,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4354,7 +4354,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4419,7 +4419,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4484,7 +4484,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4549,7 +4549,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/24"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2018-01-15T00:00:00+00:00"/>
         <recorder>
@@ -4618,7 +4618,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <assertedDate value="2020-12-01T00:00:00+00:00"/>
         <asserter>
@@ -4644,7 +4644,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2019-03-28T10:57:34+00:00"/>
         <orderedBy>
@@ -4687,7 +4687,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Surgery Consultation"/>
         </type>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <participant>
           <type>
@@ -4749,7 +4749,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -4820,7 +4820,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -4879,7 +4879,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -4928,7 +4928,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -4972,7 +4972,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5021,7 +5021,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5087,7 +5087,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5141,7 +5141,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5190,7 +5190,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5254,7 +5254,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5307,7 +5307,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5373,7 +5373,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5429,7 +5429,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5493,7 +5493,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5542,7 +5542,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5596,7 +5596,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5655,7 +5655,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5704,7 +5704,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -5760,7 +5760,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -5803,7 +5803,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -5841,7 +5841,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -5880,7 +5880,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -5918,7 +5918,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -5997,7 +5997,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/c260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-03-28"/>
         <recorder>
@@ -6077,7 +6077,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/c260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-03-28"/>
         <recorder>
@@ -6136,7 +6136,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6178,7 +6178,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6216,7 +6216,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6261,7 +6261,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6305,7 +6305,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6350,7 +6350,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6394,7 +6394,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6433,7 +6433,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6468,7 +6468,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6506,7 +6506,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6545,7 +6545,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6622,7 +6622,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/d260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-03-28"/>
         <recorder>
@@ -6702,7 +6702,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/d260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-03-28"/>
         <recorder>
@@ -6761,7 +6761,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6800,7 +6800,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6841,7 +6841,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6882,7 +6882,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6923,7 +6923,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -6962,7 +6962,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/a260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-03-28"/>
         <recorder>
@@ -7042,7 +7042,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/a60b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-03-28"/>
         <recorder>
@@ -7104,7 +7104,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7142,7 +7142,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7181,7 +7181,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7220,7 +7220,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7258,7 +7258,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7297,7 +7297,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7335,7 +7335,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -7365,7 +7365,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Surgery Consultation"/>
         </type>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <participant>
           <type>
@@ -7427,7 +7427,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7483,7 +7483,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7549,7 +7549,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7598,7 +7598,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7642,7 +7642,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7686,7 +7686,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7730,7 +7730,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7784,7 +7784,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7828,7 +7828,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter2"/>
@@ -7874,7 +7874,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -7913,7 +7913,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -7952,7 +7952,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -7995,7 +7995,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/b260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-05-01"/>
         <recorder>
@@ -8075,7 +8075,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/b260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-05-01"/>
         <recorder>
@@ -8134,7 +8134,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -8173,7 +8173,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -8212,7 +8212,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -8242,7 +8242,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Surgery Consultation"/>
         </type>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <participant>
           <type>
@@ -8304,7 +8304,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8360,7 +8360,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8426,7 +8426,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8480,7 +8480,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8524,7 +8524,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8568,7 +8568,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8612,7 +8612,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8666,7 +8666,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8710,7 +8710,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8784,7 +8784,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <encounter>
           <reference value="Encounter/Encounter3"/>
@@ -8835,7 +8835,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -8874,7 +8874,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -8913,7 +8913,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -8956,7 +8956,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/f260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-06-01"/>
         <recorder>
@@ -9036,7 +9036,7 @@ __DIARY_ENTRIES_WARNINGS__
           <reference value="Medication/f260b451-9821-42de-81f9-ba86dcea2c32"/>
         </medicationReference>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <authoredOn value="2019-06-01"/>
         <recorder>
@@ -9095,7 +9095,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9134,7 +9134,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9173,7 +9173,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9217,7 +9217,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9261,7 +9261,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9305,7 +9305,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9349,7 +9349,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9388,7 +9388,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9427,7 +9427,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter3"/>
@@ -9627,7 +9627,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -9764,7 +9764,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Swollen legs"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -9863,7 +9863,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -9936,7 +9936,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter2"/>
@@ -9985,7 +9985,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2019-03-28"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <note>
@@ -10034,7 +10034,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2019-03-28"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <note>
@@ -10083,7 +10083,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2019-03-28"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <note>
@@ -10132,7 +10132,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2019-05-01"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <note>
@@ -10181,7 +10181,7 @@ __DIARY_ENTRIES_WARNINGS__
         </effectivePeriod>
         <dateAsserted value="2019-06-01"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <taken value="unk"/>
         <note>
@@ -10211,7 +10211,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2018-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -10265,7 +10265,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2018-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -10529,7 +10529,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2019-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -10605,7 +10605,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Unknown"/>
         </vaccineCode>
         <patient>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </patient>
         <encounter>
           <reference value="Encounter/Encounter1"/>
@@ -10719,7 +10719,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <assertedDate value="2020-12-01T00:00:00+00:00"/>
         <asserter>
@@ -10745,7 +10745,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2019-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -10786,7 +10786,7 @@ __DIARY_ENTRIES_WARNINGS__
         <intent value="order"/>
         <priority value="routine"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -10836,19 +10836,19 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </type>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+               <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
             </subject>
             <created value="2019-06-24T09:35:00+11:00"/>
             <indexed value="2019-07-02T09:43:41+11:00"/>
             <author>
-               <reference value="Practitioner/__PRACTITIONER_ID__"/>
+               <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"/>
             </author>
             <description value="Discharge Summary"/>
             <content>
                <attachment>
-                  <contentType value="application/msword"/>
-				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45510"/>
-                  <size value="3654"/>
+                  <contentType value="application/text"/>
+				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45512"/>
+                  <size value="7500000"/>
                </attachment>
             </content>
             <context>
@@ -10878,7 +10878,7 @@ __DIARY_ENTRIES_WARNINGS__
         <intent value="order"/>
         <priority value="routine"/>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -10939,7 +10939,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <assertedDate value="2020-12-01T00:00:00+00:00"/>
         <asserter>
@@ -10977,7 +10977,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2019-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -11035,7 +11035,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -11082,7 +11082,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -11129,7 +11129,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <context>
           <reference value="Encounter/Encounter1"/>
@@ -11184,7 +11184,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <assertedDate value="2020-12-01T00:00:00+00:00"/>
         <asserter>
@@ -11215,7 +11215,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2019-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -11264,7 +11264,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2018-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -11313,7 +11313,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2018-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -11537,7 +11537,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <date value="2018-03-01T10:57:34+00:00"/>
         <orderedBy>
@@ -11575,7 +11575,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <requester>
@@ -11617,7 +11617,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-03T12:00:00+00:00"/>
@@ -11659,7 +11659,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -11691,7 +11691,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </type>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <receivedTime value="2017-11-01T15:00:00+00:00"/>
@@ -11721,7 +11721,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -11870,7 +11870,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -11923,7 +11923,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -11971,7 +11971,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12024,7 +12024,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12072,7 +12072,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12125,7 +12125,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12178,7 +12178,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12231,7 +12231,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12284,7 +12284,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12337,7 +12337,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12382,7 +12382,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12435,7 +12435,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12480,7 +12480,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12528,7 +12528,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12573,7 +12573,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12621,7 +12621,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12666,7 +12666,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12719,7 +12719,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <issued value="2019-04-06T12:00:00+00:00"/>
@@ -12758,7 +12758,7 @@ __DIARY_ENTRIES_WARNINGS__
           </coding>
         </type>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
           <display value="SKELLY, Horace"/>
         </subject>
         <receivedTime value="2017-11-01T15:00:00+00:00"/>
@@ -12804,7 +12804,7 @@ __DIARY_ENTRIES_WARNINGS__
           <text value="Anxiety with depression"/>
         </code>
         <subject>
-          <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+          <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
         </subject>
         <assertedDate value="2020-12-01T00:00:00+00:00"/>
         <asserter>
@@ -12830,7 +12830,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+               <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
             </subject>
             <date value="2019-03-01T10:57:34+00:00"/>
             <orderedBy>
@@ -12864,7 +12864,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+               <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
             </subject>
             <date value="2019-03-01T10:57:34+00:00"/>
             <orderedBy>
@@ -12915,7 +12915,7 @@ __DIARY_ENTRIES_WARNINGS__
                </coding>
             </code>
             <subject>
-               <reference value="Patient/__PATIENT_2_LOGICAL_ID__"/>
+               <reference value="Patient/__PATIENT_4_LOGICAL_ID__"/>
             </subject>
             <date value="2018-03-01T10:57:34+00:00"/>
             <orderedBy>

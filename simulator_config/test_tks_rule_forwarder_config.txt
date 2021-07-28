@@ -11,13 +11,13 @@ patient4_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/di
 
 patient2_document_reference_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
 document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
-document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
+document_reference_response_10MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
 
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
-patient2_document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.10.xml "200 OK"
-patient2_document_20_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.20.xml "200 OK"
-patient2_document_50_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.50.xml "200 OK"
-patient2_document_100_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.100.xml "200 OK"
+document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.10.xml "200 OK"
+document_20_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.20.xml "200 OK"
+document_50_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.50.xml "200 OK"
+document_100_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.100.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
 documents_metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_6_0.xml "200 OK"
@@ -32,7 +32,12 @@ patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Co
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 
-full_record TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record.xml "200 OK"
+# full record responses for migration
+full_record_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record.xml "200 OK"
+# no docrefs
+full_record_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_3.xml "200 OK"
+# docref to 10 MB response
+full_record_4 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_4.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -60,8 +65,10 @@ __SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
 __SSP_TRACEID__ reg_exp http_header Ssp-TraceID "^(.*)$" "$1"
 
 # parameters here are external url prefix, sds extract file, device transform , endpoint transform
-# parameters  1 and 2 will need modifying on a site by site basis the final two should not need modification
+# NB **** parameters  1 and 2 will need modifying on a site by site basis the final two should not need modification
 __SDS_ADAPTER__ Class uk.nhs.digital.mait.tkwx.tk.internalservices.rules.SDSAdapterSubstitution context_path "https://localhost:4854 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sdsdump_opentest.xml TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_device.xsl TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_endpoint.xsl"
+
+# reserved subst tag name for identifying stateful session IDs (not currently used for GP Connect)
 SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 
 # patient specific preamble added to the start of a structured response
@@ -78,7 +85,7 @@ __DIARY_ENTRIES_WARNINGS__ Xpath (if (count (fhir:Parameters/fhir:parameter[fhir
 
 __DIARY_ENTRY_SEARCH_DATE__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']/fhir:part[fhir:name/@value='diaryEntriesSearchDate']/fhir:valueDate/@value
 
-__DOCREF_ID__ Literal 27863182736
+# required so that we know what to prefix the url with when returning eg docrefs
 __BINARY_URL__ Property TKW_ROOT/config/GP_CONNECT/internal/gpconnect-demonstrator-api.properties TKW_ROOT/config/GP_CONNECT/internal/gpconnect-demonstrator-api.environment.properties TKW_ROOT/config/GP_CONNECT/external/gpconnect-demonstrator-api.environment.properties serverBaseUrl
 
 # see #6 temporarily removed type and facility search criteria
@@ -123,16 +130,14 @@ DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/
 
 DIARY_ENTRY_SEARCH_IN_PAST content xslt TKW_ROOT/config/GP_CONNECT/simulator_config/past_diary_entry_search_time.xslt TRUE
 
-DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3)/.*$
+DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4)/.*$
 
 # GetBinary
-GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
-GET_PATIENT_2_DOCUMENT_10 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45512$
-GET_PATIENT_2_DOCUMENT_20 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45513$
-GET_PATIENT_2_DOCUMENT_50 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45514$
-GET_PATIENT_2_DOCUMENT_100 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45515$
-# > 5MB 
-GET_PATIENT_4_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45511$
+GET_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
+GET_DOCUMENT_10 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45512$
+GET_DOCUMENT_20 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45513$
+GET_DOCUMENT_50 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45514$
+GET_DOCUMENT_100 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45515$
 
 # search document references
 
@@ -284,12 +289,9 @@ if not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
 if GET_PATIENT_2 then patient2_document_reference_response
 # return no docref  
 if GET_PATIENT_3 then document_reference_response_no_records
+if GET_PATIENT_4 then document_reference_response_10MB else patient_not_found_response
 
-# patient 4 backed out - see issue #10
-# return a docref for doc > 5MB
-#if GET_PATIENT_4 then document_reference_response_gt_5MB
-
-# patient 4 upwards return patient not found
+# patient 5 upwards return patient not found
 
 END RULE
 
@@ -306,8 +308,9 @@ if not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
 if not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
 # nb only supporting patient 2 migration
-if QUERY_PATIENT_2 then full_record
-if not QUERY_PATIENT_2 then patient_not_found_response
+if QUERY_PATIENT_2 then full_record_2
+if QUERY_PATIENT_3 then full_record_3
+if QUERY_PATIENT_4 then full_record_4  else patient_not_found_response
 
 END RULE
 
@@ -318,11 +321,11 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if GET_PATIENT_2_DOCUMENT then patient2_document_response
-if GET_PATIENT_2_DOCUMENT_10 then patient2_document_10_response 
-if GET_PATIENT_2_DOCUMENT_20 then patient2_document_20_response
-if GET_PATIENT_2_DOCUMENT_50 then patient2_document_50_response
-if GET_PATIENT_2_DOCUMENT_100 then patient2_document_100_response else binary_nrf
+if GET_DOCUMENT then patient2_document_response
+if GET_DOCUMENT_10 then document_10_response 
+if GET_DOCUMENT_20 then document_20_response
+if GET_DOCUMENT_50 then document_50_response
+if GET_DOCUMENT_100 then document_100_response else binary_nrf
 END RULE
 
 #==================================================================================================
@@ -343,11 +346,11 @@ BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # check CP ?
-if GET_PATIENT_2_DOCUMENT then patient2_document_response
-if GET_PATIENT_2_DOCUMENT_10 then patient2_document_10_response 
-if GET_PATIENT_2_DOCUMENT_20 then patient2_document_20_response
-if GET_PATIENT_2_DOCUMENT_50 then patient2_document_50_response
-if GET_PATIENT_2_DOCUMENT_100 then patient2_document_100_response else binary_nrf
+if GET_DOCUMENT then patient2_document_response
+if GET_DOCUMENT_10 then document_10_response 
+if GET_DOCUMENT_20 then document_20_response
+if GET_DOCUMENT_50 then document_50_response
+if GET_DOCUMENT_100 then document_100_response else binary_nrf
 END RULE
 
 #==================================================================================================

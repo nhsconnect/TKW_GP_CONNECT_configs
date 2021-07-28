@@ -7,10 +7,9 @@
    __PATIENT_2_HEAD__
    __ORG_HEAD__
    <entry>
-	   <fullUrl value="__BINARY_URL__/DocumentReference/__DOCREF_ID__"></fullUrl>
       <resource>
          <DocumentReference xmlns="http://hl7.org/fhir">
-            <id value="__DOCREF_ID__"></id>
+            <id value="27863182736"></id>
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"></profile>
             </meta>
