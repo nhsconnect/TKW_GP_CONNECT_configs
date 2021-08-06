@@ -11,13 +11,18 @@ patient4_diary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/di
 
 patient2_document_reference_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response.xml "200 OK"
 document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_no_records.xml "200 OK"
-document_reference_response_10MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
+document_reference_response_10MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_10MB.xml "200 OK"
+document_reference_response_20MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_20MB.xml "200 OK"
+document_reference_response_50MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_50MB.xml "200 OK"
+document_reference_response_95MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_95MB.xml "200 OK"
+document_reference_response_105MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_105MB.xml "200 OK"
 
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.10.xml "200 OK"
 document_20_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.20.xml "200 OK"
 document_50_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.50.xml "200 OK"
-document_100_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.100.xml "200 OK"
+document_95_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.95.xml "200 OK"
+document_105_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.105.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
 documents_metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_6_0.xml "200 OK"
@@ -33,11 +38,19 @@ device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "20
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 
 # full record responses for migration
-full_record_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record.xml "200 OK"
+full_record_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_2.xml "200 OK"
 # no docrefs
 full_record_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_3.xml "200 OK"
 # docref to 10 MB response
 full_record_4 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_4.xml "200 OK"
+# docref to 20 MB response
+full_record_5 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_5.xml "200 OK"
+# docref to 50 MB response
+full_record_6 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_6.xml "200 OK"
+# docref to 95 MB response
+full_record_7 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_7.xml "200 OK"
+# docref to 105 MB response
+full_record_8 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_8.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -52,7 +65,10 @@ __PATIENT_1__ Literal 9690937278
 __PATIENT_2__ Literal 9690937286
 __PATIENT_3__ Literal 9690937294
 __PATIENT_4__ Literal 9690937308
+__PATIENT_5__ Literal 9690937375
 __PATIENT_6__ Literal 9690937383
+__PATIENT_7__ Literal 9690937391
+__PATIENT_8__ Literal 9690937405
 
 __PATIENT_ID__ Xpath /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value
 __PRACTITIONER_ID__ Literal 1
@@ -60,6 +76,10 @@ __PATIENT_LOGICAL_ID__ reg_exp context_path  "^.*Patient/([^/]+)/.*$" "$1"
 __PATIENT_2_LOGICAL_ID__ Literal 2
 __PATIENT_3_LOGICAL_ID__ Literal 3
 __PATIENT_4_LOGICAL_ID__ Literal 4
+__PATIENT_5_LOGICAL_ID__ Literal 5
+__PATIENT_6_LOGICAL_ID__ Literal 6
+__PATIENT_7_LOGICAL_ID__ Literal 7
+__PATIENT_8_LOGICAL_ID__ Literal 8
 __ERRORTEXT_CE__ Xpath (if (//fhirconversionfailure) then concat('Failed to parse request body. Error was: ',replace(/fhirconversionfailure,'"','&quot;')) else '')
 __SSP_TO__ reg_exp http_header Ssp-to "^(.*)$" "$1"
 __SSP_TRACEID__ reg_exp http_header Ssp-TraceID "^(.*)$" "$1"
@@ -77,6 +97,10 @@ SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 __PATIENT_2_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937286_head.xml')/block/text()
 __PATIENT_3_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937294_head.xml')/block/text()
 __PATIENT_4_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937308_head.xml')/block/text()
+__PATIENT_5_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937375_head.xml')/block/text()
+__PATIENT_6_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937383_head.xml')/block/text()
+__PATIENT_7_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937391_head.xml')/block/text()
+__PATIENT_8_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937405_head.xml')/block/text()
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
@@ -113,7 +137,11 @@ QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='pa
 QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
 QUERY_PATIENT_4 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937308
 
-# stubbed in rich meds
+QUERY_PATIENT_5 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937375
+QUERY_PATIENT_7 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937391
+QUERY_PATIENT_8 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937405
+
+# stubbed in rich meds TODO what does this mean?
 QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937383
 
 QUERY_PATIENT_22 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937316
@@ -123,6 +151,10 @@ QUERY_PATIENT_24 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
 GET_PATIENT_4 context_path matches ^.*/Patient/4/.*$
+GET_PATIENT_5 context_path matches ^.*/Patient/5/.*$
+GET_PATIENT_6 context_path matches ^.*/Patient/6/.*$
+GET_PATIENT_7 context_path matches ^.*/Patient/7/.*$
+GET_PATIENT_8 context_path matches ^.*/Patient/8/.*$
 
 # only those patients who should have a record returned
 # checks for structured record post patients 2 3 4 for diary entries - not used
@@ -130,14 +162,15 @@ DIARY_CONFIGURED_PATIENT xpathmatches /fhir:Parameters/fhir:parameter[fhir:name/
 
 DIARY_ENTRY_SEARCH_IN_PAST content xslt TKW_ROOT/config/GP_CONNECT/simulator_config/past_diary_entry_search_time.xslt TRUE
 
-DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4)/.*$
+DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4|5|6|7|8)/.*$
 
 # GetBinary
 GET_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
 GET_DOCUMENT_10 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45512$
 GET_DOCUMENT_20 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45513$
 GET_DOCUMENT_50 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45514$
-GET_DOCUMENT_100 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45515$
+GET_DOCUMENT_95 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45515$
+GET_DOCUMENT_105 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45516$
 
 # search document references
 
@@ -289,7 +322,11 @@ if not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
 if GET_PATIENT_2 then patient2_document_reference_response
 # return no docref  
 if GET_PATIENT_3 then document_reference_response_no_records
-if GET_PATIENT_4 then document_reference_response_10MB else patient_not_found_response
+if GET_PATIENT_4 then document_reference_response_10MB
+if GET_PATIENT_5 then document_reference_response_20MB
+if GET_PATIENT_6 then document_reference_response_50MB
+if GET_PATIENT_7 then document_reference_response_95MB
+if GET_PATIENT_8 then document_reference_response_105MB else patient_not_found_response
 
 # patient 5 upwards return patient not found
 
@@ -310,7 +347,11 @@ if not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_
 # nb only supporting patient 2 migration
 if QUERY_PATIENT_2 then full_record_2
 if QUERY_PATIENT_3 then full_record_3
-if QUERY_PATIENT_4 then full_record_4  else patient_not_found_response
+if QUERY_PATIENT_4 then full_record_4
+if QUERY_PATIENT_5 then full_record_5
+if QUERY_PATIENT_6 then full_record_6
+if QUERY_PATIENT_7 then full_record_7
+if QUERY_PATIENT_8 then full_record_8  else patient_not_found_response
 
 END RULE
 
@@ -325,7 +366,8 @@ if GET_DOCUMENT then patient2_document_response
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
-if GET_DOCUMENT_100 then document_100_response else binary_nrf
+if GET_DOCUMENT_95 then document_95_response
+if GET_DOCUMENT_105 then document_105_response else binary_nrf
 END RULE
 
 #==================================================================================================
@@ -350,7 +392,8 @@ if GET_DOCUMENT then patient2_document_response
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
-if GET_DOCUMENT_100 then document_100_response else binary_nrf
+if GET_DOCUMENT_95 then document_95_response
+if GET_DOCUMENT_105 then document_105_response else binary_nrf
 END RULE
 
 #==================================================================================================

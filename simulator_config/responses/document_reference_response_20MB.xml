@@ -1,0 +1,56 @@
+<Bundle xmlns="http://hl7.org/fhir">
+   <meta>
+      <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"></profile>
+   </meta>
+   <type value="searchset"></type>
+   <id value="__SSP_TRACEID__"></id>
+   __PATIENT_5_HEAD__
+   __ORG_HEAD__
+   <entry>
+      <resource>
+         <DocumentReference xmlns="http://hl7.org/fhir">
+            <id value="27863182737"></id>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"></profile>
+            </meta>
+            <masterIdentifier>
+               <system value="LocalSystem/1"></system>
+               <value value="bb2374e2-dde2-11e9-9d36-2a2ae2dbcce4"></value>
+            </masterIdentifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"></system>
+               <value value="bb237762-dde2-11e9-9d36-2a2ae2dbcce4"></value>
+            </identifier>
+            <status value="current"></status>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"></system>
+                  <code value="824331000000106"></code>
+                  <display value="Inpatient final discharge letter"></display>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/__PATIENT_LOGICAL_ID__"></reference>
+            </subject>
+            <created value="2019-06-24T09:35:00+11:00"></created>
+            <indexed value="2019-07-02T09:43:41+11:00"></indexed>
+            <author>
+               <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"></reference>
+            </author>
+            <description value="Discharge Summary"></description>
+            <content>
+               <attachment>
+                  <contentType value="application/text"></contentType>
+                  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45513"></url>
+                  <size value="20000000"></size>
+               </attachment>
+            </content>
+            <context>
+               <encounter>
+                  <reference value="Encounter/4"></reference>
+               </encounter>
+            </context>
+         </DocumentReference>
+      </resource>
+   </entry>
+</Bundle>
