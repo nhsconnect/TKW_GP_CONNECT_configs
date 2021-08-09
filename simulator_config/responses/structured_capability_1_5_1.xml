@@ -1,0 +1,103 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+   <version value="1.5.1"/>
+   <name value="GP Connect API - Access Record Structured"/>
+   <status value="active"/>
+   <date value="2020-02-10"/>
+   <publisher value="Not provided"/>
+   <contact>
+      <name value="NHS Digital"/>
+   </contact>
+   <description value="This server implements the GP Connect API version 1.5.1"/>
+   <copyright value="Copyright NHS Digital 2016-21"/>
+   <kind value="capability"/>
+   <software>
+      <name value="HAPI FHIR Server"/>
+      <version value="3.0.0"/>
+      <releaseDate value="2017-09-27T00:00:00+01:00"/>
+   </software>
+   <fhirVersion value="3.0.1"/>
+   <acceptUnknown value="both"/>
+   <format value="application/fhir+json"/>
+   <format value="application/fhir+xml"/>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.4"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1/_history/1.2"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1/_history/1.2"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1/_history/1.2"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.7"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.7"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.6"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.5"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1/_history/1.2"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3"/>
+   </profile>
+   <profile>
+      <reference value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-HealthcareService-1/_history/1.0"/>
+   </profile>
+   <rest>
+      <mode value="server"/>
+      <security>
+         <cors value="true"/>
+      </security>
+      <operation>
+         <name value="gpc.getstructuredrecord"/>
+         <definition>
+            <reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.16"/>
+         </definition>
+      </operation>
+      <operation>
+         <name value="gpc.migratestructuredrecord"/>
+         <definition>
+            <reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-MigrateStructuredRecord-Operation-1/_history/1.1"/>
+         </definition>
+      </operation>
+   </rest>
+</CapabilityStatement>

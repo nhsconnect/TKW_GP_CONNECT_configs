@@ -4,7 +4,7 @@
     <xsl:output method="xml" />
 	<xsl:template match="/">
 		<!-- get the string from the appropriate TKW listener service -->
-		<xsl:variable name="epoch" select="document('http://127.0.0.1:8000/getepoch')"/>
+		<xsl:variable name="epoch" select="document('http://127.0.0.1:8001/getepoch')"/>
 		<xsl:if test="not ($epoch)">
 			<xsl:message>WARNING: empty epoch (is epoch server running on port 8000?)</xsl:message>
 		</xsl:if>
