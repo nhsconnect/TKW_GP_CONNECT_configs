@@ -1,0 +1,4 @@
+<Binary xmlns="http://hl7.org/fhir">
+	<id value="07a6483f-732b-461e-86b6-edb665c45511"></id>
+		<contentType value="application/text"></contentType>
+			<content value="
