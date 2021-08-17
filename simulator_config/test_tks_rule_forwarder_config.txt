@@ -18,6 +18,7 @@ document_reference_response_95MB TKW_ROOT/config/GP_CONNECT/simulator_config/res
 document_reference_response_105MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_105MB.xml "200 OK"
 
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
+patient2_document_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response_1.xml "200 OK"
 document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.10.xml "200 OK"
 document_20_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.20.xml "200 OK"
 document_50_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.50.xml "200 OK"
@@ -216,6 +217,8 @@ DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4|5|6|7|8|11|1
 
 # GetBinary
 GET_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
+# same doc differnt url
+GET_DOCUMENT_1 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45511$
 GET_DOCUMENT_10 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45512$
 GET_DOCUMENT_20 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45513$
 GET_DOCUMENT_50 context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45514$
@@ -419,6 +422,7 @@ BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 if GET_DOCUMENT then patient2_document_response
+if GET_DOCUMENT_1 then patient2_document_response_1
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
@@ -445,6 +449,7 @@ GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # check CP ?
 if GET_DOCUMENT then patient2_document_response
+if GET_DOCUMENT_1 then patient2_document_response_1
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
