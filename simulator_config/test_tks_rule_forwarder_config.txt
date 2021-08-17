@@ -17,6 +17,9 @@ document_reference_response_50MB TKW_ROOT/config/GP_CONNECT/simulator_config/res
 document_reference_response_95MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_95MB.xml "200 OK"
 document_reference_response_105MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_105MB.xml "200 OK"
 
+document_reference_response_patient11 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_patient11.xml "200 OK"
+document_reference_response_patient12 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_patient12.xml "200 OK"
+
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 patient2_document_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response_1.xml "200 OK"
 document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.10.xml "200 OK"
@@ -379,9 +382,12 @@ if GET_PATIENT_4 then document_reference_response_10MB
 if GET_PATIENT_5 then document_reference_response_20MB
 if GET_PATIENT_6 then document_reference_response_50MB
 if GET_PATIENT_7 then document_reference_response_95MB
-if GET_PATIENT_8 then document_reference_response_105MB else patient_not_found_response
+if GET_PATIENT_8 then document_reference_response_105MB
 
-# patient 5 upwards return patient not found
+if GET_PATIENT_11 then document_reference_response_patient11
+if GET_PATIENT_12 then document_reference_response_patient12 else patient_not_found_response
+
+# other patients return patient not found
 
 END RULE
 

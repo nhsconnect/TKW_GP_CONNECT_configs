@@ -1,0 +1,197 @@
+<Bundle xmlns="http://hl7.org/fhir">
+   <meta>
+      <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"></profile>
+   </meta>
+   <type value="searchset"></type>
+   <id value="__SSP_TRACEID__"></id>
+   __PATIENT_11_HEAD__
+   __ORG_HEAD__
+   <entry>
+      <resource>
+         <DocumentReference xmlns="http://hl7.org/fhir">
+            <id value="Consultation1-Topic5-Category-Plan-DocumentReference-1"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"/>
+            </meta>
+            <masterIdentifier>
+               <system value="LocalSystem/1"/>
+               <value value="bb2374e2-dde2-11e9-9d36-2a2ae2dbcce4"/>
+            </masterIdentifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="bb237762-dde2-11e9-9d36-2a2ae2dbcce4"/>
+            </identifier>
+            <status value="current"/>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="824331000000106"/>
+                  <display value="Inpatient final discharge letter"/>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/__PATIENT_11_LOGICAL_ID__"/>
+            </subject>
+            <created value="2019-06-24T09:35:00+11:00"/>
+            <indexed value="2019-07-02T09:43:41+11:00"/>
+            <author>
+               <reference value="Practitioner/__PRACTITIONER_ID__"/>
+            </author>
+            <description value="Discharge Summary"/>
+            <content>
+               <attachment>
+                  <contentType value="application/msword"/>
+				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45510"/>
+                  <size value="3654"/>
+               </attachment>
+            </content>
+            <context>
+               <encounter>
+                  <reference value="Encounter/Encounter1"/>
+               </encounter>
+            </context>
+         </DocumentReference>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <DocumentReference xmlns="http://hl7.org/fhir">
+            <id value="Consultation1-Topic5-Category-Plan-DocumentReference-2"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"/>
+            </meta>
+            <masterIdentifier>
+               <system value="LocalSystem/1"/>
+               <value value="bb2374e2-dde2-11e9-9d36-2a2ae2dbcce5"/>
+            </masterIdentifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="bb237762-dde2-11e9-9d36-2a2ae2dbcce5"/>
+            </identifier>
+            <status value="current"/>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="824331000000106"/>
+                  <display value="Inpatient final discharge letter"/>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/__PATIENT_11_LOGICAL_ID__"/>
+            </subject>
+            <created value="2019-06-24T09:35:00+11:00"/>
+            <indexed value="2019-07-02T09:43:41+11:00"/>
+            <author>
+               <reference value="Practitioner/__PRACTITIONER_ID__"/>
+            </author>
+            <description value="Discharge Summary"/>
+            <content>
+               <attachment>
+				   <contentType value="audio/x-au"/>
+				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45511"/>
+                  <size value="3654"/>
+               </attachment>
+            </content>
+            <context>
+               <encounter>
+                  <reference value="Encounter/Encounter1"/>
+               </encounter>
+            </context>
+         </DocumentReference>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <DocumentReference xmlns="http://hl7.org/fhir">
+            <id value="Consultation1-Topic5-Category-Plan-DocumentReference-3"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"/>
+            </meta>
+            <masterIdentifier>
+               <system value="LocalSystem/1"/>
+               <value value="bb2374e2-dde2-11e9-9d36-2a2ae2dbcce6"/>
+            </masterIdentifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="bb237762-dde2-11e9-9d36-2a2ae2dbcce6"/>
+            </identifier>
+            <status value="current"/>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="824331000000106"/>
+                  <display value="Inpatient final discharge letter"/>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/__PATIENT_11_LOGICAL_ID__"/>
+            </subject>
+            <created value="2019-06-24T09:35:00+11:00"/>
+            <indexed value="2019-07-02T09:43:41+11:00"/>
+            <author>
+               <reference value="Practitioner/__PRACTITIONER_ID__"/>
+            </author>
+            <description value="Discharge Summary"/>
+            <content>
+               <attachment>
+                  <contentType value="application/text"/>
+				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45512"/>
+                  <size value="10000000"/>
+               </attachment>
+            </content>
+            <context>
+               <encounter>
+                  <reference value="Encounter/Encounter1"/>
+               </encounter>
+            </context>
+         </DocumentReference>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <DocumentReference xmlns="http://hl7.org/fhir">
+            <id value="Consultation1-Topic5-Category-Plan-DocumentReference-4"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"/>
+            </meta>
+            <masterIdentifier>
+               <system value="LocalSystem/1"/>
+               <value value="bb2374e2-dde2-11e9-9d36-2a2ae2dbcce7"/>
+            </masterIdentifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="bb237762-dde2-11e9-9d36-2a2ae2dbcce7"/>
+            </identifier>
+            <status value="current"/>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="824331000000106"/>
+                  <display value="Inpatient final discharge letter"/>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/__PATIENT_11_LOGICAL_ID__"/>
+            </subject>
+            <created value="2019-06-24T09:35:00+11:00"/>
+            <indexed value="2019-07-02T09:43:41+11:00"/>
+            <author>
+               <reference value="Practitioner/__PRACTITIONER_ID__"/>
+            </author>
+            <description value="Discharge Summary"/>
+            <content>
+               <attachment>
+                  <contentType value="application/text"/>
+				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45513"/>
+                  <size value="20000000"/>
+               </attachment>
+            </content>
+            <context>
+               <encounter>
+                  <reference value="Encounter/Encounter1"/>
+               </encounter>
+            </context>
+         </DocumentReference>
+      </resource>
+   </entry>
+</Bundle>
