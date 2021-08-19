@@ -11159,8 +11159,8 @@ __DIARY_ENTRIES_WARNINGS__
             <content>
                <attachment>
                   <contentType value="application/text"/>
-				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45516"/>
-                  <size value="105000000"/>
+                  <size value="0"/>
+				  <title value="Document is too large (105MB) to be migrated."/>
                </attachment>
             </content>
             <context>
