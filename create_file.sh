@@ -51,6 +51,9 @@ case $mb in
 	;;
 esac
 
-cat head.txt file.b64.txt tail.txt |  tr -d '\n' | sed s/07a6483f-732b-461e-86b6-edb665c45511/07a6483f-732b-461e-86b6-edb665c4551$index/ > simulator_config/responses/binary.$mb.xml
+#format=xml
+format=json
+
+cat head.$format.txt file.b64.txt tail.$format.txt |  tr -d '\n' | sed s/07a6483f-732b-461e-86b6-edb665c45511/07a6483f-732b-461e-86b6-edb665c4551$index/ > simulator_config/responses/binary.$mb.$format
 
 rm -f $FILE.txt $FILE.b64.txt $FILE.A.txt

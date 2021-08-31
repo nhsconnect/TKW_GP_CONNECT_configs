@@ -26,7 +26,9 @@ document_10_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binar
 document_20_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.20.xml "200 OK"
 document_50_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.50.xml "200 OK"
 document_95_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.95.xml "200 OK"
+document_95_json_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.95.json.bin "200 OK"
 document_105_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.105.xml "200 OK"
+document_105_json_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/binary.105.json.bin "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
 documents_metadata_1_6_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_6_0.xml "200 OK"
@@ -432,7 +434,9 @@ if GET_DOCUMENT_1 then patient2_document_response_1
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
+if GET_DOCUMENT_95 AND ACCEPT_JSON then document_95_json_response 
 if GET_DOCUMENT_95 then document_95_response
+if GET_DOCUMENT_105 AND ACCEPT_JSON then document_105_json_response 
 if GET_DOCUMENT_105 then document_105_response else binary_nrf
 END RULE
 
@@ -459,7 +463,9 @@ if GET_DOCUMENT_1 then patient2_document_response_1
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
+if GET_DOCUMENT_95 AND ACCEPT_JSON then document_95_json_response 
 if GET_DOCUMENT_95 then document_95_response
+if GET_DOCUMENT_105 AND ACCEPT_JSON then document_105_json_response 
 if GET_DOCUMENT_105 then document_105_response else binary_nrf
 END RULE
 
