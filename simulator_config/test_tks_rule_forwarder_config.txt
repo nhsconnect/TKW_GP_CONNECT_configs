@@ -40,6 +40,8 @@ patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Co
 patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
 patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
 
+
+# SDS Adapter simulator
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 
@@ -67,6 +69,10 @@ full_record_13 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record
 full_record_14 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_14.xml "200 OK"
 full_record_16 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_16.xml "200 OK"
 full_record_17 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_17.xml "200 OK"
+
+# Oct 2021 Hackathon
+patient_response_25 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_25.xml "200 OK"
+patient_response_26 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_26.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -143,6 +149,10 @@ __PATIENT_14_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 __PATIENT_16_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938118_head.xml')/block/text()
 __PATIENT_17_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938126_head.xml')/block/text()
 
+# oct 2021 Hackathon
+__PATIENT_25_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938193_head.xml')/block/text()
+__PATIENT_26_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937464_head.xml')/block/text()
+
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
@@ -166,6 +176,7 @@ INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 passthrough	Always
 dontpassthrough	Never
 single_clinical_area xpathequals count(/fhir:Parameters/fhir:parameter) 2
+two_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter) 3
 multiple_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter)>2  true
 
 # diary entries
@@ -196,6 +207,10 @@ QUERY_PATIENT_17 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 QUERY_PATIENT_22 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937316
 QUERY_PATIENT_23 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937324
 QUERY_PATIENT_24 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937332
+
+# Hackathon Oct 2021 
+QUERY_PATIENT_25 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938193
+QUERY_PATIENT_26 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937464
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
@@ -288,7 +303,7 @@ END EXPRESSIONS
 #
 
 #==================================================================================================
-#  Structured Data - Diary Entries Clinical Area
+#  Structured Data - Diary Entries Clinical Area and others
 #
 
 BEGIN RULE
@@ -339,6 +354,10 @@ if single_diary_search_date_parameter and DIARY_ENTRY_SEARCH_IN_PAST then operat
 if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2_diary_response
 if QUERY_PATIENT_3 and single_clinical_area and single_diary_entry then patient3_diary_response
 if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4_diary_response
+
+# Oct 2021 Hackathon
+if QUERY_PATIENT_25 and two_clinical_areas and meds_request and allergies_request then patient_response_25
+if QUERY_PATIENT_26 and two_clinical_areas and meds_request and allergies_request then patient_response_26
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
