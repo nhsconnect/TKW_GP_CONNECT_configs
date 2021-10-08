@@ -3,7 +3,7 @@
       <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"/>
    </meta>
    <type value="collection"/>
-   <id xmlns="" xmlns:fhir="http://hl7.org/fhir" value="__SSP_TRACE_ID__"/>
+   <id xmlns="" xmlns:fhir="http://hl7.org/fhir" value="__SSP_TRACEID__"/>
 __PATIENT_26_HEAD__
 __ORG_HEAD__
    <entry>
