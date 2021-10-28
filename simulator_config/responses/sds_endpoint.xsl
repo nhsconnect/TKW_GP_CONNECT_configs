@@ -112,7 +112,7 @@
 										  <display value="Any"></display>
 									   </coding>
 									</payloadType>
-									 <address><xsl:value-of select="$entry/@endpoint"/></address>
+									<address value="{$entry/@endpoint}"/>
 								</Endpoint>
 							</resource>
 							<search>
