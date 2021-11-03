@@ -1,0 +1,88 @@
+<Organization xmlns="http://hl7.org/fhir">
+   <id value="X26"/>
+   <meta>
+      <lastUpdated value="2014-11-28T00:00:00+00:00"/>
+      <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1"/>
+   </meta>
+   <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-ActivePeriod-1">
+      <valuePeriod>
+         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-DateType-1">
+            <valueString value="Operational"/>
+         </extension>
+         <start value="1974-04-01"/>
+         <end value="2012-09-30"/>
+      </valuePeriod>
+   </extension>
+   <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1">
+      <extension url="role">
+         <valueCoding>
+            <system value="https://orange.testlab.nhs.uk/ods-directory/FHIR/STU3/CodeSystem/ODSAPI-OrganizationRole-1"/>
+            <code value="177"/>
+            <display value="PRESCRIBING COST CENTRE"/>
+         </valueCoding>
+      </extension>
+      <extension url="primaryRole">
+         <valueBoolean value="true"/>
+      </extension>
+      <extension url="activePeriod">
+         <valuePeriod>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-DateType-1">
+               <valueString value="Operational"/>
+            </extension>
+            <start value="1974-04-01"/>
+            <end value="2012-09-30"/>
+         </valuePeriod>
+      </extension>
+      <extension url="status">
+         <valueString value="Inactive"/>
+      </extension>
+   </extension>
+   <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1">
+      <extension url="role">
+         <valueCoding>
+            <system value="https://orange.testlab.nhs.uk/ods-directory/FHIR/STU3/CodeSystem/ODSAPI-OrganizationRole-1"/>
+            <code value="72"/>
+            <display value="OTHER PRESCRIBING COST CENTRE"/>
+         </valueCoding>
+      </extension>
+      <extension url="primaryRole">
+         <valueBoolean value="false"/>
+      </extension>
+      <extension url="activePeriod">
+         <valuePeriod>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-DateType-1">
+               <valueString value="Operational"/>
+            </extension>
+            <start value="2012-09-30"/>
+            <end value="2012-09-30"/>
+         </valuePeriod>
+      </extension>
+      <extension url="status">
+         <valueString value="Inactive"/>
+      </extension>
+   </extension>
+   <identifier>
+      <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+      <value value="X26"/>
+   </identifier>
+   <active value="false"/>
+   <type>
+      <coding>
+         <system value="https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1"/>
+         <code value="1"/>
+         <display value="HSCOrg"/>
+      </coding>
+   </type>
+   <name value="HEALTH AND SOCIAL CARE INFORMATION CENTRE"/>
+   <telecom>
+      <system value="phone"/>
+      <value value="0300 303 5678"/>
+   </telecom>
+   <address>
+      <line value="1 TREVELYAN SQUARE"/>
+      <city value="LEEDS"/>
+      <district value="WEST YORKSHIRE"/>
+      <postalCode value="LS1 6AE"/>
+      <country value="ENGLAND"/>
+   </address>
+</Organization>

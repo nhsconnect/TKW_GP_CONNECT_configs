@@ -74,6 +74,19 @@ full_record_17 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record
 patient_response_25 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_25.xml "200 OK"
 patient_response_26 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_26.xml "200 OK"
 patient_response_27 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_27.xml "200 OK"
+
+# SDS adapter org queries
+A20047_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/A20047.xml "200 OK"
+B82617_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/B82617.xml "200 OK"
+X26_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/X26.xml "200 OK"
+SDS_NoRecordFound_response TKW_ROOT/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome_sds_nrf.xml 404
+
+# binary json which is not fhir compliant as per current "live" implementation
+A20047_binary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/A20047.json.bin "200 OK"
+B82617_binary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/B82617.json.bin "200 OK"
+X26_binary_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/X26.json.bin "200 OK"
+SDS_NoRecordFound_binary_response TKW_ROOT/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome_sds_nrf.json.bin 404
+
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -299,6 +312,12 @@ MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
 #FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part) = 0 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 MIGRATE_FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 
+# SDS adapter org queries
+SDS_ORG_QUERY context_path matches ^.*/ods-directory/FHIR/STU3/Organization/.*$
+ORG_A20047 context_path matches ^.*/Organization/A20047(\?.*)?$
+ORG_B82617 context_path matches ^.*/Organization/B82617(\?.*)?$
+ORG_X26 context_path matches ^.*/Organization/X26(\?.*)?$
+
 END EXPRESSIONS
 
 #
@@ -457,9 +476,9 @@ if GET_DOCUMENT_1 then patient2_document_response_1
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
-if GET_DOCUMENT_95 AND ACCEPT_JSON then document_95_json_response 
+if GET_DOCUMENT_95 AND  ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) then document_95_json_response 
 if GET_DOCUMENT_95 then document_95_response
-if GET_DOCUMENT_105 AND ACCEPT_JSON then document_105_json_response 
+if GET_DOCUMENT_105 AND ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) then document_105_json_response 
 if GET_DOCUMENT_105 then document_105_response else binary_nrf
 END RULE
 
@@ -486,9 +505,9 @@ if GET_DOCUMENT_1 then patient2_document_response_1
 if GET_DOCUMENT_10 then document_10_response 
 if GET_DOCUMENT_20 then document_20_response
 if GET_DOCUMENT_50 then document_50_response
-if GET_DOCUMENT_95 AND ACCEPT_JSON then document_95_json_response 
+if GET_DOCUMENT_95 AND ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) then document_95_json_response 
 if GET_DOCUMENT_95 then document_95_response
-if GET_DOCUMENT_105 AND ACCEPT_JSON then document_105_json_response 
+if GET_DOCUMENT_105 AND ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) then document_105_json_response 
 if GET_DOCUMENT_105 then document_105_response else binary_nrf
 END RULE
 
@@ -513,7 +532,7 @@ END RULE
 #END RULE
 
 #==================================================================================================
-# FHIR SDS Adapter
+# FHIR SDS Adapter or any other HTTP GET with no interaction id
 #
 
 BEGIN RULE
@@ -521,6 +540,17 @@ GET
 # SDS adapter rules
 if DEVICE then device
 if ENDPOINT then endpoint
+
+# these return malformed json as per the current "live" implementation
+if SDS_ORG_QUERY and ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) and ORG_A20047 then A20047_binary_response
+if SDS_ORG_QUERY and ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) and ORG_B82617 then B82617_binary_response
+if SDS_ORG_QUERY and ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) and ORG_X26 then X26_binary_response
+if SDS_ORG_QUERY and ( FORMAT_PARAM_JSON or ( not FORMAT_PARAM_XML and ACCEPT_JSON ) ) then SDS_NoRecordFound_binary_response
+
+if SDS_ORG_QUERY and ORG_A20047 then A20047_response
+if SDS_ORG_QUERY and ORG_B82617 then B82617_response
+if SDS_ORG_QUERY and ORG_X26 then X26_response
+if SDS_ORG_QUERY then SDS_NoRecordFound_response
 
 if dontpassthrough then do_process
 END RULE

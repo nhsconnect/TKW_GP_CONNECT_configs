@@ -1,0 +1,119 @@
+{
+    "resourceType": "Organization",
+    "id": "X26",
+    "meta": {
+        "lastUpdated": "2014-11-28T00:00:00+00:00",
+        "profile": "https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1"
+    },
+    "extension": [
+        {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-ActivePeriod-1",
+            "valuePeriod": {
+                "extension": [
+                    {
+                        "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-DateType-1",
+                        "valueString": "Operational"
+                    }
+                ],
+                "start": "1974-04-01",
+                "end": "2012-09-30"
+            }
+        },
+        {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1",
+            "extension": [
+                {
+                    "url": "role",
+                    "valueCoding": {
+                        "system": "https://orange.testlab.nhs.uk/ods-directory/FHIR/STU3/CodeSystem/ODSAPI-OrganizationRole-1",
+                        "code": "177",
+                        "display": "PRESCRIBING COST CENTRE"
+                    }
+                },
+                {
+                    "url": "primaryRole",
+                    "valueBoolean": true
+                },
+                {
+                    "url": "activePeriod",
+                    "valuePeriod": {
+                        "extension": [
+                            {
+                                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-DateType-1",
+                                "valueString": "Operational"
+                            }
+                        ],
+                        "start": "1974-04-01",
+                        "end": "2012-09-30"
+                    }
+                },
+                {
+                    "url": "status",
+                    "valueString": "Inactive"
+                }
+            ]
+        },
+        {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1",
+            "extension": [
+                {
+                    "url": "role",
+                    "valueCoding": {
+                        "system": "https://orange.testlab.nhs.uk/ods-directory/FHIR/STU3/CodeSystem/ODSAPI-OrganizationRole-1",
+                        "code": "72",
+                        "display": "OTHER PRESCRIBING COST CENTRE"
+                    }
+                },
+                {
+                    "url": "primaryRole",
+                    "valueBoolean": false
+                },
+                {
+                    "url": "activePeriod",
+                    "valuePeriod": {
+                        "extension": [
+                            {
+                                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-DateType-1",
+                                "valueString": "Operational"
+                            }
+                        ],
+                        "start": "2012-09-30",
+                        "end": "2012-09-30"
+                    }
+                },
+                {
+                    "url": "status",
+                    "valueString": "Inactive"
+                }
+            ]
+        }
+    ],
+    "identifier": {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "X26"
+    },
+    "active": false,
+    "type": {
+        "coding": {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1",
+            "code": "1",
+            "display": "HSCOrg"
+        }
+    },
+    "name": "HEALTH AND SOCIAL CARE INFORMATION CENTRE",
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "0300 303 5678"
+        }
+    ],
+    "address": {
+        "line": [
+		"1 TREVELYAN SQUARE"
+        ],
+        "city": "LEEDS",
+        "district": "WEST YORKSHIRE",
+        "postalCode": "LS1 6AE",
+        "country": "ENGLAND"
+    }
+}
