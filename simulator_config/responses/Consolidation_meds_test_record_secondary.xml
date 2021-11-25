@@ -133,7 +133,7 @@
   <entry>
     <resource>
       <Patient xmlns="http://hl7.org/fhir">
-        <id value="2"/>
+        <id value="23"/>
         <meta>
           <versionId value="2169046890044627900"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
