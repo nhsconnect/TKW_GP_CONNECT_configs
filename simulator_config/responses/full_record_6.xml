@@ -10846,7 +10846,7 @@ __DIARY_ENTRIES_WARNINGS__
             <description value="Discharge Summary"/>
             <content>
                <attachment>
-                  <contentType value="application/text"/>
+				   <contentType value="text/plain"/>
 				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45514"/>
                   <size value="50000000"/>
                </attachment>

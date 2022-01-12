@@ -10841,12 +10841,12 @@ __DIARY_ENTRIES_WARNINGS__
             <created value="2019-06-24T09:35:00+11:00"/>
             <indexed value="2019-07-02T09:43:41+11:00"/>
             <author>
-               <reference value="Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"/>
+               <reference value="Practitioner/__PRACTITIONER_ID__"/>
             </author>
             <description value="Discharge Summary"/>
             <content>
                <attachment>
-                  <contentType value="application/text"/>
+				   <contentType value="text/plain"/>
 				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45515"/>
                   <size value="95000000"/>
                </attachment>

@@ -134,7 +134,7 @@
             <description value="Discharge Summary"/>
             <content>
                <attachment>
-                  <contentType value="application/text"/>
+				   <contentType value="text/plain"/>
 				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45512"/>
                   <size value="10000000"/>
                </attachment>
@@ -275,7 +275,7 @@
             <description value="Discharge Summary"/>
             <content>
                <attachment>
-                  <contentType value="application/text"/>
+				   <contentType value="text/plain"/>
 				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45515"/>
                   <size value="95000000"/>
                </attachment>
@@ -322,7 +322,7 @@
             <description value="Discharge Summary"/>
             <content>
                <attachment>
-                  <contentType value="application/text"/>
+				   <contentType value="text/plain"/>
 				  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45516"/>
                   <size value="105000000"/>
                </attachment>
