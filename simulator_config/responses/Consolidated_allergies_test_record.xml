@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
+  <id value="__SSP_TRACEID__"/>
   <meta>
     <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"/>
   </meta>
   <type value="collection"/>
-  <id value="__SSP_TRACEID__"></id>
   <entry>
     <resource>
       <Patient xmlns="http://hl7.org/fhir">
-        <id value="2"/>
+        <id value="24"/>
         <meta>
           <versionId value="8840260017698329728"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
