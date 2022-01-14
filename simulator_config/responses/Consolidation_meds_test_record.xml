@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
+  <id value="__SSP_TRACEID__"/>
   <meta>
     <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"/>
   </meta>
   <type value="collection"/>
-  <id value="__SSP_TRACEID__"></id>
   <entry>
     <resource>
       <Patient xmlns="http://hl7.org/fhir">
@@ -175,7 +175,7 @@
       <PractitionerRole xmlns="http://hl7.org/fhir">
         <id value="2"/>
         <meta>
-          <versionId value="4770759809396285430"/>
+          <versionId value="8380942905747068072"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
         </meta>
         <practitioner>
@@ -252,9 +252,9 @@
   <entry>
     <resource>
       <PractitionerRole xmlns="http://hl7.org/fhir">
-        <id value="6AB948A5-2067-4A67-AD00-60EAF13E9CAA5E496953-065B-41F2-9577-BE8F2FBD0757"/>
+        <id value="6AB948A520674A67AD0060EAF13E9CAA5E496953065B41F29577BE8F2FBD0757"/>
         <meta>
-          <versionId value="3821120703926896789"/>
+          <versionId value="5290841605602435907"/>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
         </meta>
         <practitioner>
@@ -752,7 +752,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="799E79C1-C099-0FEA-AE80-B46B3D735F61"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC62E61869FD0DB4532B694DB6511DB7A7DMS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D"/>
@@ -770,12 +770,10 @@
         </subject>
         <taken value="unk"/>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Administrative note"/>
+          <text value="Prescriber Notes:Administrative note"/>
         </note>
         <note>
-          <authorString value="Patient Notes"/>
-          <text value="Script note"/>
+          <text value="Patient Notes:Script note"/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
@@ -805,7 +803,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="A63B48A8-9A25-A527-02BE-DBBCDB32D6C0"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC62E61869FD0DB4532B694DB6511DB7A7DHD1MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
@@ -824,15 +822,20 @@
         </subject>
         <taken value="unk"/>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 Administrative note"/>
+          <text value="Prescriber Notes:Administrative note"/>
         </note>
         <note>
-          <authorString value="Patient Notes"/>
-          <text value="Issue number 1 Script note"/>
+          <text value="Patient Notes:Script note"/>
+        </note>
+        <note>
+          <text value="Prescriber Notes:Issue number 1 Administrative note"/>
+        </note>
+        <note>
+          <text value="Patient Notes:Issue number 1 Script note"/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
+          <patientInstruction value="Script note"/>
         </dosage>
       </MedicationStatement>
     </resource>
@@ -863,11 +866,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC62E61869FD0DB4532B694DB6511DB7A7DHD1"/>
         </identifier>
-        <groupIdentifier>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-hd-1"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="plan"/>
         <medicationReference>
@@ -877,11 +877,23 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2021-03-03T12:49:02.21+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
+        <note>
+          <text value="Prescriber Notes:Administrative note"/>
+        </note>
+        <note>
+          <text value="Patient Notes:Script note"/>
+        </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
+          <patientInstruction value="Script note"/>
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
@@ -920,14 +932,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="80462435-9A91-47A4-A7E9-C7BF525A00C5"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC6804624359A9147A4A7E9C7BF525A00C5"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/2E61869F-D0DB-4532-B694-DB6511DB7A7D-HD-1"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d-hd-1"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -936,17 +945,23 @@
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2021-03-03T12:49:35.397+00:00"/>
+        <context>
+          <reference value="Encounter/32B11852-21CF-495A-9EEA-6A4761BACF33"/>
+        </context>
+        <authoredOn value="2020-09-30T12:38:00+01:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 Administrative note"/>
+          <text value="Prescriber Notes:Issue number 1 Administrative note"/>
         </note>
         <note>
-          <authorString value="Patient Notes"/>
-          <text value="Issue number 1 Script note"/>
+          <text value="Patient Notes:Issue number 1 Script note"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -997,11 +1012,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="2E61869F-D0DB-4532-B694-DB6511DB7A7D"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC62E61869FD0DB4532B694DB6511DB7A7D"/>
         </identifier>
-        <groupIdentifier>
-          <value value="2e61869f-d0db-4532-b694-db6511db7a7d"/>
-        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -1011,16 +1023,19 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2021-03-03T12:49:35.397+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Administrative note"/>
+          <text value="Prescriber Notes:Administrative note"/>
         </note>
         <note>
-          <authorString value="Patient Notes"/>
-          <text value="Script note"/>
+          <text value="Patient Notes:Script note"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -4244,7 +4259,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="FBDB076F-1D04-EFC2-983C-71537763E705"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC62E352BA68F87479BBC8041494027F2E6MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/2E352BA6-8F87-479B-BC80-41494027F2E6"/>
@@ -4262,8 +4277,7 @@
         </subject>
         <taken value="unk"/>
         <note>
-          <authorString value="Patient Notes"/>
-          <text value="Take 30 mins before a meal or snack"/>
+          <text value="Patient Notes:Take 30 mins before a meal or snack"/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Morning"/>
@@ -4298,11 +4312,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="2E352BA6-8F87-479B-BC80-41494027F2E6"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC62E352BA68F87479BBC8041494027F2E6"/>
         </identifier>
-        <groupIdentifier>
-          <value value="2e352ba6-8f87-479b-bc80-41494027f2e6"/>
-        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -4312,12 +4323,16 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2021-03-05T16:35:02.273+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
         <note>
-          <authorString value="Patient Notes"/>
-          <text value="Take 30 mins before a meal or snack"/>
+          <text value="Patient Notes:Take 30 mins before a meal or snack"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Morning"/>
@@ -4554,7 +4569,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="E84DAAAF-C74C-E9DA-4BE4-8629214E182E"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC6608801399E794F1E959A545B4A7F3BC7MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
@@ -4600,11 +4615,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC6608801399E794F1E959A545B4A7F3BC7"/>
         </identifier>
-        <groupIdentifier>
-          <value value="60880139-9e79-4f1e-959a-545b4a7f3bc7"/>
-        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -4614,6 +4626,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2021-03-03T14:42:12.453+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
@@ -4656,14 +4673,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="EA171C1E-6C99-45A7-B4BA-605C6BA22A4B"/>
+          <value value="7DC1C5D8540B4A7C8E19CBD3426A8CC6EA171C1E6C9945A7B4BA605C6BA22A4B"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/60880139-9E79-4F1E-959A-545B4A7F3BC7"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="60880139-9e79-4f1e-959a-545b4a7f3bc7"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -4672,7 +4686,15 @@
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2021-03-03T14:42:34.29+00:00"/>
+        <context>
+          <reference value="Encounter/A48BE469-0303-4196-9909-2A0F2017D6C6"/>
+        </context>
+        <authoredOn value="2020-07-01T14:36:00+01:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
         </recorder>
@@ -4739,7 +4761,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="8F7B874F-2A7E-8471-0F5B-803E7AF43503"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21E01E5A37972A4911B3A8873E68978084MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/E01E5A37-972A-4911-B3A8-873E68978084"/>
@@ -4780,11 +4802,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="E01E5A37-972A-4911-B3A8-873E68978084"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21E01E5A37972A4911B3A8873E68978084"/>
         </identifier>
-        <groupIdentifier>
-          <value value="e01e5a37-972a-4911-b3a8-873e68978084"/>
-        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -4794,6 +4813,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-08-10T13:35:05.947+01:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
         </recorder>
@@ -4857,9 +4881,12 @@
             </coding>
           </valueCodeableConcept>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2011-01-16T00:00:00+00:00"/>
+        </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="0BBD883F-E74A-795E-3876-099AAFCDBBED"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21EB002DF0C86944648F74340BBC8A2457MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457"/>
@@ -4872,125 +4899,21 @@
           <start value="2011-01-16"/>
           <end value="2019-10-28"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-16T10:06:09.733+00:00"/>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <taken value="unk"/>
-        <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="This is a pharmacy information note for Cilazapril"/>
-        </note>
-        <dosage>
-          <text value="One To Be Taken Each Day"/>
-        </dosage>
-      </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationStatement xmlns="http://hl7.org/fhir">
-        <id value="EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1-MS"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
-              <code value="prescribed-at-gp-practice"/>
-              <display value="Prescribed at GP practice"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-16T00:00:00+00:00"/>
-        </extension>
-        <identifier>
-          <system value="https://EMISWeb/A82038"/>
-          <value value="A2C20582-E327-C4E5-B25A-060507840FCA"/>
-        </identifier>
-        <basedOn>
-          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
-        </basedOn>
-        <status value="completed"/>
-        <medicationReference>
-          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
-        </medicationReference>
-        <effectivePeriod>
-          <start value="2011-01-16"/>
-          <end value="2011-01-16"/>
-        </effectivePeriod>
         <dateAsserted value="2011-01-16T10:06:08.953+00:00"/>
         <subject>
           <reference value="Patient/22"/>
         </subject>
         <taken value="unk"/>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is a pharmacy information note for Cilazapril"/>
+          <text value="Prescriber Notes:This is a pharmacy information note for Cilazapril"/>
+        </note>
+        <note>
+          <text value="Prescriber Notes:Issue number 1 This is a pharmacy information note for Cilazapril"/>
         </note>
         <dosage>
           <text value="One To Be Taken Each Day"/>
         </dosage>
       </MedicationStatement>
-    </resource>
-  </entry>
-  <entry>
-    <resource>
-      <MedicationRequest xmlns="http://hl7.org/fhir">
-        <id value="EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
-        <meta>
-          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-        </meta>
-        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
-          <valueCodeableConcept>
-            <coding>
-              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
-              <code value="acute"/>
-              <display value="Acute"/>
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <identifier>
-          <system value="https://EMISWeb/A82038"/>
-          <value value="EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
-        </identifier>
-        <groupIdentifier>
-          <value value="eb002df0-c869-4464-8f74-340bbc8a2457-fi-1"/>
-        </groupIdentifier>
-        <status value="completed"/>
-        <intent value="plan"/>
-        <medicationReference>
-          <reference value="Medication/0C881423-E7C2-4A28-9244-5E1ED3DA572D"/>
-        </medicationReference>
-        <subject>
-          <reference value="Patient/22"/>
-        </subject>
-        <authoredOn value="2011-01-16T10:06:08.953+00:00"/>
-        <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
-        </recorder>
-        <dosageInstruction>
-          <text value="One To Be Taken Each Day"/>
-        </dosageInstruction>
-        <dispenseRequest>
-          <validityPeriod>
-            <start value="2011-01-16"/>
-            <end value="2011-01-16"/>
-          </validityPeriod>
-          <quantity>
-            <value value="28"/>
-            <unit value="tablet"/>
-          </quantity>
-          <expectedSupplyDuration>
-            <value value="28"/>
-            <unit value="day"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="d"/>
-          </expectedSupplyDuration>
-        </dispenseRequest>
-      </MedicationRequest>
     </resource>
   </entry>
   <entry>
@@ -5011,11 +4934,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="EB002DF0-C869-4464-8F74-340BBC8A2457"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21EB002DF0C86944648F74340BBC8A2457"/>
         </identifier>
-        <groupIdentifier>
-          <value value="eb002df0-c869-4464-8f74-340bbc8a2457"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="plan"/>
         <medicationReference>
@@ -5024,13 +4944,17 @@
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2011-01-16T10:06:09.733+00:00"/>
+        <authoredOn value="2011-01-16T10:06:08.953+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          </agent>
+        </requester>
         <recorder>
-          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+          <reference value="Practitioner/2"/>
         </recorder>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="This is a pharmacy information note for Cilazapril"/>
+          <text value="Prescriber Notes:This is a pharmacy information note for Cilazapril"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -5051,9 +4975,6 @@
             <code value="d"/>
           </expectedSupplyDuration>
         </dispenseRequest>
-        <priorPrescription>
-          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
-        </priorPrescription>
       </MedicationRequest>
     </resource>
   </entry>
@@ -5075,14 +4996,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="F14DCB62-C936-4FB9-BE4B-9AE9326A9944"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21F14DCB62C9364FB9BE4B9AE9326A9944"/>
         </identifier>
         <basedOn>
-          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1"/>
+          <reference value="MedicationRequest/EB002DF0-C869-4464-8F74-340BBC8A2457"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="eb002df0-c869-4464-8f74-340bbc8a2457-fi-1"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -5092,12 +5010,16 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-16T10:06:09.733+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
         <note>
-          <authorString value="Prescriber Notes"/>
-          <text value="Issue number 1 This is a pharmacy information note for Cilazapril"/>
+          <text value="Prescriber Notes:Issue number 1 This is a pharmacy information note for Cilazapril"/>
         </note>
         <dosageInstruction>
           <text value="One To Be Taken Each Day"/>
@@ -5165,7 +5087,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="D9F9DF68-6B1E-95A9-1824-7C813860AB00"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE2147599D21788E4F4A8DA89DBE1B40A2BFMS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/47599D21-788E-4F4A-8DA8-9DBE1B40A2BF"/>
@@ -5217,11 +5139,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="47599D21-788E-4F4A-8DA8-9DBE1B40A2BF"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE2147599D21788E4F4A8DA89DBE1B40A2BF"/>
         </identifier>
-        <groupIdentifier>
-          <value value="47599d21-788e-4f4a-8da8-9dbe1b40a2bf"/>
-        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -5231,6 +5150,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-10-02T11:24:28.613+01:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5274,14 +5198,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="9155DFD6-182A-48ED-9A62-97A92955020A"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE219155DFD6182A48ED9A6297A92955020A"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/47599D21-788E-4F4A-8DA8-9DBE1B40A2BF"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="47599d21-788e-4f4a-8da8-9dbe1b40a2bf"/>
-        </groupIdentifier>
         <status value="stopped"/>
         <intent value="order"/>
         <medicationReference>
@@ -5291,6 +5212,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-10-02T11:24:36.91+01:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5363,7 +5289,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="CCB7338A-7B51-107A-0A41-9E3EB7E57825"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21C3DE337C18BE43799EE838683327B53AMS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/C3DE337C-18BE-4379-9EE8-38683327B53A"/>
@@ -5434,11 +5360,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="C3DE337C-18BE-4379-9EE8-38683327B53A"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21C3DE337C18BE43799EE838683327B53A"/>
         </identifier>
-        <groupIdentifier>
-          <value value="c3de337c-18be-4379-9ee8-38683327b53a"/>
-        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -5448,6 +5371,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-03-24T15:59:21.893+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5491,14 +5419,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="DAE87B52-38ED-42BD-B081-34E8BA634194"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21DAE87B5238ED42BDB08134E8BA634194"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/C3DE337C-18BE-4379-9EE8-38683327B53A"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="c3de337c-18be-4379-9ee8-38683327b53a"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -5507,7 +5432,15 @@
         <subject>
           <reference value="Patient/22"/>
         </subject>
-        <authoredOn value="2011-03-24T15:59:29.41+00:00"/>
+        <context>
+          <reference value="Encounter/8F1F0FF5-2F2C-482B-BD9A-98101786B46D"/>
+        </context>
+        <authoredOn value="2011-03-24T15:39:00+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5577,7 +5510,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="BF47C921-12AA-3235-E7E2-4D3F833E5AA3"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE2151F220391FD744B1B8EF54994AE81706MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/51F22039-1FD7-44B1-B8EF-54994AE81706"/>
@@ -5626,11 +5559,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="51F22039-1FD7-44B1-B8EF-54994AE81706"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE2151F220391FD744B1B8EF54994AE81706"/>
         </identifier>
-        <groupIdentifier>
-          <value value="51f22039-1fd7-44b1-b8ef-54994ae81706"/>
-        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -5640,6 +5570,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-15T11:02:50.067+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5682,14 +5617,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="2488EAAB-4C1A-477C-A34E-5C38F636952E"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE212488EAAB4C1A477CA34E5C38F636952E"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/51F22039-1FD7-44B1-B8EF-54994AE81706"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="51f22039-1fd7-44b1-b8ef-54994ae81706"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -5699,6 +5631,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-15T11:02:51.91+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5768,7 +5705,7 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="139A7606-4263-EBA3-CD56-31BF97816EB2"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21B6777C23E2454053BE4C45F5D0A27054MS"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
@@ -5817,11 +5754,8 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="B6777C23-E245-4053-BE4C-45F5D0A27054"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21B6777C23E2454053BE4C45F5D0A27054"/>
         </identifier>
-        <groupIdentifier>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
-        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -5831,6 +5765,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-19T14:49:19.567+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5873,14 +5812,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="5FBA0748-81A4-4D79-8EDF-B558A5EA3DC8"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE215FBA074881A44D798EDFB558A5EA3DC8"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -5890,6 +5826,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-19T14:49:20.283+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5933,14 +5874,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="A4EF54E4-E3A0-4DFB-876D-5396378506C6"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21A4EF54E4E3A04DFB876D5396378506C6"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -5950,6 +5888,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-20T09:18:53.657+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -5993,14 +5936,11 @@
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
-          <value value="63E48882-8381-410A-BD0A-3DAAEA849FBB"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE2163E488828381410ABD0A3DAAEA849FBB"/>
         </identifier>
         <basedOn>
           <reference value="MedicationRequest/B6777C23-E245-4053-BE4C-45F5D0A27054"/>
         </basedOn>
-        <groupIdentifier>
-          <value value="b6777c23-e245-4053-be4c-45f5d0a27054"/>
-        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -6010,6 +5950,11 @@
           <reference value="Patient/22"/>
         </subject>
         <authoredOn value="2011-01-21T09:35:21.617+00:00"/>
+        <requester>
+          <agent>
+            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+          </agent>
+        </requester>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -6048,6 +5993,430 @@
             <code value="BEAQ9453EMIS"/>
             <display value="Benzoyl Peroxide Aquagel 5 %"/>
             <userSelected value="true"/>
+          </coding>
+        </code>
+      </Medication>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationStatement xmlns="http://hl7.org/fhir">
+        <id value="AFA9A909-808C-49DF-B805-9E43C947EE5A-MS"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+              <code value="prescribed-at-gp-practice"/>
+              <display value="Prescribed at GP practice"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2020-10-19T00:00:00+01:00"/>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21AFA9A909808C49DFB8059E43C947EE5AMS"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/AFA9A909-808C-49DF-B805-9E43C947EE5A"/>
+        </basedOn>
+        <status value="completed"/>
+        <medicationReference>
+          <reference value="Medication/1724C3CE-3191-4CC4-8A00-4BD45A9F7BD3"/>
+        </medicationReference>
+        <effectivePeriod>
+          <start value="2020-10-19"/>
+          <end value="2020-11-02"/>
+        </effectivePeriod>
+        <dateAsserted value="2020-10-19T10:39:16.27+01:00"/>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <taken value="unk"/>
+        <note>
+          <text value="Prescriber Notes:Pharmacy Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <note>
+          <text value="Patient Notes:Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <note>
+          <text value="Prescriber Notes:Issue number 1 Pharmacy Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`&#13;&#10;Pharmacy Message with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <note>
+          <text value="Patient Notes:Issue number 1 Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`&#13;&#10;Patient Message with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <dosage>
+          <text value="Dosage with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+          <patientInstruction value="Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="AFA9A909-808C-49DF-B805-9E43C947EE5A"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="acute"/>
+              <display value="Acute"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21AFA9A909808C49DFB8059E43C947EE5A"/>
+        </identifier>
+        <groupIdentifier>
+          <value value="afa9a909-808c-49df-b805-9e43c947ee5a"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="plan"/>
+        <medicationReference>
+          <reference value="Medication/1724C3CE-3191-4CC4-8A00-4BD45A9F7BD3"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2020-10-19T10:39:16.27+01:00"/>
+        <recorder>
+          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+        </recorder>
+        <note>
+          <text value="Prescriber Notes:Pharmacy Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <note>
+          <text value="Patient Notes:Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <dosageInstruction>
+          <text value="Dosage with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+          <patientInstruction value="Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2020-10-19"/>
+            <end value="2020-11-02"/>
+          </validityPeriod>
+          <quantity>
+            <value value="14"/>
+            <unit value="tablet"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="14"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="B20B2FB4-4970-4A0C-83AE-8F5B9D6F5AAF"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="acute"/>
+              <display value="Acute"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21B20B2FB449704A0C83AE8F5B9D6F5AAF"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/AFA9A909-808C-49DF-B805-9E43C947EE5A"/>
+        </basedOn>
+        <groupIdentifier>
+          <value value="afa9a909-808c-49df-b805-9e43c947ee5a"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="order"/>
+        <medicationReference>
+          <reference value="Medication/1724C3CE-3191-4CC4-8A00-4BD45A9F7BD3"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2020-10-19T10:40:13.863+01:00"/>
+        <recorder>
+          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+        </recorder>
+        <note>
+          <text value="Prescriber Notes:Issue number 1 Pharmacy Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`&#13;&#10;Pharmacy Message with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <note>
+          <text value="Patient Notes:Issue number 1 Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`&#13;&#10;Patient Message with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </note>
+        <dosageInstruction>
+          <text value="Dosage with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+          <patientInstruction value="Patient Info with special characters:!@£$%^&amp;*()_+-={}[]:&quot;|;'\&lt;&gt;?,./~`"/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2020-10-19"/>
+            <end value="2020-11-02"/>
+          </validityPeriod>
+          <quantity>
+            <value value="14"/>
+            <unit value="tablet"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="14"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Medication xmlns="http://hl7.org/fhir">
+        <id value="1724C3CE-3191-4CC4-8A00-4BD45A9F7BD3"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+        </meta>
+        <code>
+          <coding>
+            <system value="https://fhir.hl7.org.uk/Id/emis-drug-codes"/>
+            <code value="ERE/2023NEMIS"/>
+            <display value="Erythromycin 250mg gastro-resistant tablets"/>
+            <userSelected value="true"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="324178009"/>
+            <display value="Erythromycin 250mg gastro-resistant tablets"/>
+          </coding>
+        </code>
+      </Medication>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationStatement xmlns="http://hl7.org/fhir">
+        <id value="E6261782-BB51-4BA0-91F0-F7D09A7B1259-MS"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+              <code value="prescribed-at-gp-practice"/>
+              <display value="Prescribed at GP practice"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+          <valueDateTime value="2020-10-19T00:00:00+01:00"/>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21E6261782BB514BA091F0F7D09A7B1259MS"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/E6261782-BB51-4BA0-91F0-F7D09A7B1259"/>
+        </basedOn>
+        <status value="completed"/>
+        <medicationReference>
+          <reference value="Medication/0111D8E9-FBC2-4EBA-A977-BBA9D780B515"/>
+        </medicationReference>
+        <effectivePeriod>
+          <start value="2020-10-19"/>
+          <end value="2020-11-18"/>
+        </effectivePeriod>
+        <dateAsserted value="2020-10-19T10:31:12.647+01:00"/>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <taken value="unk"/>
+        <note>
+          <text value="Prescriber Notes:This is some Pharmacy Information which is useful when trying to convey pharmacy type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </note>
+        <note>
+          <text value="Patient Notes:This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </note>
+        <note>
+          <text value="Prescriber Notes:Issue number 1 This is some Pharmacy Information which is useful when trying to convey pharmacy type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field.&#13;&#10;This is some Pharmacy information which is captured when the medication is actually being issued.&#13;&#10;This is a second line of text in the Pharmacy field."/>
+        </note>
+        <note>
+          <text value="Patient Notes:Issue number 1 This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field.&#13;&#10;This is some Patient information which is captured when the medication is actually being issued.&#13;&#10;This is a second line of text in the Patient field."/>
+        </note>
+        <dosage>
+          <text value="This is some very long dosage information which will not actually tell the patient how much or indeed when to take this medication. They will simply have to work it out for themselves and i wish them all the very best."/>
+          <patientInstruction value="This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </dosage>
+      </MedicationStatement>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="E6261782-BB51-4BA0-91F0-F7D09A7B1259"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="acute"/>
+              <display value="Acute"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21E6261782BB514BA091F0F7D09A7B1259"/>
+        </identifier>
+        <groupIdentifier>
+          <value value="e6261782-bb51-4ba0-91f0-f7d09a7b1259"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="plan"/>
+        <medicationReference>
+          <reference value="Medication/0111D8E9-FBC2-4EBA-A977-BBA9D780B515"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2020-10-19T10:31:12.647+01:00"/>
+        <recorder>
+          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+        </recorder>
+        <note>
+          <text value="Prescriber Notes:This is some Pharmacy Information which is useful when trying to convey pharmacy type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </note>
+        <note>
+          <text value="Patient Notes:This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </note>
+        <dosageInstruction>
+          <text value="This is some very long dosage information which will not actually tell the patient how much or indeed when to take this medication. They will simply have to work it out for themselves and i wish them all the very best."/>
+          <patientInstruction value="This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2020-10-19"/>
+            <end value="2020-11-18"/>
+          </validityPeriod>
+          <quantity>
+            <value value="30"/>
+            <unit value="tablet"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="30"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest xmlns="http://hl7.org/fhir">
+        <id value="C56A95E5-FD91-4C81-A17B-D40B77840688"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+              <code value="acute"/>
+              <display value="Acute"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="2FE2854DCF584AEE8F71257ADF74FE21C56A95E5FD914C81A17BD40B77840688"/>
+        </identifier>
+        <basedOn>
+          <reference value="MedicationRequest/E6261782-BB51-4BA0-91F0-F7D09A7B1259"/>
+        </basedOn>
+        <groupIdentifier>
+          <value value="e6261782-bb51-4ba0-91f0-f7d09a7b1259"/>
+        </groupIdentifier>
+        <status value="completed"/>
+        <intent value="order"/>
+        <medicationReference>
+          <reference value="Medication/0111D8E9-FBC2-4EBA-A977-BBA9D780B515"/>
+        </medicationReference>
+        <subject>
+          <reference value="Patient/22"/>
+        </subject>
+        <authoredOn value="2020-10-19T10:34:14.75+01:00"/>
+        <recorder>
+          <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
+        </recorder>
+        <note>
+          <text value="Prescriber Notes:Issue number 1 This is some Pharmacy Information which is useful when trying to convey pharmacy type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field.&#13;&#10;This is some Pharmacy information which is captured when the medication is actually being issued.&#13;&#10;This is a second line of text in the Pharmacy field."/>
+        </note>
+        <note>
+          <text value="Patient Notes:Issue number 1 This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field.&#13;&#10;This is some Patient information which is captured when the medication is actually being issued.&#13;&#10;This is a second line of text in the Patient field."/>
+        </note>
+        <dosageInstruction>
+          <text value="This is some very long dosage information which will not actually tell the patient how much or indeed when to take this medication. They will simply have to work it out for themselves and i wish them all the very best."/>
+          <patientInstruction value="This is some Patient Information which is useful when trying to convey patient type information.  This field can hold a large amount of data which is very useful when testing a large amount of data in a field."/>
+        </dosageInstruction>
+        <dispenseRequest>
+          <validityPeriod>
+            <start value="2020-10-19"/>
+            <end value="2020-11-18"/>
+          </validityPeriod>
+          <quantity>
+            <value value="30"/>
+            <unit value="tablet"/>
+          </quantity>
+          <expectedSupplyDuration>
+            <value value="30"/>
+            <unit value="day"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+          </expectedSupplyDuration>
+        </dispenseRequest>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Medication xmlns="http://hl7.org/fhir">
+        <id value="0111D8E9-FBC2-4EBA-A977-BBA9D780B515"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+        </meta>
+        <code>
+          <coding>
+            <system value="https://fhir.hl7.org.uk/Id/emis-drug-codes"/>
+            <code value="PETA14419NEMIS"/>
+            <display value="Perindopril erbumine 8mg tablets"/>
+            <userSelected value="true"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="374667004"/>
+            <display value="Perindopril erbumine 8mg tablets"/>
           </coding>
         </code>
       </Medication>
@@ -6183,11 +6552,6 @@
         </entry>
         <entry>
           <item>
-            <reference value="MedicationStatement/EB002DF0-C869-4464-8F74-340BBC8A2457-FI-1-MS"/>
-          </item>
-        </entry>
-        <entry>
-          <item>
             <reference value="MedicationStatement/47599D21-788E-4F4A-8DA8-9DBE1B40A2BF-MS"/>
           </item>
         </entry>
@@ -6204,6 +6568,16 @@
         <entry>
           <item>
             <reference value="MedicationStatement/B6777C23-E245-4053-BE4C-45F5D0A27054-MS"/>
+          </item>
+        </entry>
+        <entry>
+          <item>
+            <reference value="MedicationStatement/AFA9A909-808C-49DF-B805-9E43C947EE5A-MS"/>
+          </item>
+        </entry>
+        <entry>
+          <item>
+            <reference value="MedicationStatement/E6261782-BB51-4BA0-91F0-F7D09A7B1259-MS"/>
           </item>
         </entry>
         <entry>
