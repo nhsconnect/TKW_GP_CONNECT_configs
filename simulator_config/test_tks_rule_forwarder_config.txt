@@ -85,10 +85,10 @@ BEGIN EXPRESSIONS
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 
 # 1.5.1
-rev_1_5_1	Always
+#rev_1_5_1	Always
 
 # 1.5.0
-#rev_1_5_1	Never
+rev_1_5_1	Never
 
 passthrough	Always
 dontpassthrough	Never
@@ -349,6 +349,7 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+# else defer to back end
 if rev_1_5_1 then structured_metadata_1_5_1_response
 END RULE
 
