@@ -18,6 +18,12 @@ conformance	TKW_ROOT/config/GP_CONNECT/simulator_config/responses/conformance.xm
 # fhir STU3
 capability	TKW_ROOT/config/GP_CONNECT/simulator_config/responses/capability.xml "200 OK"
 do_process	NONE	0
+
+# added back for TKW-x test purposes
+operation_outcome_400_reset TKW_ROOT/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome.xml 400 $v = 
+operation_outcome_400 TKW_ROOT/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome.xml 400
+operation_outcome_415 TKW_ROOT/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome.xml 415
+operation_outcome_422 TKW_ROOT/config/GP_CONNECT/simulator_config/operation_outcomes/operation_outcome.xml 422
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -79,6 +85,10 @@ INVALID_FORMAT_PARAMETER context_path matches ^.*\?.*_format=text%2Fxml.*$
 #
 v_is_99 $v matches ^99$
 timeperiod_is_t xpathnotequals /fhir:Parameters/fhir:parameter/fhir:name[@value='timePeriod']/@value $t
+
+# 1.5.0
+rev_1_5_1	Never
+
 END EXPRESSIONS
 
 BEGIN RULE
