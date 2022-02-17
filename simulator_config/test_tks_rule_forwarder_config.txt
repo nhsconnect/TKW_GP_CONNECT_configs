@@ -1,4 +1,4 @@
-# Simulator rule definition file for ITK Testbench
+# Simulator rule definition file for ITK Testbench 1.6
 #  GP Connect Messages
 #
 BEGIN RESPONSES
@@ -74,6 +74,9 @@ full_record_17 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record
 patient_response_25 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_25.xml "200 OK"
 patient_response_26 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_26.xml "200 OK"
 patient_response_27 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_27.xml "200 OK"
+
+# rich immunisations
+patient_response_28 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_28.xml "200 OK"
 
 # SDS adapter org queries
 A20047_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/A20047.xml "200 OK"
@@ -168,6 +171,8 @@ __PATIENT_25_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 __PATIENT_26_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937464_head.xml')/block/text()
 __PATIENT_27_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937820_head.xml')/block/text()
 
+__PATIENT_28_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938630_head.xml')/block/text()
+
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
@@ -200,6 +205,7 @@ diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value
 
 meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']) 1
 allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
+immunisations_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeImmunisations']) 1
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937286
 QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
@@ -227,6 +233,9 @@ QUERY_PATIENT_24 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 QUERY_PATIENT_25 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938193
 QUERY_PATIENT_26 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937464
 QUERY_PATIENT_27 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937820
+
+# Rich immunisations
+QUERY_PATIENT_28 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938630
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
@@ -381,6 +390,8 @@ if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4
 if QUERY_PATIENT_25 and two_clinical_areas and meds_request and allergies_request then patient_response_25
 if QUERY_PATIENT_26 and two_clinical_areas and meds_request and allergies_request then patient_response_26
 if QUERY_PATIENT_27 and two_clinical_areas and meds_request and allergies_request then patient_response_27
+
+if QUERY_PATIENT_28 and single_clinical_area and immunisations_request then patient_response_28
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
