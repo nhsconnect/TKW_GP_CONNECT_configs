@@ -1,4 +1,4 @@
-# Simulator rule definition file for ITK Testbench
+# Simulator rule definition file for ITK Testbench 1.5
 #  GP Connect Messages
 #
 BEGIN RESPONSES
@@ -15,18 +15,23 @@ document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/r
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
-documents_metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_5_1.xml "200 OK"
-structured_metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/structured_capability_1_5_1.xml "200 OK"
-metadata_1_5_1_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/capability_1_5_1.xml "200 OK"
 
 patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
 patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
 patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
 
+# Oct 2021 Hackathon
+patient_response_25 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_25.xml "200 OK"
+patient_response_26 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_26.xml "200 OK"
+patient_response_27 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_27.xml "200 OK"
+
+# rich immunisations
+patient_response_28 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_28.xml "200 OK"
+
+
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 
-full_record TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record.xml "200 OK"
 END RESPONSES
 
 BEGIN SUBSTITUTIONS
@@ -64,6 +69,14 @@ SESSION_ID reg_exp http_header Ssp-from "^(.*)$" "$1"
 __PATIENT_2_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937286_head.xml')/block/text()
 __PATIENT_3_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937294_head.xml')/block/text()
 __PATIENT_4_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937308_head.xml')/block/text()
+
+# oct 2021 Hackathon
+__PATIENT_25_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938193_head.xml')/block/text()
+__PATIENT_26_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937464_head.xml')/block/text()
+__PATIENT_27_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937820_head.xml')/block/text()
+
+__PATIENT_28_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938630_head.xml')/block/text()
+
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 
 # parameter part check
@@ -84,15 +97,10 @@ END SUBSTITUTIONS
 BEGIN EXPRESSIONS
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_expressions_common.conf
 
-# 1.5.1
-#rev_1_5_1	Always
-
-# 1.5.0
-rev_1_5_1	Never
-
 passthrough	Always
 dontpassthrough	Never
 single_clinical_area xpathequals count(/fhir:Parameters/fhir:parameter) 2
+two_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter) 3
 multiple_clinical_areas xpathequals count(/fhir:Parameters/fhir:parameter)>2  true
 
 # diary entries
@@ -101,6 +109,7 @@ diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value
 
 meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']) 1
 allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
+immunisations_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeImmunisations']) 1
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937286
 QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
@@ -112,6 +121,15 @@ QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='pa
 QUERY_PATIENT_22 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937316
 QUERY_PATIENT_23 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937324
 QUERY_PATIENT_24 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937332
+
+# Hackathon Oct 2021 
+QUERY_PATIENT_25 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938193
+QUERY_PATIENT_26 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937464
+QUERY_PATIENT_27 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937820
+
+# Rich immunisations
+QUERY_PATIENT_28 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938630
+
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
@@ -174,13 +192,6 @@ search_diary_date_parameter_well_formed xpathmatches /fhir:Parameters/fhir:param
 DEVICE context_path matches ^.*/Device\\?.*$
 ENDPOINT context_path matches ^.*/Endpoint\\?.*$
 
-# 1.5.1
-MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
-
-#FULL_RECORD_REQUESTED xpathexists /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']
-#FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part) = 0 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
-MIGRATE_FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
-
 END EXPRESSIONS
 
 #
@@ -240,11 +251,15 @@ if QUERY_PATIENT_2 and single_clinical_area and single_diary_entry then patient2
 if QUERY_PATIENT_3 and single_clinical_area and single_diary_entry then patient3_diary_response
 if QUERY_PATIENT_4 and single_clinical_area and single_diary_entry then patient4_diary_response
 
+# Oct 2021 Hackathon
+if QUERY_PATIENT_25 and two_clinical_areas and meds_request and allergies_request then patient_response_25
+if QUERY_PATIENT_26 and two_clinical_areas and meds_request and allergies_request then patient_response_26
+if QUERY_PATIENT_27 and two_clinical_areas and meds_request and allergies_request then patient_response_27
+
+if QUERY_PATIENT_28 and single_clinical_area and immunisations_request then patient_response_28
+
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and not FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and QUERY_PATIENT_2 then full_record
-#if rev_1_5_1 and FULL_RECORD_REQUESTED and not QUERY_PATIENT_2 then patient_not_found_response
 END RULE
 
 #==================================================================================================
@@ -293,24 +308,6 @@ if GET_PATIENT_3 then document_reference_response_no_records
 END RULE
 
 #==================================================================================================
-# 1.5.1 Migrate structured record
-
-BEGIN RULE
-POST+urn:nhs:names:services:gpconnect:fhir:operation:gpc.migratestructuredrecord-1
-
-INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-
-if rev_1_5_1 and not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_parameters
-if rev_1_5_1 and not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
-if rev_1_5_1 and not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
-
-# nb only supporting patient 2 migration
-if rev_1_5_1 and QUERY_PATIENT_2 then full_record
-if rev_1_5_1 and not QUERY_PATIENT_2 then patient_not_found_response
-
-END RULE
-
-#==================================================================================================
 # Documents Interface - Read Binary
 #
 
@@ -327,19 +324,7 @@ END RULE
 BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-if rev_1_5_1 then documents_metadata_1_5_1_response else documents_metadata_response
-END RULE
-
-#==================================================================================================
-# Documents Interface - Migrate Binary
-#
-
-BEGIN RULE
-GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1
-INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-# check CP ?
-if rev_1_5_1 and GET_PATIENT_2_DOCUMENT then patient2_document_response
-if rev_1_5_1 and not GET_PATIENT_2_DOCUMENT then binary_nrf
+if passthrough then documents_metadata_response
 END RULE
 
 #==================================================================================================
@@ -350,18 +335,7 @@ BEGIN RULE
 GET+urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # else defer to back end
-if rev_1_5_1 then structured_metadata_1_5_1_response
 END RULE
-
-#==================================================================================================
-# Foundation Interface - Read Metadata this still defers to 1.5.0 at this time
-#
-
-#BEGIN RULE
-#GET+urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1
-#INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
-#if rev_1_5_1 then metadata_1_5_1_response
-#END RULE
 
 #==================================================================================================
 # FHIR SDS Adapter
