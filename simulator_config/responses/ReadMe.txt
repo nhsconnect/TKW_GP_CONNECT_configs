@@ -9,7 +9,7 @@ patient3 9690937294_head.xml
 patient4 9690937308_head.xml
 
 
-To generate these files use ~Documents/gp_connect/extract_head.sh
+To generate these files use ~/Documents/gp_connect/extract_head.sh
 
 Consolidation_meds_test_record.xml patient 22 9690937316
 Consolidation_meds_test_record_secondary.xml patient 23 9690937324

@@ -47,6 +47,7 @@ endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "
 
 # full record responses for migration
 full_record_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_2.xml "200 OK"
+full_record_2_confidential TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_2_including_confidential_data.xml "200 OK"
 # no docrefs
 full_record_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/full_record_3.xml "200 OK"
 # docref to 10 MB response
@@ -321,6 +322,8 @@ MIGRATE_CP_VALID context_path matches ^.*/Patient/\$gpc.migratestructuredrecord$
 #FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part) = 0 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 MIGRATE_FULL_RECORD_PARAMETERS_VALID xpathmatches boolean(count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value) = 1 and count(/fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']) = 1 and count(/fhir:Parameters/fhir:parameter) = 2) true
 
+CONFIDENTIAL_REQUESTED xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='includeFullRecord']/fhir:part[fhir:name/@value='includeSensitiveInformation']/fhir:valueBoolean/@value true
+
 # SDS adapter org queries
 SDS_ORG_QUERY context_path matches ^.*/ods-directory/FHIR/STU3/Organization/.*$
 ORG_A20047 context_path matches ^.*/Organization/A20047(\?.*)?$
@@ -458,6 +461,7 @@ if not MIGRATE_CP_VALID then operation_outcome_422_document_search_invalid_param
 if not JWT_PAYLOAD_REASON_FOR_REQUEST_MIGRATION then operation_outcome_400_nmig
 if not MIGRATE_FULL_RECORD_PARAMETERS_VALID then operation_outcome_422_document_search_invalid_parameters
 
+if QUERY_PATIENT_2 and CONFIDENTIAL_REQUESTED then full_record_2_confidential
 if QUERY_PATIENT_2 then full_record_2
 if QUERY_PATIENT_3 then full_record_3
 if QUERY_PATIENT_4 then full_record_4

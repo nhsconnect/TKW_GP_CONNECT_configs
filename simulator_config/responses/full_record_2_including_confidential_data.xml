@@ -2,7 +2,7 @@
    <meta>
       <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"/>
    </meta>
-  <type value="collection"/>
+   <type value="collection"/>
   <id value="__SSP_TRACEID__"/>
 __PATIENT_2_HEAD__
 __ORG_HEAD__
@@ -303,9 +303,6 @@ __DIARY_ENTRIES_WARNINGS__
                   </coding>
                </valueCodeableConcept>
             </extension>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
-               <valueCode value="confidential-items"/>
-            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Medications and medical devices"/>
@@ -357,6 +354,11 @@ __DIARY_ENTRIES_WARNINGS__
             <entry>
                <item>
                   <reference value="MedicationStatement/12"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="MedicationStatement/e351aa55-1ab3-400f-af67-52eafcec6b56"/>
                </item>
             </entry>
          </List>
@@ -9365,6 +9367,361 @@ __DIARY_ENTRIES_WARNINGS__
    </entry>
    <entry>
       <resource>
+         <MedicationStatement xmlns="http://hl7.org/fhir">
+            <id value="e351aa55-1ab3-400f-af67-52eafcec6b56"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+               <valueDateTime value="2019-06-01"/>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+                     <code value="prescribed-at-gp-practice"/>
+                     <display value="Prescribed at GP practice"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="2fbf7297-bed1-11eb-a1e8-1002b58598b4"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/bee3ca1d-d8ab-4703-9c45-3ecd0ca9c475"/>
+            </basedOn>
+            <status value="active"/>
+            <medicationReference>
+               <reference value="Medication/7a63cf64-36ac-42c3-be4f-fd8831b6baaf"/>
+            </medicationReference>
+            <effectivePeriod>
+               <start value="2019-06-01T10:30:00+00:00"/>
+            </effectivePeriod>
+            <dateAsserted value="2019-06-01T10:30:00+00:00"/>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <taken value="unk"/>
+            <dosage>
+               <text value="As directed"/>
+               <patientInstruction value="Night/nocte"/>
+            </dosage>
+         </MedicationStatement>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest xmlns="http://hl7.org/fhir">
+            <id value="bee3ca1d-d8ab-4703-9c45-3ecd0ca9c475"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
+               <extension url="numberOfRepeatPrescriptionsAllowed">
+                  <valuePositiveInt value="6"/>
+               </extension>
+               <extension url="numberOfRepeatPrescriptionsIssued">
+                  <valuePositiveInt value="1"/>
+               </extension>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="2fbf1755-bed1-11eb-a1e8-1002b58598b4"/>
+            </identifier>
+            <groupIdentifier>
+               <value value="e7563a67-35cb-40cd-8d2d-e69cd644b279"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="plan"/>
+            <medicationReference>
+               <reference value="Medication/7a63cf64-36ac-42c3-be4f-fd8831b6baaf"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <authoredOn value="2018-01-15T00:00:00+00:00"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="As directed"/>
+               <patientInstruction value="Night/Nocte"/>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2019-06-01T10:30:00+00:00"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="28 tablets"/>
+                  </extension>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="28"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+               <performer>
+                  <reference value="Organization/1"/>
+               </performer>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest xmlns="http://hl7.org/fhir">
+            <id value="e7563a67-35cb-40cd-8d2d-e69cd644b279"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
+               <value value="2fbf17b5-bed1-11eb-a1e8-1002b58598b4"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/bee3ca1d-d8ab-4703-9c45-3ecd0ca9c475"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="e7563a67-35cb-40cd-8d2d-e69cd644b279"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/7a63cf64-36ac-42c3-be4f-fd8831b6baaf"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <authoredOn value="2018-01-15T00:00:00+00:00"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="As directed"/>
+               <patientInstruction value="Night/Nocte"/>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2019-06-01T10:30:00+00:00"/>
+                  <end value="2019-06-29T10:30:00+00:00"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="28 tablets"/>
+                  </extension>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="28"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+               <performer>
+                  <reference value="Organization/1"/>
+               </performer>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Medication xmlns="http://hl7.org/fhir">
+            <id value="7a63cf64-36ac-42c3-be4f-fd8831b6baaf"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+            </meta>
+            <code>
+               <coding>
+                  <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+                     <extension url="DescriptionID">
+                        <valueId value="357901000001113"/>
+                     </extension>
+                  </extension>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="37536911000001105"/>
+                  <display value="Viagra 100mg tablets (CST Pharma Ltd)"/>
+               </coding>
+            </code>
+         </Medication>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <id value="Consultation3-Topic2-Category-Examination-Observation-8"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"/>
+            </meta>
+            <identifier>
+               <system value="https://provider.nhs.uk/data-identifier"/>
+               <value value="3a2262b4-d843-474e-b549-f1bc74d3068b"/>
+            </identifier>
+            <status value="final"/>
+            <code>
+               <coding>
+                  <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+                     <extension url="DescriptionID">
+                        <valueId value="109732019"/>
+                     </extension>
+                  </extension>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="66071002"/>
+                  <display value="Type B viral hepatitis"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/2"/>
+            </subject>
+            <context>
+               <reference value="Encounter/Encounter3"/>
+            </context>
+            <effectiveDateTime value="2019-06-01T10:30:00+00:00"/>
+            <issued value="2019-06-01T10:30:00+00:00"/>
+            <performer>
+               <reference value="Practitioner/1"/>
+            </performer>
+         </Observation>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <DiagnosticReport xmlns="http://hl7.org/fhir">
+            <id value="d4a5bf91-b3de-44a8-84c0-a389e551c625"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1"/>
+            </meta>
+            <identifier>
+               <system value="https://tools.ietf.org/html/rfc4122"/>
+               <value value="bee68ffe-3dcb-4cd8-8484-c1db468edbb6"/>
+            </identifier>
+            <status value="final"/>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="721981007"/>
+                  <display value="Diagnostic studies report"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/2"/>
+               <display value="SKELLY, Horace"/>
+            </subject>
+            <issued value="2019-05-25T10:30:00+00:00"/>
+            <performer>
+               <actor>
+                  <reference value="Organization/7"/>
+                  <display value="COXWOLD Surgery"/>
+               </actor>
+            </performer>
+            <specimen>
+               <reference value="Specimen/4b652597-df37-4edd-80c0-decc56714e1b"/>
+            </specimen>
+            <result>
+               <reference value="Observation/653df9da-940b-4d2d-bb4d-e8435cb33dbc"/>
+            </result>
+         </DiagnosticReport>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Specimen xmlns="http://hl7.org/fhir">
+            <id value="4b652597-df37-4edd-80c0-decc56714e1b"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1"/>
+            </meta>
+            <identifier>
+               <system value="https://tools.ietf.org/html/rfc4122"/>
+               <value value="1b663fc5-9dec-49c0-9eed-18a7cfa5a6b2"/>
+            </identifier>
+            <status value="available"/>
+            <type>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="122555007"/>
+                  <display value="Venous blood specimen"/>
+               </coding>
+            </type>
+            <subject>
+               <reference value="Patient/2"/>
+               <display value="SKELLY, Horace"/>
+            </subject>
+            <receivedTime value="2019-05-15T10:30:00+00:00"/>
+            <collection>
+               <collectedDateTime value="2019-05-10T10:30:00+00:00"/>
+            </collection>
+         </Specimen>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <id value="653df9da-940b-4d2d-bb4d-e8435cb33dbc"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"/>
+            </meta>
+            <identifier>
+               <system value="https://tools.ietf.org/html/rfc4122"/>
+               <value value="2af46949-4938-4c57-bad4-c4363e1965d6"/>
+            </identifier>
+            <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="394595002"/>
+                  <display value="Pathology"/>
+               </coding>
+            </category>
+            <code>
+               <coding>
+                  <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+                     <extension url="DescriptionID">
+                        <valueId value="416048019"/>
+                     </extension>
+                  </extension>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="278969009"/>
+                  <display value="Hepatitis B status"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/2"/>
+               <display value="SKELLY, Horace"/>
+            </subject>
+            <issued value="2019-05-25T10:30:00+00:00"/>
+            <performer>
+               <reference value="Organization/7"/>
+               <display value="COXWOLD Surgery"/>
+            </performer>
+            <valueString value="Positive"/>
+            <specimen>
+               <reference value="Specimen/4b652597-df37-4edd-80c0-decc56714e1b"/>
+            </specimen>
+         </Observation>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <id value="Consultation3-Topic2-Category-Plan-Observation-1"/>
             <meta>
@@ -10200,9 +10557,6 @@ __DIARY_ENTRIES_WARNINGS__
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
             </meta>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
-               <valueCode value="confidential-items"/>
-            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Consultations - medications contained in consultations"/>
@@ -10248,6 +10602,11 @@ __DIARY_ENTRIES_WARNINGS__
                   <reference value="MedicationStatement/d806d0aa-a2c7-4a4b-9121-e80e04c20693"/>
                </item>
             </entry>
+            <entry>
+               <item>
+                  <reference value="MedicationStatement/e351aa55-1ab3-400f-af67-52eafcec6b56"/>
+               </item>
+            </entry>
          </List>
       </resource>
    </entry>
@@ -10257,9 +10616,6 @@ __DIARY_ENTRIES_WARNINGS__
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
             </meta>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
-               <valueCode value="confidential-items"/>
-            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Consultations - uncategorised data contained in consultations"/>
@@ -10498,6 +10854,11 @@ __DIARY_ENTRIES_WARNINGS__
             <entry>
                <item>
                   <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-5"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-8"/>
                </item>
             </entry>
             <entry>
@@ -10969,9 +11330,6 @@ __DIARY_ENTRIES_WARNINGS__
                   </coding>
                </valueCodeableConcept>
             </extension>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
-               <valueCode value="confidential-items"/>
-            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Uncategorised data"/>
@@ -10997,17 +11355,242 @@ __DIARY_ENTRIES_WARNINGS__
             </note>
             <entry>
                <item>
-                  <reference value="Observation/Consultation1_topic2_category_Examination_Observation_1"/>
+                  <reference value="Observation/Consultation1-Topic1-Category-History-Observation-1"/>
                </item>
             </entry>
             <entry>
                <item>
-                  <reference value="Observation/Consultation1_topic2_category_Examination_Observation_2"/>
+                  <reference value="Observation/Consultation1-Topic1-Category-History-Observation-2"/>
                </item>
             </entry>
             <entry>
                <item>
-                  <reference value="Observation/Consultation1_topic2_category_Examination_Observation_3"/>
+                  <reference value="Observation/Consultation1-Topic1-Category-Examination-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic1-Category-Social-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic1-Category-Social-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic1-Category-Plan-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Examination-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Examination-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Examination-Observation-3"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Examination-Observation-4"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Examination-Observation-5"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Plan-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-Plan-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic3-flat-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic3-flat-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic4-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic4-Category-History-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic4-Category-History-Observation-3"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic4-Category-History-Observation-4"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic4-Category-History-Observation-5"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-History-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-History-Observation-3"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-History-Observation-4"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-Examination-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-Examination-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic5-Category-Plan-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation2-Topic1-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation2-Topic1-Category-Examination-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation2-Topic1-Category-Social-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation2-Topic1-Category-Plan-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation2-Topic2-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation2-Topic2-Category-Plan-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic1-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic1-Category-Examination-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic1-Category-Social-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic1-Category-Plan-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-History-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-3"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-4"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-5"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Examination-Observation-8"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Plan-Observation-1"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation3-Topic2-Category-Plan-Observation-2"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="Observation/Consultation1-Topic2-Category-History-Observation-2"/>
                </item>
             </entry>
          </List>
@@ -11634,9 +12217,6 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
-            <note>
-               <text value="Items excluded due to confidentiality and/or patient preferences."/>
-            </note>
             <entry>
                <item>
                   <reference value="DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"/>
@@ -11660,9 +12240,6 @@ __DIARY_ENTRIES_WARNINGS__
                   </coding>
                </valueCodeableConcept>
             </extension>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
-               <valueCode value="confidential-items"/>
-            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Investigations and results"/>
@@ -11683,12 +12260,14 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
-            <note>
-               <text value="Items excluded due to confidentiality and/or patient preferences."/>
-            </note>
             <entry>
                <item>
                   <reference value="DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="DiagnosticReport/d4a5bf91-b3de-44a8-84c0-a389e551c625"/>
                </item>
             </entry>
          </List>
@@ -13011,9 +13590,6 @@ __DIARY_ENTRIES_WARNINGS__
                   </coding>
                </valueCodeableConcept>
             </extension>
-            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
-               <valueCode value="confidential-items"/>
-            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Consultations - investigations contained in consultations"/>
@@ -13034,12 +13610,14 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
-            <note>
-               <text value="Items excluded due to confidentiality and/or patient preferences."/>
-            </note>
             <entry>
                <item>
                   <reference value="DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="DiagnosticReport/d4a5bf91-b3de-44a8-84c0-a389e551c625"/>
                </item>
             </entry>
          </List>
