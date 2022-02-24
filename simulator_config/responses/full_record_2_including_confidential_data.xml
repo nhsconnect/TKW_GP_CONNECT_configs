@@ -11226,7 +11226,7 @@ __DIARY_ENTRIES_WARNINGS__
             <content>
                <attachment>
                   <contentType value="application/msword"/>
-                  <url value="http://10.0.2.2:4854/B82617/STU3/1/gpconnect/fhir/Binary/07a6483f-732b-461e-86b6-edb665c45510"/>
+                  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45510"/>
                   <size value="3654"/>
                </attachment>
             </content>
