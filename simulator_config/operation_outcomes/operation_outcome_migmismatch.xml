@@ -12,6 +12,6 @@
                 <display value="Bad Request" />
             </coding>
         </details>
-		<diagnostics value="JWT Payload reason for request is not migration" />
+		<diagnostics value="JWT Payload scope does not match sensitive flag in migration request" />
     </issue>
 </OperationOutcome>

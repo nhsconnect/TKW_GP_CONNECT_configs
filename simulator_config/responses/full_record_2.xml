@@ -10223,6 +10223,9 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
+            <note>
+               <text value="Items excluded due to confidentiality and/or patient preferences."/>
+            </note>
             <entry>
                <item>
                   <reference value="MedicationStatement/8f78cb68-7f02-4f8c-9b85-05abc743ec7a"/>
@@ -10280,6 +10283,9 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
+            <note>
+               <text value="Items excluded due to confidentiality and/or patient preferences."/>
+            </note>
             <entry>
                <item>
                   <reference value="Observation/Consultation1-Topic1-Category-History-Observation-1"/>
@@ -11259,6 +11265,9 @@ __DIARY_ENTRIES_WARNINGS__
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
             </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
+               <valueCode value="confidential-items"/>
+            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Problems - medications related to problems"/>
@@ -11279,6 +11288,9 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
+            <note>
+               <text value="Items excluded due to confidentiality and/or patient preferences."/>
+            </note>
             <entry>
                <item>
                   <reference value="MedicationStatement/8f78cb68-7f02-4f8c-9b85-05abc743ec7a"/>
@@ -11308,6 +11320,9 @@ __DIARY_ENTRIES_WARNINGS__
             <meta>
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
             </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
+               <valueCode value="confidential-items"/>
+            </extension>
             <status value="current"/>
             <mode value="snapshot"/>
             <title value="Problems - uncategorised data related to problems"/>
@@ -11328,6 +11343,9 @@ __DIARY_ENTRIES_WARNINGS__
                   <code value="event-date"/>
                </coding>
             </orderedBy>
+            <note>
+               <text value="Items excluded due to confidentiality and/or patient preferences."/>
+            </note>
             <entry>
                <item>
                   <reference value="Observation/Consultation1-Topic1-Category-History-Observation-1"/>
@@ -11613,6 +11631,9 @@ __DIARY_ENTRIES_WARNINGS__
                      <display value="General practice service"/>
                   </coding>
                </valueCodeableConcept>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
+               <valueCode value="confidential-items"/>
             </extension>
             <status value="current"/>
             <mode value="snapshot"/>
