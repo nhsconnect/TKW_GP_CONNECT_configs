@@ -115,7 +115,9 @@
       </resource>
    </entry>
    __PATIENT_28_HEAD__
-__ORG_HEAD__
+	__PRACTITIONER_1_HEAD__
+	__ORG_7_HEAD__
+
    <entry>
       <resource>
          <Immunization>
@@ -173,7 +175,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/C8FD0E2C-3124-4C72-AC8D-ABEA65537D1B"/>
                </actor>
             </practitioner>
             <note>
@@ -237,7 +239,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
                </actor>
             </practitioner>
             <note>
@@ -303,7 +305,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
                </actor>
             </practitioner>
          </Immunization>
@@ -384,7 +386,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
                </actor>
             </practitioner>
             <practitioner>
@@ -396,7 +398,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/C8FD0E2C-3124-4C72-AC8D-ABEA65537D1B"/>
                </actor>
             </practitioner>
             <note>
@@ -471,7 +473,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/3F42A9D0-65A9-4E2D-9CA4-67474CB83CA4"/>
                </actor>
             </practitioner>
             <practitioner>
@@ -483,7 +485,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/C8FD0E2C-3124-4C72-AC8D-ABEA65537D1B"/>
                </actor>
             </practitioner>
          </Immunization>
@@ -545,7 +547,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
                </actor>
             </practitioner>
             <note>
@@ -640,7 +642,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
                </actor>
             </practitioner>
             <note>
@@ -711,7 +713,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/CE6A1A90-4D1C-11E3-9E6B-010000001205"/>
                </actor>
             </practitioner>
             <practitioner>
@@ -723,7 +725,7 @@ __ORG_HEAD__
                   </coding>
                </role>
                <actor>
-                  <reference value="Practitioner/1"/>
+                  <reference value="Practitioner/A6D3B7DE-E5F4-49FC-9F7F-6A9781829009"/>
                </actor>
             </practitioner>
             <note>
@@ -766,7 +768,7 @@ __ORG_HEAD__
             <effectiveDateTime value="2001-03-04"/>
             <issued value="2021-03-10T16:57:47.29+00:00"/>
             <performer>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
             </performer>
             <comment value="Immunisation (Given Unknown)&#xA;MMR vaccination declined&#xA;Refused triple"/>
          </Observation>
@@ -803,7 +805,7 @@ __ORG_HEAD__
             <effectiveDateTime value="2020-02-29"/>
             <issued value="2021-03-15T16:40:41.45+00:00"/>
             <performer>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
             </performer>
             <comment value="Immunisation (Given Unknown)&#xA;No consent for hepatitis A vaccination&#xA;Descriptive text - No consent for hepatitis A vaccination"/>
          </Observation>
@@ -840,7 +842,7 @@ __ORG_HEAD__
             <effectiveDateTime value="2021-03-15"/>
             <issued value="2021-03-15T16:24:39.847+00:00"/>
             <performer>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
             </performer>
             <comment value="Immunisation (Given Unknown)&#xA;Consent given for pneumococcal vaccine&#xA;Descriptive text - Consent for pneumococcal vaccine"/>
          </Observation>
@@ -877,7 +879,7 @@ __ORG_HEAD__
             <effectiveDateTime value="2021-03-17"/>
             <issued value="2021-03-17T14:40:14.35+00:00"/>
             <performer>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
             </performer>
             <comment value="Immunisation (Given Unknown)&#xA;Contraindication to live immunisation"/>
          </Observation>
@@ -914,26 +916,296 @@ __ORG_HEAD__
             <effectiveDateTime value="2021-03-17"/>
             <issued value="2021-03-17T14:35:30.657+00:00"/>
             <performer>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
             </performer>
             <comment value="Immunisation (Given Unknown)&#xA;Did not attend first rotavirus vaccination&#xA;'Did not attend' vaccination entry"/>
          </Observation>
       </resource>
    </entry>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+   <entry>
+      <resource>
+         <Organization>
+            <id value="5E496953-065B-41F2-9577-BE8F2FBD0757"/>
+            <meta>
+               <versionId value="1112974926854455048"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MainLocation-1">
+               <valueReference>
+                  <reference value="Location/EB3994A6-5A87-4B53-A414-913137072F57"/>
+               </valueReference>
+            </extension>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+               <value value="A82038"/>
+            </identifier>
+            <type>
+               <coding>
+                  <system value="https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1"/>
+                  <code value="gp-practice"/>
+               </coding>
+               <text value="GP Practice"/>
+            </type>
+            <name value="TEMPLE SOWERBY MEDICAL PRACTICE"/>
+            <telecom>
+               <system value="phone"/>
+               <value value="01133800000"/>
+               <use value="work"/>
+               <rank value="1"/>
+            </telecom>
+            <address>
+               <use value="work"/>
+               <type value="physical"/>
+               <line value="Fulford Grange"/>
+               <line value="Micklefield Lane"/>
+               <line value="Rawdon"/>
+               <line value="Rawdon"/>
+               <city value="Leeds"/>
+               <district value="Yorkshire"/>
+               <postalCode value="LS19 6BA"/>
+            </address>
+         </Organization>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Practitioner>
+            <id value="2DB481A3-306A-4133-9491-1558161D6A2B"/>
+            <meta>
+               <versionId value="4333436790463129417"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+            </meta>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+               <value value="555079033108"/>
+            </identifier>
+            <identifier>
+               <system value="https://fhir.nhs.uk/Id/sds-role-profile-id"/>
+               <value value="555079046103"/>
+            </identifier>
+            <name>
+               <use value="official"/>
+               <family value="TEMPLE SOWERBY"/>
+               <given value="GPONE"/>
+               <prefix value="Mr"/>
+            </name>
+            <gender value="male"/>
+         </Practitioner>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Location>
+            <id value="EB3994A6-5A87-4B53-A414-913137072F57"/>
+            <meta>
+               <versionId value="6653785719080073703"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>
+            </meta>
+            <status value="active"/>
+            <name value="EMIS Test Practice Location"/>
+            <type>
+               <text value="Main Surgery"/>
+            </type>
+            <telecom>
+               <system value="phone"/>
+               <value value="01133800000"/>
+               <use value="work"/>
+               <rank value="1"/>
+            </telecom>
+            <address>
+               <use value="work"/>
+               <type value="physical"/>
+               <line value="Fulford Grange"/>
+               <line value="Micklefield Lane"/>
+               <line value="Rawdon"/>
+               <line value="Rawdon"/>
+               <city value="Leeds"/>
+               <district value="Yorkshire"/>
+               <postalCode value="LS19 6BA"/>
+            </address>
+            <managingOrganization>
+               <reference value="Organization/5E496953-065B-41F2-9577-BE8F2FBD0757"/>
+               <display value="TEMPLE SOWERBY MEDICAL PRACTICE"/>
+            </managingOrganization>
+         </Location>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Location>
+            <id value="9A978391-4BF9-4028-AC31-F955809AAFF0"/>
+            <meta>
+               <versionId value="2941299615456452548"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>
+            </meta>
+            <status value="active"/>
+            <name value="Testvale Surgery"/>
+            <telecom>
+               <system value="phone"/>
+               <value value="tel:01414221031"/>
+               <use value="work"/>
+               <rank value="1"/>
+            </telecom>
+            <address>
+               <use value="work"/>
+               <type value="physical"/>
+               <line value="22 Northern Parade"/>
+               <line value="Portsmouth"/>
+               <line value="Hampshire"/>
+               <postalCode value="PO2 9PF"/>
+            </address>
+         </Location>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Practitioner>
+            <id value="C8FD0E2C-3124-4C72-AC8D-ABEA65537D1B"/>
+            <meta>
+               <versionId value="7786052607397903776"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+            </meta>
+            <name>
+               <use value="official"/>
+               <family value="Test"/>
+               <given value="NHS"/>
+               <prefix value="Mr"/>
+            </name>
+            <gender value="male"/>
+         </Practitioner>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Organization>
+            <id value="0D4D8C3BBF6C2736CA91BC7DD50659B4D61D71B6-XMO"/>
+            <meta>
+               <versionId value="5939580616327273888"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+            </meta>
+            <name value="imakedrugs"/>
+         </Organization>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Practitioner>
+            <id value="6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
+            <meta>
+               <versionId value="4749697187075864793"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+            </meta>
+            <name>
+               <use value="official"/>
+               <family value="McAvenue"/>
+               <given value="David"/>
+               <prefix value="Dr"/>
+            </name>
+            <gender value="male"/>
+         </Practitioner>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Organization>
+            <id value="4DBB2AC2949F2968E25CE6217769757CEC0825A5-XMO"/>
+            <meta>
+               <versionId value="3467880042696824743"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+            </meta>
+            <name value="Astra Zeneca"/>
+         </Organization>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Practitioner>
+            <id value="3F42A9D0-65A9-4E2D-9CA4-67474CB83CA4"/>
+            <meta>
+               <versionId value="6855069453919254394"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+            </meta>
+            <name>
+               <use value="official"/>
+               <family value="Kennedy"/>
+               <given value="Frederick"/>
+               <prefix value="Dr"/>
+            </name>
+            <gender value="unknown"/>
+         </Practitioner>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Practitioner>
+            <id value="CE6A1A90-4D1C-11E3-9E6B-010000001205"/>
+            <meta>
+               <versionId value="4465736822165199997"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+            </meta>
+            <name>
+               <use value="official"/>
+               <family value="McAvenue"/>
+               <given value="David"/>
+            </name>
+            <gender value="unknown"/>
+         </Practitioner>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Practitioner>
+            <id value="A6D3B7DE-E5F4-49FC-9F7F-6A9781829009"/>
+            <meta>
+               <versionId value="954275709207252868"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+            </meta>
+            <name>
+               <use value="official"/>
+               <family value="Porteous"/>
+               <given value="Josh"/>
+               <prefix value="Mr"/>
+            </name>
+            <gender value="male"/>
+         </Practitioner>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Organization>
+            <id value="D7CFC8DB301548C1A3DB153C7FDDEDBC21624C4C-XMO"/>
+            <meta>
+               <versionId value="2151807447256333870"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+            </meta>
+            <name value="imakedrugs4u"/>
+         </Organization>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Organization>
+            <id value="8A8003CF93711335AA96BD321415118D274026DB-XMO"/>
+            <meta>
+               <versionId value="6708460689857944543"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+            </meta>
+            <name value="Pete"/>
+         </Organization>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Organization>
+            <id value="F4D020C6-EAFF-4528-83BA-E81A1CFD30DC"/>
+            <meta>
+               <versionId value="8763263137657800212"/>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+            </meta>
+            <name value="National"/>
+         </Organization>
+      </resource>
+   </entry>
    <entry>
       <resource>
          <PractitionerRole>
@@ -943,7 +1215,7 @@ __ORG_HEAD__
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
             </meta>
             <practitioner>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
             </practitioner>
             <organization>
                <reference value="Organization/5E496953-065B-41F2-9577-BE8F2FBD0757"/>
@@ -967,7 +1239,7 @@ __ORG_HEAD__
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
             </meta>
             <practitioner>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/C8FD0E2C-3124-4C72-AC8D-ABEA65537D1B"/>
             </practitioner>
             <organization>
                <reference value="Organization/5E496953-065B-41F2-9577-BE8F2FBD0757"/>
@@ -991,7 +1263,7 @@ __ORG_HEAD__
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
             </meta>
             <practitioner>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
             </practitioner>
             <organization>
                <reference value="Organization/5E496953-065B-41F2-9577-BE8F2FBD0757"/>
@@ -1015,7 +1287,7 @@ __ORG_HEAD__
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
             </meta>
             <practitioner>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/3F42A9D0-65A9-4E2D-9CA4-67474CB83CA4"/>
             </practitioner>
             <organization>
                <reference value="Organization/5E496953-065B-41F2-9577-BE8F2FBD0757"/>
@@ -1039,7 +1311,7 @@ __ORG_HEAD__
                <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
             </meta>
             <practitioner>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/CE6A1A90-4D1C-11E3-9E6B-010000001205"/>
             </practitioner>
             <organization>
                <reference value="Organization/F4D020C6-EAFF-4528-83BA-E81A1CFD30DC"/>
@@ -1102,7 +1374,7 @@ __ORG_HEAD__
             </subject>
             <assertedDate value="2020-11-18T13:56:52.87+00:00"/>
             <asserter>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
             </asserter>
             <note>
                <text value="historical date&#xA;historical date"/>
@@ -1211,7 +1483,7 @@ __ORG_HEAD__
             <onsetDateTime value="2020-09-15"/>
             <assertedDate value="2021-03-26T16:34:39.213+00:00"/>
             <asserter>
-               <reference value="Practitioner/1"/>
+               <reference value="Practitioner/2DB481A3-306A-4133-9491-1558161D6A2B"/>
             </asserter>
             <note>
                <text value="The descriptive text includes special characters!'Â£$%^7*()-={}][|&#34;:/.#@, -~ (Grouped with Chest pain)&#xA;The descriptive text includes special characters!'Â£$%^7*()-={}][|&#34;:/.,&#xA;(Grouped with Chest pain)"/>

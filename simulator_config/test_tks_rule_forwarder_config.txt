@@ -78,6 +78,8 @@ __PATIENT_27_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 __PATIENT_28_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938630_head.xml')/block/text()
 
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
+__PRACTITIONER_1_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/practitioner_1_head.xml')/block/text()
+__ORG_7_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_7_head.xml')/block/text()
 
 # parameter part check
 # one operation outcome with a separate issue for each unrecognised parameter part
