@@ -1,0 +1,2310 @@
+<Bundle xmlns="http://hl7.org/fhir">
+   <meta>
+      <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"/>
+   </meta>
+   <type value="collection"/>
+   <id xmlns="" xmlns:fhir="http://hl7.org/fhir" value="__SSP_TRACEID__"/>
+__PATIENT_25_HEAD__
+__ORG_HEAD__
+   <entry>
+      <resource>
+         <List>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ClinicalSetting-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="1060971000000108"/>
+                     <display value="General practice service"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <status value="current"/>
+            <mode value="snapshot"/>
+            <title value="Allergies and adverse reactions"/>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="886921000000105"/>
+                  <display value="Allergies and adverse reactions"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <note>
+               <text value="Information not available"/>
+            </note>
+            <emptyReason>
+               <coding>
+                  <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-ListEmptyReasonCode-1"/>
+                  <code value="no-content-recorded"/>
+                  <display value="No Content Recorded"/>
+               </coding>
+            </emptyReason>
+         </List>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <List>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ClinicalSetting-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="1060971000000108"/>
+                     <display value="General practice service"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <status value="current"/>
+            <mode value="snapshot"/>
+            <title value="Ended allergies"/>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="1103671000000101"/>
+                  <display value="Ended allergies"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <note>
+               <text value="Information not available"/>
+            </note>
+            <emptyReason>
+               <coding>
+                  <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-ListEmptyReasonCode-1"/>
+                  <code value="no-content-recorded"/>
+                  <display value="No Content Recorded"/>
+               </coding>
+            </emptyReason>
+         </List>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationStatement>
+            <id value="9000000000000000_40fe000000000000"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+               <valueDateTime value="2021-03-22"/>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+                     <code value="prescribed-at-gp-practice"/>
+                     <display value="Prescribed at GP practice"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_40fe000000000000"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_40fe000000000000_plan"/>
+            </basedOn>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <status value="active"/>
+            <medicationReference>
+               <reference value="Medication/2002914_0"/>
+            </medicationReference>
+            <effectivePeriod>
+               <start value="2021-01-18"/>
+            </effectivePeriod>
+            <dateAsserted value="2021-01-18"/>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <taken value="unk"/>
+            <dosage>
+               <text value="2 doses four times daily and when required for wheezing"/>
+            </dosage>
+         </MedicationStatement>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="9000000000000000_40fe000000000000_plan"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
+               <extension url="numberOfRepeatPrescriptionsAllowed">
+                  <valuePositiveInt value="6"/>
+               </extension>
+               <extension url="numberOfRepeatPrescriptionsIssued">
+                  <valueUnsignedInt value="4"/>
+               </extension>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_40fe000000000000_plan"/>
+            </identifier>
+            <groupIdentifier>
+               <value value="40fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="plan"/>
+            <medicationReference>
+               <reference value="Medication/2002914_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T11:26:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="2 doses four times daily and when required for wheezing"/>
+               <timing>
+                  <repeat>
+                     <frequency value="4"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <asNeededBoolean value="true"/>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="200"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="21"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_77d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_77d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_40fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="40fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/2002914_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_c50c990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T17:22:56Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="2 doses four times daily and when required for wheezing"/>
+               <timing>
+                  <repeat>
+                     <frequency value="4"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <asNeededBoolean value="true"/>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+                  <end value="2021-02-08"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="200"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="21"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Medication>
+            <id value="2002914_0"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+            </meta>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="39113611000001102"/>
+                  <display value="Salbutamol 100micrograms/dose inhaler CFC free"/>
+               </coding>
+            </code>
+         </Medication>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_b7d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_b7d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_40fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="40fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/2002914_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_c40c990000000000"/>
+            </context>
+            <authoredOn value="2021-02-08T17:28:18Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="2 doses four times daily and when required for wheezing"/>
+               <timing>
+                  <repeat>
+                     <frequency value="4"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <asNeededBoolean value="true"/>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-02-08"/>
+                  <end value="2021-03-01"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="200"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="21"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_18d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_18d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_40fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="40fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/2002914_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_a40c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-02T17:32:01Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="2 doses four times daily and when required for wheezing"/>
+               <timing>
+                  <repeat>
+                     <frequency value="4"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <asNeededBoolean value="true"/>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-02"/>
+                  <end value="2021-03-23"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="200"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="21"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_58d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_58d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_40fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="40fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/2002914_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_840c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-22T17:38:10Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="2 doses four times daily and when required for wheezing"/>
+               <timing>
+                  <repeat>
+                     <frequency value="4"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <asNeededBoolean value="true"/>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-22"/>
+                  <end value="2021-04-12"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="200"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="21"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationStatement>
+            <id value="9000000000000000_50fe000000000000"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+               <valueDateTime value="2021-03-17"/>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+                     <code value="prescribed-at-gp-practice"/>
+                     <display value="Prescribed at GP practice"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_50fe000000000000"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_50fe000000000000_plan"/>
+            </basedOn>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <status value="active"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <effectivePeriod>
+               <start value="2021-01-18"/>
+            </effectivePeriod>
+            <dateAsserted value="2021-01-18"/>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <taken value="unk"/>
+            <dosage>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosage>
+         </MedicationStatement>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="9000000000000000_50fe000000000000_plan"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
+               <extension url="numberOfRepeatPrescriptionsAllowed">
+                  <valuePositiveInt value="6"/>
+               </extension>
+               <extension url="numberOfRepeatPrescriptionsIssued">
+                  <valueUnsignedInt value="5"/>
+               </extension>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_50fe000000000000_plan"/>
+            </identifier>
+            <groupIdentifier>
+               <value value="50fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="plan"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T11:26:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="60"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="15"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_57d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_57d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_50fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="50fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_c50c990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T17:22:56Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+                  <end value="2021-02-02"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="60"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="15"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Medication>
+            <id value="1017742_0"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+            </meta>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3184311000001107"/>
+                  <display value="Flixotide 100micrograms/dose Accuhaler (GlaxoSmithKline UK Ltd)"/>
+               </coding>
+            </code>
+         </Medication>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_97d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_97d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_50fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="50fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_d40c990000000000"/>
+            </context>
+            <authoredOn value="2021-01-29T17:25:24Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-29"/>
+                  <end value="2021-02-13"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="60"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="15"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_d7d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_d7d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_50fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="50fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_b40c990000000000"/>
+            </context>
+            <authoredOn value="2021-02-15T17:30:04Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-02-15"/>
+                  <end value="2021-03-02"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="60"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="15"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_08d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_08d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_50fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="50fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_a40c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-02T17:32:01Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-02"/>
+                  <end value="2021-03-17"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="60"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="15"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_38d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_38d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_50fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="50fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1017742_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_940c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-17T17:34:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="inhale 2 doses twice daily"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <route>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="18679011000001101"/>
+                     <display value="inhalation"/>
+                  </coding>
+               </route>
+               <doseQuantity>
+                  <value value="2"/>
+                  <unit value="dose"/>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="3317411000001100"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-17"/>
+                  <end value="2021-04-01"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="dose"/>
+                  </extension>
+                  <value value="60"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="15"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationStatement>
+            <id value="9000000000000000_20fe000000000000"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+               <valueDateTime value="2021-03-17"/>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+                     <code value="prescribed-at-gp-practice"/>
+                     <display value="Prescribed at GP practice"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_20fe000000000000"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_20fe000000000000_plan"/>
+            </basedOn>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <status value="active"/>
+            <medicationReference>
+               <reference value="Medication/1002535_0"/>
+            </medicationReference>
+            <effectivePeriod>
+               <start value="2021-01-18"/>
+            </effectivePeriod>
+            <dateAsserted value="2021-01-18"/>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <taken value="unk"/>
+            <dosage>
+               <text value="take one As directed"/>
+               <asNeededBoolean value="true"/>
+            </dosage>
+         </MedicationStatement>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="9000000000000000_20fe000000000000_plan"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
+               <extension url="numberOfRepeatPrescriptionsAllowed">
+                  <valuePositiveInt value="6"/>
+               </extension>
+               <extension url="numberOfRepeatPrescriptionsIssued">
+                  <valueUnsignedInt value="3"/>
+               </extension>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_20fe000000000000_plan"/>
+            </identifier>
+            <groupIdentifier>
+               <value value="20fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="plan"/>
+            <medicationReference>
+               <reference value="Medication/1002535_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T11:26:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="take one As directed"/>
+               <asNeededBoolean value="true"/>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="30"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_67d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_67d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_20fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="20fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1002535_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_c50c990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T17:22:56Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="take one As directed"/>
+               <asNeededBoolean value="true"/>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+                  <end value="2021-02-17"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="30"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Medication>
+            <id value="1002535_0"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+            </meta>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="42111000001107"/>
+                  <display value="Microgynon 30 tablets (Bayer Plc)"/>
+               </coding>
+            </code>
+         </Medication>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_e7d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_e7d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_20fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="20fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1002535_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_b40c990000000000"/>
+            </context>
+            <authoredOn value="2021-02-15T17:30:04Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="take one As directed"/>
+               <asNeededBoolean value="true"/>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-02-15"/>
+                  <end value="2021-03-17"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="30"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_48d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_48d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_20fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="20fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1002535_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_940c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-17T17:34:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="take one As directed"/>
+               <asNeededBoolean value="true"/>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-17"/>
+                  <end value="2021-04-16"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="30"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationStatement>
+            <id value="9000000000000000_30fe000000000000"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
+               <valueDateTime value="2021-03-17"/>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1"/>
+                     <code value="prescribed-at-gp-practice"/>
+                     <display value="Prescribed at GP practice"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_30fe000000000000"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <status value="active"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <effectivePeriod>
+               <start value="2021-01-18"/>
+            </effectivePeriod>
+            <dateAsserted value="2021-01-18"/>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <taken value="unk"/>
+            <dosage>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosage>
+            <dosage>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosage>
+         </MedicationStatement>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="9000000000000000_30fe000000000000_plan"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1">
+               <extension url="numberOfRepeatPrescriptionsAllowed">
+                  <valuePositiveInt value="6"/>
+               </extension>
+               <extension url="numberOfRepeatPrescriptionsIssued">
+                  <valueUnsignedInt value="6"/>
+               </extension>
+            </extension>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="9000000000000000_30fe000000000000_plan"/>
+            </identifier>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="plan"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_adfb990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T11:26:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_7ad4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_7ad4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_c50c990000000000"/>
+            </context>
+            <authoredOn value="2021-01-18T17:22:56Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-18"/>
+                  <end value="2021-01-28"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <Medication>
+            <id value="1016519_0"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+            </meta>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="889311000001108"/>
+                  <display value="Epilim 200 gastro-resistant tablets (Sanofi)"/>
+               </coding>
+            </code>
+         </Medication>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_87d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_87d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_d40c990000000000"/>
+            </context>
+            <authoredOn value="2021-01-29T17:25:24Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-01-29"/>
+                  <end value="2021-02-08"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_a7d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_a7d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_c40c990000000000"/>
+            </context>
+            <authoredOn value="2021-02-08T17:28:18Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-02-08"/>
+                  <end value="2021-02-18"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_c7d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_c7d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_b40c990000000000"/>
+            </context>
+            <authoredOn value="2021-02-15T17:30:04Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-02-15"/>
+                  <end value="2021-02-25"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_f7d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_f7d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="completed"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_a40c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-02T17:32:01Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-02"/>
+                  <end value="2021-03-12"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <MedicationRequest>
+            <id value="1000000000000000_28d4a70000000000_order"/>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"/>
+                     <code value="repeat"/>
+                     <display value="Repeat"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <identifier>
+               <system value="https://tpp-uk.com/Id/ccs-id"/>
+               <value value="1000000000000000_28d4a70000000000_order"/>
+            </identifier>
+            <basedOn>
+               <reference value="MedicationRequest/9000000000000000_30fe000000000000_plan"/>
+            </basedOn>
+            <groupIdentifier>
+               <value value="30fe000000000000"/>
+            </groupIdentifier>
+            <status value="active"/>
+            <intent value="order"/>
+            <medicationReference>
+               <reference value="Medication/1016519_0"/>
+            </medicationReference>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <context>
+               <reference value="Encounter/4000000000000000_940c990000000000"/>
+            </context>
+            <authoredOn value="2021-03-17T17:34:42Z"/>
+            <recorder>
+               <reference value="Practitioner/1"/>
+            </recorder>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="MORN"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dosageInstruction>
+               <text value="[08:00-1 tablet][20:00-2 tablets]"/>
+               <timing>
+                  <repeat>
+                     <frequency value="2"/>
+                     <period value="1"/>
+                     <periodUnit value="d"/>
+                     <when value="NIGHT"/>
+                  </repeat>
+               </timing>
+               <doseQuantity>
+                  <value value="200"/>
+                  <unit value="milligram"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <start value="2021-03-17"/>
+                  <end value="2021-03-27"/>
+               </validityPeriod>
+               <quantity>
+                  <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1">
+                     <valueString value="tablet"/>
+                  </extension>
+                  <value value="30"/>
+               </quantity>
+               <expectedSupplyDuration>
+                  <value value="10"/>
+                  <unit value="day"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+   </entry>
+   <entry>
+      <resource>
+         <List>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+            </meta>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ClinicalSetting-1">
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://snomed.info/sct"/>
+                     <code value="1060971000000108"/>
+                     <display value="General practice service"/>
+                  </coding>
+               </valueCodeableConcept>
+            </extension>
+            <status value="current"/>
+            <mode value="snapshot"/>
+            <title value="Medications and medical devices"/>
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="933361000000108"/>
+                  <display value="Medications and medical devices"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="Patient/25"/>
+            </subject>
+            <entry>
+               <item>
+                  <reference value="MedicationStatement/9000000000000000_40fe000000000000"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="MedicationStatement/9000000000000000_50fe000000000000"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="MedicationStatement/9000000000000000_20fe000000000000"/>
+               </item>
+            </entry>
+            <entry>
+               <item>
+                  <reference value="MedicationStatement/9000000000000000_30fe000000000000"/>
+               </item>
+            </entry>
+         </List>
+      </resource>
+   </entry>
+   
+   
+   
+</Bundle>

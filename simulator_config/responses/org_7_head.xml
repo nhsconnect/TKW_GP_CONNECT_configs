@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+<![CDATA[
+  <entry>
+    <resource>
+      <Organization xmlns="http://hl7.org/fhir">
+        <id value="7"/>
+        <meta>
+          <versionId value="1469444400000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+01:00"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+          <value value="B82617"/>
+        </identifier>
+        <name value="COXWOLD SURGERY"/>
+        <telecom>
+          <system value="phone"/>
+          <value value="12345678"/>
+          <use value="work"/>
+        </telecom>
+        <address>
+          <use value="work"/>
+          <line value="NHS NPFIT Test Data Manager"/>
+          <line value="Princes Exchange"/>
+          <city value="Leeds"/>
+          <district value="West Yorkshire"/>
+          <postalCode value="LS1 4HY"/>
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+]]>
+</block>
