@@ -415,8 +415,8 @@
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="3fc884e6-a327-4076-b4c5-6b02192c5160"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E463FC884E6A3274076B4C56B02192C5160"/>
         </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
@@ -428,14 +428,31 @@
             <display value="Adverse reaction to erythromycin"/>
             <userSelected value="true"/>
           </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="2579700012"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Adverse reaction to erythromycin"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="419056004"/>
+            <display value="Erythromycin adverse reaction"/>
+          </coding>
         </code>
         <patient>
           <reference value="Patient/24"/>
         </patient>
-        <assertedDate value="2019-03-28"/>
+        <onsetDateTime value="2019-03-28"/>
+        <assertedDate value="2019-03-28T13:55:12.777+00:00"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
+        <note>
+          <text value="Significance : Major&#10;Episodicity : First"/>
+        </note>
       </AllergyIntolerance>
     </resource>
   </entry>
@@ -447,8 +464,8 @@
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="62658072-28af-47e5-b81c-bc0521d5c41c"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E466265807228AF47E5B81CBC0521D5C41C"/>
         </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
@@ -460,14 +477,31 @@
             <display value="Peanut allergy"/>
             <userSelected value="true"/>
           </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="152306018"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Allergy to peanuts"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="91935009"/>
+            <display value="Allergy to peanut"/>
+          </coding>
         </code>
         <patient>
           <reference value="Patient/24"/>
         </patient>
-        <assertedDate value="2019-03-28"/>
+        <onsetDateTime value="2019-03-28"/>
+        <assertedDate value="2019-03-28T13:29:03.26+00:00"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
+        <note>
+          <text value="Significance : Major&#10;Episodicity : First"/>
+        </note>
       </AllergyIntolerance>
     </resource>
   </entry>
@@ -479,8 +513,8 @@
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="bcabe667-9375-4e32-823f-6b455fff2d88"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E46BCABE66793754E32823F6B455FFF2D88"/>
         </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
@@ -492,14 +526,31 @@
             <display value="H/O: serum allergy"/>
             <userSelected value="true"/>
           </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="3023291019"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Serum allergy"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="705097000"/>
+            <display value="Allergy to serum"/>
+          </coding>
         </code>
         <patient>
           <reference value="Patient/24"/>
         </patient>
-        <assertedDate value="2019-03-28"/>
+        <onsetDateTime value="2019"/>
+        <assertedDate value="2019-03-28T13:28:07.827+00:00"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
+        <note>
+          <text value="Year only populated - special characters: !'£$%^&amp;*(0_+}{&quot;:?&gt;&lt;~`@][';/.,"/>
+        </note>
       </AllergyIntolerance>
     </resource>
   </entry>
@@ -511,8 +562,8 @@
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="42b94fc2-cf5c-46d4-b125-e0dc13e59aca"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E4642B94FC2CF5C46D4B125E0DC13E59ACA"/>
         </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
@@ -524,11 +575,25 @@
             <display value="Adverse reaction to Antoin"/>
             <userSelected value="true"/>
           </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="1061831000006117"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Adverse reaction to Antoin"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="1061831000006101"/>
+            <display value="Adverse reaction to Antoin"/>
+          </coding>
         </code>
         <patient>
           <reference value="Patient/24"/>
         </patient>
-        <assertedDate value="2019-03-28"/>
+        <onsetDateTime value="2019-03-28"/>
+        <assertedDate value="2019-03-28T13:27:02.62+00:00"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
@@ -543,8 +608,8 @@
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
         <identifier>
-          <system value="https://fhir.nhs.uk/Id/cross-care-setting-identifier"/>
-          <value value="4b9b29f2-a4d8-4c2d-9883-42ee3f5dae74"/>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E464B9B29F2A4D84C2D988342EE3F5DAE74"/>
         </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
@@ -556,11 +621,25 @@
             <display value="H/O: penicillin allergy"/>
             <userSelected value="true"/>
           </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="811091000006112"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Allergy to penicillin"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="91936005"/>
+            <display value="Allergy to penicillin"/>
+          </coding>
         </code>
         <patient>
           <reference value="Patient/24"/>
         </patient>
-        <assertedDate value="2019-03-28"/>
+        <onsetDateTime value="2019-03-28"/>
+        <assertedDate value="2019-03-28T13:26:06.81+00:00"/>
         <recorder>
           <reference value="Practitioner/1"/>
         </recorder>
@@ -577,6 +656,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_9a44170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_850c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -584,13 +672,15 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="317919004"/>
+            <display value="Bendroflumethiazide 2.5mg tablets"/>
           </coding>
-          <text value="BENDROFLUMETHIAZIDE (all components considered allergens - Bendroflumethiazide 2.5mg tablets)"/>
+          <text value="BENDROFLUMETHIAZIDE"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
         </patient>
         <onsetDateTime value="2010-12-20"/>
+        <assertedDate value="2011-01-21T08:18:35Z"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -611,6 +701,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_5544170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_f50c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -618,8 +717,9 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="15065911000001106"/>
+            <display value="Codeine 15mg/5ml linctus"/>
           </coding>
-          <text value="CODEINE PHOSPHATE (all components considered allergens - Codeine 15mg/5ml linctus)"/>
+          <text value="CODEINE PHOSPHATE"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -646,6 +746,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_5544170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_e50c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -653,8 +762,9 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="4674511000001105"/>
+            <display value="Dicobalt edetate 300mg/20ml solution for injection ampoules (Alliance Pharmaceuticals Ltd)"/>
           </coding>
-          <text value="DICOBALT EDETATE (all components considered allergens - Dicobalt edetate 300mg/20ml solution for injection ampoules (Alliance Pharmaceuticals Ltd))"/>
+          <text value="DICOBALT EDETATE"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -674,6 +784,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_8644170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_b50c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -709,6 +828,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_f844170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_a50c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -716,8 +844,9 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="3961211000001100"/>
+            <display value="Dihydrotachysterol 250micrograms/ml oral solution sugar free 15 ml"/>
           </coding>
-          <text value="DIHYDROTACHYSTEROL (all components considered allergens - Dihydrotachysterol 250micrograms/ml oral solution sugar free)"/>
+          <text value="DIHYDROTACHYSTEROL"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -744,6 +873,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_f844170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_950c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -751,8 +889,9 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="3961211000001100"/>
+            <display value="Dihydrotachysterol 250micrograms/ml oral solution sugar free 15 ml"/>
           </coding>
-          <text value="DIHYDROTACHYSTEROL (all components considered allergens - Dihydrotachysterol 250micrograms/ml oral solution sugar free)"/>
+          <text value="DIHYDROTACHYSTEROL"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -779,6 +918,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_ee44170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_750c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -814,6 +962,15 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_7854170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="b000000000000000_350c000000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
@@ -850,11 +1007,25 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_d844170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_98eb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="environment"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="294801000000114"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="196461000000101"/>
             <display value="Transfer-degraded drug allergy"/>
@@ -886,15 +1057,30 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_5544170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_23eb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="environment"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="3750096014"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="300916003"/>
-            <display value="Latex allergy"/>
+            <display value="Allergy to latex"/>
           </coding>
+          <text value="Latex allergy"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -921,15 +1107,30 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_aa44170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_f6fb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="environment"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="2154877014"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="241960008"/>
-            <display value="Aspirin-induced angio-oedema-urticaria"/>
+            <display value="Aspirin-induced angioedema-urticaria"/>
           </coding>
+          <text value="Aspirin-induced angio-oedema-urticaria"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -956,13 +1157,28 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_aa44170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_e6fb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="3748817013"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="293880004"/>
+            <display value="Allergy to amobarbital"/>
           </coding>
           <text value="Amobarbital allergy"/>
         </code>
@@ -991,15 +1207,30 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_de44170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_d2fb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="3749285010"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="293669002"/>
-            <display value="Kaolin allergy"/>
+            <display value="Allergy to kaolin"/>
           </coding>
+          <text value="Kaolin allergy"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -1026,13 +1257,28 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_0244170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_dddb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="432460015"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="292324009"/>
+            <display value="Primidone adverse reaction"/>
           </coding>
           <text value="Adverse reaction to primidone"/>
         </code>
@@ -1061,15 +1307,30 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_e144170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_bddb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="3749800014"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="294505008"/>
-            <display value="Amoxicillin allergy"/>
+            <display value="Allergy to amoxicillin"/>
           </coding>
+          <text value="Amoxicillin allergy"/>
         </code>
         <patient>
           <reference value="Patient/24"/>
@@ -1096,13 +1357,28 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_d144170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_9ddb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="152307010"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="91936005"/>
+            <display value="Allergy to penicillin"/>
           </coding>
           <text value="Penicillin allergy"/>
         </code>
@@ -1124,13 +1400,28 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_d144170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_6ddb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="26952016"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="15911003"/>
+            <display value="Cow's milk protein sensitivity"/>
           </coding>
           <text value="Cow's milk allergy"/>
         </code>
@@ -1159,13 +1450,28 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_d144170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_7ddb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="medication"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="2838980018"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="232346004"/>
+            <display value="Allergy to cat dander"/>
           </coding>
           <text value="Cat allergy"/>
         </code>
@@ -1194,11 +1500,25 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
         </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter">
+          <valueReference>
+            <reference value="Encounter/4000000000000000_d144170000000000"/>
+          </valueReference>
+        </extension>
+        <identifier>
+          <system value="https://tpp-uk.com/Id/ccs-id"/>
+          <value value="5000000000000000_8ddb070000000000"/>
+        </identifier>
         <clinicalStatus value="active"/>
         <verificationStatus value="unconfirmed"/>
         <category value="environment"/>
         <code>
           <coding>
+            <extension url="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="306731000000112"/>
+              </extension>
+            </extension>
             <system value="http://snomed.info/sct"/>
             <code value="201551000000109"/>
             <display value="Allergy to plasters"/>

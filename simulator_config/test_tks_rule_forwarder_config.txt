@@ -14,7 +14,7 @@ document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_conf
 document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
-documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
+documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability_1_5_1.xml "200 OK"
 
 patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
 patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"

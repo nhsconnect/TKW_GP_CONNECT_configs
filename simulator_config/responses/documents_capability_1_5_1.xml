@@ -2,13 +2,13 @@
    <version value="1.5.1"></version>
    <name value="GP Connect API - Access Document"></name>
    <status value="active"></status>
-   <date value="2020-02-10"></date>
+   <date value="2022-11-08"></date>
    <publisher value="[Provider Software Vendor Name]"></publisher>
    <contact>
       <name value="[Provider Software Vendor Contact Name]"></name>
    </contact>
    <description value="This server implements the GP Connect API - Access Document version 1.5.1"></description>
-   <copyright value="Copyright NHS Digital 2016-21"></copyright>
+   <copyright value="Copyright NHS Digital 2016-22"></copyright>
    <kind value="capability"></kind>
    <software>
       <name value="[Provider Software Name]"></name>
