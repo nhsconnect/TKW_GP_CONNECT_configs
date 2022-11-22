@@ -36,7 +36,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <date value="2022-09-09T09:49:08.084+01:00"/>
+        <date value="2023-09-09T09:49:08.084+01:00"/>
         <orderedBy>
           <coding>
             <system value="http://hl7.org/fhir/list-order"/>
@@ -213,6 +213,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE21D66D84C9C0734EDF8C2CF309A83C3DC7"/>
         </identifier>
+        <groupIdentifier>
+          <value value="d66d84c9-c073-4edf-8c2c-f309a83c3dc7"/>
+        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -221,12 +224,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T11:23:20.077+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T11:23:20.077+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -235,7 +233,7 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
+            <start value="2012-01-15"/>
           </validityPeriod>
           <quantity>
             <value value="5"/>
@@ -274,6 +272,9 @@
         <basedOn>
           <reference value="MedicationRequest/D66D84C9-C073-4EDF-8C2C-F309A83C3DC7"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="d66d84c9-c073-4edf-8c2c-f309a83c3dc7"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -282,12 +283,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T11:23:21.81+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T11:23:21.81+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -296,8 +292,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-02-12"/>
+            <start value="2012-01-15"/>
+            <end value="2012-02-12"/>
           </validityPeriod>
           <quantity>
             <value value="5"/>
@@ -336,6 +332,9 @@
         <basedOn>
           <reference value="MedicationRequest/D66D84C9-C073-4EDF-8C2C-F309A83C3DC7"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="d66d84c9-c073-4edf-8c2c-f309a83c3dc7"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -344,12 +343,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-19T09:17:26.327+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-19T09:17:26.327+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -358,8 +352,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-19"/>
-            <end value="2011-02-16"/>
+            <start value="2012-01-19"/>
+            <end value="2012-02-16"/>
           </validityPeriod>
           <quantity>
             <value value="5"/>
@@ -403,6 +397,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE21DD679575F8D149BA990CAB46F54E9A43"/>
         </identifier>
+        <groupIdentifier>
+          <value value="dd679575-f8d1-49ba-990c-ab46f54e9a43"/>
+        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -411,12 +408,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T11:07:01.93+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T11:07:01.93+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -425,7 +417,7 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
+            <start value="2012-01-15"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -455,7 +447,7 @@
             </valueCodeableConcept>
           </extension>
           <extension url="statusChangeDate">
-            <valueDateTime value="2011-01-19T14:33:16.397+00:00"/>
+            <valueDateTime value="2012-01-19T14:33:16.397+00:00"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -471,6 +463,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE21086437F31C274B2BA7701FA5DAB8FBCF"/>
         </identifier>
+        <groupIdentifier>
+          <value value="086437f3-1c27-4b2b-a770-1fa5dab8fbcf"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -479,12 +474,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:26:31.553+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:26:31.553+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -493,8 +483,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-01-19"/>
+            <start value="2012-01-15"/>
+            <end value="2012-01-19"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -533,6 +523,9 @@
         <basedOn>
           <reference value="MedicationRequest/086437F3-1C27-4B2B-A770-1FA5DAB8FBCF"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="086437f3-1c27-4b2b-a770-1fa5dab8fbcf"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="order"/>
         <medicationReference>
@@ -541,12 +534,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:26:32.493+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:26:32.493+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -558,8 +546,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-01-19"/>
+            <start value="2012-01-15"/>
+            <end value="2012-01-19"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -582,6 +570,16 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
         </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
+          <extension url="statusReason">
+            <valueCodeableConcept>
+              <text value="Expired"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="statusChangeDate">
+            <valueDateTime value="2020-10-27T02:01:03.697+00:00"/>
+          </extension>
+        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
           <valueCodeableConcept>
             <coding>
@@ -595,7 +593,10 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE212A49D41023B842FA91F83570E8F93C23"/>
         </identifier>
-        <status value="completed"/>
+        <groupIdentifier>
+          <value value="2a49d410-23b8-42fa-91f8-3570e8f93c23"/>
+        </groupIdentifier>
+        <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
           <reference value="Medication/180491A6-75E8-41E9-A542-5D608F98BFD7"/>
@@ -603,12 +604,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:26:18.993+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:26:18.993+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -617,8 +613,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2019-10-28"/>
+            <start value="2012-01-15"/>
+            <end value="2020-10-27"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -657,6 +653,9 @@
         <basedOn>
           <reference value="MedicationRequest/2A49D410-23B8-42FA-91F8-3570E8F93C23"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="2a49d410-23b8-42fa-91f8-3570e8f93c23"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -665,12 +664,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:26:19.57+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:26:19.57+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -679,8 +673,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-02-12"/>
+            <start value="2012-01-15"/>
+            <end value="2012-02-12"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -711,6 +705,16 @@
             <valueUnsignedInt value="3"/>
           </extension>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
+          <extension url="statusReason">
+            <valueCodeableConcept>
+              <text value="No information available"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="statusChangeDate">
+            <valueDateTime value="2012-01-19T14:45:39.78+00:00"/>
+          </extension>
+        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
           <valueCodeableConcept>
             <coding>
@@ -724,7 +728,10 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE218627572CBAE54325897EF346C0B1F91BHD1"/>
         </identifier>
-        <status value="completed"/>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b-hd-1"/>
+        </groupIdentifier>
+        <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
           <reference value="Medication/E0F80D42-0B7B-42B2-9D2A-3639D86A8E6B"/>
@@ -732,12 +739,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:46:01.933+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:46:01.933+00:00"/>
         <recorder>
           <reference value="Practitioner/3"/>
         </recorder>
@@ -746,8 +748,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-01-19"/>
+            <start value="2012-01-15"/>
+            <end value="2012-01-19"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -786,6 +788,9 @@
         <basedOn>
           <reference value="MedicationRequest/8627572C-BAE5-4325-897E-F346C0B1F91B-HD-1"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b-hd-1"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -794,12 +799,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:46:02.513+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:46:02.513+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -808,8 +808,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-01-29"/>
+            <start value="2012-01-15"/>
+            <end value="2012-01-29"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -848,6 +848,9 @@
         <basedOn>
           <reference value="MedicationRequest/8627572C-BAE5-4325-897E-F346C0B1F91B-HD-1"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b-hd-1"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -856,12 +859,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:46:07.31+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:46:07.31+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -870,8 +868,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-01-29"/>
+            <start value="2012-01-15"/>
+            <end value="2012-01-29"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -910,6 +908,9 @@
         <basedOn>
           <reference value="MedicationRequest/8627572C-BAE5-4325-897E-F346C0B1F91B-HD-1"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b-hd-1"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -918,12 +919,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-15T10:46:13.42+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-15T10:46:13.42+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -932,8 +928,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-15"/>
-            <end value="2011-01-29"/>
+            <start value="2012-01-15"/>
+            <end value="2012-01-29"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -971,7 +967,7 @@
             </valueCodeableConcept>
           </extension>
           <extension url="statusChangeDate">
-            <valueDateTime value="2011-01-19T14:37:22.35+00:00"/>
+            <valueDateTime value="2012-01-19T14:37:22.35+00:00"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -987,6 +983,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE2154BE52A76C074402A57F024B3C6A391E"/>
         </identifier>
+        <groupIdentifier>
+          <value value="54be52a7-6c07-4402-a57f-024b3c6a391e"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -995,12 +994,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-19T09:17:10.543+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-19T09:17:10.543+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1009,8 +1003,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-19"/>
-            <end value="2011-01-19"/>
+            <start value="2012-01-19"/>
+            <end value="2012-01-19"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -1049,6 +1043,9 @@
         <basedOn>
           <reference value="MedicationRequest/54BE52A7-6C07-4402-A57F-024B3C6A391E"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="54be52a7-6c07-4402-a57f-024b3c6a391e"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="order"/>
         <medicationReference>
@@ -1057,12 +1054,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-19T09:17:11.183+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-19T09:17:11.183+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1074,8 +1066,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-19"/>
-            <end value="2011-01-19"/>
+            <start value="2012-01-19"/>
+            <end value="2012-01-19"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -1132,7 +1124,7 @@
             </valueCodeableConcept>
           </extension>
           <extension url="statusChangeDate">
-            <valueDateTime value="2012-09-28T10:22:32.423+01:00"/>
+            <valueDateTime value="2013-09-28T10:22:32.423+01:00"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -1148,6 +1140,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE218627572CBAE54325897EF346C0B1F91B"/>
         </identifier>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -1156,12 +1151,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-19T14:45:39.78+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-19T14:45:39.78+00:00"/>
         <recorder>
           <reference value="Practitioner/3"/>
         </recorder>
@@ -1170,8 +1160,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-19"/>
-            <end value="2012-09-28"/>
+            <start value="2012-01-19"/>
+            <end value="2013-09-28"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1213,6 +1203,9 @@
         <basedOn>
           <reference value="MedicationRequest/8627572C-BAE5-4325-897E-F346C0B1F91B"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1221,12 +1214,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-01-19T14:45:39.78+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-01-19T14:45:39.78+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1235,8 +1223,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-01-19"/>
-            <end value="2011-02-02"/>
+            <start value="2012-01-19"/>
+            <end value="2012-02-02"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1275,6 +1263,9 @@
         <basedOn>
           <reference value="MedicationRequest/8627572C-BAE5-4325-897E-F346C0B1F91B"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="8627572c-bae5-4325-897e-f346c0b1f91b"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1283,12 +1274,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-02-27T14:44:16.19+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-02-27T14:44:16.19+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1297,8 +1283,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-02-27"/>
-            <end value="2011-03-13"/>
+            <start value="2012-02-27"/>
+            <end value="2012-03-12"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1342,6 +1328,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE21CFF8B80849664FB4BA72E6360649917A"/>
         </identifier>
+        <groupIdentifier>
+          <value value="cff8b808-4966-4fb4-ba72-e6360649917a"/>
+        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -1350,12 +1339,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:44:29.467+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:44:29.467+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1367,7 +1351,7 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
+            <start value="2012-03-23"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1406,6 +1390,9 @@
         <basedOn>
           <reference value="MedicationRequest/CFF8B808-4966-4FB4-BA72-E6360649917A"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="cff8b808-4966-4fb4-ba72-e6360649917a"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1414,12 +1401,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:44:40.547+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:44:40.547+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1431,8 +1413,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-25"/>
-            <end value="2011-04-08"/>
+            <start value="2012-03-24"/>
+            <end value="2012-04-07"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1470,7 +1452,7 @@
             </valueCodeableConcept>
           </extension>
           <extension url="statusChangeDate">
-            <valueDateTime value="2011-03-24T16:41:06.69+00:00"/>
+            <valueDateTime value="2012-03-23T16:41:06.69+00:00"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -1486,6 +1468,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE21BA6AA3F4100F4994A12EF96E7C931917"/>
         </identifier>
+        <groupIdentifier>
+          <value value="ba6aa3f4-100f-4994-a12e-f96e7c931917"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -1494,12 +1479,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:40:37.893+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:40:37.893+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1508,8 +1488,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-03-24"/>
+            <start value="2012-03-23"/>
+            <end value="2012-03-23"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1548,6 +1528,9 @@
         <basedOn>
           <reference value="MedicationRequest/BA6AA3F4-100F-4994-A12E-F96E7C931917"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="ba6aa3f4-100f-4994-a12e-f96e7c931917"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1556,12 +1539,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:40:40.177+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:40:40.177+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1570,8 +1548,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-04-07"/>
+            <start value="2012-03-23"/>
+            <end value="2012-04-06"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1610,6 +1588,9 @@
         <basedOn>
           <reference value="MedicationRequest/BA6AA3F4-100F-4994-A12E-F96E7C931917"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="ba6aa3f4-100f-4994-a12e-f96e7c931917"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1618,12 +1599,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:40:46.58+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:40:46.58+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1632,8 +1608,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-04-07"/>
+            <start value="2012-03-23"/>
+            <end value="2012-04-06"/>
           </validityPeriod>
           <quantity>
             <value value="14"/>
@@ -1664,6 +1640,16 @@
             <valueUnsignedInt value="1"/>
           </extension>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
+          <extension url="statusReason">
+            <valueCodeableConcept>
+              <text value="No information available"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="statusChangeDate">
+            <valueDateTime value="2012-03-23T16:27:58.547+00:00"/>
+          </extension>
+        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
           <valueCodeableConcept>
             <coding>
@@ -1677,7 +1663,10 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE214DF74563BED24E9096793115C78DBBC6FD2"/>
         </identifier>
-        <status value="completed"/>
+        <groupIdentifier>
+          <value value="4df74563-bed2-4e90-9679-3115c78dbbc6-fd-2"/>
+        </groupIdentifier>
+        <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
           <reference value="Medication/CA40A65D-60B3-49F2-834E-983D404F137F"/>
@@ -1685,12 +1674,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:24:02.89+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:24:02.89+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1699,8 +1683,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-03-24"/>
+            <start value="2012-03-23"/>
+            <end value="2012-03-23"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -1739,6 +1723,9 @@
         <basedOn>
           <reference value="MedicationRequest/4DF74563-BED2-4E90-9679-3115C78DBBC6-FD-2"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="4df74563-bed2-4e90-9679-3115c78dbbc6-fd-2"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1747,12 +1734,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:24:06.127+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:24:06.127+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1761,8 +1743,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-04-21"/>
+            <start value="2012-03-23"/>
+            <end value="2012-04-20"/>
           </validityPeriod>
           <quantity>
             <value value="28"/>
@@ -1806,6 +1788,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE214DF74563BED24E9096793115C78DBBC6"/>
         </identifier>
+        <groupIdentifier>
+          <value value="4df74563-bed2-4e90-9679-3115c78dbbc6"/>
+        </groupIdentifier>
         <status value="active"/>
         <intent value="plan"/>
         <medicationReference>
@@ -1814,12 +1799,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:27:58.547+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:27:58.547+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1828,7 +1808,7 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
+            <start value="2012-03-23"/>
           </validityPeriod>
           <quantity>
             <value value="56"/>
@@ -1862,6 +1842,16 @@
             <valueUnsignedInt value="1"/>
           </extension>
         </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
+          <extension url="statusReason">
+            <valueCodeableConcept>
+              <text value="No information available"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="statusChangeDate">
+            <valueDateTime value="2012-03-23T00:00:00+00:00"/>
+          </extension>
+        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
           <valueCodeableConcept>
             <coding>
@@ -1875,7 +1865,10 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE214DF74563BED24E9096793115C78DBBC6HD1"/>
         </identifier>
-        <status value="completed"/>
+        <groupIdentifier>
+          <value value="4df74563-bed2-4e90-9679-3115c78dbbc6-hd-1"/>
+        </groupIdentifier>
+        <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
           <reference value="Medication/CA40A65D-60B3-49F2-834E-983D404F137F"/>
@@ -1883,7 +1876,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:27:58.547+00:00"/>
+        <authoredOn value="2012-03-23T16:27:58.547+00:00"/>
         <requester>
           <agent>
             <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
@@ -1897,8 +1890,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-03-24"/>
+            <start value="2012-03-23"/>
+            <end value="2012-03-23"/>
           </validityPeriod>
           <quantity>
             <value value="56"/>
@@ -1940,6 +1933,9 @@
         <basedOn>
           <reference value="MedicationRequest/4DF74563-BED2-4E90-9679-3115C78DBBC6-HD-1"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="4df74563-bed2-4e90-9679-3115c78dbbc6-hd-1"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -1948,12 +1944,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-03-24T16:27:58.547+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-03-23T16:27:58.547+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -1962,8 +1953,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-03-24"/>
-            <end value="2011-04-21"/>
+            <start value="2012-03-23"/>
+            <end value="2012-04-20"/>
           </validityPeriod>
           <quantity>
             <value value="56"/>
@@ -1986,6 +1977,16 @@
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
         </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatusReason-1">
+          <extension url="statusReason">
+            <valueCodeableConcept>
+              <text value="Expired"/>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="statusChangeDate">
+            <valueDateTime value="2020-10-27T02:01:03.697+00:00"/>
+          </extension>
+        </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
           <valueCodeableConcept>
             <coding>
@@ -1999,7 +2000,10 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE21FA91A636612842B0980762CC44167D2D"/>
         </identifier>
-        <status value="completed"/>
+        <groupIdentifier>
+          <value value="fa91a636-6128-42b0-9807-62cc44167d2d"/>
+        </groupIdentifier>
+        <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
           <reference value="Medication/180491A6-75E8-41E9-A542-5D608F98BFD7"/>
@@ -2007,7 +2011,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-08-10T13:42:22.51+01:00"/>
+        <authoredOn value="2012-08-09T13:42:22.51+01:00"/>
         <requester>
           <agent>
             <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
@@ -2021,8 +2025,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-08-10"/>
-            <end value="2019-10-28"/>
+            <start value="2012-08-09"/>
+            <end value="2020-10-27"/>
           </validityPeriod>
           <quantity>
             <value value="63"/>
@@ -2061,6 +2065,9 @@
         <basedOn>
           <reference value="MedicationRequest/FA91A636-6128-42B0-9807-62CC44167D2D"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="fa91a636-6128-42b0-9807-62cc44167d2d"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -2069,12 +2076,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2011-08-10T13:42:38.04+01:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6AB948A5-2067-4A67-AD00-60EAF13E9CAA"/>
-          </agent>
-        </requester>
+        <authoredOn value="2012-08-09T13:42:38.04+01:00"/>
         <recorder>
           <reference value="Practitioner/3"/>
         </recorder>
@@ -2083,8 +2085,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2011-11-10"/>
-            <end value="2012-02-02"/>
+            <start value="2012-11-09"/>
+            <end value="2013-02-01"/>
           </validityPeriod>
           <quantity>
             <value value="63"/>
@@ -2120,6 +2122,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE211458EF9ED0EA4745BB46C38668E0EC0CFI1"/>
         </identifier>
+        <groupIdentifier>
+          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c-fi-1"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="plan"/>
         <medicationReference>
@@ -2128,12 +2133,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2012-11-15T14:55:59.093+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2013-11-15T14:55:59.093+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -2142,8 +2142,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-11-15"/>
+            <start value="2013-11-15"/>
+            <end value="2013-11-15"/>
           </validityPeriod>
           <quantity>
             <value value="168"/>
@@ -2182,6 +2182,9 @@
         <basedOn>
           <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C-FI-1"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c-fi-1"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -2193,12 +2196,7 @@
         <context>
           <reference value="Encounter/0B6398B9-E22B-4195-BBBA-301BA6732708"/>
         </context>
-        <authoredOn value="2012-11-15T14:54:00+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2013-11-15T14:54:00+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -2210,8 +2208,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-12-13"/>
+            <start value="2013-11-15"/>
+            <end value="2013-12-13"/>
           </validityPeriod>
           <quantity>
             <value value="168"/>
@@ -2241,7 +2239,7 @@
             </valueCodeableConcept>
           </extension>
           <extension url="statusChangeDate">
-            <valueDateTime value="2012-11-15T15:02:50.72+00:00"/>
+            <valueDateTime value="2013-11-15T15:02:50.72+00:00"/>
           </extension>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1">
@@ -2257,6 +2255,9 @@
           <system value="https://EMISWeb/A82038"/>
           <value value="2FE2854DCF584AEE8F71257ADF74FE211458EF9ED0EA4745BB46C38668E0EC0C"/>
         </identifier>
+        <groupIdentifier>
+          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c"/>
+        </groupIdentifier>
         <status value="stopped"/>
         <intent value="plan"/>
         <medicationReference>
@@ -2265,12 +2266,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2012-11-15T14:59:52.57+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2013-11-15T14:59:52.57+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -2279,8 +2275,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-11-15"/>
+            <start value="2013-11-15"/>
+            <end value="2013-11-15"/>
           </validityPeriod>
           <quantity>
             <value value="168"/>
@@ -2322,6 +2318,9 @@
         <basedOn>
           <reference value="MedicationRequest/1458EF9E-D0EA-4745-BB46-C38668E0EC0C"/>
         </basedOn>
+        <groupIdentifier>
+          <value value="1458ef9e-d0ea-4745-bb46-c38668e0ec0c"/>
+        </groupIdentifier>
         <status value="completed"/>
         <intent value="order"/>
         <medicationReference>
@@ -2330,12 +2329,7 @@
         <subject>
           <reference value="Patient/23"/>
         </subject>
-        <authoredOn value="2012-11-15T14:59:52.57+00:00"/>
-        <requester>
-          <agent>
-            <reference value="Practitioner/6D340A1B-BC15-4D4E-93CF-BBCB5B74DF73"/>
-          </agent>
-        </requester>
+        <authoredOn value="2013-11-15T14:59:52.57+00:00"/>
         <recorder>
           <reference value="Practitioner/2"/>
         </recorder>
@@ -2347,8 +2341,8 @@
         </dosageInstruction>
         <dispenseRequest>
           <validityPeriod>
-            <start value="2012-11-15"/>
-            <end value="2012-12-13"/>
+            <start value="2013-11-15"/>
+            <end value="2013-12-13"/>
           </validityPeriod>
           <quantity>
             <value value="168"/>
@@ -2381,7 +2375,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-19T00:00:00+00:00"/>
+          <valueDateTime value="2012-01-19T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2395,9 +2389,9 @@
           <reference value="Medication/13428E0A-4E7A-4AD2-B6E6-15194BB18962"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-15"/>
+          <start value="2012-01-15"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-15T11:23:20.077+00:00"/>
+        <dateAsserted value="2012-01-15T11:23:20.077+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2436,9 +2430,9 @@
           <reference value="Medication/3AA57D2E-3896-43A9-AA3E-D5B950547F45"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-15"/>
+          <start value="2012-01-15"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-15T11:07:01.93+00:00"/>
+        <dateAsserted value="2012-01-15T11:07:01.93+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2466,7 +2460,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-15T00:00:00+00:00"/>
+          <valueDateTime value="2012-01-15T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2480,10 +2474,10 @@
           <reference value="Medication/52422392-BAAB-4E24-99E9-229830B4B6DA"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-15"/>
-          <end value="2011-01-19"/>
+          <start value="2012-01-15"/>
+          <end value="2012-01-19"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-15T10:26:31.553+00:00"/>
+        <dateAsserted value="2012-01-15T10:26:31.553+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2511,7 +2505,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-15T00:00:00+00:00"/>
+          <valueDateTime value="2012-01-15T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2520,15 +2514,15 @@
         <basedOn>
           <reference value="MedicationRequest/2A49D410-23B8-42FA-91F8-3570E8F93C23"/>
         </basedOn>
-        <status value="completed"/>
+        <status value="stopped"/>
         <medicationReference>
           <reference value="Medication/180491A6-75E8-41E9-A542-5D608F98BFD7"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-15"/>
-          <end value="2019-10-28"/>
+          <start value="2012-01-15"/>
+          <end value="2020-10-27"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-15T10:26:18.993+00:00"/>
+        <dateAsserted value="2012-01-15T10:26:18.993+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2556,7 +2550,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-15T00:00:00+00:00"/>
+          <valueDateTime value="2012-01-15T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2565,15 +2559,15 @@
         <basedOn>
           <reference value="MedicationRequest/8627572C-BAE5-4325-897E-F346C0B1F91B-HD-1"/>
         </basedOn>
-        <status value="completed"/>
+        <status value="stopped"/>
         <medicationReference>
           <reference value="Medication/E0F80D42-0B7B-42B2-9D2A-3639D86A8E6B"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-15"/>
-          <end value="2011-01-19"/>
+          <start value="2012-01-15"/>
+          <end value="2012-01-19"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-15T10:46:01.933+00:00"/>
+        <dateAsserted value="2012-01-15T10:46:01.933+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2601,7 +2595,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-01-19T00:00:00+00:00"/>
+          <valueDateTime value="2012-01-19T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2615,10 +2609,10 @@
           <reference value="Medication/4AC4A089-62F7-4798-A4E2-1E5E77298D45"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-19"/>
-          <end value="2011-01-19"/>
+          <start value="2012-01-19"/>
+          <end value="2012-01-19"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-19T09:17:10.543+00:00"/>
+        <dateAsserted value="2012-01-19T09:17:10.543+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2646,7 +2640,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-02-27T00:00:00+00:00"/>
+          <valueDateTime value="2012-02-27T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2660,10 +2654,10 @@
           <reference value="Medication/E0F80D42-0B7B-42B2-9D2A-3639D86A8E6B"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-01-19"/>
-          <end value="2012-09-28"/>
+          <start value="2012-01-19"/>
+          <end value="2013-09-28"/>
         </effectivePeriod>
-        <dateAsserted value="2011-01-19T14:45:39.78+00:00"/>
+        <dateAsserted value="2012-01-19T14:45:39.78+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2691,7 +2685,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-03-25T00:00:00+00:00"/>
+          <valueDateTime value="2012-03-24T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2705,9 +2699,9 @@
           <reference value="Medication/A8E702B8-55A2-4191-8BC1-34A1365E24D2"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-03-24"/>
+          <start value="2012-03-23"/>
         </effectivePeriod>
-        <dateAsserted value="2011-03-24T16:44:29.467+00:00"/>
+        <dateAsserted value="2012-03-23T16:44:29.467+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2741,7 +2735,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-03-24T00:00:00+00:00"/>
+          <valueDateTime value="2012-03-23T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2755,10 +2749,10 @@
           <reference value="Medication/A8E702B8-55A2-4191-8BC1-34A1365E24D2"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-03-24"/>
-          <end value="2011-03-24"/>
+          <start value="2012-03-23"/>
+          <end value="2012-03-23"/>
         </effectivePeriod>
-        <dateAsserted value="2011-03-24T16:40:37.893+00:00"/>
+        <dateAsserted value="2012-03-23T16:40:37.893+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2786,7 +2780,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-03-24T00:00:00+00:00"/>
+          <valueDateTime value="2012-03-23T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2795,15 +2789,15 @@
         <basedOn>
           <reference value="MedicationRequest/4DF74563-BED2-4E90-9679-3115C78DBBC6-FD-2"/>
         </basedOn>
-        <status value="completed"/>
+        <status value="stopped"/>
         <medicationReference>
           <reference value="Medication/CA40A65D-60B3-49F2-834E-983D404F137F"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-03-24"/>
-          <end value="2011-03-24"/>
+          <start value="2012-03-23"/>
+          <end value="2012-03-23"/>
         </effectivePeriod>
-        <dateAsserted value="2011-03-24T16:24:02.89+00:00"/>
+        <dateAsserted value="2012-03-23T16:24:02.89+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2842,9 +2836,9 @@
           <reference value="Medication/05DF466B-AAEB-4DC6-BD05-7842EA951224"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-03-24"/>
+          <start value="2012-03-23"/>
         </effectivePeriod>
-        <dateAsserted value="2011-03-24T16:27:58.547+00:00"/>
+        <dateAsserted value="2012-03-23T16:27:58.547+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2872,7 +2866,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-03-24T00:00:00+00:00"/>
+          <valueDateTime value="2012-03-23T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2881,15 +2875,15 @@
         <basedOn>
           <reference value="MedicationRequest/4DF74563-BED2-4E90-9679-3115C78DBBC6-HD-1"/>
         </basedOn>
-        <status value="completed"/>
+        <status value="stopped"/>
         <medicationReference>
           <reference value="Medication/CA40A65D-60B3-49F2-834E-983D404F137F"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-03-24"/>
-          <end value="2011-03-24"/>
+          <start value="2012-03-23"/>
+          <end value="2012-03-23"/>
         </effectivePeriod>
-        <dateAsserted value="2011-03-24T16:27:58.547+00:00"/>
+        <dateAsserted value="2012-03-23T16:27:58.547+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2917,7 +2911,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2011-11-10T00:00:00+00:00"/>
+          <valueDateTime value="2012-11-09T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2926,15 +2920,15 @@
         <basedOn>
           <reference value="MedicationRequest/FA91A636-6128-42B0-9807-62CC44167D2D"/>
         </basedOn>
-        <status value="completed"/>
+        <status value="stopped"/>
         <medicationReference>
           <reference value="Medication/180491A6-75E8-41E9-A542-5D608F98BFD7"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2011-08-10"/>
-          <end value="2019-10-28"/>
+          <start value="2012-08-09"/>
+          <end value="2020-10-27"/>
         </effectivePeriod>
-        <dateAsserted value="2011-08-10T13:42:22.51+01:00"/>
+        <dateAsserted value="2012-08-09T13:42:22.51+01:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -2962,7 +2956,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2012-11-15T00:00:00+00:00"/>
+          <valueDateTime value="2013-11-15T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -2976,10 +2970,10 @@
           <reference value="Medication/46E32CDA-0BB5-44C9-BC37-58F77F0432E1"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2012-11-15"/>
-          <end value="2012-11-15"/>
+          <start value="2013-11-15"/>
+          <end value="2013-11-15"/>
         </effectivePeriod>
-        <dateAsserted value="2012-11-15T14:55:59.093+00:00"/>
+        <dateAsserted value="2013-11-15T14:55:59.093+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
@@ -3010,7 +3004,7 @@
           </valueCodeableConcept>
         </extension>
         <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1">
-          <valueDateTime value="2012-11-15T00:00:00+00:00"/>
+          <valueDateTime value="2013-11-15T00:00:00+00:00"/>
         </extension>
         <identifier>
           <system value="https://EMISWeb/A82038"/>
@@ -3024,10 +3018,10 @@
           <reference value="Medication/75C7F97D-C12F-43EC-95F2-AE7D4B0F4BC7"/>
         </medicationReference>
         <effectivePeriod>
-          <start value="2012-11-15"/>
-          <end value="2012-11-15"/>
+          <start value="2013-11-15"/>
+          <end value="2013-11-15"/>
         </effectivePeriod>
-        <dateAsserted value="2012-11-15T14:59:52.57+00:00"/>
+        <dateAsserted value="2013-11-15T14:59:52.57+00:00"/>
         <subject>
           <reference value="Patient/23"/>
         </subject>
