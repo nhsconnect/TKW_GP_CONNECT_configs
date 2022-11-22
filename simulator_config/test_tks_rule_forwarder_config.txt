@@ -28,6 +28,8 @@ patient_response_27 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record
 # rich immunisations
 patient_response_28 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_28.xml "200 OK"
 
+# rich uncat
+patient_response_29 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_29.xml "200 OK"
 
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
@@ -42,6 +44,7 @@ __ERRORID__	UUID
 __ERRORCODE__ Literal INVALID_PARAMETER
 __ERRORTEXT_IVP__ Xpath concat('Disallowed Parameter part type combination for ',if (//fhir:parameter/fhir:name[@value='includeConsultations']) then 'Consultations ' else 'Problems ',string-join(/fhir:Parameters/fhir:parameter/fhir:part/fhir:name[@value=('medicationSearchFromDate','uncategorisedDataSearchPeriod') or (//fhir:parameter/fhir:name[@value='includeConsultations'] and (@value=('filterSignificance','filterStatus'))) or @value=('referralSearchPeriod','diaryEntriesSearchDate','includeNotGiven','includeStatus')]/concat(../../fhir:name/@value,'.',@value),','))
 __SERVER__ Literal NHS Digital TKW Server
+
 __PATIENT_1__ Literal 9690937278
 __PATIENT_2__ Literal 9690937286
 __PATIENT_3__ Literal 9690937294
@@ -75,7 +78,10 @@ __PATIENT_25_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 __PATIENT_26_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937464_head.xml')/block/text()
 __PATIENT_27_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937820_head.xml')/block/text()
 
+# rich imm
 __PATIENT_28_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938207_head.xml')/block/text()
+# rich uncat
+__PATIENT_29_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938215_head.xml')/block/text()
 
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 __PRACTITIONER_1_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/practitioner_1_head.xml')/block/text()
@@ -112,6 +118,7 @@ diary_entries xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value
 meds_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeMedication']) 1
 allergies_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeAllergies']) 1
 immunisations_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeImmunisations']) 1
+uncat_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeUncategorisedData']) 1
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937286
 QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
@@ -131,7 +138,8 @@ QUERY_PATIENT_27 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 
 # Rich immunisations
 QUERY_PATIENT_28 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938207
-
+# Rich uncat
+QUERY_PATIENT_29 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938215
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
@@ -259,6 +267,7 @@ if QUERY_PATIENT_26 and two_clinical_areas and meds_request and allergies_reques
 if QUERY_PATIENT_27 and two_clinical_areas and meds_request and allergies_request then patient_response_27
 
 if QUERY_PATIENT_28 and single_clinical_area and immunisations_request then patient_response_28
+if QUERY_PATIENT_29 and single_clinical_area and uncat_request then patient_response_29
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
