@@ -42,8 +42,8 @@
             <content>
                <attachment>
                   <contentType value="application/msword"></contentType>
-                  <url value="__BINARY_URL__/Binary/07a6483f-732b-461e-86b6-edb665c45511"></url>
                   <size value="6000000"></size>
+                  <title value="file size 6000000 bytes greater than maximum allowable (5MB)"></title>
                </attachment>
             </content>
             <context>

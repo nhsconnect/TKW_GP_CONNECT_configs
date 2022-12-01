@@ -143,7 +143,7 @@ __DIARY_ENTRIES_WARNINGS__
             <clinicalStatus value="active"></clinicalStatus>
             <category>
                 <coding>
-                    <system value="http://hl7.org/fhir/condition-category"/>
+                    <system value="https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-ConditionCategory-1"/>
                     <code value="problem-list-item"/>
                     <display value="Problem List Item"/>
                 </coding>
