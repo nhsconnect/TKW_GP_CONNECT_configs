@@ -14,11 +14,14 @@ document_reference_response_no_records TKW_ROOT/config/GP_CONNECT/simulator_conf
 document_reference_response_gt_5MB TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_reference_response_gt_5MB.xml "200 OK"
 patient2_document_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/document_response.xml "200 OK"
 
+# EMIS Docs Consolidation
+patient33_document_reference_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/EMIS_Docs_consolidated_V2.xml "200 OK"
+
 documents_metadata_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/documents_capability.xml "200 OK"
 
 patient_rich_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record.xml "200 OK"
 patient_rich_response_2 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidation_meds_test_record_secondary.xml "200 OK"
-patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidated_allergies_test_record.xml "200 OK"
+patient_rich_response_3 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Consolidated_Allergies_Test_Record_v0_1.xml "200 OK"
 
 # Oct 2021 Hackathon
 patient_response_25 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_25.xml "200 OK"
@@ -39,6 +42,17 @@ patient_response_31 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record
 
 # rich Problems
 patient_response_32 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_32.xml "200 OK"
+
+# rich Referrals
+patient_response_34 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/Referrals_ConsumerData_v0_3.xml "200 OK"
+
+# rich DiaryEntries
+patient_response_35 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/DiaryEntries_ConsumerData_v0_2.xml "200 OK"
+
+
+
+# patient 33 search response
+#patient_33_search_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_33_search.xml "200 OK"
 
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
@@ -97,6 +111,12 @@ __PATIENT_30_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 __PATIENT_31_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938223_head.xml')/block/text()
 # rich problems
 __PATIENT_32_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937340_head.xml')/block/text()
+#EMIS_Docs_Consolidation
+__PATIENT_33_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938088_head.xml')/block/text()
+# rich Referrals
+__PATIENT_34_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937693_head.xml')/block/text()
+# rich DiaryEntries
+__PATIENT_35_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938770_head.xml')/block/text()
 
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 __PRACTITIONER_1_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/practitioner_1_head.xml')/block/text()
@@ -137,6 +157,8 @@ uncat_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value
 investigation_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeInvestigations']) 1
 consultations_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeConsultations']) 1
 problems_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeProblems']) 1
+referrals_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeReferrals']) 1
+diaryEntries_request xpathequals count(/fhir:Parameters/fhir:parameter[fhir:name/@value='includeDiaryEntries']) 1
 
 QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937286
 QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
@@ -164,10 +186,19 @@ QUERY_PATIENT_30 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 QUERY_PATIENT_31 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938223
 # Rich problems
 QUERY_PATIENT_32 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937340
+# EMIS Docs Consolidation
+#QUERY_PATIENT_33 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938088
+# Rich Referrals
+QUERY_PATIENT_34 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937693
+# Rich DiaryEntries
+QUERY_PATIENT_35 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938770
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
 GET_PATIENT_4 context_path matches ^.*/Patient/4/.*$
+GET_PATIENT_33 context_path matches ^.*/Patient/33/.*$
+#GET_PATIENT_33_SEARCH context_path matches ^.*https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9690938088$
+#^.*|9690938088$
 
 # only those patients who should have a record returned
 # checks for structured record post patients 2 3 4 for diary entries - not used
@@ -295,6 +326,8 @@ if QUERY_PATIENT_29 and single_clinical_area and uncat_request then patient_resp
 if QUERY_PATIENT_30 and single_clinical_area and investigation_request then patient_response_30
 if QUERY_PATIENT_31 and single_clinical_area and consultations_request then patient_response_31
 if QUERY_PATIENT_32 and single_clinical_area and problems_request then patient_response_32
+if QUERY_PATIENT_34 and single_clinical_area and referrals_request then patient_response_34
+if QUERY_PATIENT_35 and single_clinical_area and diaryEntries_request then patient_response_35
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
@@ -330,7 +363,8 @@ if CREATED and not ( CREATED_LE_VALID or CREATED_GE_VALID ) then operation_outco
 
 if CREATED_2 and not CREATED_RANGE_VALID then operation_outcome_422_document_search_created_ge_after_le
 
-if not DOCUMENT_CONFIGURED_PATIENT then patient_lid_not_found_response
+#patient 33 doesn't have any configured document. only used for emis test
+if not DOCUMENT_CONFIGURED_PATIENT and not GET_PATIENT_33 then patient_lid_not_found_response
 
 # return a docref 
 if GET_PATIENT_2 then patient2_document_reference_response
@@ -341,7 +375,11 @@ if GET_PATIENT_3 then document_reference_response_no_records
 # return a docref for doc > 5MB
 if GET_PATIENT_4 then document_reference_response_gt_5MB
 
-# patient 4 upwards return patient not found
+# patient 4 upwards return patient not found apart from patient 33
+
+if GET_PATIENT_33 then patient33_document_reference_response
+
+
 
 END RULE
 
@@ -374,6 +412,16 @@ GET+urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1
 INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
 # else defer to back end
 END RULE
+
+#==================================================================================================
+# Document Interface - search Patient
+#
+#comment out the line below as we are using demonstrator for patient 33 search response
+#BEGIN RULE
+#GET+urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1
+#INCLUDE TKW_ROOT/config/GP_CONNECT/simulator_config/fhir_rules_common.conf
+#if GET_PATIENT_33_SEARCH then patient_33_search_response
+#END RULE
 
 #==================================================================================================
 # FHIR SDS Adapter
