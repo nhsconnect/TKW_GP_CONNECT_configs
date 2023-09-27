@@ -51,9 +51,6 @@ patient_response_35 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/DiaryE
 
 
 
-# patient 33 search response
-#patient_33_search_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_33_search.xml "200 OK"
-
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 
