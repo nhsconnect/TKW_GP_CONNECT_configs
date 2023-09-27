@@ -1,0 +1,8 @@
+<Bundle xmlns="http://hl7.org/fhir">
+   <id value="__SSP_TRACEID__"/>
+   <meta>
+      <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"/>
+   </meta>
+   <type value="searchset"/>
+   __PATIENT_33_HEAD__
+</Bundle>
