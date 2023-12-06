@@ -12040,7 +12040,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="5.7000000000000002"/>
+               <value value="5.70"/>
                <unit value="10*9/L"/>
             </valueQuantity>
             <specimen>
@@ -12093,7 +12093,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="4.5700000000000003"/>
+               <value value="4.57"/>
                <unit value="10*12/L"/>
             </valueQuantity>
             <specimen>
@@ -12194,7 +12194,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="0.42699999999999999"/>
+               <value value="0.42"/>
                <unit value="%"/>
             </valueQuantity>
             <specimen>
@@ -12242,7 +12242,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="93.400000000000006"/>
+               <value value="93.40"/>
                <unit value="fL"/>
             </valueQuantity>
             <specimen>
@@ -12295,7 +12295,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="31.100000000000001"/>
+               <value value="31.10"/>
                <unit value="pg"/>
             </valueQuantity>
             <specimen>
@@ -12454,7 +12454,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="2.7599999999999998"/>
+               <value value="2.75"/>
                <unit value="10*9/L"/>
             </valueQuantity>
             <specimen>
@@ -12507,7 +12507,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="ST JAMES'S UNIVERSITY HOSPITAL"/>
             </performer>
             <valueQuantity>
-               <value value="77.700000000000003"/>
+               <value value="77.70"/>
                <unit value="%"/>
             </valueQuantity>
             <specimen>
@@ -12552,7 +12552,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="2.1200000000000001"/>
+               <value value="2.12"/>
                <unit value="10*9/L"/>
             </valueQuantity>
             <specimen>
@@ -12605,7 +12605,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="14.300000000000001"/>
+               <value value="14.30"/>
                <unit value="%"/>
             </valueQuantity>
             <specimen>
@@ -12650,7 +12650,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="0.47999999999999998"/>
+               <value value="0.47"/>
                <unit value="10*9/L"/>
             </valueQuantity>
             <specimen>
@@ -12698,7 +12698,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="7.0999999999999996"/>
+               <value value="7.09"/>
                <unit value="%"/>
             </valueQuantity>
             <specimen>
@@ -12743,7 +12743,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="0.28999999999999998"/>
+               <value value="0.28"/>
                <unit value="10*9/L"/>
             </valueQuantity>
             <specimen>
@@ -12791,7 +12791,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="0.90000000000000002"/>
+               <value value="0.90"/>
                <unit value="%"/>
             </valueQuantity>
             <specimen>
@@ -12836,7 +12836,7 @@ __DIARY_ENTRIES_WARNINGS__
                <display value="COXWOLD Surgery"/>
             </performer>
             <valueQuantity>
-               <value value="0.059999999999999998"/>
+               <value value="0.05"/>
                <unit value="10*9/L"/>
             </valueQuantity>
             <specimen>
