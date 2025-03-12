@@ -1,8 +1,8 @@
-<Parameters xmlns="http://hl7.org/fhir">
+C:/GPConnect/TKW_TEMP/TKW_GP_CONNECT_configs/<Parameters xmlns="http:/hl7.org/fhir">
     <parameter>
         <name value="patientNHSNumber" />
         <valueIdentifier>
-            <system value="http://fhir.nhs.net/Id/nhs-number" />
+            <system value="http:/fhir.nhs.net/Id/nhs-number" />
 			<value value="__NHS_NO__" />
 		</valueIdentifier>
     </parameter>
@@ -10,7 +10,7 @@
         <name value="recordSection" />
         <valueCodeableConcept>
             <coding>
-                <system value="http://fhir.nhs.net/ValueSet/gpconnect-record-section-1" />
+                <system value="http:/fhir.nhs.net/ValueSet/gpconnect-record-section-1" />
 				<code value="__CODE__" />
             </coding>
         </valueCodeableConcept>
