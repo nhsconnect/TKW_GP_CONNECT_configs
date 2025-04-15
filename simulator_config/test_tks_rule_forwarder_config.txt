@@ -82,6 +82,10 @@ patient_response_28 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record
 # rich uncat
 patient_response_29 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_29.xml "200 OK"
 
+# patient 37 Consolidation_meds_test_record 1.6.2 dosage changes
+patient_response_37 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_37.xml "200 OK"
+
+
 # SDS adapter org queries
 A20047_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/A20047.xml "200 OK"
 B82617_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/B82617.xml "200 OK"
