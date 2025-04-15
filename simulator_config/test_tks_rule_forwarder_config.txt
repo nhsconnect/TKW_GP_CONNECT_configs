@@ -123,6 +123,14 @@ __PATIENT_34_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 # rich DiaryEntries
 __PATIENT_35_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938770_head.xml')/block/text()
 
+# patient 37 Consolidation_meds_test_record 1.6.2 dosage changes
+__PATIENT_37_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937472_head.xml')/block/text()
+# patient 38 Consolidation_meds_test_record 1.6.2 dosage changes
+__PATIENT_38_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938975_head.xml')/block/text()
+# patient 39 Consolidation_meds_test_record 1.6.2 dosage changes
+__PATIENT_39_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937359_head.xml')/block/text()
+
+
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 __PRACTITIONER_1_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/practitioner_1_head.xml')/block/text()
 __ORG_7_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_7_head.xml')/block/text()
