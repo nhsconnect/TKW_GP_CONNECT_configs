@@ -82,6 +82,16 @@ patient_response_28 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record
 # rich uncat
 patient_response_29 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_29.xml "200 OK"
 
+# patient 37 Consolidation_meds_test_record 1.6.2 dosage changes
+patient_response_37 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_37.xml "200 OK"
+
+# patient 38 Investigations_Consumer_Data_Extract_File 1.6.2 fasting status
+patient_response_38 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_38.xml "200 OK"
+
+# patient 39 full_record_security_label 1.6.2 security label
+patient_response_39 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_39.xml "200 OK"
+
+
 # SDS adapter org queries
 A20047_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/A20047.xml "200 OK"
 B82617_response TKW_ROOT/config/GP_CONNECT/simulator_config/responses/B82617.xml "200 OK"
@@ -183,6 +193,13 @@ __PATIENT_29_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 __ORG_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_head.xml')/block/text()
 __PRACTITIONER_1_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/practitioner_1_head.xml')/block/text()
 __ORG_7_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/org_7_head.xml')/block/text()
+
+# patient 37 Consolidation_meds_test_record 1.6.2 dosage changes
+__PATIENT_37_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937472_head.xml')/block/text()
+# patient 38 Consolidation_meds_test_record 1.6.2 dosage changes
+__PATIENT_38_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938975_head.xml')/block/text()
+# patient 39 Consolidation_meds_test_record 1.6.2 dosage changes
+__PATIENT_39_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937359_head.xml')/block/text()
 
 # parameter part check
 # one operation outcome with a separate issue for each unrecognised parameter part
