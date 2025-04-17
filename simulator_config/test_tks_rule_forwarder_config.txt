@@ -123,11 +123,11 @@ __PATIENT_34_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/respo
 # rich DiaryEntries
 __PATIENT_35_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938770_head.xml')/block/text()
 
-# patient 37 Consolidation_meds_test_record 1.6.2 dosage changes
+# patient 37 - 9690937472 - Consolidation_meds_test_record 1.6.2 dosage changes
 __PATIENT_37_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937472_head.xml')/block/text()
-# patient 38 Consolidation_meds_test_record 1.6.2 dosage changes
+# patient 38 - 9690938975 - Investigations_Consumer_Data_Extract_File 1.6.2 fasting status
 __PATIENT_38_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690938975_head.xml')/block/text()
-# patient 39 Consolidation_meds_test_record 1.6.2 dosage changes
+# patient 39 - 9690937359 - full_record_security_label 1.6.2 security label
 __PATIENT_39_HEAD__ Xpath doc('TKW_ROOT/config/GP_CONNECT/simulator_config/responses/9690937359_head.xml')/block/text()
 
 
@@ -341,6 +341,14 @@ if QUERY_PATIENT_31 and single_clinical_area and consultations_request then pati
 if QUERY_PATIENT_32 and single_clinical_area and problems_request then patient_response_32
 if QUERY_PATIENT_34 and single_clinical_area and referrals_request then patient_response_34
 if QUERY_PATIENT_35 and single_clinical_area and diaryEntries_request then patient_response_35
+
+# patient 37 - 9690937472 - Consolidation_meds_test_record 1.6.2 dosage changes
+if QUERY_PATIENT_37 and multiple_clinical_areas then patient_response_37
+# patient 38 - 9690938975 - Investigations_Consumer_Data_Extract_File 1.6.2 fasting status
+if QUERY_PATIENT_38 and single_clinical_area and investigation_request then patient_response_38
+# patient 39 - 9690937359 - full_record_security_label 1.6.2 security label
+if QUERY_PATIENT_39 and multiple_clinical_areas then patient_response_39
+
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
 
