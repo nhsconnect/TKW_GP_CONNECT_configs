@@ -206,6 +206,14 @@ QUERY_PATIENT_34 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 # Rich DiaryEntries
 QUERY_PATIENT_35 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938770
 
+# Rich DiaryEntries
+QUERY_PATIENT_37 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937472
+# Rich DiaryEntries
+QUERY_PATIENT_38 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690938975
+# Rich DiaryEntries
+QUERY_PATIENT_39 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937359
+
+
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
 GET_PATIENT_4 context_path matches ^.*/Patient/4/.*$
@@ -223,7 +231,7 @@ DOCUMENT_CONFIGURED_PATIENT context_path matches ^.*/Patient/(2|3|4)/.*$
 
 # GetBinary
 GET_PATIENT_2_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45510$
-# > 5MB 
+# > 5MB
 GET_PATIENT_4_DOCUMENT context_path matches ^.*/Binary/07a6483f-732b-461e-86b6-edb665c45511$
 
 # search document references
