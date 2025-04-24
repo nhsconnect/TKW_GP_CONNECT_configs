@@ -177,6 +177,7 @@ QUERY_PATIENT_2 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='pa
 QUERY_PATIENT_3 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937294
 QUERY_PATIENT_4 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937308
 
+
 # stubbed in rich meds
 QUERY_PATIENT_6 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937383
 
@@ -351,11 +352,11 @@ if QUERY_PATIENT_34 and single_clinical_area and referrals_request then patient_
 if QUERY_PATIENT_35 and single_clinical_area and diaryEntries_request then patient_response_35
 
 # patient 37 - 9690937472 - Consolidation_meds_test_record 1.6.2 dosage changes
-if QUERY_PATIENT_37 and multiple_clinical_areas then patient_response_37
+if QUERY_PATIENT_37 and single_clinical_area and meds_request then patient_response_37
 # patient 38 - 9690938975 - Investigations_Consumer_Data_Extract_File 1.6.2 fasting status
 if QUERY_PATIENT_38 and single_clinical_area and investigation_request then patient_response_38
 # patient 39 - 9690937359 - full_record_security_label 1.6.2 security label
-if QUERY_PATIENT_39 and multiple_clinical_areas then patient_response_39
+if QUERY_PATIENT_39 then patient_response_39
 
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
