@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="__SSP_TRACEID__"/>
+  <meta>
+    <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <resource>
+      <Patient xmlns="http://hl7.org/fhir">
+        <id value="36"/>
+        <meta>
+          <versionId value="8840260017698329728"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1">
+          <extension url="preferredBranchSurgery">
+            <valueReference>
+              <reference value="Location/EB3994A6-5A87-4B53-A414-913137072F57"/>
+            </valueReference>
+          </extension>
+        </extension>
+        <identifier>
+          <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1">
+            <valueCodeableConcept>
+              <coding>
+                <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1"/>
+                <code value="01"/>
+                <display value="Number present and verified"/>
+              </coding>
+              <text value="Number present and verified"/>
+            </valueCodeableConcept>
+          </extension>
+          <system value="https://fhir.nhs.uk/Id/nhs-number"/>
+          <value value="9738345294"/>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <family value="LINDEN"/>
+          <given value="Doug"/>
+          <given value="Adam"/>
+          <prefix value="MR"/>
+        </name>
+        <gender value="male"/>
+        <birthDate value="1932-12-30"/>
+        <address>
+          <use value="home"/>
+          <type value="physical"/>
+          <line value="2 BROUGH ROAD"/>
+          <line value="Burringham"/>
+          <city value="BILLINGHAM"/>
+          <postalCode value="TS23 2HT"/>
+        </address>
+        <generalPractitioner>
+          <reference value="Practitioner/1"/>
+        </generalPractitioner>
+        <managingOrganization>
+          <reference value="Organization/7"/>
+        </managingOrganization>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Organization xmlns="http://hl7.org/fhir">
+        <id value="7"/>
+        <meta>
+          <versionId value="6599199755373375979"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
+          <value value="B82617"/>
+        </identifier>
+        <type>
+          <coding>
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1"/>
+            <code value="gp-practice"/>
+          </coding>
+          <text value="GP Practice"/>
+        </type>
+        <name value="COXWOLD Surgery"/>
+        <telecom>
+          <system value="phone"/>
+          <value value="12345678"/>
+          <use value="work"/>
+          <rank value="1"/>
+        </telecom>
+        <address>
+          <use value="work"/>
+          <type value="physical"/>
+          <line value="NHS NPFIT Test Data Manager"/>
+          <line value="Princes Exchange"/>
+          <city value="Leeds"/>
+          <district value="West Yorkshire"/>
+          <postalCode value="LS1 4HY"/>
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <meta>
+          <versionId value="4333436790463129417"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-user-id"/>
+          <value value="G13579135"/>
+        </identifier>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/sds-role-profile-id"/>
+          <value value="555079046103"/>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <family value="Gilbert"/>
+          <given value="Nichole"/>
+          <prefix value="Miss"/>
+        </name>
+        <gender value="female"/>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <meta>
+          <versionId value="3362584387961498423"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
+        </meta>
+        <practitioner>
+          <reference value="Practitioner/1"/>
+        </practitioner>
+        <organization>
+          <reference value="Organization/7"/>
+        </organization>
+        <code>
+          <coding>
+            <system value="https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1"/>
+            <code value="R0260"/>
+            <display value="General Medical Practitioner"/>
+          </coding>
+        </code>
+      </PractitionerRole>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="2"/>
+        <meta>
+          <versionId value="CE7A3D441AC7E71F17351325F4047C7B"/>
+          <lastUpdated value="2019-10-04T12:15:27+01:00"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <active value="true"/>
+        <name>
+          <use value="official"/>
+          <family value="Slater"/>
+          <given value="Kibo"/>
+        </name>
+        <gender value="male"/>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole xmlns="http://hl7.org/fhir">
+        <id value="2"/>
+        <meta>
+          <versionId value="67DA8D2DD47E14A9203832D65D02ADF7"/>
+          <lastUpdated value="2019-10-04T12:15:27+01:00"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
+        </meta>
+        <practitioner>
+          <reference value="Practitioner/2"/>
+        </practitioner>
+        <organization>
+          <reference value="Organization/7"/>
+        </organization>
+      </PractitionerRole>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <meta>
+          <versionId value="1469444400000"/>
+          <lastUpdated value="2016-07-25T12:00:00.000+01:00"/>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+        </meta>
+        <identifier>
+          <system value="http://visionhealth.co.uk/Id/gmp-code"/>
+          <value value="G8311672"/>
+        </identifier>
+        <name>
+          <family value="Parsons"/>
+          <given value="Melissa"/>
+          <prefix value="Mr"/>
+        </name>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"/>
+        </meta>
+        <practitioner>
+          <reference value="Practitioner/3"/>
+        </practitioner>
+        <organization>
+          <reference value="Organization/7"/>
+        </organization>
+      </PractitionerRole>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <List xmlns="http://hl7.org/fhir">
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"/>
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ClinicalSetting-1">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="1060971000000108"/>
+              <display value="General practice service"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ListWarningCode-1">
+          <valueCode value="data-in-transit"/>
+        </extension>
+        <status value="current"/>
+        <mode value="snapshot"/>
+        <title value="Allergies and adverse reactions"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="886921000000105"/>
+            <display value="Allergies and adverse reactions"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/36"/>
+        </subject>
+        <date value="2026-07-02T14:37:25Z"/>
+        <orderedBy>
+          <coding>
+            <system value="http://hl7.org/fhir/list-order"/>
+            <code value="event-date"/>
+            <display value="Sorted by Event Date"/>
+          </coding>
+        </orderedBy>
+        <note>
+          <text value="Patient record transfer from previous GP practice not yet complete; any information recorded before 02-Jul-2026 has been excluded."/>
+        </note>
+        <entry>
+          <item>
+            <!-- Need clarification on source of reference values mentioned below. What these values correspond to-->
+			<reference value="AllergyIntolerance/3FC884E6-A327-4076-B4C5-6B02192C5160"/>
+          </item>
+        </entry>
+        <entry>
+          <item>
+            <reference value="AllergyIntolerance/62658072-28AF-47E5-B81C-BC0521D5C41C"/>
+          </item>
+        </entry>
+        <entry>
+          <item>
+            <reference value="AllergyIntolerance/BCABE667-9375-4E32-823F-6B455FFF2D88"/>
+          </item>
+        </entry>
+        <entry>
+          <item>
+            <reference value="AllergyIntolerance/42B94FC2-CF5C-46D4-B125-E0DC13E59ACA"/>
+          </item>
+        </entry>
+        </List>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <AllergyIntolerance xmlns="http://hl7.org/fhir">
+<!-- Value in the below tag is same as the refernce value mentioned above in row 269. Need clarity on what this value corresponds to and where is it available -->       
+	   <id value="3FC884E6-A327-4076-B4C5-6B02192C5160"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
+        </meta>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E463FC884E6A3274076B4C56B02192C5160"/>
+        </identifier>
+        <clinicalStatus value="active"/>
+        <verificationStatus value="unconfirmed"/>
+        <category value="medication"/>
+        <code>
+          <coding>
+            <system value="http://read.info/readv2"/>
+            <code value="ZVu6i00"/>
+            <display value="Allergy to Bisoprolol"/>
+            <userSelected value="true"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="434221016"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Allergy to Bisoprolol"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="293967003"/>
+            <display value="Allergy to Bisoprolol"/>
+          </coding>
+        </code>
+        <patient>
+          <reference value="Patient/36"/>
+        </patient>
+        <onsetDateTime value="2020-05-20"/>
+        <assertedDate value="2020-05-21T13:55:12.777+00:00"/>
+        <recorder>
+          <reference value="Practitioner/1"/>
+        </recorder>
+        <note>
+         <!-- Need clarification on where the value Significance : Major&#10 is coming from -->
+		 <text value="Significance : Major&#10;Episodicity : First"/>
+        </note>
+      </AllergyIntolerance>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <AllergyIntolerance xmlns="http://hl7.org/fhir">
+        <id value="62658072-28AF-47E5-B81C-BC0521D5C41C"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
+        </meta>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E466265807228AF47E5B81CBC0521D5C41C"/>
+        </identifier>
+        <clinicalStatus value="resolved"/>
+        <verificationStatus value="unconfirmed"/>
+        <category value="environment"/>
+        <code>
+          <coding>
+            <system value="http://read.info/readv2"/>
+            <code value="9bJ400"/>
+            <display value="Transfer-degraded drug allergy"/>
+            <userSelected value="true"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="294801000000114"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Transfer-degraded drug allergy"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="196461000000101"/>
+            <display value="Transfer degraded code (196461000000101). Resolved 'Allergy to Naproxen' original code 293625009"/>
+          </coding>
+        </code>
+        <patient>
+          <reference value="Patient/36"/>
+        </patient>
+        <onsetDateTime value="2022-04-15"/>
+        <assertedDate value="2022-04-17T13:29:03.26+00:00"/>
+        <recorder>
+          <reference value="Practitioner/1"/>
+        </recorder>
+        <note>
+		<!-- Need to review the Significance value below -->
+          <text value="Significance : Major&#10;Episodicity : First"/>
+        </note>
+      </AllergyIntolerance>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <AllergyIntolerance xmlns="http://hl7.org/fhir">
+        <id value="BCABE667-9375-4E32-823F-6B455FFF2D88"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
+        </meta>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E46BCABE66793754E32823F6B455FFF2D88"/>
+        </identifier>
+        <clinicalStatus value="active"/>
+        <verificationStatus value="unconfirmed"/>
+        <category value="medication"/>
+        <code>
+          <coding>
+            <system value="http://read.info/readv2"/>
+			<!-- Not able to find the corresponding read code for Allergy to Tenormin. The below allergy is to be entered with EMIS code and transfer degradation is to be verified -->
+            <code value="UNKNOWN"/>
+            <display value="Allergy to Tenormin"/>
+            <userSelected value="true"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="TBC... Snowmed code"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Allergy to Tenormin"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="TBC... Snowmed code"/>
+            <display value="Allergy to Tenormin"/>
+          </coding>
+        </code>
+        <patient>
+          <reference value="Patient/36"/>
+        </patient>
+        <onsetDateTime value="1992-04-23"/>
+        <assertedDate value="1992-04-28T13:28:07.827+00:00"/>
+        <recorder>
+          <reference value="Practitioner/1"/>
+        </recorder>
+        <note>
+          <text value="This is a note for Tenormin allergy. The allergy is recorded using EMIS code and is to be verified if the code is transfer degraded"/>
+        </note>
+      </AllergyIntolerance>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <AllergyIntolerance xmlns="http://hl7.org/fhir">
+        <id value="42B94FC2-CF5C-46D4-B125-E0DC13E59ACA"/>
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
+        </meta>
+        <identifier>
+          <system value="https://EMISWeb/A82038"/>
+          <value value="9340157B697342099B57BF6C64F29E4642B94FC2CF5C46D4B125E0DC13E59ACA"/>
+        </identifier>
+        <clinicalStatus value="active"/>
+        <verificationStatus value="unconfirmed"/>
+        <category value="medication"/>
+        <code>
+          <coding>
+            <system value="https://fhir.hl7.org.uk/Id/egton-codes"/>
+            <code value="TBC... Read Code"/>
+            <display value="Allergy to Paracetamol"/>
+            <userSelected value="true"/>
+          </coding>
+          <coding>
+            <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid">
+              <extension url="descriptionId">
+                <valueId value="TBC... Snowmed code"/>
+              </extension>
+              <extension url="descriptionDisplay">
+                <valueString value="Allergy to paracetamol"/>
+              </extension>
+            </extension>
+            <system value="http://snomed.info/sct"/>
+            <code value="293584003"/>
+            <display value="Allergy to paracetamol"/>
+          </coding>
+        </code>
+        <patient>
+          <reference value="Patient/36"/>
+        </patient>
+        <onsetDateTime value="1961-01-16"/>
+        <assertedDate value="1961-01-17T13:27:02.62+00:00"/>
+        <recorder>
+          <reference value="Practitioner/1"/>
+        </recorder>
+      </AllergyIntolerance>
+    </resource>
+  </entry>
+  </Bundle>

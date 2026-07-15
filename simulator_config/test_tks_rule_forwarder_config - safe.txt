@@ -58,9 +58,6 @@ patient_response_38 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record
 # patient 39 full_record_security_label 1.6.2 security label
 patient_response_39 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/record_39.xml "200 OK"
 
-#extra allergies request data - JGratton 14/07
-allergy_extra_response_1 TKW_ROOT/config/GP_CONNECT/simulator_config/responses/consolidated_allergies_1.xml "200 OK"
-
 
 device TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
 endpoint TKW_ROOT/config/GP_CONNECT/simulator_config/responses/sds_adapter.xml "200 OK"
@@ -217,9 +214,6 @@ QUERY_PATIENT_38 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='p
 # Rich DiaryEntries
 QUERY_PATIENT_39 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9690937359
 
-#Allergies extra patients - JGratton 14/07
-QUERY_PATIENT_ALL_1 xpathequals /fhir:Parameters/fhir:parameter[fhir:name/@value='patientNHSNumber']/fhir:valueIdentifier/fhir:value/@value 9738345294
-
 
 GET_PATIENT_2 context_path matches ^.*/Patient/2/.*$
 GET_PATIENT_3 context_path matches ^.*/Patient/3/.*$
@@ -366,9 +360,6 @@ if QUERY_PATIENT_39 then patient_response_39
 
 
 if single_clinical_area and single_diary_entry then patient_not_found_response
-
-#allergy patients  - JGratton 14/07
-if QUERY_PATIENT_ALL_1 and single_clinical_area and allergies_request then allergy_extra_response_1
 
 END RULE
 
